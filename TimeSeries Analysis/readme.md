@@ -1,6 +1,9 @@
-# Stock Price Analytics
+# Time Series Analysis
 
-The idea is to create a financial interactive dashboard that will provide analytics regarding the
+We will use as our time series stock data. Based on this data we will create a dashboard
+The idea is to create a financial interactive dashboard that will provide 
+
+1. Analytics regarding the
 
 -   Technical
 -   Fundamental
