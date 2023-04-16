@@ -1,0 +1,85 @@
+{% macro exec_field(field, exec_args) %}
+<input
+	class="form-control btn btn btn-outline-primary"
+	type="text"
+	name="{{ field }}"
+	placeholder="value"
+	list="{{ field }}_list"
+	autocomplete="off"
+/>
+<datalist id="{{ field }}_list">
+	{% for val in exec_args[field]['options'] %}
+	<option>{{ val }}</option>
+	{% endfor %}
+</datalist>
+
+{% endmacro %}
+
+{% macro exec_form(name, endpoint, exec_args=none, close_endpoint=none) %}
+<div id="form_exec">
+		<div class="table-responsive">
+			<form
+				method="GET"
+				action="{{ url_for(endpoint) }}"
+				name="exec_query"
+			>
+				<table
+					class="table table-hover table-bordered border-5 table-dark caption-top"
+				>
+					<caption>
+						<h1>{{ name|capitalize }} exec form</h1>
+					</caption>
+					<thead class="table-dark">
+					</thead>
+					<tbody class="table-group-divider table-dark">
+						{% if exec_args is not none %}
+							{% for field in exec_args %}
+							<tr scope="row">
+								<th>{{field}}</th>
+								<td>{{exec_field(field, exec_args)}}</td>
+							</tr>
+							{% endfor %}
+						{% endif %}
+					</tbody>
+				</table>
+				<div class="d-grid">
+					<div class="btn-group-vertical">
+						<div class="btn-group">
+							<button
+								type="btn-primary"
+								class="btn btn-outline-primary btn-block"
+								id="saved_exec_query"
+							>
+								Saved Query
+							</button>
+							<button
+								type="btn-primary"
+								class="btn btn-outline-primary btn-block clear_form"
+							>
+								Clear
+							</button>
+							{% if close_endpoint is not none %}
+								<button
+									type="btn-primary"
+									class="btn btn-outline-danger btn-block"
+									formaction="{{ url_for(close_endpoint) }}"
+									formmethod="GET"
+									id="exec_query_stop"
+								>
+									Stop
+								</button>	
+							{% endif %}					
+						</div>
+						<button
+							type="button"
+							class="btn btn-primary btn-block exec_query"
+						>
+							INITIATE
+						</button>
+					</div>
+				</div>
+			</form>
+	</div>
+</div>
+<div id="exec_status"></div>
+{% endmacro %}

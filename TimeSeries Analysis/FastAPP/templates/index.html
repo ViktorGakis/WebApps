@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% from "macros/header.html" import header with context %}
+
+{% block head %} {{ header() }} {%endblock %} 
+
+{% block content %}
+    <span class="title"><h1>{% block title %} Main page {% endblock %}</h1></span>
+    <div class="content">
+        <h2>This is the index</h2>
+    </div>
+{% endblock %}
+
+{% block script %} 
+{% endblock %}
+

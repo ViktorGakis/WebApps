@@ -1,0 +1,35 @@
+{% macro plotlygraph(graphJSON, id) %}
+    <div id= {{ id }} class='chart'></div>
+
+    <!-- <script src='https://cdn.plot.ly/plotly-latest.min.js'></script> -->
+
+    <script type='text/javascript'>
+        var graphs = {{graphJSON | safe}};
+        Plotly.plot({{ id }},graphs,{});
+    </script>
+{% endmacro %}
+
+
+
+{% macro plotlygraphs(graphJSONS) %}
+    {% for graphJSON in graphJSONS %}
+
+        <div id= {{ ['chart',loop.index]|join }} class='chart'></div>
+        <!-- <script src='https://cdn.plot.ly/plotly-latest.min.js'></script> -->
+        <script type='text/javascript'>
+            var graphs = {{graphJSON | safe}};
+            Plotly.plot({{ ['chart',loop.index]|join }},graphs,{});
+        </script>
+    {% endfor %}
+{% endmacro %}
+
+
+<div class="plotly">
+    {{ plotlygraph(plot_prepared_data, 'plot_prepared_data') }}
+</div>
+
+.plotly {
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+}

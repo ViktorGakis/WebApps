@@ -1,0 +1,48 @@
+:root {
+	--background-color: #333;
+	--text-color: #fff;
+}
+
+body {
+	background-color: var(--background-color);
+	color: var(--text-color);
+}
+
+body.dark-mode {
+	--background-color: #333;
+	--text-color: #fff;
+	transition: all 0.3s ease;
+}
+
+body.light-mode {
+	--background-color: #fff;
+	--text-color: #333;
+	transition: all 0.3s ease;
+}
+
+button {
+	background-color: var(--background-color);
+	color: var(--text-color);
+	border: none;
+	border-radius: 4px;
+	padding: 8px 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+button:hover {
+	background-color: var(--text-color);
+	color: var(--background-color);
+}
+
+#toggle-theme {
+	position: absolute;
+	top: 5px;
+	right: 20px;
+}
+
+#reloadjscss {
+	position: absolute;
+	top: 5px;
+	right: 140px;
+}

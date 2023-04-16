@@ -1,0 +1,15 @@
+{% macro css_tracker() %}
+
+<h3 class="text-center">CSS TRACKER</h3>
+
+<div class="d-grid gap-2">
+	{% for router in ['Connect', 'Start', 'Stop', 'Disconnect'] %}
+	<input
+		class="btn btn btn-outline-primary"
+		type="button"
+		name="{{ router }}"
+		value="{{ router }}"
+	/>
+	{% endfor %}
+</div>
+{% endmacro %}
