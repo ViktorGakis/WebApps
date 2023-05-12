@@ -3,6 +3,8 @@ import { toggleDarkMode } from "./darkmode.js";
 import { submitForm } from "./requests.js";
 import { reloadAllResources } from "./reloading.js";
 
+export { DarkModeDE, submitFormDE, reloadJsCssDE, testDE };
+
 // Listen for clicks on the dark mode toggle button
 async function DarkModeDE() {
 	console.log("DarkModeED initialized!");
@@ -55,18 +57,78 @@ async function reloadJsCssDE(selector) {
 	);
 }
 
-async function testDE(selector = "#my-list li") {
-	console.log(`testDE listener initialized!`);
-	console.log("testDE", Date.now());
+
+
+// ReloadJsCssDE
+async function plotlyplot(selector) {
+	console.log(`Plotly listener initialized!`);
+
 	return await delegateEvent(
 		["click"],
 		[selector],
 		[
 			async (event) => {
-				console.log(event.target.innerHTML);
+				event.preventDefault();
+				await plotlyHandler();
 			},
 		]
 	);
 }
 
-export { DarkModeDE, submitFormDE, reloadJsCssDE, testDE };
+
+async function plotlyHandler(event) {
+	let btn = event.target;
+	let method = btn.attr("formmethod");
+	let url = btn.attr("formaction");
+	let exec_stat = $("#exec_status");	
+	
+}
+
+
+$(document).ready(function () {
+	$(document).on("click", "button.plotly", function (e) {
+		e.preventDefault();
+		let btn = $(this);
+		let method = btn.attr("formmethod");
+		let url = btn.attr("formaction");
+		let exec_stat = $("#exec_status");
+
+		let req = $.ajax({
+			type: method,
+			url: url,
+			data: { analytics_type: btn.attr("name") },
+			// dataType: 'json',
+			// contentType: 'application/json',
+			// data: JSON.stringify({'okboi': form_data(form)})
+		});
+
+		btn.html(
+			'RUNNING...<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
+		);
+
+		req.done(function (resp_json, status) {
+			console.log(resp_json);
+
+			let container = document.getElementById("anal_plots");
+			for (const [k, val] of Object.entries(resp_json)) {
+				let resp = JSON.parse(val);
+				let plot_div = document.createElement("div");
+				plot_div.id = k;
+				plot_div.width = "fit content";
+				container.appendChild(plot_div);
+				let config = { displayModeBar: false };
+				Plotly.newPlot(plot_div, resp.data, resp.layout, config);
+			}
+			btn.addClass("btn-success")
+				.removeClass("btn-primary")
+				.html("COMPLETED");
+			btn.css({ color: "white" });
+		});
+
+		req.fail(function (resp, status) {
+			exec_stat.html("ERROR");
+			exec_stat.css("color", "red");
+			// alert(`Something went wrong: resp: ${resp}`);
+		});
+	});
+});
