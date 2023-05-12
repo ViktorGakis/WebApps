@@ -51,3 +51,22 @@ async def exec_block(func, /, *args, **kwargs) -> Any:
         ctx: Context = copy_context()
         func_call: partial = partial(ctx.run, func, *args, **kwargs)
         return await loop.run_in_executor(pool, func_call)
+
+async def parse_body(request: Request) -> dict[str, list[str]]:
+    data = {}
+    body: bytes = await request.body()
+    print(f"{body=}")
+    if isinstance(body, bytes):
+        # decode the bytes to a string
+        body_str: str = body.decode("utf-8")
+        print(f"{body_str=}")
+    if "&" in body_str:
+        # parse the string as a dictionary using parse_qs
+        data: dict[str, list[str]] = parse_qs(body_str)
+    else:
+        try:
+            data = json.loads(body_str)
+        except json.JSONDecodeError:
+            print("data is not json object")
+    print(f"{data=}")
+    return data

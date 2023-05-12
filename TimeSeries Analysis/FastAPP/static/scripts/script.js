@@ -1,12 +1,14 @@
-import { reloadJsCssDE } from "./modules/eventListeners.js";
+import { reloadJsCssDE, plotlyDE,  } from "./modules/eventListeners.js";
 
 // Create an object to store event listeners references
 const eventListeners = {
 	reloadJsCss: null,
+	plotly: null
 };
 
 async function main() {
-	eventListeners.reloadJsCss = await reloadJsCssDE(".reloadjscss");
+	eventListeners.reloadJsCssde = await reloadJsCssDE(".reloadjscss");
+	eventListeners.plotlyde = await plotlyDE(".plotly")
 }
 
 // Initialize your script

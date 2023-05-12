@@ -1,36 +1,55 @@
-import { delegateEvent, removeDelegatedEvent } from "./delegateEvent.js";
-import { toggleDarkMode } from "./darkmode.js";
+import { delegateEvent } from "./delegateEvent.js";
 import { submitForm } from "./requests.js";
 import { reloadAllResources } from "./reloading.js";
 
-export { DarkModeDE, submitFormDE, reloadJsCssDE, testDE };
-
-// Listen for clicks on the dark mode toggle button
-async function DarkModeDE() {
-	console.log("DarkModeED initialized!");
-	return await delegateEvent(
-		["click"], // event type
-		["#toggle-theme"], // selector
-		[toggleDarkMode] // handler
-	);
-}
+export { submitFormDE, reloadJsCssDE, plotlyDE };
 
 //
 async function formHandler(event) {
 	event.preventDefault();
 	const form = event.target;
-	let rsp_data = await submitForm(form);
-	console.log(`rsp_data:`, rsp_data);
-	const div = document.createElement("div");
-	div.innerHTML = `<h1>Form Response: id: [#${form.id}], method: [${form.method}]</h1>`;
-	const rsp = document.createElement("pre");
-	rsp.textContent = JSON.stringify(rsp_data, null, 2);
-	console.log(`rsp.textContent: ${rsp.textContent}`);
-	div.appendChild(rsp);
-	document.body.appendChild(div);
+	// let rsp_data = await submitForm(form);
+	// return JSON.stringify(rsp_data, null, 2);
+	return await submitForm(form)
 }
 
-// Listen for clicks on the dark mode toggle button
+async function plotlyHandler(event) {
+	console.log("event.target:", event.target);
+	try {
+		let plots = await formHandler(event);
+		console.log("Object.keys(obj)", Object.keys(plots));
+		let container = document.getElementById("anal_plots");
+		console.log("container", container);
+
+		for (const [k, val] of Object.entries(plots)) {
+			console.log("k", k);
+			let resp = JSON.parse(val);
+			let plot_div = document.createElement("div");
+			plot_div.id = k;
+			plot_div.width = "fit content";
+			container.appendChild(plot_div);
+			let config = { displayModeBar: false };
+			Plotly.newPlot(plot_div, resp.data, resp.layout, config);
+		}
+	} catch (error) {
+		console.error("Error:", error);
+	}
+}
+
+async function plotlyDE(selector) {
+	console.log(`plotlyDE listener initialized!`);
+	return await delegateEvent(
+		["submit"],
+		[selector],
+		[
+			async (event) => {
+				event.preventDefault();
+				await plotlyHandler(event);
+			},
+		]
+	);
+}
+
 async function submitFormDE(form, handler = formHandler) {
 	const form_str = form ? typeof form === "string" : JSON.stringify(form);
 	console.log(`Form: [${form_str}] listener initialized!`);
@@ -56,34 +75,6 @@ async function reloadJsCssDE(selector) {
 		]
 	);
 }
-
-
-
-// ReloadJsCssDE
-async function plotlyplot(selector) {
-	console.log(`Plotly listener initialized!`);
-
-	return await delegateEvent(
-		["click"],
-		[selector],
-		[
-			async (event) => {
-				event.preventDefault();
-				await plotlyHandler();
-			},
-		]
-	);
-}
-
-
-async function plotlyHandler(event) {
-	let btn = event.target;
-	let method = btn.attr("formmethod");
-	let url = btn.attr("formaction");
-	let exec_stat = $("#exec_status");	
-	
-}
-
 
 $(document).ready(function () {
 	$(document).on("click", "button.plotly", function (e) {
