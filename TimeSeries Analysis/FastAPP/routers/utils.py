@@ -33,8 +33,8 @@ def get_outer_scope_var(var_type: Any) -> Any | None:
         return vars[0]
 
 
-def jsonResp(d: dict) -> JSONResponse:
-    return JSONResponse(content=jsonable_encoder(d))
+def jsonResp(d: dict, media_type="application/json") -> JSONResponse:
+    return JSONResponse(content=jsonable_encoder(d), media_type=media_type)
 
 
 def render_html(

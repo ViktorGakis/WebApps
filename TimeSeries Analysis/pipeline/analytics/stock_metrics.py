@@ -160,12 +160,12 @@ class StockMetrics:
         indicators = self.create_indicators()
 
         for i, indicator in enumerate(indicators):
-            row = i // 6 + 1
-            col = i % 6 + 1
+            row: int = i // 6 + 1
+            col: int = i % 6 + 1
             fig.add_trace(indicator, row=row, col=col)
 
         fig.update_layout(
-            title=f"{self.symbol} Financial Attributes", margin=dict(t=100)
+            title=f"Fundamentals of ticker: {self.symbol}", margin=dict(t=100)
         )
 
         return fig

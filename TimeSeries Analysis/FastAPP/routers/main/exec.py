@@ -1,11 +1,8 @@
-import json
 from collections import OrderedDict
 from logging import Logger
-from typing import Optional
 
 from fastapi.responses import JSONResponse
 from pandas import DataFrame
-from plotly.graph_objects import Figure
 from pydantic import BaseModel, Extra, ValidationError, validator
 
 from pipeline.analytics import Stock, StockMetrics, TechDashboard, TechnicalIndicators
@@ -38,18 +35,19 @@ async def parse_exec_args(rq_args) -> ExecArgs | None:
         log.error("%s", e.json())
 
 
-def generate_analytics(ticker: str) -> JSONResponse:
+def generate_analytics(ticker: str) -> JSONResponse|str:
     stock = Stock(symbol=ticker)
-    technicalIndicators = TechnicalIndicators(stock.data, stock.symbol)
-    dashboard = TechDashboard(technicalIndicators)
-    stock_metrics = StockMetrics(stock.symbol, stock.info)
-    plots = dict(technical=dashboard.plot(), fundamental=stock_metrics.create_subplot())
-    return jsonResp(OrderedDict({k: jsonify_plotly(v) for k, v in plots.items()}))
+    if isinstance(stock.data, DataFrame) and stock.data.shape[0]>0:
+        technicalIndicators = TechnicalIndicators(stock.data, stock.symbol)
+        dashboard = TechDashboard(technicalIndicators)
+        stock_metrics = StockMetrics(stock.symbol, stock.info)
+        plots = dict(technical=dashboard.plot(), fundamental=stock_metrics.create_subplot())
+        return jsonResp(OrderedDict({k: jsonify_plotly(v) for k, v in plots.items()}))
+    else:
+        return jsonResp({"data": "Hello, World!"})
 
 
 async def analytics_gen(
-    request,
+    ticker: str,
 ) -> JSONResponse:
-    rq_args: dict[str, str] = dict(request.query_params)
-    print(f'{rq_args=}')
-    return await exec_block(generate_analytics, **rq_args)
+    return await exec_block(generate_analytics, ticker)

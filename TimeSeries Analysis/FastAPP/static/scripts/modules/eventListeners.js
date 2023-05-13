@@ -10,27 +10,44 @@ async function formHandler(event) {
 	const form = event.target;
 	// let rsp_data = await submitForm(form);
 	// return JSON.stringify(rsp_data, null, 2);
-	return await submitForm(form)
+	return await submitForm(form);
+}
+
+async function handlePlots(obj) {
+	const container = document.getElementById("anal_plots");
+	// let obj = JSON.parse(plots)
+	if (typeof obj === "object" && obj !== null) {
+		const entries = Object.entries(obj);
+		console.log('entries', entries);
+		if (entries.length > 0) {
+			if (obj.hasOwnProperty("data")) {
+				container.innerHTML = obj.error;
+			} else {
+				entries.forEach(([key, val]) => {
+					const resp = JSON.parse(val);
+					const plot_div = document.createElement("div");
+					plot_div.id = key;
+					plot_div.style.width = "fit-content";
+					container.appendChild(plot_div);
+					const config = { displayModeBar: false };
+					Plotly.newPlot(plot_div, resp.data, resp.layout, config);
+				});
+			}
+		} else {
+			container.innerHTML = "Object is empty";
+		}
+	} else if (typeof obj === "string") {
+		container.innerHTML = "Object is a string";
+	} else {
+		container.innerHTML = "Object is neither an object nor a string";
+	}
 }
 
 async function plotlyHandler(event) {
-	console.log("event.target:", event.target);
 	try {
-		let plots = await formHandler(event);
-		console.log("Object.keys(obj)", Object.keys(plots));
-		let container = document.getElementById("anal_plots");
-		console.log("container", container);
-
-		for (const [k, val] of Object.entries(plots)) {
-			console.log("k", k);
-			let resp = JSON.parse(val);
-			let plot_div = document.createElement("div");
-			plot_div.id = k;
-			plot_div.width = "fit content";
-			container.appendChild(plot_div);
-			let config = { displayModeBar: false };
-			Plotly.newPlot(plot_div, resp.data, resp.layout, config);
-		}
+		let rsp  = await formHandler(event);
+		console.log('rsp', rsp);
+		await handlePlots(rsp);
 	} catch (error) {
 		console.error("Error:", error);
 	}
@@ -75,51 +92,3 @@ async function reloadJsCssDE(selector) {
 		]
 	);
 }
-
-$(document).ready(function () {
-	$(document).on("click", "button.plotly", function (e) {
-		e.preventDefault();
-		let btn = $(this);
-		let method = btn.attr("formmethod");
-		let url = btn.attr("formaction");
-		let exec_stat = $("#exec_status");
-
-		let req = $.ajax({
-			type: method,
-			url: url,
-			data: { analytics_type: btn.attr("name") },
-			// dataType: 'json',
-			// contentType: 'application/json',
-			// data: JSON.stringify({'okboi': form_data(form)})
-		});
-
-		btn.html(
-			'RUNNING...<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>'
-		);
-
-		req.done(function (resp_json, status) {
-			console.log(resp_json);
-
-			let container = document.getElementById("anal_plots");
-			for (const [k, val] of Object.entries(resp_json)) {
-				let resp = JSON.parse(val);
-				let plot_div = document.createElement("div");
-				plot_div.id = k;
-				plot_div.width = "fit content";
-				container.appendChild(plot_div);
-				let config = { displayModeBar: false };
-				Plotly.newPlot(plot_div, resp.data, resp.layout, config);
-			}
-			btn.addClass("btn-success")
-				.removeClass("btn-primary")
-				.html("COMPLETED");
-			btn.css({ color: "white" });
-		});
-
-		req.fail(function (resp, status) {
-			exec_stat.html("ERROR");
-			exec_stat.css("color", "red");
-			// alert(`Something went wrong: resp: ${resp}`);
-		});
-	});
-});

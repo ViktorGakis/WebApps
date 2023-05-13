@@ -2,8 +2,8 @@ import { reloadJsCssDE, plotlyDE,  } from "./modules/eventListeners.js";
 
 // Create an object to store event listeners references
 const eventListeners = {
-	reloadJsCss: null,
-	plotly: null
+	reloadJsCssde: null,
+	plotlyde: null
 };
 
 async function main() {
@@ -18,6 +18,7 @@ async function init() {
 	}
 	await main();
 }
+
 
 // Clean up before reloading
 function destroy() {

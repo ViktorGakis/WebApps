@@ -1,5 +1,7 @@
 from warnings import filterwarnings
 
+from torch import Value
+
 filterwarnings("ignore")
 
 from typing import Any
@@ -83,11 +85,12 @@ class Stock:
         self.data: DataFrame = yf.download(
             symbol, start=start_date, end=end_date, interval=interval
         )
-        if self.start_date is None and self.end_date is None:
-            self.start_date = str(self.data.iloc[0].name)
-            self.end_date = str(self.data.iloc[-1].name)
-        self.ticker: Ticker = yf.Ticker(symbol)
-        self.info: dict[Any, Any] = self.ticker.info
+        if isinstance(self.data, DataFrame) and self.data.shape[0]>0:
+            if self.start_date is None and self.end_date is None:
+                self.start_date = str(self.data.iloc[0].name)
+                self.end_date = str(self.data.iloc[-1].name)
+            self.ticker: Ticker = yf.Ticker(symbol)
+            self.info: dict[Any, Any] = self.ticker.info
 
     def __repr__(self) -> str:
         """
