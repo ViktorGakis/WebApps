@@ -9,6 +9,7 @@ const eventListeners = {
 async function main() {
 	eventListeners.reloadJsCssde = await reloadJsCssDE(".reloadjscss");
 	eventListeners.plotlyde = await plotlyDE(".plotly")
+
 }
 
 // Initialize your script
