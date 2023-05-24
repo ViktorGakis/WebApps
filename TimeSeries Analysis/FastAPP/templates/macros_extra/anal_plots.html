@@ -1,0 +1,25 @@
+{% macro anal_plots() %}
+
+<form
+id="analytics-form"
+action="{{ url_for('api_analytics') }}"
+method="GET"
+class="bg-dark p-4 plotly"
+>
+<div class="form-floating mb-3">
+    <input
+        type="text"
+        id="ticker"
+        name="ticker"
+        class="form-control"
+        placeholder="Ticker"
+    />
+    <label for="ticker">Ticker:</label>
+</div>
+
+<button type="submit" class="btn btn-primary" form="analytics-form">
+    Submit
+</button>
+</form>
+
+{% endmacro %}

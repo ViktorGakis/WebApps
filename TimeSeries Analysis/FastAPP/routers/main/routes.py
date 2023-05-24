@@ -4,7 +4,7 @@ from starlette.templating import _TemplateResponse
 from fastapi import Depends, Request
 from fastapi.responses import HTMLResponse
 
-from .exec import analytics_gen, elasticnet_exec
+from .exec import ElasticNetParams, analytics_gen, elasticnet_exec
 from ..utils import exec_block, jsonResp, parse_body, render_html
 from . import router
 from ...logger import logdef
@@ -28,7 +28,10 @@ def favicon() -> tuple[str, int]:
 
 @router.get("/", response_class=HTMLResponse)
 def main_index(request: Request) -> _TemplateResponse:
-    return render_html("index.html")
+    return render_html(
+        "index.html", 
+        {"ElasticNetParams":ElasticNetParams}
+    )
 
 
 @router.get("/api/analytics", response_class=HTMLResponse)
@@ -64,7 +67,12 @@ async def api_test(
 
 @router.get("/api/models/elasticnet")
 async def api_models_elasticnet(request: Request):
+    params = request.query_params._dict
     print("request.query_params", request.query_params._dict)
+    checked_params = {k:v for k,v in params.items() if k.endswith("_checked")}
+    print("checked_params", checked_params)
+    cleaned_params = {k.split("_")[0]:v for k,v in checked_params.items()}
+    print("cleaned_params", cleaned_params)
     return await exec_block(elasticnet_exec, request)
 
 

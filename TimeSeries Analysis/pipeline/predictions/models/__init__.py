@@ -1,1 +1,1 @@
-from .elasticnet import ElasticNetRegressor
+from .elasticnet import ElasticNetRegressor, ElasticNetParams

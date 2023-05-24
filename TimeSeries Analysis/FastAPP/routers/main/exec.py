@@ -1,15 +1,13 @@
 from collections import OrderedDict
 from logging import Logger
 from typing import Any, Dict, List
-from typing import List
 
-from pydantic import BaseModel, Extra, Field, validator
 from fastapi.responses import JSONResponse
 from pandas import DataFrame
 from pydantic import BaseModel, Extra, Field, ValidationError, validator
 
 from pipeline.analytics import Stock, StockMetrics, TechDashboard, TechnicalIndicators
-from pipeline.predictions.models.elasticnet import ElasticNetRegressor
+from pipeline.predictions.models.elasticnet import ElasticNetRegressor, ElasticNetParams
 from pipeline.predictions.preprocess.preprocess import DataPreparer
 
 from ...logger import logdef
@@ -77,17 +75,13 @@ def data_prep_gen(ticker, target_column, test_size) -> JSONResponse:
     dp = DataPreparer(stock.data, target_column, test_size)
     return jsonResp(OrderedDict({"Data Preparer": jsonify_plotly(dp)}))
 
-from typing import List
-
-from pydantic import BaseModel, Field
-
 
 class ElasticNetParameters(BaseModel):
-    ticker: str = Field(..., title='Ticker')
-    target_col: str = Field(..., title='Target Column')
-    test_size: float = Field(0.2, title='Test Size')
-    cv: int = Field(5, title='CV')
-    threshold: float = Field(0.2, title='Threshold')
+    ticker: str = Field(..., title="Ticker")
+    target_col: str = Field(..., title="Target Column")
+    test_size: float = Field(0.2, title="Test Size")
+    cv: int = Field(5, title="CV")
+    threshold: float = Field(0.2, title="Threshold")
     alpha: List[float] = Field([0.001, 0.01, 0.1, 1, 10, 100], title="Alpha")
     l1_ratio: List[float] = Field([0.1, 0.3, 0.5, 0.7, 0.9], title="L1 Ratio")
     max_iter: List[int] = Field([1000, 2000, 5000], title="Max Iterations")
@@ -104,11 +98,11 @@ class ElasticNetParameters(BaseModel):
 
         key = field.name
         try:
-            if key in {'ticker', 'target_col'}:
+            if key in {"ticker", "target_col"}:
                 return v
-            elif key in {'threshold', 'test_size'}:
+            elif key in {"threshold", "test_size"}:
                 return float(v)
-            elif key in {'cv'}:
+            elif key in {"cv"}:
                 return int(v)
             elif key == "selection":
                 return v.split(",")
@@ -122,14 +116,13 @@ class ElasticNetParameters(BaseModel):
             )
 
 
-
 def parse_params_elasticnet(request) -> Dict[str, Any] | None:
     parameters: dict[str, str] = {
         "ticker": request.query_params.get("ticker"),
         "target_col": request.query_params.get("target_col"),
         "test_size": request.query_params.get("test_size"),
-        "cv": request.query_params.get("cv"), 
-        "threshold": request.query_params.get("threshold"),        
+        "cv": request.query_params.get("cv"),
+        "threshold": request.query_params.get("threshold"),
         "alpha": request.query_params.get("alpha"),
         "l1_ratio": request.query_params.get("l1_ratio"),
         "max_iter": request.query_params.get("max_iter"),
@@ -165,12 +158,11 @@ def elasticnet_exec(request):
             "selection",
         ]
     }
-    # Perform tuning and evaluation with 5 folds
+    # Perform tuning and evaluation
     regressor.gridcv_tune(param_grid, cv=cv)
 
     return dict(
-        summary = regressor.summarize(threshold),
-        plot_predictions = regressor.plot(),
-        plot_learning_curve = regressor.plot_learning_curve()
+        summary=regressor.summarize(threshold),
+        plot_predictions=regressor.plot(),
+        plot_learning_curve=regressor.plot_learning_curve(),
     )
-

@@ -1,5 +1,16 @@
 {% extends 'base.html' %} {% from "macros/header.html" import header with
-context %} {% block head %} {{ header() }} {%endblock %} {% block main %}
+context %} 
+
+{% from "macros_extra/elasticnet_form.html" import elasticnet_form with
+context %}
+
+{% from "macros_extra/preprocess_form.html" import preprocess_form with
+context %}
+
+{% from "macros_extra/anal_plots.html" import anal_plots with
+context %}
+
+{% block head %} {{ header() }} {%endblock %} {% block main %}
 
 <form
 	action="{{ url_for('api_test') }}"
@@ -26,27 +37,7 @@ context %} {% block head %} {{ header() }} {%endblock %} {% block main %}
 <div class="analytics">
 	<h1>Analytics</h1>
 	<div class="container">
-		<form
-			id="analytics-form"
-			action="{{ url_for('api_analytics') }}"
-			method="GET"
-			class="bg-dark p-4 plotly"
-		>
-			<div class="form-floating mb-3">
-				<input
-					type="text"
-					id="ticker"
-					name="ticker"
-					class="form-control"
-					placeholder="Ticker"
-				/>
-				<label for="ticker">Ticker:</label>
-			</div>
-
-			<button type="submit" class="btn btn-primary" form="analytics-form">
-				Submit
-			</button>
-		</form>
+		{{ anal_plots() }}
 		<div id="anal_plots"></div>
 	</div>
 	<hr />
@@ -55,191 +46,15 @@ context %} {% block head %} {{ header() }} {%endblock %} {% block main %}
 <h1>Predictions</h1>
 <div class="preprocess">
 	<h2>Preprocess</h2>
-	<form
-		id="data_prep-form"
-		action="{{ url_for('api_data_prep') }}"
-		method="GET"
-		class="bg-dark p-4 plotly"
-	>
-		<table>
-			<tr>
-				<td><label for="ticker">Ticker:</label></td>
-				<td>
-					<input
-						type="text"
-						id="ticker"
-						name="ticker"
-						class="form-control"
-						placeholder="Ticker"
-					/>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="target-col">Target Column:</label></td>
-				<td>
-					<input
-						type="text"
-						id="target-col"
-						name="target-col"
-						class="form-control"
-						placeholder="Target Column"
-					/>
-				</td>
-			</tr>
-			<tr>
-				<td><label for="test_size">Test Size:</label></td>
-				<td>
-					<input
-						type="range"
-						id="test_size"
-						name="test_size"
-						class="form-range"
-						min="0"
-						max="1"
-						step="0.01"
-						onchange="updateSliderValue(this)"
-					/>
-					<span class="test_size_value">0</span>
-				</td>
-			</tr>
-		</table>
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
+	{{ preprocess_form() }}
 </div>
 
 <div class="model-elasticnet">
-	<h2>ElasticNet</h2>
-	<form
-		id="model-elasticnet-form"
-		action="{{ url_for('api_models_elasticnet') }}"
-		method="GET"
-		class="bg-dark p-4 plotly"
-	>
-		<div class="form-floating mb-3">
-			<input
-				type="text"
-				id="ticker"
-				name="ticker"
-				class="form-control"
-				placeholder="Ticker"
-			/>
-			<label for="ticker">Ticker:</label>
-		</div>
-
-		<div class="form-floating mb-3">
-			<input
-				type="text"
-				id="target_col"
-				name="target_col"
-				class="form-control"
-				placeholder="Target Column"
-			/>
-			<label for="target-col">Target Column:</label>
-		</div>
-
-		<div class="form-floating mb-3">
-			<label for="test_size">Test Size:</label>
-			<input
-				type="range"
-				id="test_size"
-				name="test_size"
-				class="form-range"
-				min="0"
-				max="1"
-				step="0.01"
-				onchange="updateSliderValue(this)"
-			/>
-			<span class="test_size_value">0</span>
-		</div>
-
-		<div class="form-floating mb-3">
-			<input
-				type="number"
-				id="cv"
-				name="cv"
-				class="form-control"
-				placeholder="CV"
-			/>
-			<label for="cv">CV:</label>
-		</div>
-
-		<div class="form-floating mb-3">
-			<input
-				type="text"
-				id="threshold"
-				name="threshold"
-				class="form-control"
-				placeholder="Threshold"
-			/>
-			<label for="threshold">Threshold:</label>
-		</div>
-
-
-		<div class="form-floating mb-3">
-			<input
-				type="text"
-				id="alpha"
-				name="alpha"
-				class="form-control"
-				placeholder="Alpha"
-			/>
-			<label for="alpha">Alpha:</label>
-		</div>
-		<div class="form-floating mb-3">
-			<input
-				type="text"
-				id="l1_ratio"
-				name="l1_ratio"
-				class="form-control"
-				placeholder="L1 Ratio"
-			/>
-			<label for="l1_ratio">L1 Ratio:</label>
-		</div>
-		<div class="form-floating mb-3">
-			<input
-				type="text"
-				id="max_iter"
-				name="max_iter"
-				class="form-control"
-				placeholder="Max Iter"
-			/>
-			<label for="max_iter">Max Iter:</label>
-		</div>
-		<div class="form-floating mb-3">
-			<input
-				type="text"
-				id="tol"
-				name="tol"
-				class="form-control"
-				placeholder="Tolerance"
-			/>
-			<label for="tol">Tolerance:</label>
-		</div>
-		<div class="form-floating mb-3">
-			<input
-				type="text"
-				id="selection"
-				name="selection"
-				class="form-control"
-				placeholder="Selection"
-			/>
-			<label for="selection">Selection:</label>
-		</div>
-		<button
-			type="submit"
-			class="btn btn-primary"
-			form="model-elasticnet-form"
-		>
-			Submit
-		</button>
-	</form>
+    <h2>ElasticNet</h2>
+	{{ elasticnet_form() }}
 </div>
-<script>
-    function updateSliderValue(slider) {
-        const valueElements = document.getElementsByClassName("test_size_value");
-        for (let i = 0; i < valueElements.length; i++) {
-            valueElements[i].textContent = slider.value;
-        }
-    }
-</script>
+
+
+
+
 {% endblock %} {% block script %} {% endblock %}

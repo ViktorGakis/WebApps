@@ -60,3 +60,46 @@ Evaluation:
     Mean Squared Error (MSE): {summary_dict['MSE']:.2f}
     Cross-validated R-squared scores: {summary_dict['cv_scores']}
 Filtered_coef>{self.threshold}: {summary_dict['filtered_coef']}"""
+
+
+ElasticNetParams = {
+        "cv": {
+            "default":5,
+            "type": "number"
+        },
+        "threshold": {
+            "default":0,
+            "type": "number",
+        },
+        "alpha": {
+            "default":1,
+            "grid_values":[0.001, 0.01, 0.1, 1, 10, 100],
+            "type": "number"
+        },
+        "l1_ratio": {
+            "default":0.5,
+            "min": 0,
+            "max": 1,
+            "step": 0.01,            
+            "grid_values": [0.1, 0.3, 0.5, 0.7, 0.9],
+            "type": "range"
+        },
+        "max_iter": {
+            "default":1000,
+            "min": 1000,
+            "max": 10000,
+            "step": 100,              
+            "grid_values": [1000, 2000, 5000],
+            "type": "range"
+        },
+        "tol": {
+            "default":1e-4,
+            "grid_values": [1e-4, 1e-5, 1e-6],
+            "type": "number"
+        },
+        "selection": {
+            "options":['cyclic', 'random'],
+            "default":"cyclic",
+            "grid_values":['cyclic', 'random'],
+        }
+}
