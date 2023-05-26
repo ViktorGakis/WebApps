@@ -53,40 +53,46 @@
 					type="checkbox"
 					name="{{k}}_user_input"
 					onchange="handleCheckboxChange(this)"
+					{% if v.options is defined %}
+					value="{{ v.default }}"
+					{% else %}
 					value="{{ v.min }}"
+					{% endif %}
 				/>
 				<label for="{{k}}_user_input">User Input</label>
 
-				{% if v.options is defined %}
-				<select>
+				{% if v.options is defined and v.options|length>0 %}
+				<select onchange="updateValue(this)">
 					{% for option in v.options %}
 					<option value="{{ option }}">{{ option }}</option>
 					{% endfor %}
-				</select>	
+				</select>
+
 				{% else %}
-				<input
+				<input 
 					type="{{ v.type }}"
 					name="{{k}}"
 					class="form-control"
 					placeholder="{{k|capitalize}}"
-					{% if v.min is defined %} 
+					oninput="updateValue(this)"
+					{% if v.min is defined %}
 					min="{{ v.min }}"
 					value="{{v.min}}"
 					{% endif %}
-					{% if v.max is defined %} max="{{ v.max }}" {% endif %}
-					{% if v.step is defined %}
-					step="{{ v.step }}" 
-					onchange="updateSliderValue(this)"
+					{% if v.max	is defined %}
+					max="{{ v.max }}"
 					{% endif %}
-					{% if v.value is defined %}  {% endif %}					
+					{% if v.step is	defined %}
+					step="{{ v.step }}"
+					{% endif %}
+					{% if v.value is defined %}
+					{% endif %}
 				/>
-				{% endif %}	
+				{% endif %} 
 				
 				{% if v.type=='range' %}
 				<span>{{v.min}}</span>
 				{% endif %}
-
-		
 			</td>
 		</tr>
 		{% endfor %}
@@ -95,50 +101,65 @@
 
 	<script>
 		function updateCheckedField(checkbox) {
-			const fieldName = checkbox.getAttribute('name');
-			const checkedSuffix = '_checked';
-		
+			const fieldName = checkbox.getAttribute("name");
+			const checkedSuffix = "_checked";
+	
 			// Check if the field is already checked
 			if (checkbox.checked) {
 				// Remove the checked suffix from the previously checked field, if any
-				const previouslyChecked = document.querySelector('input[name$="' + checkedSuffix + '"]');
+				const previouslyChecked = document.querySelector(
+					'input[name="' +
+						fieldName.replace(/_\d+$/, checkedSuffix) +
+						'"]'
+				);
 				if (previouslyChecked) {
-					const previousFieldName = previouslyChecked.getAttribute('name');
-					previouslyChecked.setAttribute('name', previousFieldName.replace(checkedSuffix, ''));
+					const previousFieldName =
+						previouslyChecked.getAttribute("name");
+					previouslyChecked.setAttribute(
+						"name",
+						previousFieldName.replace(checkedSuffix, "")
+					);
 				}
-		
+	
 				// Add the checked suffix to the current checked field
-				checkbox.setAttribute('name', fieldName + checkedSuffix);
+				checkbox.setAttribute(
+					"name",
+					fieldName.replace(/_\d+$/, checkedSuffix)
+				);
 			} else {
 				// Remove the checked suffix from the current unchecked field
-				checkbox.setAttribute('name', fieldName.replace(checkedSuffix, ''));
+				checkbox.setAttribute("name", fieldName.replace(checkedSuffix, ""));
 			}
-		}		
+		}
+	
 		function handleCheckboxChange(checkbox) {
-			const fieldId = checkbox.getAttribute('name').split('_')[0];
-			const checkboxes = document.querySelectorAll('input[type="checkbox"][name^="' + fieldId + '_"]');
+			const fieldId = checkbox.getAttribute("name").split("_")[0];
+			const checkboxes = document.querySelectorAll(
+				'input[type="checkbox"][name^="' + fieldId + '_"]'
+			);
 			checkboxes.forEach(function (cb) {
 				if (cb !== checkbox) {
 					cb.checked = false;
 				}
 			});
-		
+	
 			updateCheckedField(checkbox);
 		}
-		function updateSliderValue(slider) {
-			let checkbox = slider.previousElementSibling;
-			while (checkbox && checkbox.type !== 'checkbox') {
+		function updateValue(inputField) {
+			let checkbox = inputField.previousElementSibling;
+			while (checkbox && checkbox.type !== "checkbox") {
 				checkbox = checkbox.previousElementSibling;
 			}
 			if (checkbox) {
-				checkbox.value = slider.value;
+				checkbox.value = inputField.value;
 			}
-		
-			const valueElement = slider.nextElementSibling;
+	
+			const valueElement = inputField.nextElementSibling;
 			if (valueElement && valueElement.tagName === "SPAN") {
-				valueElement.textContent = slider.value;
+				valueElement.textContent = inputField.value;
 			}
 		}
 	</script>
+	
 </form>
 {% endmacro %}

@@ -1,8 +1,7 @@
 {% macro preprocess_form() %}
 
 <form
-id="data_prep-form"
-action="{{ url_for('api_data_prep') }}"
+action="{{ url_for('api_preprocess') }}"
 method="GET"
 class="bg-dark p-4 plotly"
 >
@@ -17,7 +16,7 @@ class="bg-dark p-4 plotly"
                 id="ticker"
                 name="ticker"
                 class="form-control"
-                placeholder="TSLA"
+                placeholder="GOOG"
             />
         </td>
     </tr>
@@ -32,6 +31,7 @@ class="bg-dark p-4 plotly"
                 name="target_col"
                 class="form-control"
                 placeholder="Close"
+                value="Close"
             />
         </td>
     </tr>

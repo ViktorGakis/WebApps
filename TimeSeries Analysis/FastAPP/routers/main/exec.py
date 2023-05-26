@@ -77,9 +77,9 @@ def data_prep_gen(ticker, target_column, test_size) -> JSONResponse:
 
 
 class ElasticNetParameters(BaseModel):
-    ticker: str = Field(..., title="Ticker")
-    target_col: str = Field(..., title="Target Column")
-    test_size: float = Field(0.2, title="Test Size")
+    # ticker: str = Field(..., title="Ticker")
+    # target_col: str = Field(..., title="Target Column")
+    # test_size: float = Field(0.2, title="Test Size")
     cv: int = Field(5, title="CV")
     threshold: float = Field(0.2, title="Threshold")
     alpha: List[float] = Field([0.001, 0.01, 0.1, 1, 10, 100], title="Alpha")
@@ -118,9 +118,9 @@ class ElasticNetParameters(BaseModel):
 
 def parse_params_elasticnet(request) -> Dict[str, Any] | None:
     parameters: dict[str, str] = {
-        "ticker": request.query_params.get("ticker"),
-        "target_col": request.query_params.get("target_col"),
-        "test_size": request.query_params.get("test_size"),
+        # "ticker": request.query_params.get("ticker"),
+        # "target_col": request.query_params.get("target_col"),
+        # "test_size": request.query_params.get("test_size"),
         "cv": request.query_params.get("cv"),
         "threshold": request.query_params.get("threshold"),
         "alpha": request.query_params.get("alpha"),

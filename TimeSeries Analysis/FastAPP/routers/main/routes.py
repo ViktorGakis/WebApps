@@ -1,10 +1,12 @@
 from logging import Logger
+from pprint import pprint
 from typing import Any, List
+from pydantic import ValidationError
 from starlette.templating import _TemplateResponse
 from fastapi import Depends, Request
 from fastapi.responses import HTMLResponse
 
-from .exec import ElasticNetParams, analytics_gen, elasticnet_exec
+from .exec import ElasticNetParameters, ElasticNetParams, analytics_gen, elasticnet_exec
 from ..utils import exec_block, jsonResp, parse_body, render_html
 from . import router
 from ...logger import logdef
@@ -44,15 +46,15 @@ async def api_analytics(
     return await analytics_gen(ticker.value)
 
 
-@router.get("/api/data_prep", response_class=HTMLResponse)
-async def api_data_prep(
+@router.get("/api/preprocess", response_class=HTMLResponse)
+async def api_preprocess(
     request: Request,
     ticker: CurrentTicker = Depends(get_my_ticker)
 ) -> JSONResponse:
     if val:=request.query_params.get('ticker'):
         ticker.value = val
     
-    return data_prep_gen(ticker.value, target_column, test_size)
+    return preprocess_gen(ticker.value, target_column, test_size)
 
 
 @router.get("/api/test", response_class=HTMLResponse)
@@ -68,12 +70,32 @@ async def api_test(
 @router.get("/api/models/elasticnet")
 async def api_models_elasticnet(request: Request):
     params = request.query_params._dict
-    print("request.query_params", request.query_params._dict)
+    pprint(request.query_params._dict)
     checked_params = {k:v for k,v in params.items() if k.endswith("_checked")}
-    print("checked_params", checked_params)
-    cleaned_params = {k.split("_")[0]:v for k,v in checked_params.items()}
-    print("cleaned_params", cleaned_params)
-    return await exec_block(elasticnet_exec, request)
+    pprint(checked_params)
+    cleaned_params = {
+        k.replace('_checked','').replace("_user_input","").replace("_default","").replace("_grid_values",""):v 
+        for k,v in checked_params.items()
+    }
+    pprint(cleaned_params)
+    try:
+        params = ElasticNetParameters(**cleaned_params).dict()
+        pprint(params)
+    except ValidationError as e:
+        log.error("%s", e.json())
+    param_grid = {
+        key: params[key]
+        for key in [
+            "alpha",
+            "l1_ratio",
+            "max_iter",
+            "tol",
+            "selection",
+        ]
+    }
+    pprint(param_grid)        
+    return 'okboi'
+    # return await exec_block(elasticnet_exec, request)
 
 
 
