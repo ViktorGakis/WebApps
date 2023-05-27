@@ -1,60 +1,85 @@
 {% macro preprocess_form() %}
-
 <form
-action="{{ url_for('api_preprocess') }}"
-method="GET"
-class="bg-dark p-4 plotly"
+	id="preprocess-form"
+	action="{{ url_for('api_preprocess') }}"
+	method="GET"
+	class="bg-dark p-4"
 >
-<table class="table table-dark table-striped">
-    <tr>
-        <td>
-            <label for="ticker">Ticker:</label>
-        </td>
-        <td>
-            <input
-                type="text"
-                id="ticker"
-                name="ticker"
-                class="form-control"
-                placeholder="GOOG"
-            />
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label for="target-col">Target Column:</label>
-        </td>
-        <td>
-            <input
-                type="text"
-                id="target_col"
-                name="target_col"
-                class="form-control"
-                placeholder="Close"
-                value="Close"
-            />
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <label for="test_size">Test Size:</label>
-        </td>
-        <td>
-            <input
-            type="range"
-            id="test_size"
-            name="test_size"
-            class="form-range"
-            min="0"
-            max="1"
-            step="0.01"
-            onchange="updateSliderValue(this)"
-        />
-        <span class="test_size_value">0</span>
-        </td>
-    </tr>
-</table>
-<button type="submit" class="btn btn-primary">Submit</button>
-</form>
+	<table class="table table-dark table-striped">
+		<tr>
+			<th>
+				<p>Parameters</p>
+			</th>
+			<th>
+				<p>Default Value</p>
+			</th>
+			<th>
+				<p>Custom Values</p>
+			</th>
+		</tr>
+		{% for k,v in PreprocessParams.items() %}
+		<tr>
+			<td>
+				<label for="{{k}}">{{k|capitalize}}:</label>
+			</td>
+			<td>
+				{% if v.default is not none and v.default or v.default == 0 %}
+				<input
+					type="checkbox"
+					name="{{k}}_default_checked"
+					checked
+					value="{{v.default}}"
+				/>
+				<label for="{{k}}_default">{{v.default}}</label>
+				{% endif %}
+			</td>
+			<td>
+				<input
+					type="checkbox"
+					name="{{k}}_user_input"
+					{% if v.options is defined %}
+					value="{{ v.default }}"
+					{% else %}
+					value="{{ v.min }}"
+					{% endif %}
+				/>
+				<label for="{{k}}_user_input">User Input</label>
 
+				{% if v.options is defined and v.options|length>0 %}
+				<select>
+					{% for option in v.options %}
+					<option value="{{ option }}">{{ option }}</option>
+					{% endfor %}
+				</select>
+
+				{% else %}
+				<input 
+					type="{{ v.type }}"
+					name="{{k}}"
+					class="form-control"
+					placeholder="{{k|capitalize}}"
+					{% if v.min is defined %}
+					min="{{ v.min }}"
+					value="{{v.min}}"
+					{% endif %}
+					{% if v.max	is defined %}
+					max="{{ v.max }}"
+					{% endif %}
+					{% if v.step is	defined %}
+					step="{{ v.step }}"
+					{% endif %}
+					{% if v.value is defined %}
+					{% endif %}
+				/>
+				{% endif %} 
+				
+				{% if v.type=='range' %}
+				<span>{{v.min}}</span>
+				{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>
 {% endmacro %}

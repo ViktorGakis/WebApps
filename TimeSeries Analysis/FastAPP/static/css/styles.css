@@ -46,3 +46,12 @@ button:hover {
 	top: 5px;
 	right: 140px;
 }
+
+
+.pandas-container {
+	overflow-y: auto;
+    resize: both;
+    max-height: 300px;
+    min-height: 100px;
+    border: 1px solid rgb(14, 188, 34);
+}

@@ -7,11 +7,11 @@ from pandas import DataFrame
 from pydantic import BaseModel, Extra, Field, ValidationError, validator
 
 from pipeline.analytics import Stock, StockMetrics, TechDashboard, TechnicalIndicators
-from pipeline.predictions.models.elasticnet import ElasticNetRegressor, ElasticNetParams
+from pipeline.predictions import ElasticNetRegressor, ElasticNetParams
 from pipeline.predictions.preprocess.preprocess import DataPreparer
 
 from ...logger import logdef
-from ..utils import exec_block, jsonify_plotly, jsonResp
+from ..utils import exec_block, jsonify_plotly, jsonResp, save_object
 
 log: Logger = logdef(__name__)
 
@@ -40,6 +40,7 @@ async def parse_exec_args(rq_args, pydantic_model) -> ExecArgs | None:
 
 def generate_analytics(ticker: str) -> JSONResponse | str:
     stock = Stock(symbol=ticker)
+    save_object(stock, 'data/stock.joblib')
     if isinstance(stock.data, DataFrame) and stock.data.shape[0] > 0:
         technicalIndicators = TechnicalIndicators(stock.data, stock.symbol)
         dashboard = TechDashboard(technicalIndicators)
@@ -59,21 +60,69 @@ async def analytics_gen(
 
 
 class ExecArgsDataPrep(BaseModel):
-    target_column: str = "Close"
-    test_size: float = 0.2
+    ticker: str = Field(..., title="Ticker")
+    target_col: str = Field(..., title="Target Column")
+    test_size: float = Field(0.2, title="Test Size")
 
     class Config:
         extra: Extra = Extra.forbid
 
     @validator("*", pre=True)
-    def chunk_val(cls, v, field):
-        return field.default if (v == "" or v is None) else v
+    def chunk_values(cls, v, field):
+        if v == "" or v is None:
+            return field.default
+
+        key = field.name
+        try:
+            if key in {"ticker", "target_col"}:
+                return v
+            elif key in {"test_size"}:
+                return float(v)
+            elif "," in str(v):
+                return [float(value) for value in str(v).split(",") if value]
+            else:
+                return [float(v)]
+        except (TypeError, ValueError):
+            raise ValueError(
+                f"Invalid values for parameter '{key}'. Expected float or comma-separated floats."
+            )
 
 
-def data_prep_gen(ticker, target_column, test_size) -> JSONResponse:
-    stock = Stock(symbol=ticker)
-    dp = DataPreparer(stock.data, target_column, test_size)
-    return jsonResp(OrderedDict({"Data Preparer": jsonify_plotly(dp)}))
+def data_prep(request):
+    params = request.query_params._dict
+    # pprint(request.query_params._dict)
+    checked_params = {k: v for k, v in params.items() if k.endswith("_checked")}
+    # pprint(checked_params)
+    cleaned_params = {
+        k.replace("_checked", "")
+        .replace("_user_input", "")
+        .replace("_default", "")
+        .replace("_grid_values", ""): v
+        for k, v in checked_params.items()
+    }
+    # pprint(cleaned_params)
+    params = ExecArgsDataPrep(**cleaned_params).dict()
+    stock = Stock(symbol=params["ticker"])
+    dp = DataPreparer(stock.data, params["target_col"], params["test_size"])
+    save_object(dp, 'data/dp.joblib')
+    return jsonResp(
+        OrderedDict(
+            {
+                # "stock_data": dp.data.to_html(classes="table table-dark table-striped"),
+                # "X": dp.X.to_html(classes="table table-dark table-striped"),
+                # "y": dp.y.to_html(classes="table table-dark table-striped"),
+                # "X_train": dp.X_train.to_html(classes="table table-dark table-striped"),
+                # "y_train": dp.y_train.to_html(classes="table table-dark table-striped"),
+                # "X_test": dp.X_test.to_html(classes="table table-dark table-striped"),
+                # "y_test": dp.y_test.to_html(classes="table table-dark table-striped"),
+                "plot": jsonify_plotly(dp.plot()),
+            }
+        )
+    )
+
+
+async def data_prep_exec(request) -> JSONResponse:
+    return await exec_block(data_prep, request)
 
 
 class ElasticNetParameters(BaseModel):

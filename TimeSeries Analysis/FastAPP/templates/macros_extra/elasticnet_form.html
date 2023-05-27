@@ -30,7 +30,6 @@
 				<input
 					type="checkbox"
 					name="{{k}}_default_checked"
-					onchange="handleCheckboxChange(this)"
 					checked
 					value="{{v.default}}"
 				/>
@@ -42,7 +41,6 @@
 				<input
 					type="checkbox"
 					name="{{k}}_grid_values"
-					onchange="handleCheckboxChange(this)"
 					value="{{v.grid_values}}"
 				/>
 				<label for="{{k}}_grid_values">{{v.grid_values}}</label>
@@ -52,7 +50,6 @@
 				<input
 					type="checkbox"
 					name="{{k}}_user_input"
-					onchange="handleCheckboxChange(this)"
 					{% if v.options is defined %}
 					value="{{ v.default }}"
 					{% else %}
@@ -62,7 +59,7 @@
 				<label for="{{k}}_user_input">User Input</label>
 
 				{% if v.options is defined and v.options|length>0 %}
-				<select onchange="updateValue(this)">
+				<select>
 					{% for option in v.options %}
 					<option value="{{ option }}">{{ option }}</option>
 					{% endfor %}
@@ -74,7 +71,6 @@
 					name="{{k}}"
 					class="form-control"
 					placeholder="{{k|capitalize}}"
-					oninput="updateValue(this)"
 					{% if v.min is defined %}
 					min="{{ v.min }}"
 					value="{{v.min}}"
@@ -99,67 +95,7 @@
 	</table>
 	<button type="submit" class="btn btn-primary">Submit</button>
 
-	<script>
-		function updateCheckedField(checkbox) {
-			const fieldName = checkbox.getAttribute("name");
-			const checkedSuffix = "_checked";
-	
-			// Check if the field is already checked
-			if (checkbox.checked) {
-				// Remove the checked suffix from the previously checked field, if any
-				const previouslyChecked = document.querySelector(
-					'input[name="' +
-						fieldName.replace(/_\d+$/, checkedSuffix) +
-						'"]'
-				);
-				if (previouslyChecked) {
-					const previousFieldName =
-						previouslyChecked.getAttribute("name");
-					previouslyChecked.setAttribute(
-						"name",
-						previousFieldName.replace(checkedSuffix, "")
-					);
-				}
-	
-				// Add the checked suffix to the current checked field
-				checkbox.setAttribute(
-					"name",
-					fieldName.replace(/_\d+$/, checkedSuffix)
-				);
-			} else {
-				// Remove the checked suffix from the current unchecked field
-				checkbox.setAttribute("name", fieldName.replace(checkedSuffix, ""));
-			}
-		}
-	
-		function handleCheckboxChange(checkbox) {
-			const fieldId = checkbox.getAttribute("name").split("_")[0];
-			const checkboxes = document.querySelectorAll(
-				'input[type="checkbox"][name^="' + fieldId + '_"]'
-			);
-			checkboxes.forEach(function (cb) {
-				if (cb !== checkbox) {
-					cb.checked = false;
-				}
-			});
-	
-			updateCheckedField(checkbox);
-		}
-		function updateValue(inputField) {
-			let checkbox = inputField.previousElementSibling;
-			while (checkbox && checkbox.type !== "checkbox") {
-				checkbox = checkbox.previousElementSibling;
-			}
-			if (checkbox) {
-				checkbox.value = inputField.value;
-			}
-	
-			const valueElement = inputField.nextElementSibling;
-			if (valueElement && valueElement.tagName === "SPAN") {
-				valueElement.textContent = inputField.value;
-			}
-		}
-	</script>
+
 	
 </form>
 {% endmacro %}

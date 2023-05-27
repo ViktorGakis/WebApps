@@ -2,7 +2,7 @@ import { delegateEvent } from "./delegateEvent.js";
 import { submitForm } from "./requests.js";
 import { reloadAllResources } from "./reloading.js";
 
-export { submitFormDE, reloadJsCssDE, plotlyDE };
+export { submitFormDE, reloadJsCssDE, plotlyDE, formHandler };
 
 //
 async function formHandler(event) {
@@ -91,4 +91,45 @@ async function reloadJsCssDE(selector) {
 			},
 		]
 	);
+}
+
+
+// Form with table and checkbox inputs
+async function handleCheckboxChange(chkBox) {
+    // grab the TR containing the checkbox
+    var parentRow = chkBox.closest('tr');
+    
+    // get all checkboxes inside this row
+    var checkboxes = parentRow.querySelectorAll('input[type="checkbox"]');
+    
+    // reset all checkbox name and checked attributes in this row
+    for (const element of checkboxes) {
+        // remove '_checked' suffix from name if exists
+        element.name = element.name.replace('_checked', '');
+        // remove checked attribute
+        element.checked = false;
+    }
+
+    // if this checkbox was initially checked, leave it unchecked
+    if(chkBox.checked == false) {
+        return;
+    }
+    
+    // set the '_checked' suffix and 'checked' attribute to the changed checkbox
+    chkBox.name += '_checked';
+    chkBox.checked = true;
+}
+async  function checkboxHandlerDE(selector) {
+	console.log(`checkboxHandlerDE listener initialized!`);
+
+	return await delegateEvent(
+		["click"],
+		[selector],
+		[
+			async (event) => {
+				event.preventDefault();
+				await handleCheckboxChange(event);
+			},
+		]
+	);	
 }

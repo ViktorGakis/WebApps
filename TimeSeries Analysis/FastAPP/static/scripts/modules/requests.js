@@ -1,6 +1,6 @@
 import { flattenValues } from "./utils.js";
 
-export { getFormData, sendRequest, submitForm, };
+export { getFormData, sendRequest, submitForm };
 /**
  * Sends an HTTP request to the specified endpoint using the specified options.
  * @param {string} endpoint - The endpoint to send the request to.
@@ -83,14 +83,21 @@ function buildUrl(endpoint, params) {
 }
 
 async function parseResponse(response, responseType) {
-	if (responseType === "text") {
-		return await response.text();
-	} else if (responseType === "blob") {
-		return await response.blob();
-	} else if (responseType === "arrayBuffer") {
-		return await response.arrayBuffer();
-	} else {
-		return await response.json();
+	const clonedResponse = response.clone();
+	try {
+		if (responseType === "text") {
+			return await response.text();
+		} else if (responseType === "blob") {
+			return await response.blob();
+		} else if (responseType === "arrayBuffer") {
+			return await response.arrayBuffer();
+		} else {
+			return await response.json();
+		}
+	} catch (error) {
+		console.error("Failed to parse response as JSON: ", error);
+		// Return the original response body as text for further inspection
+		return await clonedResponse.text();
 	}
 }
 
@@ -212,6 +219,3 @@ function processRequestOptions(
 
 	return { method, data, headers, responseType, params };
 }
-
-
-

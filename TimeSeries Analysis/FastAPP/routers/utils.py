@@ -6,6 +6,8 @@ from functools import partial
 from inspect import currentframe
 from logging import Logger
 from typing import Any, Optional
+from joblib import dump, load
+from pathlib import Path
 
 import plotly.graph_objects as go
 from fastapi import Request
@@ -70,3 +72,27 @@ async def parse_body(request: Request) -> dict[str, list[str]]:
             print("data is not json object")
     print(f"{data=}")
     return data
+
+
+def save_object(obj, filepath):
+    # Convert the filepath to a Path object
+    path = Path(filepath)
+    
+    # Create the parent directories if they don't exist
+    path.parent.mkdir(parents=True, exist_ok=True)
+    
+    # Save the object using joblib
+    try:
+        dump(obj, path)
+    except Exception as e:
+        log.error(e)
+
+def load_object(filepath):
+    # Convert the filepath to a Path object
+    path = Path(filepath)
+    
+    # Load the object using joblib
+    try:
+        return load(path)
+    except Exception as e:
+        log.error(e)    
