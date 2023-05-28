@@ -15,6 +15,9 @@ from ..utils import exec_block, jsonify_plotly, jsonResp, save_object
 
 log: Logger = logdef(__name__)
 
+stock = None
+dp = None
+
 
 class ExecArgs(BaseModel):
     """
@@ -39,8 +42,9 @@ async def parse_exec_args(rq_args, pydantic_model) -> ExecArgs | None:
 
 
 def generate_analytics(ticker: str) -> JSONResponse | str:
+    global stock
     stock = Stock(symbol=ticker)
-    save_object(stock, 'data/stock.joblib')
+    # save_object(stock, 'data/stock.joblib')
     if isinstance(stock.data, DataFrame) and stock.data.shape[0] > 0:
         technicalIndicators = TechnicalIndicators(stock.data, stock.symbol)
         dashboard = TechDashboard(technicalIndicators)
@@ -88,23 +92,29 @@ class ExecArgsDataPrep(BaseModel):
             )
 
 
-def data_prep(request):
-    params = request.query_params._dict
-    # pprint(request.query_params._dict)
-    checked_params = {k: v for k, v in params.items() if k.endswith("_checked")}
-    # pprint(checked_params)
-    cleaned_params = {
+def first_param_parse(request):
+    q_params = request.query_params._dict
+    # print(request.query_params._dict)
+    checked_params = {k: v for k, v in q_params.items() if k.endswith("_checked")}
+    # print(checked_params)
+    return {
         k.replace("_checked", "")
         .replace("_user_input", "")
         .replace("_default", "")
         .replace("_grid_values", ""): v
         for k, v in checked_params.items()
     }
-    # pprint(cleaned_params)
-    params = ExecArgsDataPrep(**cleaned_params).dict()
-    stock = Stock(symbol=params["ticker"])
-    dp = DataPreparer(stock.data, params["target_col"], params["test_size"])
-    save_object(dp, 'data/dp.joblib')
+
+
+def data_prep(request) -> JSONResponse:
+    global dp_params, stock, dp
+    cleaned_params = first_param_parse(request)
+    # print(cleaned_params)
+    dp_params = ExecArgsDataPrep(**cleaned_params).dict()
+    if stock is None:
+        stock = Stock(symbol=dp_params["ticker"])
+    dp = DataPreparer(stock.data, dp_params["target_col"], dp_params["test_size"])
+    save_object(dp, "data/dp.joblib")
     return jsonResp(
         OrderedDict(
             {
@@ -126,9 +136,6 @@ async def data_prep_exec(request) -> JSONResponse:
 
 
 class ElasticNetParameters(BaseModel):
-    # ticker: str = Field(..., title="Ticker")
-    # target_col: str = Field(..., title="Target Column")
-    # test_size: float = Field(0.2, title="Test Size")
     cv: int = Field(5, title="CV")
     threshold: float = Field(0.2, title="Threshold")
     alpha: List[float] = Field([0.001, 0.01, 0.1, 1, 10, 100], title="Alpha")
@@ -155,8 +162,8 @@ class ElasticNetParameters(BaseModel):
                 return int(v)
             elif key == "selection":
                 return v.split(",")
-            elif "," in str(v):
-                return [float(value) for value in str(v).split(",") if value]
+            elif key in {"alpha", "l1_ratio"}:
+                return [float(value) for value in v.replace("[", "").replace("]", "").split(",") if value.strip()]
             else:
                 return [float(v)]
         except (TypeError, ValueError):
@@ -166,37 +173,19 @@ class ElasticNetParameters(BaseModel):
 
 
 def parse_params_elasticnet(request) -> Dict[str, Any] | None:
-    parameters: dict[str, str] = {
-        # "ticker": request.query_params.get("ticker"),
-        # "target_col": request.query_params.get("target_col"),
-        # "test_size": request.query_params.get("test_size"),
-        "cv": request.query_params.get("cv"),
-        "threshold": request.query_params.get("threshold"),
-        "alpha": request.query_params.get("alpha"),
-        "l1_ratio": request.query_params.get("l1_ratio"),
-        "max_iter": request.query_params.get("max_iter"),
-        "tol": request.query_params.get("tol"),
-        "selection": request.query_params.get("selection"),
-    }
-
+    cleaned_params = first_param_parse(request)
+    print(cleaned_params)
     try:
-        return ElasticNetParameters(**parameters).dict()
+        return ElasticNetParameters(**cleaned_params).dict()
     except ValidationError as e:
         log.error("%s", e.json())
 
 
 def elasticnet_exec(request):
+    global dp, stock, dp_params
+
     params: Dict[str, Any] | None = parse_params_elasticnet(request)
-    print("params:::", params)
-    ticker = params.get("ticker")
-    target_col = params.get("target_col")
-    test_size = params.get("test_size")
-    cv = params.get("cv")
-    threshold = params.get("threshold")
     print("params", params)
-    stock = Stock(symbol=ticker)
-    dp = DataPreparer(stock.data, target_col, test_size)
-    regressor = ElasticNetRegressor(dp)
     param_grid = {
         key: params[key]
         for key in [
@@ -207,11 +196,23 @@ def elasticnet_exec(request):
             "selection",
         ]
     }
+    print("param_grid", param_grid)
+    if dp is None:
+        return jsonResp(
+            {
+                "error": "No Data Prepared Available. Please Prepare the data in Preprocess.",
+            }
+        )
+    regressor = ElasticNetRegressor(dp)
     # Perform tuning and evaluation
-    regressor.gridcv_tune(param_grid, cv=cv)
+    regressor.gridcv_tune(param_grid, cv=params["cv"])
+    regressor.calculate_learning_curve()
+    regressor.calculate_optimal_size()
 
-    return dict(
-        summary=regressor.summarize(threshold),
-        plot_predictions=regressor.plot(),
-        plot_learning_curve=regressor.plot_learning_curve(),
+    return jsonResp(
+        dict(
+            summary_pre=regressor.summarize(params["threshold"]),
+            plot_predictions_plotly=jsonify_plotly(regressor.plot()),
+            plot_learning_curve_plotly=jsonify_plotly(regressor.plot_learning_curve()),
+        )
     )

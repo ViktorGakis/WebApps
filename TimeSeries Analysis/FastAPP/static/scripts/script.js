@@ -1,6 +1,9 @@
-import { reloadJsCssDE, plotlyDE } from "./modules/eventListeners.js";
-import { checkboxHandlerDE, sliderUpdateDE } from "./checkboxforms.js";
-import { preprocessFormDE } from "./preprocessde.js";
+let cacheBust = Date.now();
+
+const eventListenersUrl = `./modules/eventListeners.js?${cacheBust}`;
+const checkboxformsUrl = `./checkboxforms.js?${cacheBust}`;
+const preprocessdeUrl = `./preprocessde.js?${cacheBust}`;
+const estimatordeUrl = `./estimator.js?${cacheBust}`;
 
 // Create an object to store event listeners references
 const eventListeners = {
@@ -11,17 +14,24 @@ const eventListeners = {
 	selectUpdatede: null,
 	submitFormde: null,
 	preprocessde: null,
+	estimatorde: null,
 };
 
 async function main() {
-	eventListeners.reloadJsCssde = await reloadJsCssDE(".reloadjscss");
-	eventListeners.plotlyde = await plotlyDE(".plotly")
-	eventListeners.checkboxHandlerde = await checkboxHandlerDE('input[type="checkbox"]')
-	eventListeners.sliderUpdatede = await sliderUpdateDE('input')
-	eventListeners.selectUpdatede = await sliderUpdateDE('select')
+	const eventListenersModule = await import(eventListenersUrl);
+	const checkboxformsModule = await import(checkboxformsUrl);
+	const preprocessdeModule = await import(preprocessdeUrl);
+	const estimatorModule = await import(estimatordeUrl);
+
+	eventListeners.reloadJsCssde = await eventListenersModule.reloadJsCssDE(".reloadjscss");
+	eventListeners.plotlyde = await eventListenersModule.plotlyDE(".plotly");
+	eventListeners.checkboxHandlerde = await checkboxformsModule.checkboxHandlerDE('input[type="checkbox"]');
+	eventListeners.sliderUpdatede = await checkboxformsModule.sliderUpdateDE('input');
+	eventListeners.selectUpdatede = await checkboxformsModule.sliderUpdateDE('select');
+	eventListeners.estimatorde = await estimatorModule.estimatorFormDE('.estimator');
 
 	// eventListeners.submitFormde = await submitFormDE('form')
-	eventListeners.preprocessde = await preprocessFormDE('#preprocess-form')
+	eventListeners.preprocessde = await preprocessdeModule.preprocessFormDE('#preprocess-form');
 }
 
 // Initialize your script
@@ -32,7 +42,6 @@ async function init() {
 	await main();
 }
 
-
 // Clean up before reloading
 function destroy() {
 	// Remove all event listeners
@@ -41,10 +50,15 @@ function destroy() {
 			eventListeners[key]();
 		}
 	}
+
+	// Reset cache busting for next load
+	cacheBust = Date.now();
 }
 
 // Expose the init and destroy functions globally
 window.myScript = { init, destroy };
 
 // Initialize the script
-init();
+(async () => {
+    await init();
+})();

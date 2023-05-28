@@ -62,7 +62,7 @@ class LearningCurve:
     def calculate_optimal_size(self):
         optimal_idx = np.argmin(self.val_scores_mean)
         self.optimal_size = self.train_sizes_abs[optimal_idx]
-        self.optimal_size_pct = round(self.optimal_size / dp.X.shape[0], 2)
+        self.optimal_size_pct = round(self.optimal_size / self.data_preparer.X.shape[0], 2)
 
     def plot_learning_curve(self) -> go.Figure:
         fig = go.Figure()

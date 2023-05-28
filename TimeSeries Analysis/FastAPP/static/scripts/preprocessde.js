@@ -1,6 +1,5 @@
 import { delegateEvent } from "./modules/delegateEvent.js";
 import { formHandler } from "./modules/eventListeners.js";
-
 export { preprocessFormDE };
 
 async function createDivElements(rsp, parentElement) {
@@ -40,16 +39,16 @@ async function preprocessHandler(event) {
 	try {
 		let rsp = await formHandler(event);
 		console.log("rsp", rsp);
-        let container = event.target.parentNode;
-        Object.keys(rsp).forEach(function (key) {
-            const resp = JSON.parse(rsp[key]);
-            const plot_div = document.createElement("div");
-            plot_div.id = key;
-            plot_div.style.width = "fit-content";
-            container.appendChild(plot_div);
-            const config = { displayModeBar: false };
-            Plotly.newPlot(plot_div, resp.data, resp.layout, config);          
-        });
+		let container = event.target.parentNode;
+		Object.keys(rsp).forEach(function (key) {
+			const resp = JSON.parse(rsp[key]);
+			const plot_div = document.createElement("div");
+			plot_div.id = key;
+			plot_div.style.width = "fit-content";
+			container.appendChild(plot_div);
+			const config = { displayModeBar: false };
+			Plotly.newPlot(plot_div, resp.data, resp.layout, config);
+		});
 	} catch (error) {
 		console.error("Error:", error);
 	}
@@ -57,7 +56,7 @@ async function preprocessHandler(event) {
 
 async function preprocessFormDE(form) {
 	const form_str = form ? typeof form === "string" : JSON.stringify(form);
-	console.log(`Form: [${form_str}] listener initialized!`);
+	console.log(`Preprocess Form: [${form_str}] listener initialized!`);
 	return await delegateEvent(
 		["submit"], // event type
 		[form], // selector

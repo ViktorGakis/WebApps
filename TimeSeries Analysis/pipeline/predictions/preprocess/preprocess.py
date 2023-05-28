@@ -150,8 +150,8 @@ class DataPreparer(InputVariables):
         )
 
         fig.update_layout(
-            title=f"Train and Test Data",
-            xaxis_title="Index",
+            title="Train and Test Data",
+            xaxis_title="Date",
             yaxis_title=self.target_col,
         )
         return fig

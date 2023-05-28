@@ -20,7 +20,7 @@ body.light-mode {
 	transition: all 0.3s ease;
 }
 
-button {
+/* button {
 	background-color: var(--background-color);
 	color: var(--text-color);
 	border: none;
@@ -33,7 +33,7 @@ button {
 button:hover {
 	background-color: var(--text-color);
 	color: var(--background-color);
-}
+} */
 
 #toggle-theme {
 	position: absolute;
@@ -54,4 +54,13 @@ button:hover {
     max-height: 300px;
     min-height: 100px;
     border: 1px solid rgb(14, 188, 34);
+}
+
+.close-button {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	padding: 0.5rem;
+	/* border: none; */
+	cursor: pointer;
 }

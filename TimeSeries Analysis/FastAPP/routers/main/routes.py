@@ -75,33 +75,5 @@ async def api_test(
 
 @router.get("/api/models/elasticnet")
 async def api_models_elasticnet(request: Request):
-    params = request.query_params._dict
-    pprint(request.query_params._dict)
-    checked_params = {k: v for k, v in params.items() if k.endswith("_checked")}
-    pprint(checked_params)
-    cleaned_params = {
-        k.replace("_checked", "")
-        .replace("_user_input", "")
-        .replace("_default", "")
-        .replace("_grid_values", ""): v
-        for k, v in checked_params.items()
-    }
-    pprint(cleaned_params)
-    try:
-        params = ElasticNetParameters(**cleaned_params).dict()
-        pprint(params)
-    except ValidationError as e:
-        log.error("%s", e.json())
-    param_grid = {
-        key: params[key]
-        for key in [
-            "alpha",
-            "l1_ratio",
-            "max_iter",
-            "tol",
-            "selection",
-        ]
-    }
-    pprint(param_grid)
-    return "okboi"
-    # return await exec_block(elasticnet_exec, request)
+
+    return await exec_block(elasticnet_exec, request)

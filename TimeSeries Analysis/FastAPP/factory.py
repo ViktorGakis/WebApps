@@ -1,17 +1,32 @@
 from logging import Logger
+from pprint import pformat
 from typing import Callable, List
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.routing import APIRoute, APIRouter
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from pprint import pformat
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import Response
+
 from .config import APISettings
 from .logger import logdef
 
 log: Logger = logdef(__name__)
+
+
+# Middleware function to set Cache-Control header for JS and CSS files
+class CacheControlMiddleware(BaseHTTPMiddleware):
+    def __init__(self, app: FastAPI, max_age: int = 0) -> None:
+        super().__init__(app)
+        self.max_age: int = max_age
+
+    async def dispatch(self, request: Request, call_next) -> Response:
+        response: Response = await call_next(request)
+        if request.url.path.endswith(".js") or request.url.path.endswith(".css"):
+            response.headers["Cache-Control"] = f"max-age={self.max_age}"
+        return response
 
 
 class AppFactory(FastAPI):
@@ -62,9 +77,10 @@ class AppFactory(FastAPI):
         self.__add_templates()
         self.__add_jinja_global_vars()
         self.__add_jinja_filters()
-        log.info('UnRegistered Routers: \n%s' % pformat(self.unregistered_routers))
-        log.info('Registered Routers: \n%s' % pformat(self.registered_routers))
-        self.__add_cors()        
+        log.info("UnRegistered Routers: \n%s" % pformat(self.unregistered_routers))
+        log.info("Registered Routers: \n%s" % pformat(self.registered_routers))
+        self.__add_cors()
+        self.__add_cache_control()
 
     @property
     def unregistered_routers(self) -> List[APIRouter]:
@@ -141,4 +157,7 @@ class AppFactory(FastAPI):
             allow_methods=["*"],
             allow_headers=["*"],
         )
-        log.info('Added CORS')
+        log.info("Added CORS")
+
+    def __add_cache_control(self) -> None:
+        self.add_middleware(CacheControlMiddleware, max_age=0)
