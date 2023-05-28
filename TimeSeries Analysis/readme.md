@@ -1,19 +1,33 @@
 # Time Series Analysis
 
-We will use as our time series stock data. Based on this data we will:
+## Description
 
-1. Create a dashboard with various analytics such as technical and fundamental indicators.
+An interactive dashboard was developed to provide comprehensive analytics for time series data using statistical derivatives. Various machine learning models were employed to forecast the time series based on historical data, including but not limited to:
 
-2. Create various machine learning models to predict the stock price based on historical data.
+- Random Forest
+- Gradient Boosting
+- ElasticNet
+- AdaBoost
+- Autoregression
+- SARIMAX
+- Support Vector Machines
 
-This dashboard will provide a comprehensive visualization of the stock price data with valuable analytics, making it a useful tool for further financial analysis.
+The resulting analysis was integrated into a FastAPI application, enabling effortless replication for similar stock data.
 
--   The data will be obtained using the yfinance library,
--   The technical indicators will be calculated using the TA-Lib library.
+## Installation
 
--   The dashboard will be created using the Plotly library.
+1. Clone the repository.
+2. Install the required dependencies using `pip install -r requirements.txt`.
+
+## Usage
+
+1. Launch the FastAPI application.
+2. Access the dashboard interface using the provided URL.
+3. Explore the time series analytics and forecasting capabilities.
 
 
+## License
 
-When working with time series prediction, it is important to choose models that can handle time-dependent patterns in the data. Here's a list of compatible models that can be used for time series prediction, along with some additional models specifically designed for time series forecasting:
+This project is licensed under the [MIT License](LICENSE).
+
 
