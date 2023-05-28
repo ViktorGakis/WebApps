@@ -1,26 +1,8 @@
 import { delegateEvent } from "./modules/delegateEvent.js";
 import { formHandler } from "./modules/eventListeners.js";
+import { addCloseButton } from "./btn_utils.js"
+
 export { estimatorFormDE };
-
-// Function to add a close button to a div element
-function addCloseButton(divElement) {
-	// Set the position of the divElement to relative
-	divElement.style.position = "relative";
-
-	// Create the close button element
-	const closeButton = document.createElement("button");
-	closeButton.textContent = "X";
-	closeButton.classList.add("btn", "btn-outline-danger", "close-button");
-	closeButton.type = "button";
-
-	// Add event listener to delete the div when clicked
-	closeButton.addEventListener("click", () => {
-		divElement.remove();
-	});
-
-	// Append the close button to the div element
-	divElement.appendChild(closeButton);
-}
 
 async function createDivElements(rsp, parentElem) {
 	// If parentElement is not provided, default to the document body
@@ -47,7 +29,7 @@ async function createDivElements(rsp, parentElem) {
 		} else if (key.endsWith("_pre")) {
 			// Create a new <pre> element
 			let preElement = document.createElement("pre");
-
+			preElement.style.width = "fit-content";
 			// Set the content of the <pre> element
 			preElement.textContent = rsp[key];
 

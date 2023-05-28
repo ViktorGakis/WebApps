@@ -1,0 +1,21 @@
+<form
+	action="{{ url_for('api_test') }}"
+	method="GET"
+	class="bg-dark p-4"
+	id="test-form"
+>
+	<div class="form-floating mb-3">
+		<input
+			type="text"
+			id="ticker"
+			name="ticker"
+			class="form-control"
+			placeholder="Ticker"
+		/>
+		<label for="ticker">Ticker:</label>
+	</div>
+
+	<button type="submit" class="btn btn-primary" form="test-form">
+		Submit
+	</button>
+</form>

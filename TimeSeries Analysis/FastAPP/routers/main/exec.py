@@ -162,14 +162,21 @@ class ElasticNetParameters(BaseModel):
                 return int(v)
             elif key == "selection":
                 return v.split(",")
-            elif key in {"alpha", "l1_ratio"}:
-                return [float(value) for value in v.replace("[", "").replace("]", "").split(",") if value.strip()]
+            elif key in {"alpha", "l1_ratio", "max_iter", "tol"}:
+                field_type = field.type_
+                if isinstance(v, str) and v.startswith("[") and v.endswith("]"):
+                    values = [field_type(value.strip()) for value in v[1:-1].split(",") if value.strip()]
+                    return values
+                else:
+                    return [field_type(v)]
             else:
                 return [float(v)]
         except (TypeError, ValueError):
             raise ValueError(
-                f"Invalid values for parameter '{key}'. Expected float or comma-separated floats."
+                f"Invalid values for parameter '{key}'. Expected {field.type_}."
             )
+
+
 
 
 def parse_params_elasticnet(request) -> Dict[str, Any] | None:
@@ -181,7 +188,7 @@ def parse_params_elasticnet(request) -> Dict[str, Any] | None:
         log.error("%s", e.json())
 
 
-def elasticnet_exec(request):
+def elasticnet_exec(request) -> JSONResponse:
     global dp, stock, dp_params
 
     params: Dict[str, Any] | None = parse_params_elasticnet(request)
