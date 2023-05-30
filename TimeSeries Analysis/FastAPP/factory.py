@@ -152,7 +152,7 @@ class AppFactory(FastAPI):
         """Add middleware for CORS"""
         self.add_middleware(
             CORSMiddleware,
-            allow_origins=["http://localhost", "https://localhost"],
+            allow_origins=["http://localhost", "https://localhost", "http://localhost:3000"],
             allow_credentials=True,
             allow_methods=["*"],
             allow_headers=["*"],

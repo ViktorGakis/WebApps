@@ -67,10 +67,9 @@ async def api_preprocess(
 async def api_test(
     request: Request, ticker: CurrentTicker = Depends(get_my_ticker)
 ) -> JSONResponse:
-    
-    if val := request.query_params.get("ticker"):
-        ticker.value = val
-    return jsonResp({"ticker": ticker.value})
+    return "<p><strong>TEST</strong></p><p> url_for('api_models_elasticnet') </p>"
+    return JSONResponse(content={"ticker": "GOOG"})
+    return jsonResp({"ticker": "GOOG"})
 
 
 @router.get("/api/models/elasticnet")
