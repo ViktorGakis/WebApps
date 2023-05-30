@@ -4,13 +4,13 @@
 
 An interactive dashboard was developed to provide comprehensive analytics for time series data using statistical derivatives. Various machine learning models were employed to forecast the time series based on historical data, including but not limited to:
 
+- ElasticNet
+- Support Vector Machines
 - Random Forest
 - Gradient Boosting
-- ElasticNet
 - AdaBoost
 - Autoregression
 - SARIMAX
-- Support Vector Machines
 
 The resulting analysis was integrated into a FastAPI application, enabling effortless replication for similar stock data.
 
