@@ -55,8 +55,8 @@ class InputVariables:
                 failed += [func]
         self.data = pd.concat([self.data, inds], axis=1)
 
-    def clean_data(self, threshold) -> None:
-        df: DataFrame = self.data
+    @staticmethod
+    def clean_data(df: DataFrame, threshold=0.05) -> DataFrame:
         # calculate the percentage of missing values for each column
         percent_missing = df.isna().sum() / len(df)
 
@@ -64,12 +64,12 @@ class InputVariables:
         mask = percent_missing > threshold
 
         # use the boolean mask to select only the columns that don't exceed the threshold
-        self.data = df.loc[:, ~mask]
+        return df.loc[:, ~mask]
 
     def generate_all(self, threshold=0.05) -> DataFrame:
         self.calculate_log_returns()
         self.add_Indicators()
-        self.clean_data(threshold)
+        self.data = self.clean_data(self.data, threshold)
         return self.data
 
 
@@ -78,7 +78,7 @@ class DataPreparer(InputVariables):
         self,
         df: pd.DataFrame,
         target_col: str,
-        testsize: float = 0.3,
+        testsize: float = 0.2,
         random_state: int = 101,
         shuffle=False,
         features: Optional[list] = None,
@@ -100,6 +100,7 @@ class DataPreparer(InputVariables):
                 if features
                 else self.data.drop(columns=[self.target_col])
             )
+            self.X = self.clean_data(self.X)
         else:
             self.X: DataFrame = (
                 self.data.drop(columns=[self.target_col]).loc[:, features]
