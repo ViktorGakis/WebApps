@@ -1,5 +1,6 @@
 :root {
 	--text-color: aliceblue;
+	--text-background-color: black;
 }
 
 .App {
@@ -58,4 +59,38 @@
 
 .questionsForm .btn:hover {
 	color: #c6cbf3;
+}
+
+.button-container {
+	display: flex;
+}
+
+.stretch-button {
+	flex: 1;
+}
+
+.enlarged-symbol {
+	font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+.correct {
+	color: chartreuse;
+}
+
+.notes {
+	resize: both;
+	overflow: auto;
+	border: 1px solid #ccc;
+	display: flex;
+}
+
+.stretch {
+	width: 100%;
+	height: 100%;
+	resize: none;
+}
+
+.notes textarea {
+	background-color: var(--text-background-color);
+	color: var(--text-color);
 }

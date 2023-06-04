@@ -13,10 +13,17 @@ function QuestionForm() {
 	const [chapters, setChapters] = useState([]);
 	const [questions, setQuestions] = useState([]);
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+	const [answeredQuestions, setAnsweredQuestions] = useState(Array(questions.length).fill(false));
+	const [correctAnswers, setCorrectAnswers] = useState(Array(questions.length).fill(false));
 
 	useEffect(() => {
 		fetchChapterData(setChapters);
 	}, []);
+
+	useEffect(() => {
+		setAnsweredQuestions(Array(questions.length).fill(false));
+		setCorrectAnswers(Array(questions.length).fill(false));
+	}, [questions]);
 
 	const handleSubmit = function (e, selectedOption) {
 		e.preventDefault();
@@ -42,7 +49,11 @@ function QuestionForm() {
 			{displayQuestionSection(
 				questions,
 				currentQuestionIndex,
-				setCurrentQuestionIndex
+				setCurrentQuestionIndex,
+				answeredQuestions,
+				setAnsweredQuestions,
+				correctAnswers,
+				setCorrectAnswers
 			)}
 		</div>
 	);
