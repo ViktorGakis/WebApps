@@ -15,7 +15,8 @@ def lit_eval(x: str):
 class APISettings(BaseSettings):
     BASE_DIR: Path = basedir
     STATIC_PATH: Path = basedir / Path("static")
-    FAV_ICON_PATH: Path = basedir / Path("static") / 'favicon.ico'
+    REACT_PATH: Path = basedir / Path("react-app/build/static")
+    FAV_ICON_PATH: Path = basedir / Path("static") / "favicon.ico"
     debug: bool = True
     debug_exceptions: bool = False
     disable_superuser_dependency: bool = False

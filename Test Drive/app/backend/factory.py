@@ -74,6 +74,7 @@ class AppFactory(FastAPI):
     def startup(self) -> None:
         self.__register_routers()
         self.__add_static()
+        self.__add_react_app()
         self.__add_templates()
         self.__add_jinja_global_vars()
         self.__add_jinja_filters()
@@ -123,9 +124,16 @@ class AppFactory(FastAPI):
         ---------STATIC CONFIGURATION-----------
         add static file(css,js,media) folder to the app
         """
-        self.mount(
-            "/static", StaticFiles(directory=self.config.STATIC_PATH), name="static"
-        )
+        if str(self.config.STATIC_PATH):
+            self.mount(
+                "/static", StaticFiles(directory=self.config.STATIC_PATH), name="static"
+            )
+
+    def __add_react_app(self) -> None:
+        if str(self.config.REACT_PATH):
+            self.mount(
+                "/app", StaticFiles(directory=self.config.REACT_PATH), name="app"
+            )
 
     def __add_templates(self) -> None:
         """
@@ -152,7 +160,11 @@ class AppFactory(FastAPI):
         """Add middleware for CORS"""
         self.add_middleware(
             CORSMiddleware,
-            allow_origins=["http://localhost", "https://localhost", "http://localhost:3000"],
+            allow_origins=[
+                "http://localhost",
+                "https://localhost",
+                "http://localhost:3000",
+            ],
             allow_credentials=True,
             allow_methods=["*"],
             allow_headers=["*"],
