@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.css";
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import ApiTester from "./components/apitester.jsx";
+import { FormFetchQuestions } from "./components/ChapterQuestionsFetch";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [refreshKey, setRefreshKey] = useState(0);
+
+	const handleRefresh = () => {
+		setRefreshKey((prevKey) => prevKey + 1);
+	};
+
+	return (
+		<div>
+			<div className="App">
+				<header className="App-header">
+					{/* <div className="sticky-bar">
+						<button className="end-button" onClick={handleRefresh}>
+							Refresh CSS
+						</button>
+					</div> */}
+					<img src={logo} className="App-logo" alt="logo" />
+					<div className="questionsForm">
+						<h1>Form Fetch Questions</h1>
+						<FormFetchQuestions />
+					</div>
+				</header>
+			</div>
+		</div>
+	);
 }
 
 export default App;

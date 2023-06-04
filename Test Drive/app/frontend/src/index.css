@@ -1,13 +1,34 @@
+:root {
+	--text-color: aliceblue;
+	--text-color: red;
+}
+
+/* Custom CSS to change unhovered button color */
+.btn {
+	color: var(--text-color);
+}
+
+.btn:hover {
+	background-color: #ffffff; /* Set the background color to white on hover */
+	color: var(--text-color); /* Set the text color to black on hover */
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--text-color);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+/* Custom CSS to prevent Bootstrap button from changing text color */
+.btn {
+	color: var(--text-color);
 }

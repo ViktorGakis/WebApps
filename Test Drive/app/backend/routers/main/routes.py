@@ -1,12 +1,12 @@
 from logging import Logger
 
 from fastapi import Depends, Request
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from starlette.templating import _TemplateResponse
 
 from ...config import APISettings, get_api_settings
 from ...logger import logdef
-from ..utils import check_localhost, render_html
+from ..utils import check_localhost, exec_block, get_chapters, jsonResp, render_html, get_chapter_questions
 from . import router
 
 log: Logger = logdef(__name__)
@@ -38,3 +38,16 @@ def main_index_debug(
 @router.get("/api/test", response_class=HTMLResponse)
 async def api_test(request: Request):
     return "dummy", 200
+
+
+@router.get("/api/chapters", response_class=HTMLResponse)
+async def api_chapters(request: Request):
+    return await exec_block(get_chapters)
+
+@router.get("/api/chapter/questions", response_class=JSONResponse)
+async def api_chapter_questions(request: Request) -> JSONResponse:
+    chapter = request.query_params._dict.get('chapter')
+    print("chapter:", chapter)
+    questions = await exec_block(get_chapter_questions, chapter)
+    print("questions: ", questions)
+    return jsonResp({'data':questions})

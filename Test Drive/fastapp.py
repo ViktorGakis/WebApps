@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from uvicorn import run
 
-from app import AppFactory
+from app.backend import AppFactory
 
 app: FastAPI = AppFactory()
 

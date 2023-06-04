@@ -164,6 +164,7 @@ class AppFactory(FastAPI):
                 "http://localhost",
                 "https://localhost",
                 "http://localhost:3000",
+                "https://localhost:3000",
             ],
             allow_credentials=True,
             allow_methods=["*"],

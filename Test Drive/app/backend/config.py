@@ -5,24 +5,25 @@ from typing import Callable
 
 from pydantic import BaseSettings
 
-basedir: Path = Path(__file__).parent
-
+BASEDIR: Path = Path(__file__).parent
+CWD: Path = Path.cwd()
 
 def lit_eval(x: str):
     return literal_eval(x.strip()) if isinstance(x, str) else ""
 
 
 class APISettings(BaseSettings):
-    BASE_DIR: Path = basedir
-    STATIC_PATH: Path = basedir / Path("static")
-    REACT_PATH: Path = basedir / Path("react-app/build/static")
-    FAV_ICON_PATH: Path = basedir / Path("static") / "favicon.ico"
+    BASE_DIR: Path = BASEDIR
+    STATIC_PATH: Path = BASEDIR / Path("static")
+    REACT_PATH: Path = BASEDIR / Path("")
+    DATA_PATH: Path = CWD / "data" / "data.json"
+    FAV_ICON_PATH: Path = BASEDIR / Path("static") / "favicon.ico"
     debug: bool = True
     debug_exceptions: bool = False
     disable_superuser_dependency: bool = False
     include_admin_routes: bool = False
     title: str = "Test Drive Theoretics"
-    TEMPLATES_PATH: Path = basedir / Path("templates")
+    TEMPLATES_PATH: Path = BASEDIR / Path("templates")
     jinja_global_vars: dict[str, Callable] = {}
     jinja_filters: dict[str, Callable] = dict(lit_eval=lit_eval)
 

@@ -109,3 +109,18 @@ async def check_localhost(request: Request):
             status_code=HTTP_403_FORBIDDEN,
             detail="Access allowed only from localhost.",
         )
+
+
+def load_data(path=config.DATA_PATH):
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def get_chapters():
+    chapters = [list(k.keys())[0] for k in load_data()[0]]
+    return json.dumps(chapters)   
+
+def get_chapter_questions(chapter: str):
+    data = load_data()[0]  # Assuming the data is a list of dictionaries
+    questions = [chaptr[chapter] for chaptr in data if chaptr.get(chapter) is not None]
+    return questions
