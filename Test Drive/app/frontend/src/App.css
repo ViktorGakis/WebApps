@@ -1,5 +1,5 @@
 :root {
-  --text-color: aliceblue,
+	--text-color: aliceblue;
 }
 
 .App {
@@ -42,20 +42,20 @@
 }
 
 .sticky-bar {
-  position: sticky;
-  top: 0;
-  right: 0;
-  background-color: #f1f1f1;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
+	position: sticky;
+	top: 0;
+	right: 0;
+	background-color: #f1f1f1;
+	padding: 10px;
+	display: flex;
+	justify-content: flex-end;
 }
 
 /* Custom CSS to change unhovered button color */
 .questionsForm .btn {
-  color: var(--text-color); 
+	color: var(--text-color);
 }
 
 .questionsForm .btn:hover {
-  color: #c6cbf3;
+	color: #c6cbf3;
 }
