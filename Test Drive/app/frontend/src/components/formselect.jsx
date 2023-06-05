@@ -6,7 +6,8 @@ function actualSelectForm(
 	setSelectedOption,
 	handleSubmit,
 	method,
-	url
+	url,
+	id
 ) {
 	const handleFormSubmit = async (e) => {
 		e.preventDefault();
@@ -18,7 +19,8 @@ function actualSelectForm(
 			className="form button-container"
 			onSubmit={handleFormSubmit}
 			method={method}
-			action={url}>
+			action={url}
+			id={id}>
 			<div className="form-group">
 				<select
 					className="form-control"
@@ -40,8 +42,8 @@ function actualSelectForm(
 	);
 }
 
-function FormSelect({ data, url, method, handleSubmit }) {
-	const [selectedOption, setSelectedOption] = useState("");
+function FormSelect({ data, url, method, handleSubmit, id }) {
+	const [selectedOption, setSelectedOption] = useState(data[0] || "");
 
 	return actualSelectForm(
 		data,
@@ -49,7 +51,8 @@ function FormSelect({ data, url, method, handleSubmit }) {
 		setSelectedOption,
 		handleSubmit,
 		method,
-		url
+		url,
+		id
 	);
 }
 

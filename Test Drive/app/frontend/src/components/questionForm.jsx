@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FormSelect } from "./formSelect";
-import { displayQuestionSection } from "./questionSection";
+import { DisplayQuestionSection } from "./questionSection";
 import {
 	fetchChapterData,
 	handleChapterQuestionFetch,
@@ -13,17 +13,18 @@ function QuestionForm() {
 	const [chapters, setChapters] = useState([]);
 	const [questions, setQuestions] = useState([]);
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-	const [answeredQuestions, setAnsweredQuestions] = useState(Array(questions.length).fill(false));
-	const [correctAnswers, setCorrectAnswers] = useState(Array(questions.length).fill(false));
+	const [answeredQuestions, setAnsweredQuestions] = useState(
+		Array(questions.length).fill(false)
+	);
+	const [correctAnswers, setCorrectAnswers] = useState(
+		Array(questions.length).fill(false)
+	);
+
+	const [formKey, setFormKey] = useState(0); // Add formKey state
 
 	useEffect(() => {
 		fetchChapterData(setChapters);
 	}, []);
-
-	useEffect(() => {
-		setAnsweredQuestions(Array(questions.length).fill(false));
-		setCorrectAnswers(Array(questions.length).fill(false));
-	}, [questions]);
 
 	const handleSubmit = function (e, selectedOption) {
 		e.preventDefault();
@@ -34,30 +35,39 @@ function QuestionForm() {
 		);
 	};
 
+	const handleFormSubmit = function (e, selectedOption) {
+		handleSubmit(e, selectedOption);
+		setAnsweredQuestions(Array(questions.length).fill(false));
+		setCorrectAnswers(Array(questions.length).fill(false));
+		setFormKey((prevKey) => prevKey + 1); // Update formKey on form submit
+	};
+
 	return (
 		<div id="main">
-			<h1>Choose Chapter</h1>		
+			<h1>Choose Chapter</h1>
 			{chapters.length > 0 ? (
 				<div id="form-container">
 					<FormSelect
 						data={chapters}
 						url="api/chapter/questions"
 						method="GET"
-						handleSubmit={handleSubmit}
+						handleSubmit={handleFormSubmit} // Modified to use handleFormSubmit
+						id={'questionForm'}
 					/>
 				</div>
 			) : (
 				<div>Loading...</div>
 			)}
 			<hr></hr>
-			{displayQuestionSection(
+			{DisplayQuestionSection(
 				questions,
 				currentQuestionIndex,
 				setCurrentQuestionIndex,
 				answeredQuestions,
 				setAnsweredQuestions,
 				correctAnswers,
-				setCorrectAnswers
+				setCorrectAnswers,
+				formKey // Pass formKey as a prop to DisplayQuestionSection
 			)}
 		</div>
 	);

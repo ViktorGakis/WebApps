@@ -16,6 +16,7 @@ function QuestionSection({
 	setAnsweredQuestions,
 	correctAnswers,
 	setCorrectAnswers,
+	formKey
 }) {
 	const handleNextQuestion = () => {
 		if (currentQuestionIndex < loadedQuestions) {
@@ -54,7 +55,7 @@ function QuestionSection({
 				</span>
 				/<span>{countTrueValues(answeredQuestions)}</span>
 			</div>
-			<Clock />
+			<Clock key={formKey}/>
 			<QuestionComponent question={question} onAnswer={handleAnswer} />
 			<span>
 				{currentQuestionIndex}/{loadedQuestions}
@@ -81,14 +82,15 @@ function QuestionSection({
 }
 
 // Display the question section if questions are available.
-function displayQuestionSection(
+function DisplayQuestionSection(
 	questions,
 	currentQuestionIndex,
 	setCurrentQuestionIndex,
 	answeredQuestions,
 	setAnsweredQuestions,
 	correctAnswers,
-	setCorrectAnswers
+	setCorrectAnswers,
+	formKey
 ) {
 	if (
 		questions.length > 0 &&
@@ -105,10 +107,11 @@ function displayQuestionSection(
 				setAnsweredQuestions={setAnsweredQuestions}
 				correctAnswers={correctAnswers}
 				setCorrectAnswers={setCorrectAnswers}
+				formKey={formKey}
 			/>
 		);
 	}
 	return null;
 }
 
-export { displayQuestionSection };
+export { DisplayQuestionSection };
