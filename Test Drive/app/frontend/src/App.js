@@ -5,18 +5,14 @@ import "./App.css";
 // import ApiTester from "./components/apitester.jsx";
 import { QuestionForm } from "./components/questionForm";
 
-
 function App() {
 	return (
 		<div>
 			<div className="App">
-				<header className="App-header">
+				<div className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
-					<div className="questionsForm">
-						<h1>Form Fetch Questions</h1>
-						<QuestionForm />
-					</div>
-				</header>
+					<QuestionForm />
+				</div>
 			</div>
 		</div>
 	);

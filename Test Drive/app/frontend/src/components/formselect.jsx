@@ -15,7 +15,7 @@ function actualSelectForm(
 
 	return (
 		<form
-			className="form"
+			className="form button-container"
 			onSubmit={handleFormSubmit}
 			method={method}
 			action={url}>

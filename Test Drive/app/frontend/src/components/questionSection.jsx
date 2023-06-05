@@ -1,7 +1,7 @@
 import React from "react";
 import { QuestionComponent } from "./questionComponent";
 import { NotesComponent } from "./notes"
-
+import { Clock } from "./clock"
 
 function countTrueValues(array) {
 	return array.filter(Boolean).length;
@@ -47,7 +47,11 @@ function QuestionSection({
 
 	return (
 		<div className="questions">
+			<h1>Questions</h1>
 			<QuestionComponent question={question} onAnswer={handleAnswer} />
+			<span>
+				{currentQuestionIndex}/{loadedQuestions}
+			</span>			
 			<div className="button-container">
 				<button
 					className="btn btn-primary stretch-button"
@@ -62,15 +66,14 @@ function QuestionSection({
 					<span className="enlarged-symbol">&raquo;</span>
 				</button>
 			</div>
-			<span>
-				{currentQuestionIndex}/{loadedQuestions}
-			</span>
+
 			<div>
 				<span className="correct">
 					{countTrueValues(correctAnswers)}
 				</span>
 				/<span>{countTrueValues(answeredQuestions)}</span>
 			</div>
+			<Clock />
 			<NotesComponent question={question}/>
 		</div>
 	);

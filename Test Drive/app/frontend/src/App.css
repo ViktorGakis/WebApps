@@ -94,3 +94,8 @@
 	background-color: var(--text-background-color);
 	color: var(--text-color);
 }
+
+/* form .button-container {
+	display: flex;
+	justify-content: center;
+} */
