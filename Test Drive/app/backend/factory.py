@@ -133,12 +133,16 @@ class AppFactory(FastAPI):
     def __add_react_app(self) -> None:
         if str(self.config.REACT_PATH):
             self.mount(
-                "/react_app", StaticFiles(directory=self.config.REACT_PATH), name="react_app"
+                "/react_app",
+                StaticFiles(directory=self.config.REACT_PATH),
+                name="react_app",
             )
-            
+
     def _add_imgs_folder(self) -> None:
         if self.config.IMGS_PATH.exists() and str(self.config.IMGS_PATH):
-            self.mount("/imgs", StaticFiles(directory=self.config.IMGS_PATH), name="imgs")
+            self.mount(
+                "/imgs", StaticFiles(directory=self.config.IMGS_PATH), name="imgs"
+            )
 
     def __add_templates(self) -> None:
         """
