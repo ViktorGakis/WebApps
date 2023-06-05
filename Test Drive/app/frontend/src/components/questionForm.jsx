@@ -35,18 +35,21 @@ function QuestionForm() {
 	};
 
 	return (
-		<div>
+		<div id="main">
 			<h1>Choose Chapter</h1>		
 			{chapters.length > 0 ? (
-				<FormSelect
-					data={chapters}
-					url="api/chapter/questions"
-					method="GET"
-					handleSubmit={handleSubmit}
-				/>
+				<div id="form-container">
+					<FormSelect
+						data={chapters}
+						url="api/chapter/questions"
+						method="GET"
+						handleSubmit={handleSubmit}
+					/>
+				</div>
 			) : (
 				<div>Loading...</div>
 			)}
+			<hr></hr>
 			{displayQuestionSection(
 				questions,
 				currentQuestionIndex,

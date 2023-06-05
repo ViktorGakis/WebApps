@@ -39,9 +39,9 @@ function QuestionComponent({ question, onAnswer }) {
 										className={`btn ${
 											selectedOption === option
 												? isCorrect
-													? "btn-outline-success"
-													: "btn-outline-danger"
-												: "btn-dark"
+													? "btn-success"
+													: "btn-danger"
+												: "btn-secondary"
 										}`}>
 										{option}
 									</button>

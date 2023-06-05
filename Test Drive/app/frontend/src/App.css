@@ -108,6 +108,37 @@
 	box-sizing: border-box;
 }
 
+#main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+#form-container {
+	display: flex;
+	justify-content: center;
+}
+
+
+.img, .title {
+	padding-top: 2%;
+}
+.choices ol {
+	padding-top: 5%;
+}
+
+.choices ol li:not(:first-child) {
+    padding-top: 1%;
+}
+
+.choices ol li {
+
+}
+
+
+
 /* form .button-container {
 	display: flex;
 	justify-content: center;

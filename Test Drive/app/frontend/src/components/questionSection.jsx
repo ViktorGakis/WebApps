@@ -48,6 +48,12 @@ function QuestionSection({
 	return (
 		<div className="questions">
 			<h1>Questions</h1>
+			<div id="correct_answers">
+				<span className="correct">
+					{countTrueValues(correctAnswers)}
+				</span>
+				/<span>{countTrueValues(answeredQuestions)}</span>
+			</div>
 			<Clock />
 			<QuestionComponent question={question} onAnswer={handleAnswer} />
 			<span>
@@ -68,12 +74,7 @@ function QuestionSection({
 				</button>
 			</div>
 
-			<div>
-				<span className="correct">
-					{countTrueValues(correctAnswers)}
-				</span>
-				/<span>{countTrueValues(answeredQuestions)}</span>
-			</div>
+
 			<NotesComponent question={question}/>
 		</div>
 	);
