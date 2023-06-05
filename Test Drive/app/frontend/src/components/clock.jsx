@@ -48,9 +48,9 @@ function Clock() {
 	return (
 		<div id='clock'>
 			<div>{formatTime(time)}</div>
-			<button onClick={handleStart}>Start</button>
-			<button onClick={handleStop}>Stop</button>
-			<button onClick={handleReset}>Reset</button>
+			<button className="btn btn-success" onClick={handleStart}>Start</button>
+			<button className="btn btn-danger" onClick={handleStop}>Stop</button>
+			<button className="btn btn-warning" onClick={handleReset}>Reset</button>
 		</div>
 	);
 }

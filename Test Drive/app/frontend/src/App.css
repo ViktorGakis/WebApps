@@ -95,6 +95,19 @@
 	color: var(--text-color);
 }
 
+#clock {
+	display: flex;
+	justify-content: center;
+	border: 3px solid #61dafb;
+	border-radius: 5%;
+	width: fit-content;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px; /* Adjust the padding value as per your preference */
+	box-sizing: border-box;
+}
+
 /* form .button-container {
 	display: flex;
 	justify-content: center;
