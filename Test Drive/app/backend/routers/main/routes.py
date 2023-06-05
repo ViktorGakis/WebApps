@@ -7,7 +7,7 @@ from starlette.templating import _TemplateResponse
 
 from ...config import APISettings, get_api_settings
 from ...logger import logdef
-from ..utils import check_localhost, exec_block, get_chapters, jsonResp, parse_body, render_html, get_chapter_questions, save_content_to_notes
+from ..utils import check_localhost, exec_block, get_chapters, jsonResp, load_notes, parse_body, render_html, get_chapter_questions, save_content_to_notes
 from . import router
 
 log: Logger = logdef(__name__)
@@ -58,3 +58,11 @@ async def api_save_note(request: Request) -> JSONResponse:
     content: str = payload['content']
     await exec_block(save_content_to_notes, content, question) 
     return jsonResp({'data':'ok'})
+
+@router.get("/api/load/note", response_class=JSONResponse)
+async def api_load_note(request: Request) -> JSONResponse:
+    print(request.query_params._dict)
+    question: str = (request.query_params._dict)['question']
+    note = await exec_block(load_notes, question)
+    # await exec_block(save_content_to_notes, content, question) 
+    return jsonResp({'note':note})

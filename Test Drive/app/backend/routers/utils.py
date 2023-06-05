@@ -134,10 +134,7 @@ def save_content_to_notes(content, question):
     except FileNotFoundError:
         notes = {}
 
-    if question not in notes:
-        notes[question] = []
-
-    notes[question].append(content)
+    notes[question] = content
 
     with open("data/notes.json", "w", encoding="utf-8") as file:
         json.dump(notes, file)
@@ -157,4 +154,4 @@ def load_notes(question=None):
     elif question in notes:
         return notes[question]
     else:
-        return None
+        return ''
