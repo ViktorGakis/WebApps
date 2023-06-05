@@ -4,15 +4,15 @@ export { Clock };
 
 function Clock() {
 	const [time, setTime] = useState(0);
-	const [isRunning, setIsRunning] = useState(false);
+	const [isRunning, setIsRunning] = useState(true);
 
 	useEffect(() => {
 		let intervalId;
 
 		if (isRunning) {
 			intervalId = setInterval(() => {
-				setTime((prevTime) => prevTime + 1);
-			}, 1000);
+				setTime((prevTime) => prevTime + 10);
+			}, 10);
 		}
 
 		return () => {
@@ -21,15 +21,18 @@ function Clock() {
 	}, [isRunning]);
 
 	const formatTime = (time) => {
-		const hours = Math.floor(time / 3600);
-		const minutes = Math.floor((time % 3600) / 60);
-		const seconds = time % 60;
+		const milliseconds = time % 1000;
+		const seconds = Math.floor((time / 1000) % 60);
+		const minutes = Math.floor((time / 1000 / 60) % 60);
+		const hours = Math.floor(time / 1000 / 60 / 60);
 
-		return `${hours}:${padNumber(minutes)}:${padNumber(seconds)}`;
+		return `${padNumber(hours)}:${padNumber(minutes)}:${padNumber(
+			seconds
+		)}.${padNumber(milliseconds, 3)}`;
 	};
 
-	const padNumber = (number) => {
-		return number.toString().padStart(2, "0");
+	const padNumber = (number, length = 2) => {
+		return number.toString().padStart(length, "0");
 	};
 
 	const handleStart = () => {
@@ -46,11 +49,17 @@ function Clock() {
 	};
 
 	return (
-		<div id='clock'>
+		<div id="clock">
 			<div>{formatTime(time)}</div>
-			<button className="btn btn-success" onClick={handleStart}>Start</button>
-			<button className="btn btn-danger" onClick={handleStop}>Stop</button>
-			<button className="btn btn-warning" onClick={handleReset}>Reset</button>
+			<button className="btn btn-success" onClick={handleStart}>
+				Start
+			</button>
+			<button className="btn btn-danger" onClick={handleStop}>
+				Stop
+			</button>
+			<button className="btn btn-warning" onClick={handleReset}>
+				Reset
+			</button>
 		</div>
 	);
 }
