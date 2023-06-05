@@ -1,0 +1,1694 @@
+[
+	[
+		{
+			"hazard": [
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-1a.jpg",
+					"alt": "K-1a.jpg",
+					"name": "Κ-1α",
+					"descr": "Επικίνδυνη αριστερή στροφή."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-1d.jpg",
+					"alt": "K-1d.jpg",
+					"name": "Κ-1δ",
+					"descr": "Επικίνδυνη δεξιά στροφή."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-2a.jpg",
+					"alt": "K-2a.jpg",
+					"name": "Κ-2α",
+					"descr": "Επικίνδυνες δύο αντίρροπες ή διαδοχικές (συνεχείς) στροφές, η πρώτη αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-2d.jpg",
+					"alt": "K-2d.jpg",
+					"name": "Κ-2δ",
+					"descr": "Επικίνδυνες δύο αντίρροπες ή διαδοχικές (συνεχείς) στροφές, η πρώτη δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-3.jpg",
+					"alt": "K-3.jpg",
+					"name": "Κ-3",
+					"descr": "Επικίνδυνη κατωφέρεια (με κλίση όπως η αναγραφόμενη στην πινακίδα)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-4.jpg",
+					"alt": "K-4.jpg",
+					"name": "Κ-4",
+					"descr": "Επικίνδυνη ανωφέρεια (με κλίση όπως η αναγραφόμενη στην πινακίδα)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-5.jpg",
+					"alt": "K-5.jpg",
+					"name": "Κ-5",
+					"descr": "Επικίνδυνη στένωση οδοστρώματος και στις δύο πλευρές."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-6a.jpg",
+					"alt": "K-6a.jpg",
+					"name": "Κ-6α",
+					"descr": "Επικίνδυνη στένωση οδοστρώματος στην αριστερή πλευρά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-6d.jpg",
+					"alt": "K-6d.jpg",
+					"name": "Κ-6δ",
+					"descr": "Επικίνδυνη στένωση οδοστρώματος στην δεξιά πλευρά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-7.jpg",
+					"alt": "K-7.jpg",
+					"name": "Κ-7",
+					"descr": "Κινητή γέφυρα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-8.jpg",
+					"alt": "K-8.jpg",
+					"name": "Κ-8",
+					"descr": "Η οδός οδηγεί σε αποβάθρα ή όχθη ποταμού."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-9.jpg",
+					"alt": "K-9.jpg",
+					"name": "Κ-9",
+					"descr": "Επικίνδυνο ανώμαλο οδόστρωμα, σε κακή κατάσταση, με λάκκους κλπ."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-10.jpg",
+					"alt": "K-10.jpg",
+					"name": "Κ-10",
+					"descr": "Επικίνδυνο υπερυψωμένο οδόστρωμα ή απότομη κυρτή αλλαγή της κατά μήκος κλίσης της οδού."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-11.jpg",
+					"alt": "K-11.jpg",
+					"name": "Κ-11",
+					"descr": "Επικίνδυνο κάθετο ρείθρο (αυλάκι) ή απότομη κοίλη αλλαγή της κατά μήκος κλίσης της οδού."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-12.jpg",
+					"alt": "K-12.jpg",
+					"name": "Κ-12",
+					"descr": "Ολισθηρό οδόστρωμα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-13.jpg",
+					"alt": "K-13.jpg",
+					"name": "Κ-13",
+					"descr": "Επικίνδυνη εκτίναξη χαλίκων (ασύνδετο αμμοχάλικο)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-14.jpg",
+					"alt": "K-14.jpg",
+					"name": "Κ-14",
+					"descr": "Κίνδυνος απο πτώση βράχων και απο την παρουσία τους στο οδόστρωμα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-15.jpg",
+					"alt": "K-15.jpg",
+					"name": "Κ-15",
+					"descr": "Κίνδυνος λόγω διάβασης πεζών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-16.jpg",
+					"alt": "K-16.jpg",
+					"name": "Κ-16",
+					"descr": "Κίνδυνος λόγω συχνής κινήσεως παιδιών (σχολεία, γήπεδα κ.λ.π.)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-17.jpg",
+					"alt": "K-17.jpg",
+					"name": "Κ-17",
+					"descr": "Κίνδυνος λόγω συχνής εισόδου ή διαβάσεως ποδηλατιστών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-18.jpg",
+					"alt": "K-18.jpg",
+					"name": "Κ-18",
+					"descr": "Κίνδυνος απο διέλευση οικοσίτων ζώων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-19.jpg",
+					"alt": "K-19.jpg",
+					"name": "Κ-19",
+					"descr": "Κίνδυνος απο διέλευση αγρίων ζώων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-20.jpg",
+					"alt": "K-20.jpg",
+					"name": "Κ-20",
+					"descr": "Κίνδυνος λόγω εκτελουμένων εργασιών στην οδό."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-21.jpg",
+					"alt": "K-21.jpg",
+					"name": "Κ-21",
+					"descr": "Προσοχή, κόμβος ή θέση όπου η κυκλοφορία ρυθμίζεται με τρίχρωμη φωτεινή σηματοδοτήση."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-22.jpg",
+					"alt": "K-22.jpg",
+					"name": "Κ-22",
+					"descr": "Κίνδυνος λόγω χαμηλής πτήσεως προσγειούμενων ή απογειούμενων αεροσκαφών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-23.jpg",
+					"alt": "K-23.jpg",
+					"name": "Κ-23",
+					"descr": "Κίνδυνος λόγω συχνού ισχυρού ανέμου (όπως δείχνει η κατεύθυνση του ανεμουρίου)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-24.jpg",
+					"alt": "K-24.jpg",
+					"name": "Κ-24",
+					"descr": "Προαναγγελία διπλής κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-25.jpg",
+					"alt": "K-25.jpg",
+					"name": "Κ-25",
+					"descr": "Προσοχή άλλοι κίνδυνοι (που δεν δηλώνονται στις πινακίδες Κ-1 έως Κ-24)"
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-26.jpg",
+					"alt": "K-26.jpg",
+					"name": "Κ-26",
+					"descr": "Προσοχή, διασταύρωση όπου ισχύει η προτεραιότητα από δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-27.jpg",
+					"alt": "K-27.jpg",
+					"name": "Κ-27",
+					"descr": "Διασταύρωση με οδό, πάνω στην οποία αυτοί που κινούνται ωφείλουν να παραχωρήσουν προτεραιότητα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-28a.jpg",
+					"alt": "K-28a.jpg",
+					"name": "Κ-28α",
+					"descr": "Διακλάδωση με κάθετη οδό αριστερά, οι επί της οποίας κινούμενοι ωφείλουν να παραχωρήσουν προτεραιότητα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-28d.jpg",
+					"alt": "K-28d.jpg",
+					"name": "Κ-28δ",
+					"descr": "Διακλάδωση με κάθετη οδό δεξιά, οι επί της οποίας κινούμενοι οφείλουν να παραχωρίσουν προτεραιότητα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-29a.jpg",
+					"alt": "K-29a.jpg",
+					"name": "Κ-29α",
+					"descr": "Διακλάδωση με λοξή οδό αριστερά, οι επί της οποίας κινούμενοι ωφείλουν να παραχωρήσουν προτεραιότητα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-29d.jpg",
+					"alt": "K-29d.jpg",
+					"name": "Κ-29δ",
+					"descr": "Διακλάδωσις με λοξή οδό δεξιά, οι επί της οποίας κινούμενοι ωφείλουν να παραχωρήσουν προτεραιότητα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-30.jpg",
+					"alt": "K-30.jpg",
+					"name": "Κ-30",
+					"descr": "Προσέγγιση σε κυκλική υποχρεωτική πορεία."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-31.jpg",
+					"alt": "K-31.jpg",
+					"name": "Κ-31",
+					"descr": "Κίνδυνος λόγω ισόπεδης σιδηροδρομικής διάβασης ή διάβασης τροχιοδρόμου με κινητά φράγματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-32.jpg",
+					"alt": "K-32.jpg",
+					"name": "Κ-32",
+					"descr": "Κίνδυνος λόγω ισόπεδης σιδηροδρομικής διάβασης χωρίς κινητά φράγματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-33-34-35.jpg",
+					"alt": "K-33-34-35.jpg",
+					"name": "Κ-33, Κ-34, Κ-35",
+					"descr": "Πρόσθετες επαναληπτικές πινακίδες στις προσβάσεις ισόπεδων σιδηροδρομικών διαβάσεων ή κινητών γεφυρών, οι οποίες δηλώνουν την προσέγγιση σ’αυτές."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-36.jpg",
+					"alt": "K-36.jpg",
+					"name": "Κ-36",
+					"descr": "Κίνδυνος λόγω άμεσης γειτονίας ισόπεδης σιδηροδρομικής διάβασης ή διάβασης τροχιοδρόμου, χωρίς κινητά φράγματα, μονής σιδηροδρομικής γραμμής."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-37.jpg",
+					"alt": "K-37.jpg",
+					"name": "Κ-37",
+					"descr": "Κίνδυνος λόγω άμεσης γειτονίας ισόπεδης σιδηροδρομικής διάβασης ή διάβασης τροχιοδρόμου, χωρίς κινητά φράγματα, διπλής ή πολλαπλής σιδηροδρομικής γραμμής."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-38a.jpg",
+					"alt": "K-38a.jpg",
+					"name": "Κ-38α",
+					"descr": "Επικίνδυνο έρεισμα αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-38d.jpg",
+					"alt": "K-38d.jpg",
+					"name": "Κ-38δ",
+					"descr": "Επικίνδυνο έρεισμα δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-39.jpg",
+					"alt": "K-39.jpg",
+					"name": "Κ-39",
+					"descr": "Συχνή κυκλοφοριακή συμφόρηση."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-40.jpg",
+					"alt": "K-40.jpg",
+					"name": "Κ-40",
+					"descr": "Σήραγγα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-41.jpg",
+					"alt": "K-41.jpg",
+					"name": "Κ-41",
+					"descr": "Κίνδυνος λόγω ισόπεδης διάβασης τροχιοδρόμου χωρίς κινητά φράγματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\hazard\\K-42.jpg",
+					"alt": "K-42.jpg",
+					"name": "Κ-42",
+					"descr": "Κίνδυνος λόγω ομίχλης"
+				}
+			]
+		},
+		{
+			"information": [
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-1.jpg",
+					"alt": "P-1.jpg",
+					"name": "Π-1",
+					"descr": "Πρoειδoπoιητική κατευθύνσεων, η oπoία τoπoθετείται στις oδoύς ταχείας κυκλoφoρίας πρo διασταυρώσεων με αναγραφές κατευ θύνσεων και χιλιoμετρικών απoστάσεων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-2.jpg",
+					"alt": "P-2.jpg",
+					"name": "Π-2",
+					"descr": "Προειδοποιητική κατευθύνσεων, η οποία τοποθετείται στις οδούς ταχείας κυκλοφορίας προ των διακλαδώσεων, με αναγραφές κατευθύνσεων και χιλιομετρικών αποστάσεων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-3.jpg",
+					"alt": "P-3.jpg",
+					"name": "Π-3",
+					"descr": "Προειδοποιητική κατευθύνσεων για συνήθεις οδούς με αναγραφές κατευθύνσεων και χιλιομετρικών αποστάσεων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-3a.jpg",
+					"alt": "P-3a.jpg",
+					"name": "Π-3α",
+					"descr": "Προειδοποιητική κατεύθυνσης με αναγραφή κατευθύνσεων και χιλιομετρικών αποστάσεων σε οδούς τοπικού οδικού δικτύου."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-3b.jpg",
+					"alt": "P-3b.jpg",
+					"name": "Π-3β",
+					"descr": "Προειδοποιητική κατεύθυνσης με αναγραφή κατευθύνσεων για περιοχές μεγάλου τουριστικού ή αρχαιολογικού ενδιαφέροντος."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-4.jpg",
+					"alt": "P-4.jpg",
+					"name": "Π-4",
+					"descr": "Προειδοποιητική για αδιέξοδο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-5.jpg",
+					"alt": "P-5.jpg",
+					"name": "Π-5",
+					"descr": "Προειδοποιητική για αδιέξοδο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-6.jpg",
+					"alt": "P-6.jpg",
+					"name": "Π-6",
+					"descr": "Προειδοποιητική υποχρεωτικής διαδρομής για στροφή αριστερά στην επόμενη διασταύρωση."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-7.jpg",
+					"alt": "P-7.jpg",
+					"name": "Π-7",
+					"descr": "Προειδοποιητική πινακίδα προεπιλογής λωρίδας σε διασταύρωση σε οδούς με πολλές λωρίδες κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-8a.jpg",
+					"alt": "P-8a.jpg",
+					"name": "Π-8α",
+					"descr": "Κατεύθυνση μιας τοπωνυμίας με μορφή βέλους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-8b.jpg",
+					"alt": "P-8b.jpg",
+					"name": "Π-8β",
+					"descr": "Κατεύθυνση μιας τοπωνυμίας με μορφή βέλους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-8c.jpg",
+					"alt": "P-8c.jpg",
+					"name": "Π-8γ",
+					"descr": "Κατεύθυνση για περισσότερες της μιας τοπωνυμίες με μορφή βέλους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-8d.jpg",
+					"alt": "P-8d.jpg",
+					"name": "Π-8δ",
+					"descr": "Κατεύθυνση μιας τοπωνυμίας μεγάλου τουριστικού ή αρχαιολογικού ενδιαφέροντος με μορφή βέλους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-9.jpg",
+					"alt": "P-9.jpg",
+					"name": "Π-9",
+					"descr": "Κατεύθυνση μιας τοπωνυμίας (μορφής ορθογωνίου)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-10.jpg",
+					"alt": "P-10.jpg",
+					"name": "Π-10",
+					"descr": "Κατεύθυνση προς αεροδρόμιο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-11.jpg",
+					"alt": "P-11.jpg",
+					"name": "Π-11",
+					"descr": "Κατεύθυνση προς κατασκήνωση."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-12.jpg",
+					"alt": "P-12.jpg",
+					"name": "Π-12",
+					"descr": "Κατεύθυνση προς Ξενώνα Νεότητας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-13.jpg",
+					"alt": "P-13.jpg",
+					"name": "Π-13",
+					"descr": "Αρίθμηση εθνικών οδών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-14.jpg",
+					"alt": "P-14.jpg",
+					"name": "Π-14",
+					"descr": "Αρίθμηση διεθνών αρτηριών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-15.jpg",
+					"alt": "P-15.jpg",
+					"name": "Π-15",
+					"descr": "Χιλιομέτρηση οδών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-16.jpg",
+					"alt": "P-16.jpg",
+					"name": "Π-16",
+					"descr": "Χιλιομέτρηση οδών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-17.jpg",
+					"alt": "P-17.jpg",
+					"name": "Π-17",
+					"descr": "Αρχή κατοικημένης περιοχής."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-18.jpg",
+					"alt": "P-18.jpg",
+					"name": "Π-18",
+					"descr": "Τέλος κατοικημένης περιοχής."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-19.jpg",
+					"alt": "P-19.jpg",
+					"name": "Π-19",
+					"descr": "Τοπωνυμία."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-20.jpg",
+					"alt": "P-20.jpg",
+					"name": "Π-20",
+					"descr": "Επιβεβαιωτική πινακίδα (παράδειγμα)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-21.jpg",
+					"alt": "P-21.jpg",
+					"name": "Π-21",
+					"descr": "Διάβαση πεζών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-22.jpg",
+					"alt": "P-22.jpg",
+					"name": "Π-22",
+					"descr": "Νοσοκομείο (για αποφυγή ή μείωση οποιουδήποτε μη αναγκαίου θορύβου)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-23.jpg",
+					"alt": "P-23.jpg",
+					"name": "Π-23",
+					"descr": "Μονόδρομος."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-24.jpg",
+					"alt": "P-24.jpg",
+					"name": "Π-24",
+					"descr": "Μονόδρομος."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-25.jpg",
+					"alt": "P-25.jpg",
+					"name": "Π-25",
+					"descr": "Οδός αδιέξοδος."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-26.jpg",
+					"alt": "P-26.jpg",
+					"name": "Π-26",
+					"descr": "Οδός ταχείας κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-26a.jpg",
+					"alt": "P-26a.jpg",
+					"name": "Π-26α",
+					"descr": "Τέλος oδού ταχείας κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-27.jpg",
+					"alt": "P-27.jpg",
+					"name": "Π-27",
+					"descr": "Αυτοκινητόδρομος."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-27a.jpg",
+					"alt": "P-27a.jpg",
+					"name": "Π-27α",
+					"descr": "Τέλος αυτοκινητοδρόμου."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-28.jpg",
+					"alt": "P-28.jpg",
+					"name": "Π-28",
+					"descr": "Στάση Λεωφορείου ή Τρόλλεϋ."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-29.jpg",
+					"alt": "P-29.jpg",
+					"name": "Π-29",
+					"descr": "Ορεινή οδός ανοικτή ή κλειστή ανάλογα με τις ενδείξεις μέσα στα πλαίσια 1,2,3 της πινακίδας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-30.jpg",
+					"alt": "P-30.jpg",
+					"name": "Π-30",
+					"descr": "Συνιστώνται αλυσίδες ή ελαστικά χιόνων (για το πλαίσιο της Π–29)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-31.jpg",
+					"alt": "P-31.jpg",
+					"name": "Π-31",
+					"descr": "Χώρος επιτρεπομένης στάθμευσης."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-31a.jpg",
+					"alt": "P-31a.jpg",
+					"name": "Π-31α",
+					"descr": "Περιοχή επιτρεπόμενης στάθμευσης."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-31b.jpg",
+					"alt": "P-31b.jpg",
+					"name": "Π-31β",
+					"descr": "Έξοδος από περιοχή επιτρεπομένης στάθμευσης."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-31c.jpg",
+					"alt": "P-31c.jpg",
+					"name": "Π-31γ",
+					"descr": "Κατεύθυνση προς χώρο επιτρεπόμενης στάθμευσης."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-32.jpg",
+					"alt": "P-32.jpg",
+					"name": "Π-32",
+					"descr": "Σταθμός Πρώτων Βοηθειών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-33.jpg",
+					"alt": "P-33.jpg",
+					"name": "Π-33",
+					"descr": "Συνεργείο επισκευής βλαβών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-34.jpg",
+					"alt": "P-34.jpg",
+					"name": "Π-34",
+					"descr": "Τηλέφωνο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-35.jpg",
+					"alt": "P-35.jpg",
+					"name": "Π-35",
+					"descr": "Πρατήριο καυσίμων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-36.jpg",
+					"alt": "P-36.jpg",
+					"name": "Π-36",
+					"descr": "Ξενοδοχείο ή Motel."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-37.jpg",
+					"alt": "P-37.jpg",
+					"name": "Π-37",
+					"descr": "Εστιατόριο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-38.jpg",
+					"alt": "P-38.jpg",
+					"name": "Π-38",
+					"descr": "Αναψυκτήριο ή Καφενείο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-39.jpg",
+					"alt": "P-39.jpg",
+					"name": "Π-39",
+					"descr": "Θέση για παραμονή εκδρομέων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-40.jpg",
+					"alt": "P-40.jpg",
+					"name": "Π-40",
+					"descr": "Σημείο έναρξης περιπάτου."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-41.jpg",
+					"alt": "P-41.jpg",
+					"name": "Π-41",
+					"descr": "Θέσεις για κατασκηνώσεις."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-42.jpg",
+					"alt": "P-42.jpg",
+					"name": "Π-42",
+					"descr": "Θέση για τροχόσπιτα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-43.jpg",
+					"alt": "P-43.jpg",
+					"name": "Π-43",
+					"descr": "Θέση για κατασκηνώσεις και τροχόσπιτα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-44.jpg",
+					"alt": "P-44.jpg",
+					"name": "Π-44",
+					"descr": "Ξενώνας Νεότητας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-45.jpg",
+					"alt": "P-45.jpg",
+					"name": "Π-45",
+					"descr": "Τουριστικές Πληροφορίες."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-46.jpg",
+					"alt": "P-46.jpg",
+					"name": "Π-46",
+					"descr": "Περιοχή κολύμβησης."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-47.jpg",
+					"alt": "P-47.jpg",
+					"name": "Π-47",
+					"descr": "Εγκαταστάσεις υγιεινής."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-48.jpg",
+					"alt": "P-48.jpg",
+					"name": "Π-48",
+					"descr": "Ραδιοφωνική συχνότητα πληροφοριών οδικής κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-49.jpg",
+					"alt": "P-49.jpg",
+					"name": "Π-49",
+					"descr": "Σήραγγα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-50.jpg",
+					"alt": "P-50.jpg",
+					"name": "Π-50",
+					"descr": "Αεροδρόμιο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-51.jpg",
+					"alt": "P-51.jpg",
+					"name": "Π-51",
+					"descr": "Ελικοδρόμιο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-52.jpg",
+					"alt": "P-52.jpg",
+					"name": "Π-52",
+					"descr": "Εναέρια μεταφορά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-53.jpg",
+					"alt": "P-53.jpg",
+					"name": "Π-53",
+					"descr": "Λιμάνι."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-54.jpg",
+					"alt": "P-54.jpg",
+					"name": "Π-54",
+					"descr": "Τουριστικό λιμάνι."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-55.jpg",
+					"alt": "P-55.jpg",
+					"name": "Π-55",
+					"descr": "Λιμενικός σταθμός ιπταμένων σκαφών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-56.jpg",
+					"alt": "P-56.jpg",
+					"name": "Π-56",
+					"descr": "Λιμενικός σταθμός εμπορικών οχηματαγωγών πλοίων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-57.jpg",
+					"alt": "P-57.jpg",
+					"name": "Π-57",
+					"descr": "Αστυνομία."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-58.jpg",
+					"alt": "P-58.jpg",
+					"name": "Π-58",
+					"descr": "Αρχή περιοχής κατοικίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-59.jpg",
+					"alt": "P-59.jpg",
+					"name": "Π-59",
+					"descr": "Τέλος περιοχής κατοικίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-60.jpg",
+					"alt": "P-60.jpg",
+					"name": "Π-60",
+					"descr": "Άτομα με μειωμένη κινητικότητα (ΑμεΑ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-61.jpg",
+					"alt": "P-61.jpg",
+					"name": "Π-61",
+					"descr": "Άνω (υπέργεια) διάβαση πεζών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-62.jpg",
+					"alt": "P-62.jpg",
+					"name": "Π-62",
+					"descr": "Κάτω (υπόγεια) διάβαση πεζών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-63.jpg",
+					"alt": "P-63.jpg",
+					"name": "Π-63",
+					"descr": "Ανισόπεδη διάβαση πεζών χωρίς σκαλοπάτια."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-64.jpg",
+					"alt": "P-64.jpg",
+					"name": "Π-64",
+					"descr": "Συνιστώμενη ταχύτητα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-65.jpg",
+					"alt": "P-65.jpg",
+					"name": "Π-65",
+					"descr": "Γενικά όρια ταχύτητας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-66.jpg",
+					"alt": "P-66.jpg",
+					"name": "Π-66",
+					"descr": "Λωρίδα αποκλειστικής κυκλοφορίας Λεωφορείων ή Τρόλλεϋ."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-67.jpg",
+					"alt": "P-67.jpg",
+					"name": "Π-67",
+					"descr": "Ανώτατα όρια ταχυτήτων ανά λωρίδα κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-68.jpg",
+					"alt": "P-68.jpg",
+					"name": "Π-68",
+					"descr": "Ελάχιστα όρια ταχυτήτων ανά λωρίδα κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-69.jpg",
+					"alt": "P-69.jpg",
+					"name": "Π-69",
+					"descr": "Αριθμός και κατευθύνσεις κυκλοφοριακών λωρίδων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-69a.jpg",
+					"alt": "P-69a.jpg",
+					"name": "Π-69α",
+					"descr": "Αριθμός και κατευθύνσεις κυκλοφοριακών λωρίδων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-70.jpg",
+					"alt": "P-70.jpg",
+					"name": "Π-70",
+					"descr": "Περιορισμός αριθμού κυκλοφοριακών λωρίδων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-70a.jpg",
+					"alt": "P-70a.jpg",
+					"name": "Π-70α",
+					"descr": "Περιορισμός αριθμού κυκλοφοριακών λωρίδων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-71.jpg",
+					"alt": "P-71.jpg",
+					"name": "Π-71",
+					"descr": "Εγκαταστάσεις υγιεινής για άτομα με μειωμένη κινητικότητα (ΑμεΑ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-72.jpg",
+					"alt": "P-72.jpg",
+					"name": "Π-72",
+					"descr": "Κατεύθυνση οχημάτων για στάθμευση σε συγκεκριμένο χώρο (π.χ. Μετρό για χρησιμοποίηση του μεταφορικού αυτού μέσου)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-73.jpg",
+					"alt": "P-73.jpg",
+					"name": "Π-73",
+					"descr": "Προειδοποίηση κατεύθυνσης οχημάτων για στάθμευση σε συγκεκριμένο στεγασμένο χώρο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-74.jpg",
+					"alt": "P-74.jpg",
+					"name": "Π-74",
+					"descr": "Κατεύθυνση-επισήμανσης επικίνδυνων καμπυλών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-75.jpg",
+					"alt": "P-75.jpg",
+					"name": "Π-75",
+					"descr": "Διαδοχικά βέλη κατεύθυνσης τοποθετούμενα σε επικίνδυνες καμπύλες κυρίων αρτηριών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-76.jpg",
+					"alt": "P-76.jpg",
+					"name": "Π-76",
+					"descr": "Εμπόδιο κινητό λόγω έργων επί της οδού."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-77.jpg",
+					"alt": "P-77.jpg",
+					"name": "Π-77",
+					"descr": "Για υποχρεωτικό πέρασμα από τα δεξιά νησίδας ή εμποδίου. (Συνδυάζεται η τοποθέτησή της π.χ. με τη Ρ-52δ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-78.jpg",
+					"alt": "P-78.jpg",
+					"name": "Π-78",
+					"descr": "Για υποχρεωτικό πέρασμα από τα αριστερά νησίδας ή εμποδίου. (Συνδυάζεται η τοποθέτησή της π.χ. με τη Ρ-52α)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-79.jpg",
+					"alt": "P-79.jpg",
+					"name": "Π-79",
+					"descr": "Για υποχρεωτικό πέρασμα από τα δεξιά ή αριστερά νησίδας ή εμποδίου. (Συνδυάζεται η τοποθέτησή της π.χ. με τη Ρ-52)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-80.jpg",
+					"alt": "P-80.jpg",
+					"name": "Π-80",
+					"descr": "Αναγγελία προσέγγισης σε ανισόπεδο κόμβο (αποκλειστικά για αυτοκινητόδρομο)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-81.jpg",
+					"alt": "P-81.jpg",
+					"name": "Π-81",
+					"descr": "Προειδοποιητική κατευθύνσεων προ ανισόπεδου κόμβου (αποκλειστικά για αυτοκινητόδρομο)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-82.jpg",
+					"alt": "P-82.jpg",
+					"name": "Π-82",
+					"descr": "Προειδοποιητική κατευθύνσεων εισόδου σε αυτοκινητόδρομο από δευτερεύουσα οδό μέσω ανισόπεδου κόμβου."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-83.jpg",
+					"alt": "P-83.jpg",
+					"name": "Π-83",
+					"descr": "Γέφυρα σήμανσης με αναγραφή κατευθύνσεων προ ανισόπεδου κόμβου (αποκλειστικά για αυτοκινητόδρομο)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-84.jpg",
+					"alt": "P-84.jpg",
+					"name": "Π-84",
+					"descr": "Γέφυρα σήμανσης με αναγραφή κατευθύνσεων προ ανισόπεδου κόμβου με αφαίρεση λωρίδας του αυτοκινητοδρόμου."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-85.jpg",
+					"alt": "P-85.jpg",
+					"name": "Π-85",
+					"descr": "Γέφυρα σήμανσης με αναγραφή κατευθύνσεων στην αρχή εξόδου από τον αυτοκινητόδρομο (αρχή λωρίδας επιβράδυνσης κόμβου)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-86.jpg",
+					"alt": "P-86.jpg",
+					"name": "Π-86",
+					"descr": "Κατεύθυνση εξόδου από τον αυτοκινητόδρομο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-87.jpg",
+					"alt": "P-87.jpg",
+					"name": "Π-87",
+					"descr": "Επιβεβαιωτική της εισόδου στο συγκεκριμένο αυτοκινητόδρομο μετά τον ανισόπεδο κόμβο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-88.jpg",
+					"alt": "P-88.jpg",
+					"name": "Π-88",
+					"descr": "Προειδοποιητική κατεύθυνσης εισόδου στον αυτοκινητόδρομο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-89.jpg",
+					"alt": "P-89.jpg",
+					"name": "Π-89",
+					"descr": "Κατεύθυνση εισόδου στον αυτοκινητόδρομο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-90a-b-c.jpg",
+					"alt": "P-90a-b-c.jpg",
+					"name": "Π-90α - Π-90β - Π-90γ",
+					"descr": "Προειδοποιητικές εξόδου από τον αυτοκινητόδρομο σε αποστάσεις 100, 200, 300 μέτρα, αντίστοιχα"
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-91.jpg",
+					"alt": "P-91.jpg",
+					"name": "Π-91",
+					"descr": "Προειδοποιητική υποχρεωτικής παρακαμπτήριας διαδρομής των οδικών οχημάτων μεταφοράς επικινδύνων φορτίων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-92.jpg",
+					"alt": "P-92.jpg",
+					"name": "Π-92",
+					"descr": "Αρχή περιοχής κατοικίας χαρακτηρισμένης ως περιοχής ηπίας κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-92a.jpg",
+					"alt": "P-92a.jpg",
+					"name": "Π-92α",
+					"descr": "Τέλος περιοχής κατοικίας χαρακτηρισμένης ως περιοχής ηπίας κυκλοφορίας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-93.jpg",
+					"alt": "P-93.jpg",
+					"name": "Π-93",
+					"descr": "Ρύθμιση κυκλοφορίας από σχολικό τροχονόμο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-94.jpg",
+					"alt": "P-94.jpg",
+					"name": "Π-94",
+					"descr": "Απαγορεύεται η στάση και η στάθμευση. Τα οχήματα των παραβατών μετακινούνται."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\information\\P-95.jpg",
+					"alt": "P-95.jpg",
+					"name": "Π-95",
+					"descr": "Τροχιόδρομος επί του οδοστρώματος."
+				}
+			]
+		},
+		{
+			"additional": [
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-1.jpg",
+					"alt": "PR-1.jpg",
+					"name": "Πρ-1",
+					"descr": "Απόσταση από τη θέση της πινακίδας μέχρι την αρχή της επικίνδυνης θέσης ή της περιοχής στην οποία εφαρμόζεται ο καθοριζόμενος με αυτήν κανόνας ή περιορισμός (π.χ. 100 μ.)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-2.jpg",
+					"alt": "PR-2.jpg",
+					"name": "Πρ-2",
+					"descr": "Μήκος του επικίνδυνου τμήματος ή της περιοχής στην οποία εφαρμόζεται ο καθοριζόμενος με την πινακίδα κανόνας ή περιορισμός (π.χ. 1 χιλιόμετρο)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-3A.jpg",
+					"alt": "PR-3A.jpg",
+					"name": "Πρ-3α",
+					"descr": "Αρχή ισχύος πινακίδας Π-39 ή Π-40, που τοποθετείται παράλληλα προς τον άξονα της οδού. Η ισχύς της πινακίδας εκτείνεται επί...(π.χ. 10 μ.) από τη θέση της πινακίδας και προς την κατεύθυνση του βέλους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-3B.jpg",
+					"alt": "PR-3B.jpg",
+					"name": "Πρ-3β",
+					"descr": "Υπόμνηση ισχύος πινακίδας Π-39 ή Π-40 που τοποθετείται παράλληλα προς τον άξονα της οδού. Η ισχύς της πινακίδας εκτείνεται επί... (π.χ. 5 μ.) και από τις δύο πλευρές της θέσης της πινακίδας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-3C.jpg",
+					"alt": "PR-3C.jpg",
+					"name": "Πρ-3γ",
+					"descr": "Τέλος ισχύος πινακίδας Π-39 ή Π-40 που τοποθετείται παράλληλα προς τον άξονα της οδού. Η ισχύς της πινακίδας εκτείνεται επί... (π.χ. 10 μ.) από τη θέση της πινακίδας και προς την κατεύθυνση του βέλους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-4A.jpg",
+					"alt": "PR-4A.jpg",
+					"name": "Πρ-4α",
+					"descr": "Αρχή ισχύος πινακίδας Π-39 ή Π-40 που τοποθετείται κάθετα προς τον άξονα της οδού."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-4B.jpg",
+					"alt": "PR-4B.jpg",
+					"name": "Πρ-4β",
+					"descr": "Επανάληψη ισχύος πινακίδας Π-39 ή Π-40 που τοποθετείται κάθετα προς τον άξονα της οδού."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-4C.jpg",
+					"alt": "PR-4C.jpg",
+					"name": "Πρ-4γ",
+					"descr": "Τέλος ισχύος πινακίδας Π-39 ή Π-40 που τοποθετείται κάθετα προς τον άξονα της οδού."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-4D.jpg",
+					"alt": "PR-4D.jpg",
+					"name": "Πρ-4δ",
+					"descr": "Επιτρέπεται μόνο για οχήματα \"ατόμων με Αναπηρίες (ΑμεΑ)\" ύστερα από ειδική άδεια."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-4E.jpg",
+					"alt": "PR-4E.jpg",
+					"name": "Πρ-4ε",
+					"descr": "Εξαιρούνται μόνο οχήματα \"ατόμων με Αναπηρίες (ΑμεΑ)\" ύστερα από ειδική άδεια."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-5.jpg",
+					"alt": "PR-5.jpg",
+					"name": "Πρ-5",
+					"descr": "Πάγος."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-6.jpg",
+					"alt": "PR-6.jpg",
+					"name": "Πρ-6",
+					"descr": "Βροχή."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-7.jpg",
+					"alt": "PR-7.jpg",
+					"name": "Πρ-7",
+					"descr": "Προτεραιότητα κατεύθυνσης σε διακλάδωση (π.χ. α-δ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-8.jpg",
+					"alt": "PR-8.jpg",
+					"name": "Πρ-8",
+					"descr": "Προτεραιότητα κατεύθυνσης σε διακλάδωση μορφής (π.χ. α-β)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-9.jpg",
+					"alt": "PR-9.jpg",
+					"name": "Πρ-9",
+					"descr": "Προτεραιότητα κατεύθυνσης σε διακλάδωση μορφής (π.χ. α-γ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-10.jpg",
+					"alt": "PR-10.jpg",
+					"name": "Πρ-10",
+					"descr": "Προτεραιότητα κατεύθυνσης σε διακλάδωση μορφής (π.χ. α-β)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-11.jpg",
+					"alt": "PR-11.jpg",
+					"name": "Πρ-11",
+					"descr": "Προτεραιότητα κατεύθυνσης σε διακλάδωση μορφής (π.χ. α-β)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-12.jpg",
+					"alt": "PR-12.jpg",
+					"name": "Πρ-12",
+					"descr": "Προτεραιότητα κατεύθυνσης σε διακλάδωση μορφής (π.χ. α-γ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-13.jpg",
+					"alt": "PR-13.jpg",
+					"name": "Πρ-13",
+					"descr": "Προτεραιότητα κατεύθυνσης σε διακλάδωση μορφής (π.χ. α-β)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-14A.jpg",
+					"alt": "PR-14A.jpg",
+					"name": "Πρ-14α",
+					"descr": "Επικίνδυνη κλειστή στροφή αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-14D.jpg",
+					"alt": "PR-14D.jpg",
+					"name": "Πρ-14δ",
+					"descr": "Επικίνδυνη κλειστή στροφή δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-15A.jpg",
+					"alt": "PR-15A.jpg",
+					"name": "Πρ-15α",
+					"descr": "Ανακάπτων ελιγμός αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-15D.jpg",
+					"alt": "PR-15D.jpg",
+					"name": "Πρ-15δ",
+					"descr": "Ανακάπτων ελιγμός δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16A.jpg",
+					"alt": "PR-16A.jpg",
+					"name": "Πρ-16α",
+					"descr": "Ζωήλατο όχημα (επιτρέπεται μόνο για τη συγκεκριμένη κατηγορία οχημάτων που απεικονίζει το σύμβολο)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16B.jpg",
+					"alt": "PR-16B.jpg",
+					"name": "Πρ-16β",
+					"descr": "Χειράμαξα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16C.jpg",
+					"alt": "PR-16C.jpg",
+					"name": "Πρ-16γ",
+					"descr": "Ποδήλατο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16D.jpg",
+					"alt": "PR-16D.jpg",
+					"name": "Πρ-16δ",
+					"descr": "Μοτοποδήλατο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16E.jpg",
+					"alt": "PR-16E.jpg",
+					"name": "Πρ-16ε",
+					"descr": "Μοτοσικλέτα ή τρίτροχο όχημα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16ST.jpg",
+					"alt": "PR-16ST.jpg",
+					"name": "Πρ-16στ",
+					"descr": "Επιβατικό όχημα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16Z.jpg",
+					"alt": "PR-16Z.jpg",
+					"name": "Πρ-16ζ",
+					"descr": "Επιβατικό με ρυμουλκούμενο όχημα ενός άξονα (τρέϊλερ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16H.jpg",
+					"alt": "PR-16H.jpg",
+					"name": "Πρ-16η",
+					"descr": "Αγροτικό μηχάνημα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16TH.jpg",
+					"alt": "PR-16TH.jpg",
+					"name": "Πρ-16θ",
+					"descr": "Λεωφορείο ή Τρόλλεϋ."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16I.jpg",
+					"alt": "PR-16I.jpg",
+					"name": "Πρ-16ι",
+					"descr": "Φορτηγό αυτοκίνητο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16IA.jpg",
+					"alt": "PR-16IA.jpg",
+					"name": "Πρ-16ια",
+					"descr": "Φορτηγό αρθρωτό (κονταίηνερ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16IB.jpg",
+					"alt": "PR-16IB.jpg",
+					"name": "Πρ-16ιβ",
+					"descr": "Φορτηγό με ρυμουλκούμενο όχημα (νταλίκα) πλην ρυμουλκούμενου ενός άξονα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16IC.jpg",
+					"alt": "PR-16IC.jpg",
+					"name": "Πρ-16ιγ",
+					"descr": "Φορτηγό με ρυμουλκούμενο όχημα ενός άξονα (τρέϊλερ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16ID.jpg",
+					"alt": "PR-16ID.jpg",
+					"name": "Πρ-16ιδ",
+					"descr": "Όχημα που φέρει πάνω από ορισμένη ποσότητα εκρηκτικές ή εύφλεκτες ύλες."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-16IE.jpg",
+					"alt": "PR-16IE.jpg",
+					"name": "Πρ-16ιε",
+					"descr": "Τροχιοδρόμος"
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-17.jpg",
+					"alt": "PR-17.jpg",
+					"name": "Πρ-17",
+					"descr": "Εξαιρείται (από την ισχύουσα ρύθμιση) μόνο η συγκεκριμένη κατηγορία οχημάτων που απεικονίζει το σύμβολο (αρίθμηση αντίστοιχη με την Πρ-16)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-18A.jpg",
+					"alt": "PR-18A.jpg",
+					"name": "Πρ-18α",
+					"descr": "Επιτρέπεται μόνο για τα \"ΤΑΧΙ\"."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\additional\\PR-18B.jpg",
+					"alt": "PR-18B.jpg",
+					"name": "Πρ-18β",
+					"descr": "Εξαιρούνται μόνο τα \"ΤΑΧΙ\"."
+				}
+			]
+		},
+		{
+			"regulatory": [
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-1.jpg",
+					"alt": "R-1.jpg",
+					"name": "P-1",
+					"descr": "Υποχρεωτική παραχώρηση προτεραιότητας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-2.jpg",
+					"alt": "R-2.jpg",
+					"name": "P-2",
+					"descr": "Υποχρεωτική διακοπή πορείας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-3.jpg",
+					"alt": "R-3.jpg",
+					"name": "P-3",
+					"descr": "Οδός προτεραιότητας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-4.jpg",
+					"alt": "R-4.jpg",
+					"name": "P-4",
+					"descr": "Τέλος οδού προτεραιότητας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-5.jpg",
+					"alt": "R-5.jpg",
+					"name": "P-5",
+					"descr": "Προτεραιότητα της αντιθέτως ερχόμενης κυκλοφορίας (λόγω στενότητας οδοστρώματος)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-6.jpg",
+					"alt": "R-6.jpg",
+					"name": "P-6",
+					"descr": "Προτεραιότητα έναντι της επερχόμενης κυκλοφορίας (λόγω στενότητας οδοστρώματος)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-7.jpg",
+					"alt": "R-7.jpg",
+					"name": "P-7",
+					"descr": "Απαγορεύεται η είσοδος σε όλα τα οχήματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-8.jpg",
+					"alt": "R-8.jpg",
+					"name": "P-8",
+					"descr": "Κλειστή οδός για όλα τα οχήματα και προς τις δύο κατευθύνσεις."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-9.jpg",
+					"alt": "R-9.jpg",
+					"name": "P-9",
+					"descr": "Απαγορεύεται η είσοδος σε μηχανοκίνητα οχήματα εκτός των διτρόχων μοτοσυκλετών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-10.jpg",
+					"alt": "R-10.jpg",
+					"name": "P-10",
+					"descr": "Απαγορεύεται η είσοδος στις μοτοσυκλέτες."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-11.jpg",
+					"alt": "R-11.jpg",
+					"name": "P-11",
+					"descr": "Απαγορεύεται η είσοδος στα ποδήλατα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-12.jpg",
+					"alt": "R-12.jpg",
+					"name": "P-12",
+					"descr": "Απαγορεύεται η είσοδος στα μοτοποδήλατα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-13.jpg",
+					"alt": "R-13.jpg",
+					"name": "P-13",
+					"descr": "Απαγορεύεται η είσοδος σε φορτηγά αυτοκίνητα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-14.jpg",
+					"alt": "R-14.jpg",
+					"name": "P-14",
+					"descr": "Απαγορεύεται η είσοδος σε μηχανοκίνητο όχημα, το οποίο σύρει ρυμουλκούμενο πλην ημιρυμουλκουμένου ή ρυμουλκουμένου ενός άξονα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-15.jpg",
+					"alt": "R-15.jpg",
+					"name": "P-15",
+					"descr": "Απαγορεύεται η είσοδος σε πεζούς."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-16.jpg",
+					"alt": "R-16.jpg",
+					"name": "P-16",
+					"descr": "Απαγορεύεται η είσοδος σε ζωήλατα οχήματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-17.jpg",
+					"alt": "R-17.jpg",
+					"name": "P-17",
+					"descr": "Απαγορεύεται η είσοδος σε χειράμαξες."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-18.jpg",
+					"alt": "R-18.jpg",
+					"name": "P-18",
+					"descr": "Απαγορεύεται η είσοδος σε αγροτικά μηχανήματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-19.jpg",
+					"alt": "R-19.jpg",
+					"name": "P-19",
+					"descr": "Απαγορεύεται η είσοδος σε μηχανοκίνητα οχήματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-20.jpg",
+					"alt": "R-20.jpg",
+					"name": "P-20",
+					"descr": "Απαγορεύεται η είσοδος σε οχήματα ορισμένων κατηγοριών (π.χ. σε μηχανοκίνητα και ζωήλατα οχήματα)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-21.jpg",
+					"alt": "R-21.jpg",
+					"name": "P-21",
+					"descr": "Απαγορεύεται η είσοδος σε οχήματα συνολικού πλάτους που υπερβαίνει τα... (π.χ. 2) μέτρα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-22.jpg",
+					"alt": "R-22.jpg",
+					"name": "P-22",
+					"descr": "Απαγορεύεται η είσοδος σε οχήματα συνολικού ύψους που υπερβαίνει τα... (π.χ. 3.5) μέτρα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-23.jpg",
+					"alt": "R-23.jpg",
+					"name": "P-23",
+					"descr": "Απαγορεύεται η είσοδος σε οχήματα συνολικού βάρους που υπερβαίνει τους... (π.χ. 5) τόνους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-24.jpg",
+					"alt": "R-24.jpg",
+					"name": "P-24",
+					"descr": "Απαγορεύεται η είσοδος σε οχήματα βάρους ανά άξονα που υπερβαίνει τους... (π.χ. 2) τόνους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-25.jpg",
+					"alt": "R-25.jpg",
+					"name": "P-25",
+					"descr": "Απαγορεύεται η είσοδος σε οχήματα ή συνδυασμούς οχημάτων μήκους που υπερβαίνει τα... (π.χ. 10) μέτρα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-26.jpg",
+					"alt": "R-26.jpg",
+					"name": "P-26",
+					"descr": "Απαγορεύεται η οδήγηση οχήματος σε απόσταση μικρότερη των... (π.χ. 70) μέτρων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-27.jpg",
+					"alt": "R-27.jpg",
+					"name": "P-27",
+					"descr": "Απαγορεύεται η αριστερή στροφή."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-28.jpg",
+					"alt": "R-28.jpg",
+					"name": "P-28",
+					"descr": "Απαγορεύεται η δεξιά στροφή."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-29.jpg",
+					"alt": "R-29.jpg",
+					"name": "P-29",
+					"descr": "Απαγορεύεται η αναστροφή (στροφή κατά 180 μοίρες)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-30.jpg",
+					"alt": "R-30.jpg",
+					"name": "P-30",
+					"descr": "Απαγορεύεται το προσπέρασμα μηχανοκίνητων οχημάτων, πλην των δίτροχων μοτοσικλετών χωρίς καλάθι."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-31.jpg",
+					"alt": "R-31.jpg",
+					"name": "P-31",
+					"descr": "Απαγορεύεται στους οδηγούς φορτηγών αυτοκινήτων, μέγιστου επιτρεπόμενου βάρους που υπερβαίνει τους 3,5 τόνους, να προσπερνούν άλλα οχήματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-32.jpg",
+					"alt": "R-32.jpg",
+					"name": "P-32",
+					"descr": "Η μέγιστη ταχύτητα περιορίζεται στον αναγραφόμενο αριθμό (π.χ. 50 χλμ.) την ώρα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-33.jpg",
+					"alt": "R-33.jpg",
+					"name": "P-33",
+					"descr": "Απαγορεύεται η χρήση ηχητικών οργάνων προειδοποίησης (εκτός για αποφυγή δυστυχήματος)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-34.jpg",
+					"alt": "R-34.jpg",
+					"name": "P-34",
+					"descr": "Απαγορεύεται η διέλευση χωρίς στάση προ του Τελωνείου. Η αντικατάσταση της ένδειξης Τελωνείο με άλλη σημαίνει την απαγόρευση της διέλευσης χωρίς στάση προ της δηλούμενης θέσης."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-35.jpg",
+					"alt": "R-35.jpg",
+					"name": "P-35",
+					"descr": "Απαγορεύεται η διέλευση χωρίς στάση προ του σταθμού διοδίων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-36.jpg",
+					"alt": "R-36.jpg",
+					"name": "P-36",
+					"descr": "Τέλος όλων των τοπικών απαγορεύσεων οι οποίες έχουν επιβληθεί με απαγορευτικές πινακίδες στα κινούμενα οχήματα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-37.jpg",
+					"alt": "R-37.jpg",
+					"name": "P-37",
+					"descr": "Τέλος ορίου ταχύτητας το οποίο έχει επιβληθεί με απαγορευτική πινακίδα (π.χ. 40 χλμ.) την ώρα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-38.jpg",
+					"alt": "R-38.jpg",
+					"name": "P-38",
+					"descr": "Τέλος απαγόρευσης προσπεράσματος το οποίο έχει επιβληθεί με απαγορευτική πινακίδα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-39.jpg",
+					"alt": "R-39.jpg",
+					"name": "P-39",
+					"descr": "Απαγορεύεται η στάθμευση."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-40.jpg",
+					"alt": "R-40.jpg",
+					"name": "P-40",
+					"descr": "Απαγορεύεται η στάση και η στάθμευση."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-41.jpg",
+					"alt": "R-41.jpg",
+					"name": "P-41",
+					"descr": "Απαγορεύεται η στάθμευση επί της πλευράς της πινακίδας κατά τους μονούς μήνες."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-42.jpg",
+					"alt": "R-42.jpg",
+					"name": "P-42",
+					"descr": "Απαγορεύεται η στάθμευση επί της πλευράς της πινακίδας κατά τους ζυγούς μήνες."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-43.jpg",
+					"alt": "R-43.jpg",
+					"name": "P-43",
+					"descr": "Περιοχή απαγόρευσης στάθμευσης (στάθμευση περιορισμένης χρονικής διαρκείας)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-44.jpg",
+					"alt": "R-44.jpg",
+					"name": "P-44",
+					"descr": "Έξοδος από περιοχή απαγορευμένης στάθμευσης."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-45.jpg",
+					"alt": "R-45.jpg",
+					"name": "P-45",
+					"descr": "Απαγορεύεται η είσοδος σε οχήματα που μεταφέρουν πάνω από ορισμένη ποσότητα εκρηκτικών ή εύφλεκτων υλών."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-46.jpg",
+					"alt": "R-46.jpg",
+					"name": "P-46",
+					"descr": "Απαγορεύεται η είσοδος σε οχήματα που μεταφέρουν πάνω από ορισμένη ποσότητα ύλες οι οποίες μπορούν να προκαλέσουν μόλυνση υδάτων."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-47.jpg",
+					"alt": "R-47.jpg",
+					"name": "P-47",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας προς τα αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-48.jpg",
+					"alt": "R-48.jpg",
+					"name": "P-48",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας προς τα δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-49.jpg",
+					"alt": "R-49.jpg",
+					"name": "P-49",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας προς τα εμπρός."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-50.jpg",
+					"alt": "R-50.jpg",
+					"name": "P-50",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας με στροφή αριστερά ή δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-50a.jpg",
+					"alt": "R-50a.jpg",
+					"name": "P-50α",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας με στροφή αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-50d.jpg",
+					"alt": "R-50d.jpg",
+					"name": "P-50δ",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας με στροφή δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-51a.jpg",
+					"alt": "R-51a.jpg",
+					"name": "P-51α",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας εμπρός ή αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-51d.jpg",
+					"alt": "R-51d.jpg",
+					"name": "P-51δ",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας εμπρός ή δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-52.jpg",
+					"alt": "R-52.jpg",
+					"name": "P-52",
+					"descr": "Yπoχρεωτική διέλευση είτε από τη δεξιά είτε από την αριστερή πλευρά της νησίδας ή τoυ εμπoδίoυ."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-52a.jpg",
+					"alt": "R-52a.jpg",
+					"name": "P-52α",
+					"descr": "Υποχρεωτική διέλευση μόνο από την αριστερή πλευρά της νησίδας ή του εμποδίου."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-52d.jpg",
+					"alt": "R-52d.jpg",
+					"name": "P-52δ",
+					"descr": "Υποχρεωτική διέλευση μόνο από τη δεξιά πλευρά της νησίδας ή του εμποδίου."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-53.jpg",
+					"alt": "R-53.jpg",
+					"name": "P-53",
+					"descr": "Κυκλική υποχρεωτική διαδρομή."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-54.jpg",
+					"alt": "R-54.jpg",
+					"name": "P-54",
+					"descr": "Οδός υποχρεωτικής διέλευσης ποδηλάτων (απαγορευομένης της διέλευσης άλλων οχημάτων)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-55.jpg",
+					"alt": "R-55.jpg",
+					"name": "P-55",
+					"descr": "Oδός υπoχρεωτικής διέλευσης πεζών (πεζόδρoμoς, απαγoρευμένης της διέλευσης άλλων εκτός πεζών, oχημάτων άμεσης ανάγκης και oχημάτων για την είσoδo-έξoδo σε παρόδιες ιδιoκτησίες)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-56.jpg",
+					"alt": "R-56.jpg",
+					"name": "P-56",
+					"descr": "Οδός υποχρεωτικής διέλευσης εφίππων (απαγορευομένης της διέλευσης άλλων, εκτός εφίππων, που χρησιμοποιούν την οδό)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-57.jpg",
+					"alt": "R-57.jpg",
+					"name": "P-57",
+					"descr": "Υποχρεωτική ελαχίστη ταχύτητα που αναγράφεται με λευκούς αριθμούς σε (π.χ. 30) χλμ/ώρα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-58.jpg",
+					"alt": "R-58.jpg",
+					"name": "P-58",
+					"descr": "Τέλος υποχρεωτικής ελαχίστης ταχύτητας, που έχει επιβληθεί με την πινακίδα Ρ-57."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-59.jpg",
+					"alt": "R-59.jpg",
+					"name": "P-59",
+					"descr": "Yπoχρεωτικές αντιoλισθητικές αλυσίδες χιόνων σε δύo τoυλάχιστoν από τoυς κινητήριoυς τρoχoύς τoυ αυτoκινήτoυ."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-60.jpg",
+					"alt": "R-60.jpg",
+					"name": "P-60",
+					"descr": "Ανώτατη ταχύτητα περιοχής."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-61.jpg",
+					"alt": "R-61.jpg",
+					"name": "P-61",
+					"descr": "Έξοδος από περιοχή με ανώτατο όριο ταχύτητας."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-62.jpg",
+					"alt": "R-62.jpg",
+					"name": "P-62",
+					"descr": "Tέλoς απαγόρευσης πρoσπεράσματoς από φoρτηγά αυτoκίνητα, πoυ έχει επιβληθεί με απαγoρευτική πινακίδα."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-63.jpg",
+					"alt": "R-63.jpg",
+					"name": "P-63",
+					"descr": "Απαγορεύεται το ρυμουλκούμενο όχημα να έχει βάρος μεγαλύτερο από (π.χ. 3) τόνους."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-64.jpg",
+					"alt": "R-64.jpg",
+					"name": "P-64",
+					"descr": "Aπαγoρεύεται η είσoδoς σε oχήματα πoυ μεταφέρoυν επικίνδυνα υλικά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-65.jpg",
+					"alt": "R-65.jpg",
+					"name": "P-65",
+					"descr": "H κάθε κατηγoρία χρηστών πoυ απεικoνίζει τo αντίστoιχo σύμβoλo πρέπει να χρησιμoπoιεί την πλευρά τoυ αντίστoιχoυ διαδρόμoυ πoυ είναι ειδικά επιλεγμένη για αυτήν την κατηγoρία."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-66.jpg",
+					"alt": "R-66.jpg",
+					"name": "P-66",
+					"descr": "Οι διάφορες κατηγορίες χρηστών που απεικονίζουν τα αντίστοιχα σύμβολα επιτρέπεται να χρησιμοποιούν ταυτόχρονα τον ειδικό διάδρομο."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-67.jpg",
+					"alt": "R-67.jpg",
+					"name": "P-67",
+					"descr": "Αποκλειστική διέλευση Λεωφορείων ή Τρόλλεϋ."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-68.jpg",
+					"alt": "R-68.jpg",
+					"name": "P-68",
+					"descr": "Τέλος αποκλειστικής διέλευσης Λεωφορείων ή Τρόλλεϋ."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-69.jpg",
+					"alt": "R-69.jpg",
+					"name": "P-69",
+					"descr": "Χώρος ελεγχόμενης στάθμευσης."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-70.jpg",
+					"alt": "R-70.jpg",
+					"name": "P-70",
+					"descr": "Χωρός στάθμευσης ορισμένης κατηγορίας οχημάτων (π.χ. ΤΑΧΙ)."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-71.jpg",
+					"alt": "R-71.jpg",
+					"name": "P-71",
+					"descr": "Χώρος στάθμευσης αποκλειστικά για οχήματα \"ατόμων με Αναπηρίες (ΑμεΑ)\" ύστερα από ειδική άδεια."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-72.jpg",
+					"alt": "R-72.jpg",
+					"name": "P-72",
+					"descr": "Χώρος στάθμευσης αποκλειστικά για συγκεκριμένο όχημα \"ατόμων με Αναπηρίες (ΑμεΑ)\", ύστερα από ειδική άδεια και με αριθμό κυκλοφορίας"
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-73a.jpg",
+					"alt": "R-73a.jpg",
+					"name": "P-73α",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας οχημάτων μεταφοράς επικίνδυνων φορτίων προς αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-73d.jpg",
+					"alt": "R-73d.jpg",
+					"name": "P-73δ",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας οχημάτων μεταφοράς επικίνδυνων φορτίων προς τα δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-74a.jpg",
+					"alt": "R-74a.jpg",
+					"name": "P-74α",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας οχημάτων μεταφοράς επικίνδυνων φορτίων προς τα αριστερά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-74d.jpg",
+					"alt": "R-74d.jpg",
+					"name": "P-74δ",
+					"descr": "Υποχρεωτική κατεύθυνση πορείας οχημάτων μεταφοράς επικίνδυνων φορτίων προς τα δεξιά."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-75.jpg",
+					"alt": "R-75.jpg",
+					"name": "P-75",
+					"descr": "Επιβάλλει ιδιαίτερη προσοχή σε οχήματα που μεταφέρουν επικίνδυνες ύλες που μπορούν να προκαλέσουν μόλυνση των υδάτω."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-76.jpg",
+					"alt": "R-76.jpg",
+					"name": "P-76",
+					"descr": "Αποκλειστική διέλευση τροχιοδρόμου."
+				},
+				{
+					"src": "data\\imgs\\roadsigns\\regulatory\\R-77.jpg",
+					"alt": "R-77.jpg",
+					"name": "P-77",
+					"descr": "Τέλος αποκλειστικής διέλευσης τροχιοδρόμου."
+				}
+			]
+		}
+	]
+]
