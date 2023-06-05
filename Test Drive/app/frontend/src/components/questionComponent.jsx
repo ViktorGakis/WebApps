@@ -3,6 +3,13 @@ import React, { useState } from "react";
 
 export { QuestionComponent };
 
+function transformImagePath(img_path) {
+	var baseURL = "http://localhost:8000";
+	var transformedPath = img_path.replace(/\\/g, "/");
+	transformedPath = baseURL + transformedPath.substring(transformedPath.indexOf("/"));
+	return transformedPath;
+  }
+
 function QuestionComponent({ question, onAnswer }) {
     const { question: questionText, choices, img_url, img_path } = question;
     const [selectedOption, setSelectedOption] = useState(null);
@@ -22,7 +29,7 @@ function QuestionComponent({ question, onAnswer }) {
 				<h3>{questionText}</h3>
 			</div>
 			<div className="img">
-				{img_url && <img src={img_url} alt="Question Image" />}
+				{img_path && <img src={transformImagePath(img_path)} alt="Question Image" />}
 			</div>
 			<div className="choices">
 				<ol>

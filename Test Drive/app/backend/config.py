@@ -17,6 +17,7 @@ class APISettings(BaseSettings):
     STATIC_PATH: Path = BASEDIR / Path("static")
     REACT_PATH: Path = BASEDIR / Path("")
     DATA_PATH: Path = CWD / "data" / "data.json"
+    IMGS_PATH: Path = CWD / "data" / "imgs"
     FAV_ICON_PATH: Path = BASEDIR / Path("static") / "favicon.ico"
     debug: bool = True
     debug_exceptions: bool = False
