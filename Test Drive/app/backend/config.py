@@ -14,11 +14,11 @@ def lit_eval(x: str):
 
 class APISettings(BaseSettings):
     BASE_DIR: Path = BASEDIR
-    STATIC_PATH: Path = BASEDIR / Path("static")
-    REACT_PATH: Path = BASEDIR / Path("")
+    REACT_PATH: Path = CWD / Path("app/frontend/build")
+    STATIC_PATH: Path = REACT_PATH / Path("static")
     DATA_PATH: Path = CWD / "data" / "data.json"
     IMGS_PATH: Path = CWD / "data" / "imgs"
-    FAV_ICON_PATH: Path = BASEDIR / Path("static") / "favicon.ico"
+    FAV_ICON_PATH: Path = REACT_PATH
     debug: bool = True
     debug_exceptions: bool = False
     disable_superuser_dependency: bool = False

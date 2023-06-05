@@ -14,18 +14,12 @@ log: Logger = logdef(__name__)
 config: APISettings = get_api_settings()
 
 
-@router.get("/favicon.ico", include_in_schema=False)
-async def favicon() -> FileResponse:
-    return FileResponse(config.FAV_ICON_PATH)
-    # return "dummy", 200
-
-
-@router.get("/", response_class=HTMLResponse)
-def main_index(request: Request) -> _TemplateResponse:
-    return render_html(
-        "index.html",
-    )
-
+@router.get("/")
+def main_index() -> HTMLResponse:
+    index_path = config.REACT_PATH / 'index.html'
+    with index_path.open("r") as file:
+        html_content: str = file.read()
+    return HTMLResponse(content=html_content, status_code=200)
 
 @router.get("/debug", response_class=HTMLResponse)
 def main_index_debug(

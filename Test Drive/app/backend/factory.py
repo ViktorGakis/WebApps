@@ -133,9 +133,9 @@ class AppFactory(FastAPI):
     def __add_react_app(self) -> None:
         if str(self.config.REACT_PATH):
             self.mount(
-                "/react_app",
+                "/frontend",
                 StaticFiles(directory=self.config.REACT_PATH),
-                name="react_app",
+                name="frontend",
             )
 
     def _add_imgs_folder(self) -> None:
