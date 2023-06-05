@@ -1,27 +1,21 @@
 import "bootstrap/dist/css/bootstrap.css";
 import React, { useState } from "react";
+import { transformImagePath } from "../js/app_specifics";
 
 export { QuestionComponent };
 
-function transformImagePath(img_path) {
-	var baseURL = "http://localhost:8000";
-	var transformedPath = img_path.replace(/\\/g, "/");
-	transformedPath = baseURL + transformedPath.substring(transformedPath.indexOf("/"));
-	return transformedPath;
-  }
-
 function QuestionComponent({ question, onAnswer }) {
-    const { question: questionText, choices, img_url, img_path } = question;
-    const [selectedOption, setSelectedOption] = useState(null);
+	const { question: questionText, choices, img_url, img_path } = question;
+	const [selectedOption, setSelectedOption] = useState(null);
 
-    const handleOptionClick = (option, isCorrect) => {
-        setSelectedOption(option);
+	const handleOptionClick = (option, isCorrect) => {
+		setSelectedOption(option);
 
-        // The onAnswer function is called here every time a choice is clicked.
-        // This allows the QuestionForm component to update answeredQuestions
-        // and correctAnswers based on the user's selections.
-        onAnswer(isCorrect);
-    };
+		// The onAnswer function is called here every time a choice is clicked.
+		// This allows the QuestionForm component to update answeredQuestions
+		// and correctAnswers based on the user's selections.
+		onAnswer(isCorrect);
+	};
 
 	return (
 		<div className="question">
@@ -29,7 +23,12 @@ function QuestionComponent({ question, onAnswer }) {
 				<h3>{questionText}</h3>
 			</div>
 			<div className="img">
-				{img_path && <img src={transformImagePath(img_path)} alt="Question Image" />}
+				{img_path && (
+					<img
+						src={transformImagePath(img_path)}
+						alt="Question Image"
+					/>
+				)}
 			</div>
 			<div className="choices">
 				<ol>
@@ -61,4 +60,3 @@ function QuestionComponent({ question, onAnswer }) {
 		</div>
 	);
 }
-

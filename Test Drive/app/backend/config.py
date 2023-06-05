@@ -16,8 +16,10 @@ class APISettings(BaseSettings):
     BASE_DIR: Path = BASEDIR
     REACT_PATH: Path = CWD / Path("app/frontend/build")
     STATIC_PATH: Path = REACT_PATH / Path("static")
-    DATA_PATH: Path = CWD / "data" / "data.json"
-    IMGS_PATH: Path = CWD / "data" / "imgs"
+    DATA_PATH: Path = CWD / "data"
+    DATA_QUIZ_PATH: Path = DATA_PATH / "data.json"
+    DATA_ROADSIGNS_PATH: Path = DATA_PATH / "roadsigns.json"
+    IMGS_PATH: Path = DATA_PATH / "imgs"
     FAV_ICON_PATH: Path = REACT_PATH
     debug: bool = True
     debug_exceptions: bool = False

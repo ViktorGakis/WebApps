@@ -150,7 +150,7 @@
 						"Μη ορατή με λοξή ματιά πάνω από τους ώμους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/b02.jpg",
-					"img_path": "data\\imgs\\b02.jpg"
+					"img_path": "data\\imgs\\quiz\\b02.jpg"
 				},
 				{
 					"question": "Για να εγκατασταθείτε σωστά στη θέση του οδηγού:",
@@ -159,7 +159,7 @@
 						"Πρέπει να μπορείτε να ακουμπάτε τα χέρια σας στον πίνακα ελέγχου.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/b03.jpg",
-					"img_path": "data\\imgs\\b03.jpg"
+					"img_path": "data\\imgs\\quiz\\b03.jpg"
 				},
 				{
 					"question": "Ένα ογκώδες αντικείμενο δεν επιτρέπεται να εξέχει προς τα πίσω περισσότερο του 30% του μήκους του οχήματος χωρίς ειδική άδεια:",
@@ -168,7 +168,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/b05.jpg",
-					"img_path": "data\\imgs\\b05.jpg"
+					"img_path": "data\\imgs\\quiz\\b05.jpg"
 				},
 				{
 					"question": "Για να επιβιβασθείτε στο όχημά σας:",
@@ -238,7 +238,7 @@
 						"Να περάσετε με προσοχή χωρίς να σταματήσετε.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c001.jpg",
-					"img_path": "data\\imgs\\c001.jpg"
+					"img_path": "data\\imgs\\quiz\\c001.jpg"
 				},
 				{
 					"question": "Όταν συναντάτε αυτόν τον συνδυασμό πινακίδων, οδηγείτε σε δρόμο με προτεραιότητα:",
@@ -247,7 +247,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c002.jpg",
-					"img_path": "data\\imgs\\c002.jpg"
+					"img_path": "data\\imgs\\quiz\\c002.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -257,7 +257,7 @@
 						"Ανισόπεδη διάβαση πεζών χωρίς σκαλοπάτια.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c004.jpg",
-					"img_path": "data\\imgs\\c004.jpg"
+					"img_path": "data\\imgs\\quiz\\c004.jpg"
 				},
 				{
 					"question": "Σε αυτήν τη φωτογραφία, λωρίδες κυκλοφορίας είναι οι:",
@@ -267,7 +267,7 @@
 						"1 και 2": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c005.jpg",
-					"img_path": "data\\imgs\\c005.jpg"
+					"img_path": "data\\imgs\\quiz\\c005.jpg"
 				},
 				{
 					"question": "Όταν σε περιοχές έργων στον αυτοκινητόδρομο, η οριζόντια σήμανση συμπεριλαμβάνει άσπρες και κίτρινες γραμμές ταυτόχρονα, σέβεστε:",
@@ -277,7 +277,7 @@
 						"Μόνο τις κίτρινες γραμμές.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c006.jpg",
-					"img_path": "data\\imgs\\c006.jpg"
+					"img_path": "data\\imgs\\quiz\\c006.jpg"
 				},
 				{
 					"question": "Το όχημά σας έχει μήκος 4,5 m. Αυτή η πινακίδα σας απαγορεύει την είσοδο:",
@@ -286,7 +286,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c007.jpg",
-					"img_path": "data\\imgs\\c007.jpg"
+					"img_path": "data\\imgs\\quiz\\c007.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -296,7 +296,7 @@
 						"Αναγγελία προσεγγίσεως σε διασταύρωση εθνικής οδού.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c008.jpg",
-					"img_path": "data\\imgs\\c008.jpg"
+					"img_path": "data\\imgs\\quiz\\c008.jpg"
 				},
 				{
 					"question": "Αυτό το σήμα καθορίζει:",
@@ -306,7 +306,7 @@
 						"Διακλάδωση αριστερά με αγροτική οδό που οδηγεί σε οικισμό.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c009.jpg",
-					"img_path": "data\\imgs\\c009.jpg"
+					"img_path": "data\\imgs\\quiz\\c009.jpg"
 				},
 				{
 					"question": "Οι ειδικές λωρίδες για τα λεωφορεία μπορούν να χρησιμοποιηθούν προσωρινά:",
@@ -315,7 +315,7 @@
 						"Από την κανονική κυκλοφορία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c010.jpg",
-					"img_path": "data\\imgs\\c010.jpg"
+					"img_path": "data\\imgs\\quiz\\c010.jpg"
 				},
 				{
 					"question": "Οδηγείτε με 90 km/h σε αυτόν το δρόμο όπου η ορατότητα είναι καλή:",
@@ -324,7 +324,7 @@
 						"Η ελάχιστη επιτρεπόμενη ταχύτητα είναι 90 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c011.jpg",
-					"img_path": "data\\imgs\\c011.jpg"
+					"img_path": "data\\imgs\\quiz\\c011.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -334,7 +334,7 @@
 						"Προειδοποιητική κατευθύνσεων που τοποθετείται προ κόμβου σε εθνική οδό.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c012.jpg",
-					"img_path": "data\\imgs\\c012.jpg"
+					"img_path": "data\\imgs\\quiz\\c012.jpg"
 				},
 				{
 					"question": "Τι επιτρέπεται να κάνετε όταν υπάρχει το σήμα αυτό:",
@@ -344,7 +344,7 @@
 						"Να σταθμεύσετε εφόσον δεν παρακωλύετε την είσοδο ή την έξοδο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c013.jpg",
-					"img_path": "data\\imgs\\c013.jpg"
+					"img_path": "data\\imgs\\quiz\\c013.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα σημαίνει:",
@@ -353,7 +353,7 @@
 						"Βαθιά λακκούβα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c014.jpg",
-					"img_path": "data\\imgs\\c014.jpg"
+					"img_path": "data\\imgs\\quiz\\c014.jpg"
 				},
 				{
 					"question": "Συναντώ αυτήν την πινακίδα με αρίθμηση:",
@@ -362,7 +362,7 @@
 						"Σε εθνική οδό.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c015.jpg",
-					"img_path": "data\\imgs\\c015.jpg"
+					"img_path": "data\\imgs\\quiz\\c015.jpg"
 				},
 				{
 					"question": "Η ζώνη που προορίζεται για τη στάση λεωφορείων επισημαίνεται συνήθως με μια τεθλασμένη κίτρινη γραμμή (ζιγκ-ζαγκ). Μπορείτε:",
@@ -372,7 +372,7 @@
 						"Να σταθμεύσετε σε εκείνο το σημείο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c017.jpg",
-					"img_path": "data\\imgs\\c017.jpg"
+					"img_path": "data\\imgs\\quiz\\c017.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα απαγορεύει την είσοδο:",
@@ -381,7 +381,7 @@
 						"Μόνο στα μοτοποδήλατα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c018.jpg",
-					"img_path": "data\\imgs\\c018.jpg"
+					"img_path": "data\\imgs\\quiz\\c018.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα σημαίνει:",
@@ -390,7 +390,7 @@
 						"Απαγορεύεται η είσοδος στους ποδηλάτες.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c019.jpg",
-					"img_path": "data\\imgs\\c019.jpg"
+					"img_path": "data\\imgs\\quiz\\c019.jpg"
 				},
 				{
 					"question": "Κάθε φορά που συναντάτε αυτήν την πινακίδα:",
@@ -400,7 +400,7 @@
 						"Έχετε προτεραιότητα μόνο στην επόμενη διασταύρωση.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c020.jpg",
-					"img_path": "data\\imgs\\c020.jpg"
+					"img_path": "data\\imgs\\quiz\\c020.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα συμβολίζει την απαγόρευση να στρίψετε αριστερά:",
@@ -409,7 +409,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c021.jpg",
-					"img_path": "data\\imgs\\c021.jpg"
+					"img_path": "data\\imgs\\quiz\\c021.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -419,7 +419,7 @@
 						"Έξοδος από περιοχή περιορισμένης σταθμεύσεως.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c023.jpg",
-					"img_path": "data\\imgs\\c023.jpg"
+					"img_path": "data\\imgs\\quiz\\c023.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -429,7 +429,7 @@
 						"Οδός αποκλειστικής διελεύσεως αναπηρικών αμαξιδίων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c024.jpg",
-					"img_path": "data\\imgs\\c024.jpg"
+					"img_path": "data\\imgs\\quiz\\c024.jpg"
 				},
 				{
 					"question": "Κάθε φορά που συναντάτε αυτήν την πινακίδα:",
@@ -439,7 +439,7 @@
 						"Διακόπτετε υποχρεωτικά την πορεία σας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c026.jpg",
-					"img_path": "data\\imgs\\c026.jpg"
+					"img_path": "data\\imgs\\quiz\\c026.jpg"
 				},
 				{
 					"question": "Κάθε φορά που συναντάτε αυτήν την πινακίδα, απαγορεύεται η είσοδος:",
@@ -449,7 +449,7 @@
 						"Σε όλα τα ποδήλατα και τα αγροτικά μηχανήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c027.jpg",
-					"img_path": "data\\imgs\\c027.jpg"
+					"img_path": "data\\imgs\\quiz\\c027.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα σημαίνει:",
@@ -458,7 +458,7 @@
 						"Επικίνδυνες στροφές.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c028.jpg",
-					"img_path": "data\\imgs\\c028.jpg"
+					"img_path": "data\\imgs\\quiz\\c028.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα σημαίνει:",
@@ -468,7 +468,7 @@
 						"Οδός υποχρεωτικής διελεύσεως πεζών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c029.jpg",
-					"img_path": "data\\imgs\\c029.jpg"
+					"img_path": "data\\imgs\\quiz\\c029.jpg"
 				},
 				{
 					"question": "Βρίσκεσθε κατά λάθος σε μια λωρίδα επιβραδύνσεως και το συνειδητοποιείτε καθυστερημένα:",
@@ -477,7 +477,7 @@
 						"Μένετε στην ίδια λωρίδα, ακόμα και αν κάνατε λάθος.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c031.jpg",
-					"img_path": "data\\imgs\\c031.jpg"
+					"img_path": "data\\imgs\\quiz\\c031.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -487,7 +487,7 @@
 						"Έξοδος από περιοχή όπου ισχύει ανώτατο όριο ταχύτητας 30 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c033.jpg",
-					"img_path": "data\\imgs\\c033.jpg"
+					"img_path": "data\\imgs\\quiz\\c033.jpg"
 				},
 				{
 					"question": "Όταν συναντάτε αυτήν την πινακίδα, οδηγείτε σε δρόμο με προτεραιότητα:",
@@ -496,7 +496,7 @@
 						"OXI": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c034.jpg",
-					"img_path": "data\\imgs\\c034.jpg"
+					"img_path": "data\\imgs\\quiz\\c034.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα σημαίνει κίνδυνο λόγω:",
@@ -505,7 +505,7 @@
 						"Ισχυρού μετωπικού ανέμου λόγω προσεγγίσεως σε αεροδρόμιο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c035.jpg",
-					"img_path": "data\\imgs\\c035.jpg"
+					"img_path": "data\\imgs\\quiz\\c035.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -515,7 +515,7 @@
 						"Υποχρεωτική στροφή δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c036.jpg",
-					"img_path": "data\\imgs\\c036.jpg"
+					"img_path": "data\\imgs\\quiz\\c036.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -525,7 +525,7 @@
 						"Αδιέξοδο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c037.jpg",
-					"img_path": "data\\imgs\\c037.jpg"
+					"img_path": "data\\imgs\\quiz\\c037.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση, έχετε το δικαίωμα να προσπεράσετε:",
@@ -534,7 +534,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c040.jpg",
-					"img_path": "data\\imgs\\c040.jpg"
+					"img_path": "data\\imgs\\quiz\\c040.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -544,7 +544,7 @@
 						"Τέλος τουριστικής περιοχής.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c042.jpg",
-					"img_path": "data\\imgs\\c042.jpg"
+					"img_path": "data\\imgs\\quiz\\c042.jpg"
 				},
 				{
 					"question": "Ποιά από αυτές τις πινακίδες σημαίνει «Μονόδρομος»:",
@@ -553,7 +553,7 @@
 						"Η πινακίδα (Β)": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c043.jpg",
-					"img_path": "data\\imgs\\c043.jpg"
+					"img_path": "data\\imgs\\quiz\\c043.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -563,7 +563,7 @@
 						"Περιοχή περιορισμένης σταθμεύσεως.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c044.jpg",
-					"img_path": "data\\imgs\\c044.jpg"
+					"img_path": "data\\imgs\\quiz\\c044.jpg"
 				},
 				{
 					"question": "Έχομε 14 Μαΐου. Μπορείτε να σταθμεύσετε στην πλευρά της οδού όπου έχει τοποθετηθεί αυτή η πινακίδα:",
@@ -572,7 +572,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c045.jpg",
-					"img_path": "data\\imgs\\c045.jpg"
+					"img_path": "data\\imgs\\quiz\\c045.jpg"
 				},
 				{
 					"question": "Τι πρέπει να κάνετε βλέποντας αυτό το σήμα:",
@@ -582,7 +582,7 @@
 						"Να τοποθετήσετε αντιολισθητικές αλυσίδες χιονιού, στους εμπρόσθιους τροχούς του αυτοκινήτου.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c046.jpg",
-					"img_path": "data\\imgs\\c046.jpg"
+					"img_path": "data\\imgs\\quiz\\c046.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα σημαίνει:",
@@ -592,7 +592,7 @@
 						"Επιτρέπεται η διέλευση μόνον όσων πεζών συνοδεύουν παιδιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c047.jpg",
-					"img_path": "data\\imgs\\c047.jpg"
+					"img_path": "data\\imgs\\quiz\\c047.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -602,7 +602,7 @@
 						"Αρχαιολογικός χώρος.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c048.jpg",
-					"img_path": "data\\imgs\\c048.jpg"
+					"img_path": "data\\imgs\\quiz\\c048.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -612,7 +612,7 @@
 						"Υποχρεωτική προτεραιότητα στην επόμενη διασταύρωση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c049.jpg",
-					"img_path": "data\\imgs\\c049.jpg"
+					"img_path": "data\\imgs\\quiz\\c049.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα σας τονίζει:",
@@ -621,7 +621,7 @@
 						"Έναν κίνδυνο που βρίσκεται 1.000 m μετά την πινακίδα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c050.jpg",
-					"img_path": "data\\imgs\\c050.jpg"
+					"img_path": "data\\imgs\\quiz\\c050.jpg"
 				},
 				{
 					"question": "Σε αυτήν την εικονογράφηση, όπου κινείσθε κατά τη φορά του βέλους η οριογραμμή του οδοστρώματος αντιστοιχεί στο σημείο:",
@@ -630,7 +630,7 @@
 						"2": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c053.jpg",
-					"img_path": "data\\imgs\\c053.jpg"
+					"img_path": "data\\imgs\\quiz\\c053.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση μπορείτε να επιχειρήσετε προσπέρασμα:",
@@ -639,7 +639,7 @@
 						"OXI": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c056.jpg",
-					"img_path": "data\\imgs\\c056.jpg"
+					"img_path": "data\\imgs\\quiz\\c056.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -649,7 +649,7 @@
 						"Απαγορεύεται η αριστερή στροφή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c057.jpg",
-					"img_path": "data\\imgs\\c057.jpg"
+					"img_path": "data\\imgs\\quiz\\c057.jpg"
 				},
 				{
 					"question": "Τι δείχνει η πινακίδα αυτή:",
@@ -659,7 +659,7 @@
 						"Αριστερά από το οδόστρωμα υπάρχει αυλάκι με νερό.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c058.jpg",
-					"img_path": "data\\imgs\\c058.jpg"
+					"img_path": "data\\imgs\\quiz\\c058.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -669,7 +669,7 @@
 						"Οδός αποκλειστικής κυκλοφορίας διτρόχων οχημάτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c060.jpg",
-					"img_path": "data\\imgs\\c060.jpg"
+					"img_path": "data\\imgs\\quiz\\c060.jpg"
 				},
 				{
 					"question": "Ποια οχήματα απαγορεύεται να εισέλθουν σε μία οδό με αυτήν τη σήμανση:",
@@ -679,7 +679,7 @@
 						"Τα οχήματα συνολικού βάρους που υπερβαίνει τους πέντε τόνους.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c061.jpg",
-					"img_path": "data\\imgs\\c061.jpg"
+					"img_path": "data\\imgs\\quiz\\c061.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -689,7 +689,7 @@
 						"Απαγορεύεται η δεξιά στροφή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c062.jpg",
-					"img_path": "data\\imgs\\c062.jpg"
+					"img_path": "data\\imgs\\quiz\\c062.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -699,7 +699,7 @@
 						"Απαγορεύεται η είσοδος σε πεζούς και μοτοποδήλατα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c063.jpg",
-					"img_path": "data\\imgs\\c063.jpg"
+					"img_path": "data\\imgs\\quiz\\c063.jpg"
 				},
 				{
 					"question": "Η πινακίδα σας προειδοποιεί για:",
@@ -709,7 +709,7 @@
 						"Τρεις εξόδους από την οδό ταχείας κυκλοφορίας σε απόσταση 200 m.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c064.jpg",
-					"img_path": "data\\imgs\\c064.jpg"
+					"img_path": "data\\imgs\\quiz\\c064.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -719,7 +719,7 @@
 						"Έξοδος από χώρο επιτρεπόμενης σταθμεύσεως.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c065.jpg",
-					"img_path": "data\\imgs\\c065.jpg"
+					"img_path": "data\\imgs\\quiz\\c065.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -729,7 +729,7 @@
 						"Ανισόπεδη διάβαση πεζών χωρίς σκαλοπάτια.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c066.jpg",
-					"img_path": "data\\imgs\\c066.jpg"
+					"img_path": "data\\imgs\\quiz\\c066.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -739,7 +739,7 @@
 						"Απαγορεύεται η δεξιά στροφή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c067.jpg",
-					"img_path": "data\\imgs\\c067.jpg"
+					"img_path": "data\\imgs\\quiz\\c067.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -749,7 +749,7 @@
 						"Κινητή γέφυρα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c068.jpg",
-					"img_path": "data\\imgs\\c068.jpg"
+					"img_path": "data\\imgs\\quiz\\c068.jpg"
 				},
 				{
 					"question": "Τι δείχνει το σήμα αυτό:",
@@ -759,7 +759,7 @@
 						"Απαγορεύεται η είσοδος σε περισσότερα από τρία οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c069.jpg",
-					"img_path": "data\\imgs\\c069.jpg"
+					"img_path": "data\\imgs\\quiz\\c069.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -769,7 +769,7 @@
 						"Οδός αποκλειστικής κυκλοφορίας ποδηλάτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c070.jpg",
-					"img_path": "data\\imgs\\c070.jpg"
+					"img_path": "data\\imgs\\quiz\\c070.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -779,7 +779,7 @@
 						"Απαγορεύεται η προσέγγιση προπορευόμενου οχήματος σε απόσταση μικρότερη των 2 m.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c071.jpg",
-					"img_path": "data\\imgs\\c071.jpg"
+					"img_path": "data\\imgs\\quiz\\c071.jpg"
 				},
 				{
 					"question": "Η πινακίδα σας προειδοποιεί για:",
@@ -789,7 +789,7 @@
 						"Καμμία έξοδο από την οδό ταχείας κυκλοφορίας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c073.jpg",
-					"img_path": "data\\imgs\\c073.jpg"
+					"img_path": "data\\imgs\\quiz\\c073.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -799,7 +799,7 @@
 						"Νοσοκομείο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c074.jpg",
-					"img_path": "data\\imgs\\c074.jpg"
+					"img_path": "data\\imgs\\quiz\\c074.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -809,7 +809,7 @@
 						"Απαγορεύεται η δεξιά στροφή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c075.jpg",
-					"img_path": "data\\imgs\\c075.jpg"
+					"img_path": "data\\imgs\\quiz\\c075.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε βλέποντας αυτό το σήμα:",
@@ -819,7 +819,7 @@
 						"Παραχωρείτε προτεραιότητα στην αντίθετη κυκλοφορία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c076.jpg",
-					"img_path": "data\\imgs\\c076.jpg"
+					"img_path": "data\\imgs\\quiz\\c076.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -829,7 +829,7 @@
 						"Δρόμος κλειστός για όλα τα οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c077.jpg",
-					"img_path": "data\\imgs\\c077.jpg"
+					"img_path": "data\\imgs\\quiz\\c077.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -839,7 +839,7 @@
 						"Απαγορεύεται η είσοδος σε ρυμουλκούμενα οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c078.jpg",
-					"img_path": "data\\imgs\\c078.jpg"
+					"img_path": "data\\imgs\\quiz\\c078.jpg"
 				},
 				{
 					"question": "Τι υποδεικνύει ο συνδυασμός των πινακίδων αυτών:",
@@ -849,7 +849,7 @@
 						"Κατεύθυνση προς χώρο σταθμεύσεως ταξί.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c079.jpg",
-					"img_path": "data\\imgs\\c079.jpg"
+					"img_path": "data\\imgs\\quiz\\c079.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -859,7 +859,7 @@
 						"Έξοδος από περιοχή όπου ισχύει ανώτατο όριο ταχύτητας 50 km/h.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c080.jpg",
-					"img_path": "data\\imgs\\c080.jpg"
+					"img_path": "data\\imgs\\quiz\\c080.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -869,7 +869,7 @@
 						"Οδός ταχείας κυκλοφορίας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c081.jpg",
-					"img_path": "data\\imgs\\c081.jpg"
+					"img_path": "data\\imgs\\quiz\\c081.jpg"
 				},
 				{
 					"question": "Τι πρέπει να κάνετε βλέποντας αυτό το σήμα για να κατευθυνθείτε προς την Αθήνα:",
@@ -879,7 +879,7 @@
 						"Να στρίψετε αριστερά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c082.jpg",
-					"img_path": "data\\imgs\\c082.jpg"
+					"img_path": "data\\imgs\\quiz\\c082.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -889,7 +889,7 @@
 						"Συνεργείο επισκευής βλαβών.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c083.jpg",
-					"img_path": "data\\imgs\\c083.jpg"
+					"img_path": "data\\imgs\\quiz\\c083.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -899,7 +899,7 @@
 						"Ανισόπεδη διάβαση πεζών χωρίς σκαλοπάτια.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c084.jpg",
-					"img_path": "data\\imgs\\c084.jpg"
+					"img_path": "data\\imgs\\quiz\\c084.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε βλέποντας αυτό το σήμα:",
@@ -909,7 +909,7 @@
 						"Συνεχίζετε με την ίδια ταχύτητα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c085.jpg",
-					"img_path": "data\\imgs\\c085.jpg"
+					"img_path": "data\\imgs\\quiz\\c085.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -919,7 +919,7 @@
 						"Κίνδυνος λόγω συχνής εισόδου ή διαβάσεως ποδηλατιστών": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c086.jpg",
-					"img_path": "data\\imgs\\c086.jpg"
+					"img_path": "data\\imgs\\quiz\\c086.jpg"
 				},
 				{
 					"question": "Ποιά πινακίδα επισημαίνει κίνδυνο λόγω ισόπεδης σιδηροδρομικής γραμμής χωρίς κινητά φράγματα:",
@@ -929,7 +929,7 @@
 						"Η πινακίδα Γ.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c087.jpg",
-					"img_path": "data\\imgs\\c087.jpg"
+					"img_path": "data\\imgs\\quiz\\c087.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -939,7 +939,7 @@
 						"Επιτρέπεται η είσοδος μόνο σε ζωήλατα οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c088.jpg",
-					"img_path": "data\\imgs\\c088.jpg"
+					"img_path": "data\\imgs\\quiz\\c088.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -949,7 +949,7 @@
 						"Απαγορεύεται η στάθμευση χειραμαξών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c089.jpg",
-					"img_path": "data\\imgs\\c089.jpg"
+					"img_path": "data\\imgs\\quiz\\c089.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -959,7 +959,7 @@
 						"Προσέγγιση σε κυκλική υποχρεωτική πορεία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c090.jpg",
-					"img_path": "data\\imgs\\c090.jpg"
+					"img_path": "data\\imgs\\quiz\\c090.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -969,7 +969,7 @@
 						"Δεξιά της οδού υπάρχει χώρος σταθμεύσεως οχημάτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c092.jpg",
-					"img_path": "data\\imgs\\c092.jpg"
+					"img_path": "data\\imgs\\quiz\\c092.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -979,7 +979,7 @@
 						"Νοσοκομείο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c093.jpg",
-					"img_path": "data\\imgs\\c093.jpg"
+					"img_path": "data\\imgs\\quiz\\c093.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -989,7 +989,7 @@
 						"Ελάχιστη ταχύτητα 60 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c094.jpg",
-					"img_path": "data\\imgs\\c094.jpg"
+					"img_path": "data\\imgs\\quiz\\c094.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -999,7 +999,7 @@
 						"Απαγορεύεται η αριστερή στροφή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c095.jpg",
-					"img_path": "data\\imgs\\c095.jpg"
+					"img_path": "data\\imgs\\quiz\\c095.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1009,7 +1009,7 @@
 						"Τελωνείο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c096.jpg",
-					"img_path": "data\\imgs\\c096.jpg"
+					"img_path": "data\\imgs\\quiz\\c096.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1019,7 +1019,7 @@
 						"Οδός αποκλειστικής κυκλοφορίας πεζών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c098.jpg",
-					"img_path": "data\\imgs\\c098.jpg"
+					"img_path": "data\\imgs\\quiz\\c098.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1029,7 +1029,7 @@
 						"Οδός αποκλειστικής κινήσεως αγροτικών μηχανημάτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c099.jpg",
-					"img_path": "data\\imgs\\c099.jpg"
+					"img_path": "data\\imgs\\quiz\\c099.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1039,7 +1039,7 @@
 						"Απαγορεύεται η στάθμευση στους διαδρόμους σταθμού Διοδίων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c100.jpg",
-					"img_path": "data\\imgs\\c100.jpg"
+					"img_path": "data\\imgs\\quiz\\c100.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1049,7 +1049,7 @@
 						"Περιοχή σταθμεύσεως περιορισμένης χρονικής διάρκειας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c101.jpg",
-					"img_path": "data\\imgs\\c101.jpg"
+					"img_path": "data\\imgs\\quiz\\c101.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1059,7 +1059,7 @@
 						"Έξοδος από την περιοχή της Κατάρας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c102.jpg",
-					"img_path": "data\\imgs\\c102.jpg"
+					"img_path": "data\\imgs\\quiz\\c102.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1069,7 +1069,7 @@
 						"Αεροδρόμιο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c103.jpg",
-					"img_path": "data\\imgs\\c103.jpg"
+					"img_path": "data\\imgs\\quiz\\c103.jpg"
 				},
 				{
 					"question": "Ποιά είναι η ανώτατη ταχύτητα εκτός κατοικημένης περιοχής που επιβάλλει η πινακίδα αυτή:",
@@ -1079,7 +1079,7 @@
 						"120 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c104.jpg",
-					"img_path": "data\\imgs\\c104.jpg"
+					"img_path": "data\\imgs\\quiz\\c104.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε βλέποντας αυτό το σήμα:",
@@ -1089,7 +1089,7 @@
 						"Φρενάρετε.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c105.jpg",
-					"img_path": "data\\imgs\\c105.jpg"
+					"img_path": "data\\imgs\\quiz\\c105.jpg"
 				},
 				{
 					"question": "Πώς ενεργείτε βλέποντας  το σήμα αυτό:",
@@ -1099,7 +1099,7 @@
 						"Αυξάνετε την ταχύτητα του αυτοκινήτου.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c106.jpg",
-					"img_path": "data\\imgs\\c106.jpg"
+					"img_path": "data\\imgs\\quiz\\c106.jpg"
 				},
 				{
 					"question": "Κινείσθε σε αυτοκινητόδρομο, εμπρός από ένα εργοτάξιο και συναντάτε αυτό το σήμα. Τι πρέπει να περιμένετε:",
@@ -1109,7 +1109,7 @@
 						"Προτεραιότητα της αντίθετης κυκλοφορίας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c107.jpg",
-					"img_path": "data\\imgs\\c107.jpg"
+					"img_path": "data\\imgs\\quiz\\c107.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1119,7 +1119,7 @@
 						"Οδός αποκλειστικής κυκλοφορίας φορτηγών οχημάτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c108.jpg",
-					"img_path": "data\\imgs\\c108.jpg"
+					"img_path": "data\\imgs\\quiz\\c108.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1129,7 +1129,7 @@
 						"Απαγορεύεται η είσοδος επιβατηγών αυτοκινήτων, ζωηλάτων οχημάτων και μοτοσυκλετών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c109.jpg",
-					"img_path": "data\\imgs\\c109.jpg"
+					"img_path": "data\\imgs\\quiz\\c109.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1139,7 +1139,7 @@
 						"Ναύσταθμος.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c110.jpg",
-					"img_path": "data\\imgs\\c110.jpg"
+					"img_path": "data\\imgs\\quiz\\c110.jpg"
 				},
 				{
 					"question": "Τι υποδεικνύει το σήμα αυτό:",
@@ -1149,7 +1149,7 @@
 						"Αδιέξοδη οδό εμπρός.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c112.jpg",
-					"img_path": "data\\imgs\\c112.jpg"
+					"img_path": "data\\imgs\\quiz\\c112.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1159,7 +1159,7 @@
 						"Νοσοκομείο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c113.jpg",
-					"img_path": "data\\imgs\\c113.jpg"
+					"img_path": "data\\imgs\\quiz\\c113.jpg"
 				},
 				{
 					"question": "Ποιά οχήματα επιτρέπεται να χρησιμοποιούν τη δεξιά λωρίδα κυκλοφορίας:",
@@ -1169,7 +1169,7 @@
 						"Ταξί και λεωφορεία ή τρόλεϊ.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c114.jpg",
-					"img_path": "data\\imgs\\c114.jpg"
+					"img_path": "data\\imgs\\quiz\\c114.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1179,7 +1179,7 @@
 						"Πρέπει να κινείσθε μόνο στο μέσον του δρόμου.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c115.jpg",
-					"img_path": "data\\imgs\\c115.jpg"
+					"img_path": "data\\imgs\\quiz\\c115.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1189,7 +1189,7 @@
 						"Δρόμος κλειστός λόγω κατολισθήσεων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c116.jpg",
-					"img_path": "data\\imgs\\c116.jpg"
+					"img_path": "data\\imgs\\quiz\\c116.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1199,7 +1199,7 @@
 						"Απαγορεύεται η στροφή αριστερά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c117.jpg",
-					"img_path": "data\\imgs\\c117.jpg"
+					"img_path": "data\\imgs\\quiz\\c117.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1209,7 +1209,7 @@
 						"Υποχρεωτική διακοπή πορείας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c118.jpg",
-					"img_path": "data\\imgs\\c118.jpg"
+					"img_path": "data\\imgs\\quiz\\c118.jpg"
 				},
 				{
 					"question": "Ποια οχήματα απαγορεύεται να εισέλθουν σε μία οδό με αυτήν τη σήμανση:",
@@ -1219,7 +1219,7 @@
 						"Τα οχήματα συνολικού μήκους που δεν υπερβαίνει τα 3,5 m.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c119.jpg",
-					"img_path": "data\\imgs\\c119.jpg"
+					"img_path": "data\\imgs\\quiz\\c119.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1229,7 +1229,7 @@
 						"Απαγορεύεται η στροφή αριστερά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c120.jpg",
-					"img_path": "data\\imgs\\c120.jpg"
+					"img_path": "data\\imgs\\quiz\\c120.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1239,7 +1239,7 @@
 						"Απαγορεύεται η στάθμευση λεωφορείων ή τρόλεϊ.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c121.jpg",
-					"img_path": "data\\imgs\\c121.jpg"
+					"img_path": "data\\imgs\\quiz\\c121.jpg"
 				},
 				{
 					"question": "Ποια λωρίδα κυκλοφορίας θα επιλέξετε προκειμένου να στρίψετε αριστερά:",
@@ -1249,7 +1249,7 @@
 						"Την (Α).": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c122.jpg",
-					"img_path": "data\\imgs\\c122.jpg"
+					"img_path": "data\\imgs\\quiz\\c122.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1259,7 +1259,7 @@
 						"Πληροφορίες.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c123.jpg",
-					"img_path": "data\\imgs\\c123.jpg"
+					"img_path": "data\\imgs\\quiz\\c123.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1269,7 +1269,7 @@
 						"Ανώτατη ταχύτητα 100 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c124.jpg",
-					"img_path": "data\\imgs\\c124.jpg"
+					"img_path": "data\\imgs\\quiz\\c124.jpg"
 				},
 				{
 					"question": "Ο φωτεινός σηματοδότης δείχνει κόκκινο φως και δίπλα ανάβει πράσινο βέλος. Τι σημαίνει αυτό:",
@@ -1279,7 +1279,7 @@
 						"Ότι όλα τα οχήματα πρέπει να σταματήσουν.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c125.jpg",
-					"img_path": "data\\imgs\\c125.jpg"
+					"img_path": "data\\imgs\\quiz\\c125.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1289,7 +1289,7 @@
 						"Κίνδυνος λόγω συχνής κινήσεως παιδιών (σχολεία, γήπεδα κλπ.).": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c126.jpg",
-					"img_path": "data\\imgs\\c126.jpg"
+					"img_path": "data\\imgs\\quiz\\c126.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1298,7 +1298,7 @@
 						"Κινείσθε σε ολισθηρό οδόστρωμα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c127.jpg",
-					"img_path": "data\\imgs\\c127.jpg"
+					"img_path": "data\\imgs\\quiz\\c127.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1308,7 +1308,7 @@
 						"Οδός αποκλειστικής κυκλοφορίας επιβατηγών αυτοκινήτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c128.jpg",
-					"img_path": "data\\imgs\\c128.jpg"
+					"img_path": "data\\imgs\\quiz\\c128.jpg"
 				},
 				{
 					"question": "Ποια οχήματα απαγορεύεται να εισέλθουν σε μία οδό με αυτήν τη σήμανση:",
@@ -1318,7 +1318,7 @@
 						"Τα οχήματα συνολικού βάρους μικρότερου από δύο τόνους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c129.jpg",
-					"img_path": "data\\imgs\\c129.jpg"
+					"img_path": "data\\imgs\\quiz\\c129.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1328,7 +1328,7 @@
 						"Κατηφορικό τμήμα του δρόμου δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c130.jpg",
-					"img_path": "data\\imgs\\c130.jpg"
+					"img_path": "data\\imgs\\quiz\\c130.jpg"
 				},
 				{
 					"question": "Θέλοντας να κατευθυνθείτε προς Οίτυλο, πώς θα ενεργήσετε βλέποντας αυτήν την πινακίδα:",
@@ -1338,7 +1338,7 @@
 						"θα συνεχίσετε την πορεία εμπρός.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c131.jpg",
-					"img_path": "data\\imgs\\c131.jpg"
+					"img_path": "data\\imgs\\quiz\\c131.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1348,7 +1348,7 @@
 						"Αναψυκτήριο ή Καφενείο.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c132.jpg",
-					"img_path": "data\\imgs\\c132.jpg"
+					"img_path": "data\\imgs\\quiz\\c132.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1358,7 +1358,7 @@
 						"Ελάχιστη ταχύτητα 60 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c133.jpg",
-					"img_path": "data\\imgs\\c133.jpg"
+					"img_path": "data\\imgs\\quiz\\c133.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε βλέποντας αυτό το σήμα:",
@@ -1368,7 +1368,7 @@
 						"Προσαρμόζετε την ταχύτητα του οχήματος, λόγω της επικίνδυνης στενώσεως στην αριστερή πλευρά του οδοστρώματος.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c134.jpg",
-					"img_path": "data\\imgs\\c134.jpg"
+					"img_path": "data\\imgs\\quiz\\c134.jpg"
 				},
 				{
 					"question": "Πώς κινείσθε βλέποντας αυτό το σήμα:",
@@ -1378,7 +1378,7 @@
 						"Επιταχύνετε για να απομακρυνθείτε από την επικίνδυνη περιοχή, λόγω ενδεχόμενης πτώσεως βράχων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c135.jpg",
-					"img_path": "data\\imgs\\c135.jpg"
+					"img_path": "data\\imgs\\quiz\\c135.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1388,7 +1388,7 @@
 						"Υποχρεωτική στροφή δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c136.jpg",
-					"img_path": "data\\imgs\\c136.jpg"
+					"img_path": "data\\imgs\\quiz\\c136.jpg"
 				},
 				{
 					"question": "Για ποια οχήματα ισχύει η απόσταση ασφαλείας των 70 μέτρων που καθορίζει το σήμα αυτό:",
@@ -1398,7 +1398,7 @@
 						"Μόνο για τα επιβατηγά οχήματα χωρίς ρυμουλκούμενο όχημα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c137.jpg",
-					"img_path": "data\\imgs\\c137.jpg"
+					"img_path": "data\\imgs\\quiz\\c137.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1408,7 +1408,7 @@
 						"Κατηφορικό τμήμα του δρόμου αριστερά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c138.jpg",
-					"img_path": "data\\imgs\\c138.jpg"
+					"img_path": "data\\imgs\\quiz\\c138.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1418,7 +1418,7 @@
 						"Απαγορεύεται η είσοδος στα οχήματα που μεταφέρουν επικίνδυνα υλικά.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c139.jpg",
-					"img_path": "data\\imgs\\c139.jpg"
+					"img_path": "data\\imgs\\quiz\\c139.jpg"
 				},
 				{
 					"question": "Θέλοντας να κατευθυνθείτε προς Ηράκλειο, πώς θα ενεργήσετε βλέποντας αυτήν την πινακίδα:",
@@ -1428,7 +1428,7 @@
 						"Θα συνεχίσετε την πορεία εμπρός.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c140.jpg",
-					"img_path": "data\\imgs\\c140.jpg"
+					"img_path": "data\\imgs\\quiz\\c140.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1438,7 +1438,7 @@
 						"Θέση για κατασκηνώσεις.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c141.jpg",
-					"img_path": "data\\imgs\\c141.jpg"
+					"img_path": "data\\imgs\\quiz\\c141.jpg"
 				},
 				{
 					"question": "Πόσες λωρίδες κυκλοφορίας έχει στην πινακίδα αυτή το αντίθετο ρεύμα κυκλοφορίας:",
@@ -1448,7 +1448,7 @@
 						"Τρεις.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c142.jpg",
-					"img_path": "data\\imgs\\c142.jpg"
+					"img_path": "data\\imgs\\quiz\\c142.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1458,7 +1458,7 @@
 						"Υποχρεωτική στροφή αριστερά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c143.jpg",
-					"img_path": "data\\imgs\\c143.jpg"
+					"img_path": "data\\imgs\\quiz\\c143.jpg"
 				},
 				{
 					"question": "Τι δείχνει το σήμα αυτό:",
@@ -1468,7 +1468,7 @@
 						"Δεξιά από το οδόστρωμα υπάρχει αυλάκι με νερό.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c144.jpg",
-					"img_path": "data\\imgs\\c144.jpg"
+					"img_path": "data\\imgs\\quiz\\c144.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1478,7 +1478,7 @@
 						"Απαγορεύεται η αναστροφή (στροφή 180°).": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c145.jpg",
-					"img_path": "data\\imgs\\c145.jpg"
+					"img_path": "data\\imgs\\quiz\\c145.jpg"
 				},
 				{
 					"question": "Ποια κατεύθυνση πορείας έχει προτεραιότητα:",
@@ -1488,7 +1488,7 @@
 						"Καμιά κατεύθυνση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c146.jpg",
-					"img_path": "data\\imgs\\c146.jpg"
+					"img_path": "data\\imgs\\quiz\\c146.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1498,7 +1498,7 @@
 						"Υποχρεωτική κατεύθυνση δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c147.jpg",
-					"img_path": "data\\imgs\\c147.jpg"
+					"img_path": "data\\imgs\\quiz\\c147.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1508,7 +1508,7 @@
 						"Σημείο ενάρξεως περιπάτου.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c148.jpg",
-					"img_path": "data\\imgs\\c148.jpg"
+					"img_path": "data\\imgs\\quiz\\c148.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε βλέποντας αυτό το σήμα:",
@@ -1518,7 +1518,7 @@
 						"Παραχωρείτε, στην αμέσως επόμενη διασταύρωση, προτεραιότητα στα οχήματα που έρχονται από δεξιά.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c149.jpg",
-					"img_path": "data\\imgs\\c149.jpg"
+					"img_path": "data\\imgs\\quiz\\c149.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε βλέποντας αυτό το σήμα:",
@@ -1527,7 +1527,7 @@
 						"Συνεχίζετε, διότι έχετε προτεραιότητα ως προς τα αυτοκίνητα που έρχονται αντίθετα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c150.jpg",
-					"img_path": "data\\imgs\\c150.jpg"
+					"img_path": "data\\imgs\\quiz\\c150.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1537,7 +1537,7 @@
 						"Επιτρέπεται το προσπέρασμα μηχανοκινήτων οχημάτων πλην των διτρόχων μοτοσυκλετών χωρίς κάνιστρο σε μήκος 1 km.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c151.jpg",
-					"img_path": "data\\imgs\\c151.jpg"
+					"img_path": "data\\imgs\\quiz\\c151.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1547,7 +1547,7 @@
 						"Απαγορεύεται η στροφή δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c152.jpg",
-					"img_path": "data\\imgs\\c152.jpg"
+					"img_path": "data\\imgs\\quiz\\c152.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1557,7 +1557,7 @@
 						"Έξοδος από περιοχή όπου ισχύει ανώτατο όριο ταχύτητας 50 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c153.jpg",
-					"img_path": "data\\imgs\\c153.jpg"
+					"img_path": "data\\imgs\\quiz\\c153.jpg"
 				},
 				{
 					"question": "Τι υποδεικνύει το σήμα αυτό:",
@@ -1567,7 +1567,7 @@
 						"Αρίθμηση αγροτικών οδών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c154.jpg",
-					"img_path": "data\\imgs\\c154.jpg"
+					"img_path": "data\\imgs\\quiz\\c154.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1577,7 +1577,7 @@
 						"Θέση για κατασκηνώσεις.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c155.jpg",
-					"img_path": "data\\imgs\\c155.jpg"
+					"img_path": "data\\imgs\\quiz\\c155.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1587,7 +1587,7 @@
 						"Κατεύθυνση οχημάτων προς χώρο επιτρεπόμενης σταθμεύσεως.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c156.jpg",
-					"img_path": "data\\imgs\\c156.jpg"
+					"img_path": "data\\imgs\\quiz\\c156.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε βλέποντας αυτό το σήμα:",
@@ -1597,7 +1597,7 @@
 						"Παραχωρείτε προτεραιότητα στην αντίθετη κυκλοφορία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c157.jpg",
-					"img_path": "data\\imgs\\c157.jpg"
+					"img_path": "data\\imgs\\quiz\\c157.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1607,7 +1607,7 @@
 						"Επικίνδυνο κάθετο ρείθρο (αυλάκι) ή απότομη κοίλη αλλαγή της κατά μήκος κλίσεως της οδού.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c158.jpg",
-					"img_path": "data\\imgs\\c158.jpg"
+					"img_path": "data\\imgs\\quiz\\c158.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε βλέποντας αυτό το σήμα:",
@@ -1617,7 +1617,7 @@
 						"Συνεχίζετε χωρίς να στρίψετε, διότι επιτρέπεται μόνο η κίνηση εμπρός.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c159.jpg",
-					"img_path": "data\\imgs\\c159.jpg"
+					"img_path": "data\\imgs\\quiz\\c159.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1627,7 +1627,7 @@
 						"Υποχρεωτική σταθερή ταχύτητα 50 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c160.jpg",
-					"img_path": "data\\imgs\\c160.jpg"
+					"img_path": "data\\imgs\\quiz\\c160.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1637,7 +1637,7 @@
 						"Επιτρέπεται η κατεύθυνση πορείας προς τα εμπρός.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c161.jpg",
-					"img_path": "data\\imgs\\c161.jpg"
+					"img_path": "data\\imgs\\quiz\\c161.jpg"
 				},
 				{
 					"question": "Τι υποδεικνύει το σήμα αυτό:",
@@ -1647,7 +1647,7 @@
 						"Μήκος των οδών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c162.jpg",
-					"img_path": "data\\imgs\\c162.jpg"
+					"img_path": "data\\imgs\\quiz\\c162.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1657,7 +1657,7 @@
 						"Θέση για τροχόσπιτα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c163.jpg",
-					"img_path": "data\\imgs\\c163.jpg"
+					"img_path": "data\\imgs\\quiz\\c163.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1667,7 +1667,7 @@
 						"Κατεύθυνση οχημάτων προς χώρο επιτρεπόμενης σταθμεύσεως.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c164.jpg",
-					"img_path": "data\\imgs\\c164.jpg"
+					"img_path": "data\\imgs\\quiz\\c164.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1677,7 +1677,7 @@
 						"Ολισθηρό οδόστρωμα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c165.jpg",
-					"img_path": "data\\imgs\\c165.jpg"
+					"img_path": "data\\imgs\\quiz\\c165.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1687,7 +1687,7 @@
 						"Απαγορεύεται η είσοδος σε λεωφορεία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c166.jpg",
-					"img_path": "data\\imgs\\c166.jpg"
+					"img_path": "data\\imgs\\quiz\\c166.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1697,7 +1697,7 @@
 						"Είσοδος σε τετράγωνη πλατεία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c167.jpg",
-					"img_path": "data\\imgs\\c167.jpg"
+					"img_path": "data\\imgs\\quiz\\c167.jpg"
 				},
 				{
 					"question": "Τι πρέπει να κάνετε βλέποντας αυτό το σήμα:",
@@ -1706,7 +1706,7 @@
 						"Να κατευθυνθείτε δεξιά, στη διασταύρωση προ του σήματος.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c169.jpg",
-					"img_path": "data\\imgs\\c169.jpg"
+					"img_path": "data\\imgs\\quiz\\c169.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1716,7 +1716,7 @@
 						"Απαγορεύεται η είσοδος ζώων ιππασίας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c170.jpg",
-					"img_path": "data\\imgs\\c170.jpg"
+					"img_path": "data\\imgs\\quiz\\c170.jpg"
 				},
 				{
 					"question": "Τι υποδεικνύει το σήμα αυτό:",
@@ -1726,7 +1726,7 @@
 						"Αρίθμηση αγροτικών οδών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c171.jpg",
-					"img_path": "data\\imgs\\c171.jpg"
+					"img_path": "data\\imgs\\quiz\\c171.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1736,7 +1736,7 @@
 						"Ορεινό καταφύγιο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c172.jpg",
-					"img_path": "data\\imgs\\c172.jpg"
+					"img_path": "data\\imgs\\quiz\\c172.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1746,7 +1746,7 @@
 						"Εμπόδιο κινητό λόγω έργων επί της οδού.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c173.jpg",
-					"img_path": "data\\imgs\\c173.jpg"
+					"img_path": "data\\imgs\\quiz\\c173.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1756,7 +1756,7 @@
 						"Κίνδυνος λόγω χαμηλής πτήσεως αεροσκαφών που προσγειώνονται ή απογειώνονται.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c174.jpg",
-					"img_path": "data\\imgs\\c174.jpg"
+					"img_path": "data\\imgs\\quiz\\c174.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1766,7 +1766,7 @@
 						"Απαγορεύεται η είσοδος σε φορτηγά αυτοκίνητα με απόσταση μεταξύ των αξόνων των τροχών μεγαλύτερη των 10 m.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c175.jpg",
-					"img_path": "data\\imgs\\c175.jpg"
+					"img_path": "data\\imgs\\quiz\\c175.jpg"
 				},
 				{
 					"question": "Ποιες απαγορέυσεις παύουν να ισχύουν με αυτό το σήμα:",
@@ -1776,7 +1776,7 @@
 						"Όλες οι τοπικές απαγορεύσεις που έχουν επιβληθεί με απαγορευτικές πινακίδες.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c176.jpg",
-					"img_path": "data\\imgs\\c176.jpg"
+					"img_path": "data\\imgs\\quiz\\c176.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1786,7 +1786,7 @@
 						"Απαγορεύεται η είσοδος σε βαρέα οχήματα επειδή κάτω από το οδόστρωμα υπάρχει αυλάκι με νερό.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c177.jpg",
-					"img_path": "data\\imgs\\c177.jpg"
+					"img_path": "data\\imgs\\quiz\\c177.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1796,7 +1796,7 @@
 						"Κίνδυνος λόγω διελεύσεως ποδηλατιστών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c178.jpg",
-					"img_path": "data\\imgs\\c178.jpg"
+					"img_path": "data\\imgs\\quiz\\c178.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1806,7 +1806,7 @@
 						"Τοπωνυμία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c179.jpg",
-					"img_path": "data\\imgs\\c179.jpg"
+					"img_path": "data\\imgs\\quiz\\c179.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1816,7 +1816,7 @@
 						"Υποχρεωτική κατεύθυνση οχημάτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c180.jpg",
-					"img_path": "data\\imgs\\c180.jpg"
+					"img_path": "data\\imgs\\quiz\\c180.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1826,7 +1826,7 @@
 						"Προσοχή, κόμβος ή θέση όπου η κυκλοφορία ρυθμίζεται με τρίχρωμη φωτεινή σηματοδότηση.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c181.jpg",
-					"img_path": "data\\imgs\\c181.jpg"
+					"img_path": "data\\imgs\\quiz\\c181.jpg"
 				},
 				{
 					"question": "Τι πρέπει να κάνετε βλέποντας αυτό το σήμα πριν από διασταύρωση:",
@@ -1836,7 +1836,7 @@
 						"Να σταματήσετε μόνο αν έρχεται κάθετα άλλο όχημα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c182.jpg",
-					"img_path": "data\\imgs\\c182.jpg"
+					"img_path": "data\\imgs\\quiz\\c182.jpg"
 				},
 				{
 					"question": "Ποιες απαγορεύσεις παύουν να ισχύουν με αυτό το σήμα:",
@@ -1846,7 +1846,7 @@
 						"Απαγόρευση προσπεράσματος.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c183.jpg",
-					"img_path": "data\\imgs\\c183.jpg"
+					"img_path": "data\\imgs\\quiz\\c183.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1856,7 +1856,7 @@
 						"Έξοδος από περιοχή σταθμεύσεως περιορισμένης χρονικής διάρκειας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c184.jpg",
-					"img_path": "data\\imgs\\c184.jpg"
+					"img_path": "data\\imgs\\quiz\\c184.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1866,7 +1866,7 @@
 						"Απαγορεύεται η συνέχιση της πορείας εμπρός.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c185.jpg",
-					"img_path": "data\\imgs\\c185.jpg"
+					"img_path": "data\\imgs\\quiz\\c185.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1876,7 +1876,7 @@
 						"Απαγορεύεται η διέλευση από το κέντρο της πόλεως.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c186.jpg",
-					"img_path": "data\\imgs\\c186.jpg"
+					"img_path": "data\\imgs\\quiz\\c186.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1886,7 +1886,7 @@
 						"Θέση για κατασκηνώσεις.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c187.jpg",
-					"img_path": "data\\imgs\\c187.jpg"
+					"img_path": "data\\imgs\\quiz\\c187.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1896,7 +1896,7 @@
 						"Κινητό εμπόδιο επί της οδού λόγω έργων.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c188.jpg",
-					"img_path": "data\\imgs\\c188.jpg"
+					"img_path": "data\\imgs\\quiz\\c188.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1906,7 +1906,7 @@
 						"Κίνδυνος από πτώση βράχων στο οδόστρωμα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c189.jpg",
-					"img_path": "data\\imgs\\c189.jpg"
+					"img_path": "data\\imgs\\quiz\\c189.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1916,7 +1916,7 @@
 						"Προσέγγιση σε ζωολογικό κήπο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c190.jpg",
-					"img_path": "data\\imgs\\c190.jpg"
+					"img_path": "data\\imgs\\quiz\\c190.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1926,7 +1926,7 @@
 						"Τέλος αυτοκινητόδρομου.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c191.jpg",
-					"img_path": "data\\imgs\\c191.jpg"
+					"img_path": "data\\imgs\\quiz\\c191.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1936,7 +1936,7 @@
 						"Η στάση και η στάθμευση απαγορεύονται στην απέναντι πλευρά της οδού.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c192.jpg",
-					"img_path": "data\\imgs\\c192.jpg"
+					"img_path": "data\\imgs\\quiz\\c192.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1946,7 +1946,7 @@
 						"Απαγορεύεται η στάθμευση, στην πλευρά που είναι η πινακίδα, οχημάτων με ζυγό αριθμό κυκλοφορίας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c193.jpg",
-					"img_path": "data\\imgs\\c193.jpg"
+					"img_path": "data\\imgs\\quiz\\c193.jpg"
 				},
 				{
 					"question": "Τι πρέπει να κάνετε βλέποντας αυτό το σήμα:",
@@ -1955,7 +1955,7 @@
 						"Να κατευθυνθείτε αριστερά στη διασταύρωση προ του σήματος.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c194.jpg",
-					"img_path": "data\\imgs\\c194.jpg"
+					"img_path": "data\\imgs\\quiz\\c194.jpg"
 				},
 				{
 					"question": "Πώς ενεργείτε βλέποντας αυτό το σήμα:",
@@ -1965,7 +1965,7 @@
 						"Σταματάτε επάνω στη διάβαση πεζών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c195.jpg",
-					"img_path": "data\\imgs\\c195.jpg"
+					"img_path": "data\\imgs\\quiz\\c195.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1975,7 +1975,7 @@
 						"Θέση για κατασκηνώσεις.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c196.jpg",
-					"img_path": "data\\imgs\\c196.jpg"
+					"img_path": "data\\imgs\\quiz\\c196.jpg"
 				},
 				{
 					"question": "Ποιες απαγορεύσεις παύουν να ισχύουν με αυτό το σήμα:",
@@ -1985,7 +1985,7 @@
 						"Απαγόρευση εισόδου οχήματος που το συνολικό βάρος του υπερβαίνει τους 40 τόνους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c197.jpg",
-					"img_path": "data\\imgs\\c197.jpg"
+					"img_path": "data\\imgs\\quiz\\c197.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -1995,7 +1995,7 @@
 						"Περιοχή διελεύσεως πλοίων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c198.jpg",
-					"img_path": "data\\imgs\\c198.jpg"
+					"img_path": "data\\imgs\\quiz\\c198.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2005,7 +2005,7 @@
 						"Προσέγγιση σε εκτροφεία οικοσίτων ζώων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c199.jpg",
-					"img_path": "data\\imgs\\c199.jpg"
+					"img_path": "data\\imgs\\quiz\\c199.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2015,7 +2015,7 @@
 						"Οδός όπου επιτρέπεται η κυκλοφορία όλων των οχημάτων εκτός λεωφορείων ή τρόλεϊ.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c200.jpg",
-					"img_path": "data\\imgs\\c200.jpg"
+					"img_path": "data\\imgs\\quiz\\c200.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2025,7 +2025,7 @@
 						"Σταθμός Πρώτων Βοηθειών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c201.jpg",
-					"img_path": "data\\imgs\\c201.jpg"
+					"img_path": "data\\imgs\\quiz\\c201.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2035,7 +2035,7 @@
 						"Εγκαταστάσεις υγιεινής.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c202.jpg",
-					"img_path": "data\\imgs\\c202.jpg"
+					"img_path": "data\\imgs\\quiz\\c202.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2045,7 +2045,7 @@
 						"Προσέγγιση σε ανηφορικό τμήμα της οδού.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c203.jpg",
-					"img_path": "data\\imgs\\c203.jpg"
+					"img_path": "data\\imgs\\quiz\\c203.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2055,7 +2055,7 @@
 						"Κατοικημένη περιοχή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c204.jpg",
-					"img_path": "data\\imgs\\c204.jpg"
+					"img_path": "data\\imgs\\quiz\\c204.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2065,7 +2065,7 @@
 						"Κατεύθυνση εξόδου από οδό ταχείας κυκλοφορίας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c205.jpg",
-					"img_path": "data\\imgs\\c205.jpg"
+					"img_path": "data\\imgs\\quiz\\c205.jpg"
 				},
 				{
 					"question": "Ο φωτεινός σηματοδότης δείχνει πράσινο φως. Προς ποια κατεύθυνση επιτρέπεται η συνέχιση της πορείας:",
@@ -2075,7 +2075,7 @@
 						"Μόνο δεξιά ή αριστερά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c206.jpg",
-					"img_path": "data\\imgs\\c206.jpg"
+					"img_path": "data\\imgs\\quiz\\c206.jpg"
 				},
 				{
 					"question": "Ποια κατεύθυνση πορείας έχει προτεραιότητα:",
@@ -2085,7 +2085,7 @@
 						"Καμιά κατεύθυνση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c207.jpg",
-					"img_path": "data\\imgs\\c207.jpg"
+					"img_path": "data\\imgs\\quiz\\c207.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2095,7 +2095,7 @@
 						"Επικίνδυνη στροφή δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c208.jpg",
-					"img_path": "data\\imgs\\c208.jpg"
+					"img_path": "data\\imgs\\quiz\\c208.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2105,7 +2105,7 @@
 						"Σιδηροδρομικός σταθμός.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c209.jpg",
-					"img_path": "data\\imgs\\c209.jpg"
+					"img_path": "data\\imgs\\quiz\\c209.jpg"
 				},
 				{
 					"question": "Πού πρέπει να αναμένετε ότι θα δείτε την πινακίδα αυτή:",
@@ -2115,7 +2115,7 @@
 						"Σε εθνική οδό, πριν από διασταύρωση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c210.jpg",
-					"img_path": "data\\imgs\\c210.jpg"
+					"img_path": "data\\imgs\\quiz\\c210.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2125,7 +2125,7 @@
 						"Απαγορεύεται η είσοδος σε οχήματα που κινούνται με υγραέριο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c211.jpg",
-					"img_path": "data\\imgs\\c211.jpg"
+					"img_path": "data\\imgs\\quiz\\c211.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2135,7 +2135,7 @@
 						"Περιοχή διελεύσεως αεροσκαφών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c212.jpg",
-					"img_path": "data\\imgs\\c212.jpg"
+					"img_path": "data\\imgs\\quiz\\c212.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2145,7 +2145,7 @@
 						"Απαγορεύεται η διέλευση επιβατηγών αυτοκινήτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c213.jpg",
-					"img_path": "data\\imgs\\c213.jpg"
+					"img_path": "data\\imgs\\quiz\\c213.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2155,7 +2155,7 @@
 						"Περιοχή διελεύσεως αεροσκαφών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c214.jpg",
-					"img_path": "data\\imgs\\c214.jpg"
+					"img_path": "data\\imgs\\quiz\\c214.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2165,7 +2165,7 @@
 						"Προειδοποίηση εισόδου σε οδό ταχείας κυκλοφορίας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c215.jpg",
-					"img_path": "data\\imgs\\c215.jpg"
+					"img_path": "data\\imgs\\quiz\\c215.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2175,7 +2175,7 @@
 						"Η οδός οδηγεί σε αποβάθρα ή όχθη ποταμού.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c216.jpg",
-					"img_path": "data\\imgs\\c216.jpg"
+					"img_path": "data\\imgs\\quiz\\c216.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2185,7 +2185,7 @@
 						"Απαγορεύεται η στάθμευση, στην πλευρά που είναι η πινακίδα, οχημάτων με μονό αριθμό κυκλοφορίας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c217.jpg",
-					"img_path": "data\\imgs\\c217.jpg"
+					"img_path": "data\\imgs\\quiz\\c217.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2195,7 +2195,7 @@
 						"Τέλος οδού ταχείας κυκλοφορίας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c218.jpg",
-					"img_path": "data\\imgs\\c218.jpg"
+					"img_path": "data\\imgs\\quiz\\c218.jpg"
 				},
 				{
 					"question": "Που συναντάτε αυτήν την πινακίδα:",
@@ -2205,7 +2205,7 @@
 						"Προ ισοπέδου σιδηροδρομικής διαβάσεως.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c220.jpg",
-					"img_path": "data\\imgs\\c220.jpg"
+					"img_path": "data\\imgs\\quiz\\c220.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2215,7 +2215,7 @@
 						"Απαγορεύεται η είσοδος σε μηχανοκίνητα οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c221.jpg",
-					"img_path": "data\\imgs\\c221.jpg"
+					"img_path": "data\\imgs\\quiz\\c221.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία του σήματος αυτού:",
@@ -2225,7 +2225,7 @@
 						"Αυτοκινητόδρομος.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c222.jpg",
-					"img_path": "data\\imgs\\c222.jpg"
+					"img_path": "data\\imgs\\quiz\\c222.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2234,7 +2234,7 @@
 						"Προσέγγιση σε παιδική χαρά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c223.jpg",
-					"img_path": "data\\imgs\\c223.jpg"
+					"img_path": "data\\imgs\\quiz\\c223.jpg"
 				},
 				{
 					"question": "Πώς οδηγείτε αν συναντήσετε την πινακίδα αυτή:",
@@ -2243,7 +2243,7 @@
 						"Με πολύ χαμηλή ταχύτητα που δεν πρέπει να υπερβαίνει τα 50 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c224.jpg",
-					"img_path": "data\\imgs\\c224.jpg"
+					"img_path": "data\\imgs\\quiz\\c224.jpg"
 				},
 				{
 					"question": "Σταθμεύετε το αυτοκίνητό σας σε περιοχές που συναντάτε αυτήν την πινακίδα:",
@@ -2253,7 +2253,7 @@
 						"Ναι, αν είσθε κάτοικος της περιοχής.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c225.jpg",
-					"img_path": "data\\imgs\\c225.jpg"
+					"img_path": "data\\imgs\\quiz\\c225.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2262,7 +2262,7 @@
 						"Ρύθμιση κυκλοφορίας από Σχολικό Τροχονόμο.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c226.jpg",
-					"img_path": "data\\imgs\\c226.jpg"
+					"img_path": "data\\imgs\\quiz\\c226.jpg"
 				},
 				{
 					"question": "Αν συναντήσετε την πινακίδα αυτή, για τι πρέπει να προετοιμάζεστε:",
@@ -2271,7 +2271,7 @@
 						"Είσθε κοντά σε σχολείο και τις ώρες προσελεύσεως και αποχωρήσεως μαθητών Σχολικός Τροχονόμος μπορεί να ρυθμίζει την κυκλοφορία.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c227.jpg",
-					"img_path": "data\\imgs\\c227.jpg"
+					"img_path": "data\\imgs\\quiz\\c227.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2281,7 +2281,7 @@
 						"Επιτρέπεται η κίνηση συνδυασμού οχημάτων (ρυμουλκό μετά ρυμουλκούμενου).": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c229.jpg",
-					"img_path": "data\\imgs\\c229.jpg"
+					"img_path": "data\\imgs\\quiz\\c229.jpg"
 				},
 				{
 					"question": "Σε ποια σημεία του οδικού δικτύου μπορεί να συναντήσετε αυτήν την πινακίδα:",
@@ -2291,7 +2291,7 @@
 						"Σε διασταυρώσεις οδών ή και σε οδούς που διέρχονται μέσα μαζικής μεταφοράς και η στάθμευση οχημάτων δυσκολεύει ή καθιστά αδύνατη τη διέλευση αυτών.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c230.jpg",
-					"img_path": "data\\imgs\\c230.jpg"
+					"img_path": "data\\imgs\\quiz\\c230.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2300,7 +2300,7 @@
 						"Προειδοποιητική κατευθύνσεων σε περιοχές μεγάλου τουριστικού ή αρχαιολογικού ενδιαφέροντος.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c231.jpg",
-					"img_path": "data\\imgs\\c231.jpg"
+					"img_path": "data\\imgs\\quiz\\c231.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2310,7 +2310,7 @@
 						"Προειδοποιητική κατευθύνσεων σε αυτοκινητόδρομο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c232.jpg",
-					"img_path": "data\\imgs\\c232.jpg"
+					"img_path": "data\\imgs\\quiz\\c232.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2320,7 +2320,7 @@
 						"Προειδοποιητική κατευθύνσεων σε αυτοκινητόδρομο.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c233.jpg",
-					"img_path": "data\\imgs\\c233.jpg"
+					"img_path": "data\\imgs\\quiz\\c233.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2330,7 +2330,7 @@
 						"Προειδοποιητική κατευθύνσεων σε αυτοκινητόδρομο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c234.jpg",
-					"img_path": "data\\imgs\\c234.jpg"
+					"img_path": "data\\imgs\\quiz\\c234.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2340,7 +2340,7 @@
 						"Υποχρεωτική παρακαμπτήριος διαδρομή των οχημάτων που μεταφέρουν εκρηκτικές ή εύφλεκτες ύλες.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c235.jpg",
-					"img_path": "data\\imgs\\c235.jpg"
+					"img_path": "data\\imgs\\quiz\\c235.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2350,7 +2350,7 @@
 						"Απαγόρευση κατευθύνσεως πορείας οχημάτων που μεταφέρουν επικίνδυνα φορτία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c236.jpg",
-					"img_path": "data\\imgs\\c236.jpg"
+					"img_path": "data\\imgs\\quiz\\c236.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2360,7 +2360,7 @@
 						"Απαγόρευση κατευθύνσεως πορείας οχημάτων που μεταφέρουν επικίνδυνα φορτία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c237.jpg",
-					"img_path": "data\\imgs\\c237.jpg"
+					"img_path": "data\\imgs\\quiz\\c237.jpg"
 				},
 				{
 					"question": "Ποιά είναι η σημασία της πινακίδας αυτής:",
@@ -2370,7 +2370,7 @@
 						"Υποχρεωτική κατεύθυνση πορείας προς τα δεξιά, οχημάτων που μεταφέρουν εκρηκτικές ή εύφλεκτες ύλες.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c238.jpg",
-					"img_path": "data\\imgs\\c238.jpg"
+					"img_path": "data\\imgs\\quiz\\c238.jpg"
 				},
 				{
 					"question": "Σε ποια οχήματα απευθύνεται το μήνυμα αυτής της πινακίδας:",
@@ -2380,7 +2380,7 @@
 						"Σε οχήματα που μεταφέρουν επικίνδυνα υλικά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c239.jpg",
-					"img_path": "data\\imgs\\c239.jpg"
+					"img_path": "data\\imgs\\quiz\\c239.jpg"
 				},
 				{
 					"question": "Σε ποια οχήματα απευθύνεται το μήνυμα αυτής της πινακίδας:",
@@ -2390,7 +2390,7 @@
 						"Σε οχήματα που μεταφέρουν επικίνδυνα υλικά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c240.jpg",
-					"img_path": "data\\imgs\\c240.jpg"
+					"img_path": "data\\imgs\\quiz\\c240.jpg"
 				},
 				{
 					"question": "Σε ποια οχήματα απευθύνεται το μήνυμα αυτής της πινακίδας:",
@@ -2400,7 +2400,7 @@
 						"Σε φορτηγά οχήματα μεταφοράς επικινδύνων φορτίων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c241.jpg",
-					"img_path": "data\\imgs\\c241.jpg"
+					"img_path": "data\\imgs\\quiz\\c241.jpg"
 				},
 				{
 					"question": "Τι σημαίνει πράσινο φανάρι σε σχήμα κατακόρυφου βέλους με φορά προς τα κάτω:",
@@ -2410,7 +2410,7 @@
 						"Δεν επιτρέπετε να κυκλοφορείτε στη λωρίδα κυκλοφορίας πάνω από την οποία βρίσκεται το φανάρι.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c243.jpg",
-					"img_path": "data\\imgs\\c243.jpg"
+					"img_path": "data\\imgs\\quiz\\c243.jpg"
 				},
 				{
 					"question": "Φτάνοντας στο σηματοδότη με ταχύτητα 50 km/h, το φανάρι γίνεται κίτρινο:",
@@ -2543,7 +2543,7 @@
 						"Αφύλακτης σιδηροδρομικής διαβάσεως.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c025.jpg",
-					"img_path": "data\\imgs\\c025.jpg"
+					"img_path": "data\\imgs\\quiz\\c025.jpg"
 				},
 				{
 					"question": "Πώς ενεργείτε βλέποντας  το σήμα αυτό:",
@@ -2553,7 +2553,7 @@
 						"Συνεχίζετε την πορεία σας χωρίς καθυστέρηση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/c097.jpg",
-					"img_path": "data\\imgs\\c097.jpg"
+					"img_path": "data\\imgs\\quiz\\c097.jpg"
 				}
 			]
 		},
@@ -2566,7 +2566,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d001.jpg",
-					"img_path": "data\\imgs\\d001.jpg"
+					"img_path": "data\\imgs\\quiz\\d001.jpg"
 				},
 				{
 					"question": "Οδηγείτε το κόκκινο ανοιχτό αυτοκίνητο (καμπριολέ). Το μπλε αυτοκίνητο έρχεται με μεγάλη ταχύτητα:",
@@ -2575,7 +2575,7 @@
 						"Είστε έτοιμος να σταματήσετε γιατί πάντα είναι πιθανή η παραβίαση της προτεραιότητάς σας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d002.jpg",
-					"img_path": "data\\imgs\\d002.jpg"
+					"img_path": "data\\imgs\\quiz\\d002.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση:",
@@ -2585,7 +2585,7 @@
 						"Περνάτε.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d003.jpg",
-					"img_path": "data\\imgs\\d003.jpg"
+					"img_path": "data\\imgs\\quiz\\d003.jpg"
 				},
 				{
 					"question": "Όταν στρίβετε σε μια διασταύρωση, εγκαταλείπετε την επικίνδυνη περιοχή:",
@@ -2594,7 +2594,7 @@
 						"Αφού ανακτήσετε την ταχύτητα κυκλοφορίας των οχημάτων του δρόμου στον οποίο εισέρχεσθε.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d004.jpg",
-					"img_path": "data\\imgs\\d004.jpg"
+					"img_path": "data\\imgs\\quiz\\d004.jpg"
 				},
 				{
 					"question": "Συναντάτε αυτήν την πινακίδα:",
@@ -2603,7 +2603,7 @@
 						"Στην επόμενη διασταύρωση, θα έχετε την προτεραιότητα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d005.jpg",
-					"img_path": "data\\imgs\\d005.jpg"
+					"img_path": "data\\imgs\\quiz\\d005.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα σας πληροφορεί για:",
@@ -2612,7 +2612,7 @@
 						"Έναν κίνδυνο και μια διασταύρωση όπου έχετε την προτεραιότητα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d006.jpg",
-					"img_path": "data\\imgs\\d006.jpg"
+					"img_path": "data\\imgs\\quiz\\d006.jpg"
 				},
 				{
 					"question": "Όταν συναντάτε αυτήν την πινακίδα:",
@@ -2621,7 +2621,7 @@
 						"Πρέπει να σταματήσετε στη διαχωριστική γραμμή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d007.jpg",
-					"img_path": "data\\imgs\\d007.jpg"
+					"img_path": "data\\imgs\\quiz\\d007.jpg"
 				},
 				{
 					"question": "Σε μια κυκλική διασταύρωση:",
@@ -2630,7 +2630,7 @@
 						"Όποια και αν είναι η έξοδος που θα ακολουθήσετε, διέρχεστε πρώτα από την εσωτερική λωρίδα κυκλοφορίας του κόμβου.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d009.jpg",
-					"img_path": "data\\imgs\\d009.jpg"
+					"img_path": "data\\imgs\\quiz\\d009.jpg"
 				},
 				{
 					"question": "Σε μια κυκλική διασταύρωση:",
@@ -2639,7 +2639,7 @@
 						"Μπορείτε να παραμείνετε δεξιά μέχρι την έξοδο, εάν δεν γνωρίζετε την έξοδό σας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d010.jpg",
-					"img_path": "data\\imgs\\d010.jpg"
+					"img_path": "data\\imgs\\quiz\\d010.jpg"
 				},
 				{
 					"question": "Το χρώμα των φαναριών που δηλώνουν στάση είναι:",
@@ -2648,7 +2648,7 @@
 						"Πράσινο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d011.jpg",
-					"img_path": "data\\imgs\\d011.jpg"
+					"img_path": "data\\imgs\\quiz\\d011.jpg"
 				},
 				{
 					"question": "Το κόκκινο φανάρι έχει ανάψει και ένα κίτρινο βέλος στον ίδιο σηματοδότη αναβοσβήνει. Εσείς:",
@@ -2658,7 +2658,7 @@
 						"Μπορείτε να στρίψετε προς την κατεύθυνση που υποδεικνύεται από το βέλος τηρώντας την προτεραιότητα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d012.jpg",
-					"img_path": "data\\imgs\\d012.jpg"
+					"img_path": "data\\imgs\\quiz\\d012.jpg"
 				},
 				{
 					"question": "Οδηγείτε το μαύρο (σκούρο) όχημα:",
@@ -2667,7 +2667,7 @@
 						"Περνάτε πριν το κόκκινο αυτοκίνητο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d014.jpg",
-					"img_path": "data\\imgs\\d014.jpg"
+					"img_path": "data\\imgs\\quiz\\d014.jpg"
 				},
 				{
 					"question": "Το γαλάζιο αυτοκίνητο πρέπει να παραχωρήσει την προτεραιότητα:",
@@ -2676,7 +2676,7 @@
 						"Στο φορτηγάκι.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d015.jpg",
-					"img_path": "data\\imgs\\d015.jpg"
+					"img_path": "data\\imgs\\quiz\\d015.jpg"
 				},
 				{
 					"question": "Οδηγείτε το κόκκινο όχημα:",
@@ -2686,7 +2686,7 @@
 						"Το κίτρινο φορτηγάκι περνάει πριν από εσάς.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d016.jpg",
-					"img_path": "data\\imgs\\d016.jpg"
+					"img_path": "data\\imgs\\quiz\\d016.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση:",
@@ -2696,7 +2696,7 @@
 						"Το ανοικτό (μαύρο) όχημα περνάει πριν το πράσινο όχημα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d017.jpg",
-					"img_path": "data\\imgs\\d017.jpg"
+					"img_path": "data\\imgs\\quiz\\d017.jpg"
 				},
 				{
 					"question": "Όταν το κίτρινο φως αναβοσβήνει σε μία διασταύρωση:",
@@ -2705,7 +2705,7 @@
 						"Ισχύουν οι πινακίδες που ρυθμίζουν την προτεραιότητα στη διασταύρωση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d018.jpg",
-					"img_path": "data\\imgs\\d018.jpg"
+					"img_path": "data\\imgs\\quiz\\d018.jpg"
 				},
 				{
 					"question": "Όταν συναντάτε αυτήν την πινακίδα:",
@@ -2714,7 +2714,7 @@
 						"Πρέπει να σταματήσετε στη διαχωριστική γραμμή και να παραχωρήσετε την προτεραιότητα αριστερά και δεξιά.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d019.jpg",
-					"img_path": "data\\imgs\\d019.jpg"
+					"img_path": "data\\imgs\\quiz\\d019.jpg"
 				},
 				{
 					"question": "Όταν στρίβετε αριστερά σε ένα σταυροδρόμι όπου αντίθετα εισερχόμενα αυτοκίνητα επίσης στρίβουν αριστερά, ο σωστός και ασφαλής τρόπος διελεύσεως είναι αυτός που φαίνεται:",
@@ -2723,7 +2723,7 @@
 						"Στο σκίτσο B.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d020.jpg",
-					"img_path": "data\\imgs\\d020.jpg"
+					"img_path": "data\\imgs\\quiz\\d020.jpg"
 				},
 				{
 					"question": "Όταν συναντάτε αυτήν την πινακίδα, σημαίνει:",
@@ -2732,7 +2732,7 @@
 						"Ότι μετά από την επόμενη διασταύρωση θα έχετε πάλι την προτεραιότητα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d021.jpg",
-					"img_path": "data\\imgs\\d021.jpg"
+					"img_path": "data\\imgs\\quiz\\d021.jpg"
 				},
 				{
 					"question": "Όταν λειτουργούν τα φανάρια υπερισχύουν των πινακίδων:",
@@ -2741,7 +2741,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d022.jpg",
-					"img_path": "data\\imgs\\d022.jpg"
+					"img_path": "data\\imgs\\quiz\\d022.jpg"
 				},
 				{
 					"question": "Σε αυτήν την υπόδειξη του τροχονόμου:",
@@ -2750,7 +2750,7 @@
 						"Σταματάτε.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d023.jpg",
-					"img_path": "data\\imgs\\d023.jpg"
+					"img_path": "data\\imgs\\quiz\\d023.jpg"
 				},
 				{
 					"question": "Σε ισόπεδο κυκλικό κόμβο, χωρίς σήμανση, ποιοι έχουν προτεραιότητα:",
@@ -2760,7 +2760,7 @@
 						"Δεν υπάρχει κανόνας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d024.jpg",
-					"img_path": "data\\imgs\\d024.jpg"
+					"img_path": "data\\imgs\\quiz\\d024.jpg"
 				},
 				{
 					"question": "Σε αυτό το σήμα του τροχονόμου:",
@@ -2770,7 +2770,7 @@
 						"Περνάτε.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d026.jpg",
-					"img_path": "data\\imgs\\d026.jpg"
+					"img_path": "data\\imgs\\quiz\\d026.jpg"
 				},
 				{
 					"question": "Το κίτρινο φορτηγάκι πρέπει να παραχωρήσει την προτεραιότητα στο κόκκινο όχημα:",
@@ -2779,7 +2779,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d028.jpg",
-					"img_path": "data\\imgs\\d028.jpg"
+					"img_path": "data\\imgs\\quiz\\d028.jpg"
 				},
 				{
 					"question": "Αυτό το σήμα τονίζει:",
@@ -2788,7 +2788,7 @@
 						"Πως υπάρχουν δύο ή περισσότερες σιδηροδρομικές γραμμές στην ισόπεδη διάβαση που προσεγγίζετε.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d030.jpg",
-					"img_path": "data\\imgs\\d030.jpg"
+					"img_path": "data\\imgs\\quiz\\d030.jpg"
 				},
 				{
 					"question": "Κινείσθε στη μεσαία λωρίδα κυκλοφορίας και επιθυμείτε να στρίψετε δεξιά στο σηματοδότη. Πώς συμπεριφέρεσθε:",
@@ -2797,7 +2797,7 @@
 						"Προειδοποιείτε τους οδηγούς που ακολουθούν χρησιμοποιώντας τα φώτα αλλαγής κατευθύνσεως (φλας) του οχήματός σας, αλλάζετε λωρίδα κυκλοφορίας προς τα δεξιά και στρίβετε δεξιά εφόσον σας το επιτρέπει η σήμανση και η σηματοδότηση.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d032.jpg",
-					"img_path": "data\\imgs\\d032.jpg"
+					"img_path": "data\\imgs\\quiz\\d032.jpg"
 				},
 				{
 					"question": "Το φως του σηματοδότη είναι πράσινο. Το όχημά σας κινείται στη δεξιά λωρίδα κυκλοφορίας και έχετε την πρόθεση να στρίψετε δεξιά. Πώς πρέπει να ενεργήσετε:",
@@ -2806,7 +2806,7 @@
 						"Να σταματήσετε πριν από το σηματοδότη επειδή πάνω από αυτόν υπάρχει πινακίδα υποχρεωτικής παραχωρήσεως προτεραιότητας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d033.jpg",
-					"img_path": "data\\imgs\\d033.jpg"
+					"img_path": "data\\imgs\\quiz\\d033.jpg"
 				},
 				{
 					"question": "Σε ποιο σημείο του οδοστρώματος πρέπει να σταματήσετε για να ελέγξετε:",
@@ -2815,7 +2815,7 @@
 						"Στο ύψος της κατά πλάτος (εγκάρσιας) συνεχούς λευκής γραμμής.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d034.jpg",
-					"img_path": "data\\imgs\\d034.jpg"
+					"img_path": "data\\imgs\\quiz\\d034.jpg"
 				},
 				{
 					"question": "Με ποια προϋπόθεση μπορείτε να εισέλθετε στην περιοχή του οδοστρώματος που προσδιορίζεται με το πλέγμα κιτρίνων γραμμών:",
@@ -2824,7 +2824,7 @@
 						"Με την προϋπόθεση ότι αν εισέλθετε, δεν θα υποχρεωθείτε να παραμείνετε μέσα στη διασταύρωση λόγω της πυκνότητας της κυκλοφορίας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d035.jpg",
-					"img_path": "data\\imgs\\d035.jpg"
+					"img_path": "data\\imgs\\quiz\\d035.jpg"
 				},
 				{
 					"question": "Κινείσθε στην αριστερή λωρίδα κυκλοφορίας στο δρόμο της φωτογραφίας και σκοπεύετε να στρίψετε δεξιά στην επόμενη διασταύρωση που σημαίνεται με το βέλος. Ποιες ενέργειες πρέπει να κάνετε:",
@@ -2833,7 +2833,7 @@
 						"Θα επιταχύνετε το όχημά σας, προσπερνώντας το προπορευόμενο αυτοκίνητο, θα ειδοποιήσετε τον οδηγό του για την πρόθεσή σας και θα στρίψετε δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d036.jpg",
-					"img_path": "data\\imgs\\d036.jpg"
+					"img_path": "data\\imgs\\quiz\\d036.jpg"
 				},
 				{
 					"question": "Το αυτοκίνητο της φωτογραφίας προτίθεται να στρίψει δεξιά στην οδό στην οποία κινείσθε. Ποια πρέπει να είναι η συμπεριφορά σας και γιατί:",
@@ -2842,7 +2842,7 @@
 						"Να μειώσετε την ταχύτητά σας και να παραχωρήσετε προτεραιότητα στο αυτοκίνητο αυτό επειδή έρχεται από δεξιά.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d037.jpg",
-					"img_path": "data\\imgs\\d037.jpg"
+					"img_path": "data\\imgs\\quiz\\d037.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περιμένει:",
@@ -2852,7 +2852,7 @@
 						"Και τα δυο οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d038.jpg",
-					"img_path": "data\\imgs\\d038.jpg"
+					"img_path": "data\\imgs\\quiz\\d038.jpg"
 				},
 				{
 					"question": "Με ποια σειρά επιτρέπεται να περάσουν τη διασταύρωση τα οχήματα:",
@@ -2862,7 +2862,7 @@
 						"3-1-2.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d039.jpg",
-					"img_path": "data\\imgs\\d039.jpg"
+					"img_path": "data\\imgs\\quiz\\d039.jpg"
 				},
 				{
 					"question": "Με ποια σειρά προτεραιότητας επιτρέπεται η διέλευση της διασταυρώσεως αυτής:",
@@ -2872,7 +2872,7 @@
 						"Πρέπει να προηγηθεί συνεννόηση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d040.jpg",
-					"img_path": "data\\imgs\\d040.jpg"
+					"img_path": "data\\imgs\\quiz\\d040.jpg"
 				},
 				{
 					"question": "Ποιο όχημα επιτρέπεται να περάσει πρώτο:",
@@ -2882,7 +2882,7 @@
 						"Κανένα. Πρέπει να συνεννοηθούν οι οδηγοί.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d041.jpg",
-					"img_path": "data\\imgs\\d041.jpg"
+					"img_path": "data\\imgs\\quiz\\d041.jpg"
 				},
 				{
 					"question": "Ο σηματοδότης δείχνει κίτρινο φως που αναβοσβήνει. Ποια υποχρέωση έχει ο οδηγός του αυτοκινήτου:",
@@ -2892,7 +2892,7 @@
 						"Να ανακόψει ταχύτητα και να συνεχίσει με ιδιαίτερη προσοχή, παραχωρώντας προτεραιότητα στα αυτοκίνητα και στους πεζούς.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d042.jpg",
-					"img_path": "data\\imgs\\d042.jpg"
+					"img_path": "data\\imgs\\quiz\\d042.jpg"
 				},
 				{
 					"question": "Με ποια σειρά πρέπει να περάσουν τη διασταύρωση τα οχήματα:",
@@ -2902,7 +2902,7 @@
 						"3-2-1.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d043.jpg",
-					"img_path": "data\\imgs\\d043.jpg"
+					"img_path": "data\\imgs\\quiz\\d043.jpg"
 				},
 				{
 					"question": "Ποιο από τα οχήματα θα περάσει τελευταίο τη διασταύρωση και ποιο πρώτο:",
@@ -2912,7 +2912,7 @@
 						"Το 1 τελευταίο και το 3 πρώτο.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d044.jpg",
-					"img_path": "data\\imgs\\d044.jpg"
+					"img_path": "data\\imgs\\quiz\\d044.jpg"
 				},
 				{
 					"question": "Ποιο όχημα επιτρέπεται να περάσει πρώτο τη διασταύρωση:",
@@ -2922,7 +2922,7 @@
 						"Το όχημα 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d045.jpg",
-					"img_path": "data\\imgs\\d045.jpg"
+					"img_path": "data\\imgs\\quiz\\d045.jpg"
 				},
 				{
 					"question": "Ποιο όχημα επιτρέπεται να ξεκινήσει πρώτο:",
@@ -2932,7 +2932,7 @@
 						"Το όχημα 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d046.jpg",
-					"img_path": "data\\imgs\\d046.jpg"
+					"img_path": "data\\imgs\\quiz\\d046.jpg"
 				},
 				{
 					"question": "Με ποια σειρά πρέπει να περάσουν τη διασταύρωση τα οχήματα:",
@@ -2942,7 +2942,7 @@
 						"1-2-3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d047.jpg",
-					"img_path": "data\\imgs\\d047.jpg"
+					"img_path": "data\\imgs\\quiz\\d047.jpg"
 				},
 				{
 					"question": "Ποιο όχημα επιτρέπεται να στρίψει:",
@@ -2952,7 +2952,7 @@
 						"Και τα δυο οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d048.jpg",
-					"img_path": "data\\imgs\\d048.jpg"
+					"img_path": "data\\imgs\\quiz\\d048.jpg"
 				},
 				{
 					"question": "Ποιο όχημα επιτρέπεται να περάσει  τη διασταύρωση:",
@@ -2962,7 +2962,7 @@
 						"Κανένα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d049.jpg",
-					"img_path": "data\\imgs\\d049.jpg"
+					"img_path": "data\\imgs\\quiz\\d049.jpg"
 				},
 				{
 					"question": "Με ποια σειρά προτεραιότητας επιτρέπεται η διέλευση της διασταυρώσεως αυτής:",
@@ -2972,7 +2972,7 @@
 						"1-3-2.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d050.jpg",
-					"img_path": "data\\imgs\\d050.jpg"
+					"img_path": "data\\imgs\\quiz\\d050.jpg"
 				},
 				{
 					"question": "Σε ποια από τις τρεις σημειούμενες τροχιές, εάν κινηθεί το όχημά σας, θα παρεμποδίσει την κυκλοφορία:",
@@ -2982,7 +2982,7 @@
 						"Στην τροχιά 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d051.jpg",
-					"img_path": "data\\imgs\\d051.jpg"
+					"img_path": "data\\imgs\\quiz\\d051.jpg"
 				},
 				{
 					"question": "Ποια από τα οχήματα πρέπει να περιμένουν να περάσουν τα άλλα:",
@@ -2992,7 +2992,7 @@
 						"Τα οχήματα 1 και 4.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d052.jpg",
-					"img_path": "data\\imgs\\d052.jpg"
+					"img_path": "data\\imgs\\quiz\\d052.jpg"
 				},
 				{
 					"question": "Ο σηματοδότης δείχνει πράσινο φως. Στο σηματοδότη υπάρχει πινακίδα με το σήμα STOP. Τι θα κάνει ο οδηγός του αυτοκινήτου:",
@@ -3002,7 +3002,7 @@
 						"Θα περάσει τη διασταύρωση χωρίς να σταματήσει.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d053.jpg",
-					"img_path": "data\\imgs\\d053.jpg"
+					"img_path": "data\\imgs\\quiz\\d053.jpg"
 				},
 				{
 					"question": "Με ποια σειρά προτεραιότητας επιτρέπεται η διέλευση της διασταυρώσεως αυτής:",
@@ -3012,7 +3012,7 @@
 						"3-2-1.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d054.jpg",
-					"img_path": "data\\imgs\\d054.jpg"
+					"img_path": "data\\imgs\\quiz\\d054.jpg"
 				},
 				{
 					"question": "Ποιο όχημα έχει προτεραιότητα:",
@@ -3022,7 +3022,7 @@
 						"Κανένα και οι οδηγοί πρέπει να συνεννοηθούν.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d055.jpg",
-					"img_path": "data\\imgs\\d055.jpg"
+					"img_path": "data\\imgs\\quiz\\d055.jpg"
 				},
 				{
 					"question": "Ποια από τα οχήματα πρέπει να περιμένει:",
@@ -3032,7 +3032,7 @@
 						"Τα οχήματα 1 και 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d056.jpg",
-					"img_path": "data\\imgs\\d056.jpg"
+					"img_path": "data\\imgs\\quiz\\d056.jpg"
 				},
 				{
 					"question": "Τι πρέπει να κάνει ο οδηγός του οχήματος 1:",
@@ -3042,7 +3042,7 @@
 						"Να ξεκινήσει πριν από το όχημα 2 και στη συνέχεια να σταθεί στη μέση της διασταυρώσεως δίνοντας προτεραιότητα στο όχημα 3.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d057.jpg",
-					"img_path": "data\\imgs\\d057.jpg"
+					"img_path": "data\\imgs\\quiz\\d057.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να εγκαταλείψει τελευταίο τη διασταύρωση:",
@@ -3052,7 +3052,7 @@
 						"Το όχημα 3.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d058.jpg",
-					"img_path": "data\\imgs\\d058.jpg"
+					"img_path": "data\\imgs\\quiz\\d058.jpg"
 				},
 				{
 					"question": "Ποιο όχημα και γιατί έχει προτεραιότητα:",
@@ -3062,7 +3062,7 @@
 						"Το επιβατηγό γιατί κινείται σε ευθεία.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d059.jpg",
-					"img_path": "data\\imgs\\d059.jpg"
+					"img_path": "data\\imgs\\quiz\\d059.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περιμένει  να περάσει  το άλλο και γιατί:",
@@ -3072,7 +3072,7 @@
 						"Το όχημα 2 γιατί έρχεται από τα αριστερά του οχήματος 1.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d060.jpg",
-					"img_path": "data\\imgs\\d060.jpg"
+					"img_path": "data\\imgs\\quiz\\d060.jpg"
 				},
 				{
 					"question": "Ποιος από τους οδηγούς των δυο οχημάτων πρέπει να περιμένει να περάσει ο άλλος:",
@@ -3082,7 +3082,7 @@
 						"Πρέπει να συνεννοηθούν μεταξύ τους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d061.jpg",
-					"img_path": "data\\imgs\\d061.jpg"
+					"img_path": "data\\imgs\\quiz\\d061.jpg"
 				},
 				{
 					"question": "Ποιο όχημα και γιατί έχει προτεραιότητα:",
@@ -3092,7 +3092,7 @@
 						"Το όχημα 1 γιατί έρχεται από τα δεξιά του οχήματος 2.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d062.jpg",
-					"img_path": "data\\imgs\\d062.jpg"
+					"img_path": "data\\imgs\\quiz\\d062.jpg"
 				},
 				{
 					"question": "Ποιο όχημα έχει προτεραιότητα και γιατί :",
@@ -3102,7 +3102,7 @@
 						"Το όχημα 2 γιατί κινείται σε πλατύτερο δρόμο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d063.jpg",
-					"img_path": "data\\imgs\\d063.jpg"
+					"img_path": "data\\imgs\\quiz\\d063.jpg"
 				},
 				{
 					"question": "Ποιο όχημα έχει προτεραιότητα:",
@@ -3112,7 +3112,7 @@
 						"Κανένα και οι οδηγοί τους πρέπει να συνεννοηθούν για το ποιος θα περάσει πρώτος.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d064.jpg",
-					"img_path": "data\\imgs\\d064.jpg"
+					"img_path": "data\\imgs\\quiz\\d064.jpg"
 				},
 				{
 					"question": "Ποιο όχημα επιτρέπεται να στρίψει:",
@@ -3122,7 +3122,7 @@
 						"Κανένα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d065.jpg",
-					"img_path": "data\\imgs\\d065.jpg"
+					"img_path": "data\\imgs\\quiz\\d065.jpg"
 				},
 				{
 					"question": "Ποιο όχημα έχει προτεραιότητα και γιατί :",
@@ -3132,7 +3132,7 @@
 						"Το όχημα 2 γιατί διατηρεί την κατεύθυνσή του.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d066.jpg",
-					"img_path": "data\\imgs\\d066.jpg"
+					"img_path": "data\\imgs\\quiz\\d066.jpg"
 				},
 				{
 					"question": "Ποιο όχημα έχει προτεραιότητα:",
@@ -3142,7 +3142,7 @@
 						"Κανένα και οι οδηγοί πρέπει να συνεννοηθούν μεταξύ τους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d067.jpg",
-					"img_path": "data\\imgs\\d067.jpg"
+					"img_path": "data\\imgs\\quiz\\d067.jpg"
 				},
 				{
 					"question": "Ποιο όχημα έχει προτεραιότητα:",
@@ -3152,7 +3152,7 @@
 						"Κανένα και οι οδηγοί πρέπει να συνεννοηθούν μεταξύ τους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d068.jpg",
-					"img_path": "data\\imgs\\d068.jpg"
+					"img_path": "data\\imgs\\quiz\\d068.jpg"
 				},
 				{
 					"question": "Ποια οχήματα επιτρέπεται να στρίψουν:",
@@ -3162,7 +3162,7 @@
 						"Και τα τρία οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d069.jpg",
-					"img_path": "data\\imgs\\d069.jpg"
+					"img_path": "data\\imgs\\quiz\\d069.jpg"
 				},
 				{
 					"question": "Ποιο όχημα έχει προτεραιότητα:",
@@ -3172,7 +3172,7 @@
 						"Κανένα και οι οδηγοί πρέπει να συνεννοηθούν μεταξύ τους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d070.jpg",
-					"img_path": "data\\imgs\\d070.jpg"
+					"img_path": "data\\imgs\\quiz\\d070.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περάσει τελευταίο τη διασταύρωση:",
@@ -3182,7 +3182,7 @@
 						"Το όχημα 3.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d071.jpg",
-					"img_path": "data\\imgs\\d071.jpg"
+					"img_path": "data\\imgs\\quiz\\d071.jpg"
 				},
 				{
 					"question": "Ποιο όχημα και γιατί πρέπει να περιμένει  να περάσει  το άλλο:",
@@ -3192,7 +3192,7 @@
 						"Το όχημα 1 γιατί το όχημα 2 κινείται σε δρόμο με διαχωριστική νησίδα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d072.jpg",
-					"img_path": "data\\imgs\\d072.jpg"
+					"img_path": "data\\imgs\\quiz\\d072.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περιμένει  να περάσει  το άλλο:",
@@ -3202,7 +3202,7 @@
 						"Κανένα και οι οδηγοί πρέπει να συνεννοηθούν μεταξύ τους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d073.jpg",
-					"img_path": "data\\imgs\\d073.jpg"
+					"img_path": "data\\imgs\\quiz\\d073.jpg"
 				},
 				{
 					"question": "Ποιο οχήμα επιτρέπεται να συνεχίσει την πορεία του:",
@@ -3212,7 +3212,7 @@
 						"Το όχημα 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d074.jpg",
-					"img_path": "data\\imgs\\d074.jpg"
+					"img_path": "data\\imgs\\quiz\\d074.jpg"
 				},
 				{
 					"question": "Ποιο ή ποια από τα οχήματα πρέπει να περιμένουν:",
@@ -3222,7 +3222,7 @@
 						"Τα οχήματα 2 και 3 για να περάσει το 1.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d075.jpg",
-					"img_path": "data\\imgs\\d075.jpg"
+					"img_path": "data\\imgs\\quiz\\d075.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περιμένει  να περάσει  το άλλο και γιατί:",
@@ -3232,7 +3232,7 @@
 						"Το επιβατηγό αυτοκίνητο γιατί ο γεωργικός ελκυστήρας κινείται σε δρόμο προτεραιότητας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d076.jpg",
-					"img_path": "data\\imgs\\d076.jpg"
+					"img_path": "data\\imgs\\quiz\\d076.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει διακόψει την πορεία του και να περιμένει:",
@@ -3242,7 +3242,7 @@
 						"Το όχημα 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d077.jpg",
-					"img_path": "data\\imgs\\d077.jpg"
+					"img_path": "data\\imgs\\quiz\\d077.jpg"
 				},
 				{
 					"question": "Ποιο από τα οχήματα πρέπει να περάσει τελευταίο τη διασταύρωση:",
@@ -3252,7 +3252,7 @@
 						"Το όχημα 3.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d078.jpg",
-					"img_path": "data\\imgs\\d078.jpg"
+					"img_path": "data\\imgs\\quiz\\d078.jpg"
 				},
 				{
 					"question": "Ποιο όχημα επιτρέπεται να περάσει πρώτο τη διασταύρωση:",
@@ -3262,7 +3262,7 @@
 						"Το όχημα 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d079.jpg",
-					"img_path": "data\\imgs\\d079.jpg"
+					"img_path": "data\\imgs\\quiz\\d079.jpg"
 				},
 				{
 					"question": "Ποια οχήματα επιτρέπεται να περάσουν τη διασταύρωση χωρίς να σταματήσουν:",
@@ -3272,7 +3272,7 @@
 						"Και τα τρία οχήματα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d080.jpg",
-					"img_path": "data\\imgs\\d080.jpg"
+					"img_path": "data\\imgs\\quiz\\d080.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περάσει τελευταίο τη διασταύρωση:",
@@ -3282,7 +3282,7 @@
 						"Το όχημα 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d081.jpg",
-					"img_path": "data\\imgs\\d081.jpg"
+					"img_path": "data\\imgs\\quiz\\d081.jpg"
 				},
 				{
 					"question": "Ποιο όχημα επιτρέπεται να στρίψει:",
@@ -3292,7 +3292,7 @@
 						"Κανένα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d082.jpg",
-					"img_path": "data\\imgs\\d082.jpg"
+					"img_path": "data\\imgs\\quiz\\d082.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περάσει τελευταίο τη διασταύρωση:",
@@ -3302,7 +3302,7 @@
 						"Το όχημα 3.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d083.jpg",
-					"img_path": "data\\imgs\\d083.jpg"
+					"img_path": "data\\imgs\\quiz\\d083.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περάσει τελευταίο τη διασταύρωση:",
@@ -3312,7 +3312,7 @@
 						"Το όχημα 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d084.jpg",
-					"img_path": "data\\imgs\\d084.jpg"
+					"img_path": "data\\imgs\\quiz\\d084.jpg"
 				},
 				{
 					"question": "Ο σηματοδότης δείχνει κόκκινο φως. Ποιο όχημα πρέπει να περιμένει:",
@@ -3322,7 +3322,7 @@
 						"Και τα δυο οχήματα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d085.jpg",
-					"img_path": "data\\imgs\\d085.jpg"
+					"img_path": "data\\imgs\\quiz\\d085.jpg"
 				},
 				{
 					"question": "Ποιο από τα οχήματα έχει πάρει σωστή θέση προκειμένου μετά την αριστερή στροφή, να στρίψει αμέσως δεξιά:",
@@ -3332,7 +3332,7 @@
 						"Το όχημα 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d086.jpg",
-					"img_path": "data\\imgs\\d086.jpg"
+					"img_path": "data\\imgs\\quiz\\d086.jpg"
 				},
 				{
 					"question": "Ποιο όχημα πρέπει να περιμένει:",
@@ -3342,7 +3342,7 @@
 						"Κανένα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d090.jpg",
-					"img_path": "data\\imgs\\d090.jpg"
+					"img_path": "data\\imgs\\quiz\\d090.jpg"
 				},
 				{
 					"question": "Ποιο από τα οχήματα και γιατί πρέπει να περάσει πρώτο τη διασταύρωση:",
@@ -3352,7 +3352,7 @@
 						"Το όχημα 1, γιατί το όχημα 2 πρόκειται να στρίψει αριστερά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d091.jpg",
-					"img_path": "data\\imgs\\d091.jpg"
+					"img_path": "data\\imgs\\quiz\\d091.jpg"
 				},
 				{
 					"question": "Με ποια σειρά προτεραιότητας επιτρέπεται η διέλευση της διασταυρώσεως αυτής:",
@@ -3362,7 +3362,7 @@
 						"3-1-2.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d092.jpg",
-					"img_path": "data\\imgs\\d092.jpg"
+					"img_path": "data\\imgs\\quiz\\d092.jpg"
 				},
 				{
 					"question": "Ένα κόκκινο φανάρι υπερισχύει ενός τροχονόμου:",
@@ -3533,7 +3533,7 @@
 						"Προσέγγιση σε πέρασμα που έχει σαμαράκι.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/d029.jpg",
-					"img_path": "data\\imgs\\d029.jpg"
+					"img_path": "data\\imgs\\quiz\\d029.jpg"
 				}
 			]
 		},
@@ -3547,7 +3547,7 @@
 						"Πατάτε την κόρνα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e01.jpg",
-					"img_path": "data\\imgs\\e01.jpg"
+					"img_path": "data\\imgs\\quiz\\e01.jpg"
 				},
 				{
 					"question": "Μόλις πάρετε την άδεια οδηγήσεώς σας, είστε υποχρεωμένος να έχετε τοποθετημένο το ειδικό σήμα του νέου οδηγού (Ν) στο πίσω τζάμι του αυτοκινήτου σας για ένα έτος:",
@@ -3557,7 +3557,7 @@
 						"Μόνο μέσα στις πόλεις.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e03.jpg",
-					"img_path": "data\\imgs\\e03.jpg"
+					"img_path": "data\\imgs\\quiz\\e03.jpg"
 				},
 				{
 					"question": "Τα όρια ταχύτητας που τίθενται με πινακίδες σαν αυτή του σχήματος έχουν σκοπό:",
@@ -3567,7 +3567,7 @@
 						"Ως συμβουλή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e04.jpg",
-					"img_path": "data\\imgs\\e04.jpg"
+					"img_path": "data\\imgs\\quiz\\e04.jpg"
 				},
 				{
 					"question": "Προσαρμόζετε την ταχύτητά σας για να καταφέρετε να σταματήσετε στο ορατό και ελεύθερο διάστημα του δρόμου εμπρός από το όχημά σας:",
@@ -3576,7 +3576,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e05.jpg",
-					"img_path": "data\\imgs\\e05.jpg"
+					"img_path": "data\\imgs\\quiz\\e05.jpg"
 				},
 				{
 					"question": "Τα όρια ταχύτητας στην Ελλάδα για τα επιβατηγά αυτοκίνητα είναι:",
@@ -3586,7 +3586,7 @@
 						"60 km/h σε κατοικημένη περιοχή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e09.jpg",
-					"img_path": "data\\imgs\\e09.jpg"
+					"img_path": "data\\imgs\\quiz\\e09.jpg"
 				},
 				{
 					"question": "Η πινακίδα εισόδου σε κατοικημένη περιοχή σημαίνει ταυτόχρονα πως το όριο ταχύτητας περιορίζεται σε:",
@@ -3595,7 +3595,7 @@
 						"60 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e10.jpg",
-					"img_path": "data\\imgs\\e10.jpg"
+					"img_path": "data\\imgs\\quiz\\e10.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση:",
@@ -3605,7 +3605,7 @@
 						"Ενεργοποιείτε τα φώτα κινδύνου.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e11.jpg",
-					"img_path": "data\\imgs\\e11.jpg"
+					"img_path": "data\\imgs\\quiz\\e11.jpg"
 				},
 				{
 					"question": "Κινείσθε στην αριστερή λωρίδα κυκλοφορίας της οδού και στη δεξιά λωρίδα υπάρχει σταθμευμένο φορτηγό. Τι πρέπει να προσέξετε ιδιαίτερα στην κατάσταση αυτή και γιατί:",
@@ -3614,7 +3614,7 @@
 						"Πρέπει να ανακόψετε ταχύτητα και να παρατηρείτε μήπως εμπρός από το σταθμευμένο φορτηγό αυτοκίνητο, πεταχτεί ξαφνικά κάποιος πεζός.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e12.jpg",
-					"img_path": "data\\imgs\\e12.jpg"
+					"img_path": "data\\imgs\\quiz\\e12.jpg"
 				},
 				{
 					"question": "Σε ποια από τις ακόλουθες περιπτώσεις πρέπει να μετριάζετε την ταχύτητα του οχήματός σας:",
@@ -3719,7 +3719,7 @@
 						"90 km/h σε όλο το εθνικό οδικό δίκτυο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/e07.jpg",
-					"img_path": "data\\imgs\\e07.jpg"
+					"img_path": "data\\imgs\\quiz\\e07.jpg"
 				},
 				{
 					"question": "Ποιο είναι το ανώτατο επιτρεπόμενο όριο ταχύτητας των επιβατηγών αυτοκινήτων σε αυτοκινητόδρομους αν τούτο δεν καθορίζεται με ειδικές πινακίδες:",
@@ -3743,7 +3743,7 @@
 						"Οποιαδήποτε από τις δύο πορείες.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st01.jpg",
-					"img_path": "data\\imgs\\st01.jpg"
+					"img_path": "data\\imgs\\quiz\\st01.jpg"
 				},
 				{
 					"question": "Σε κανονική κυκλοφορία, όταν οι λωρίδες οριοθετούνται από διακεκομμένες γραμμές:",
@@ -3753,7 +3753,7 @@
 						"Κινείσθε στο αριστερό άκρο της λωρίδας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st02.jpg",
-					"img_path": "data\\imgs\\st02.jpg"
+					"img_path": "data\\imgs\\quiz\\st02.jpg"
 				},
 				{
 					"question": "Για να στρίψετε αριστερά σε διασταύρωση από οδό διπλής κατευθύνσεως:",
@@ -3763,7 +3763,7 @@
 						"Κινείσθε στο αριστερό άκρο της οδού.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st03.jpg",
-					"img_path": "data\\imgs\\st03.jpg"
+					"img_path": "data\\imgs\\quiz\\st03.jpg"
 				},
 				{
 					"question": "Σε κανονική πορεία, σε αυτοκινητόδρομο με τρεις λωρίδες κυκλοφορίας ανά κατεύθυνση, ανεξάρτητα από την ταχύτητά σας, οδηγείτε σωστά αν κινείσθε:",
@@ -3773,7 +3773,7 @@
 						"Στην αριστερή λωρίδα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st04.jpg",
-					"img_path": "data\\imgs\\st04.jpg"
+					"img_path": "data\\imgs\\quiz\\st04.jpg"
 				},
 				{
 					"question": "Το αυτοκίνητο έχει σταματήσει στη σωστή θέση του οδοστρώματος και γιατί:",
@@ -3782,7 +3782,7 @@
 						"Ναι, διότι έχει σταματήσει πριν από την ειδική γραμμή διακοπής πορείας της διαβάσεως των πεζών.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st05.jpg",
-					"img_path": "data\\imgs\\st05.jpg"
+					"img_path": "data\\imgs\\quiz\\st05.jpg"
 				},
 				{
 					"question": "Σε έναν αυτοκινητόδρομο ή ένα δρόμο ταχείας κυκλοφορίας με τρεις λωρίδες ανά κατεύθυνση ρυμουλκείτε ένα τροχόσπιτο:",
@@ -3791,7 +3791,7 @@
 						"Δεν μπορείτε να χρησιμοποιήσετε την αριστερή λωρίδα για να προσπεράσετε.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st07.jpg",
-					"img_path": "data\\imgs\\st07.jpg"
+					"img_path": "data\\imgs\\quiz\\st07.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση μπορείτε ακόμη να στρίψετε αριστερά:",
@@ -3800,7 +3800,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st08.jpg",
-					"img_path": "data\\imgs\\st08.jpg"
+					"img_path": "data\\imgs\\quiz\\st08.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση, τα δύο οχήματα που αναμένουν, θα στρίψουν αριστερά έχοντας το καθένα το άλλο όχημα στα δεξιά του:",
@@ -3809,7 +3809,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st10.jpg",
-					"img_path": "data\\imgs\\st10.jpg"
+					"img_path": "data\\imgs\\quiz\\st10.jpg"
 				},
 				{
 					"question": "Στη φωτογραφία, οδηγείτε σε έναν αυτοκινητόδρομο με τρεις λωρίδες ανά κατεύθυνση και κινείσθε με το ανώτατο επιτρεπόμενο όριο ταχύτητας:",
@@ -3819,7 +3819,7 @@
 						"Κινείσθε στην αριστερή λωρίδα για να παρεμποδίσετε κάποιους να κινηθούν με ταχύτητα πάνω από το όριο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st12.jpg",
-					"img_path": "data\\imgs\\st12.jpg"
+					"img_path": "data\\imgs\\quiz\\st12.jpg"
 				},
 				{
 					"question": "Τι πρέπει να κάνετε προκειμένου να αλλάξετε λωρίδα κυκλοφορίας:",
@@ -3947,7 +3947,7 @@
 						"Ναι, διότι σταμάτησε σε σημείο επάνω στη διάβαση ώστε ο οδηγός να ελέγχει αν έρχονται οχήματα από δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/st14.jpg",
-					"img_path": "data\\imgs\\st14.jpg"
+					"img_path": "data\\imgs\\quiz\\st14.jpg"
 				}
 			]
 		},
@@ -4208,7 +4208,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h01.jpg",
-					"img_path": "data\\imgs\\h01.jpg"
+					"img_path": "data\\imgs\\quiz\\h01.jpg"
 				},
 				{
 					"question": "Καμμία πινακίδα δεν σας απαγορεύει να σταθμεύσετε. Μπορείτε να σταθμεύσετε έτσι:",
@@ -4217,7 +4217,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h02.jpg",
-					"img_path": "data\\imgs\\h02.jpg"
+					"img_path": "data\\imgs\\quiz\\h02.jpg"
 				},
 				{
 					"question": "Όταν αφήνετε το όχημά σας κατά μήκος του πεζοδρομίου, όσο χρόνο χρειάζεστε για να φορτώσετε ή ξεφορτώσετε τις αποσκευές σας:",
@@ -4226,7 +4226,7 @@
 						"Πρόκειται για στάθμευση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h03.jpg",
-					"img_path": "data\\imgs\\h03.jpg"
+					"img_path": "data\\imgs\\quiz\\h03.jpg"
 				},
 				{
 					"question": "Η στάση σε αυτό το σημείο:",
@@ -4236,7 +4236,7 @@
 						"Είναι επικίνδυνη.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h04.jpg",
-					"img_path": "data\\imgs\\h04.jpg"
+					"img_path": "data\\imgs\\quiz\\h04.jpg"
 				},
 				{
 					"question": "Μπορείτε να σταθμεύσετε κατά μήκος αυτού του πεζοδρομίου το μήνα Απρίλιο:",
@@ -4245,7 +4245,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h08.jpg",
-					"img_path": "data\\imgs\\h08.jpg"
+					"img_path": "data\\imgs\\quiz\\h08.jpg"
 				},
 				{
 					"question": "Μπορείτε να σταθμεύσετε αμέσως δεξιά της πινακίδας σε παράταξη (κάθετα στο πεζοδρόμιο) και γιατί:",
@@ -4254,7 +4254,7 @@
 						"Ναι, διότι απαγορεύεται η στάθμευση μετά από 10 m από αυτήν.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h10.jpg",
-					"img_path": "data\\imgs\\h10.jpg"
+					"img_path": "data\\imgs\\quiz\\h10.jpg"
 				},
 				{
 					"question": "Η στάση σε αυτό το μέρος:",
@@ -4264,7 +4264,7 @@
 						"Είναι επικίνδυνη.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h11.jpg",
-					"img_path": "data\\imgs\\h11.jpg"
+					"img_path": "data\\imgs\\quiz\\h11.jpg"
 				},
 				{
 					"question": "Η στάση σε αυτό το σημείο:",
@@ -4274,7 +4274,7 @@
 						"Δεν συνιστάται.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h12.jpg",
-					"img_path": "data\\imgs\\h12.jpg"
+					"img_path": "data\\imgs\\quiz\\h12.jpg"
 				},
 				{
 					"question": "Αυτό το όχημα βρίσκεται σε στάθμευση:",
@@ -4283,7 +4283,7 @@
 						"Απαγορευμένη.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h13.jpg",
-					"img_path": "data\\imgs\\h13.jpg"
+					"img_path": "data\\imgs\\quiz\\h13.jpg"
 				},
 				{
 					"question": "Το Ι.Χ. αυτοκίνητο, που έχει σταματήσει στα δεξιά του οδοστρώματος έχει παρανομήσει:",
@@ -4292,7 +4292,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h15.jpg",
-					"img_path": "data\\imgs\\h15.jpg"
+					"img_path": "data\\imgs\\quiz\\h15.jpg"
 				},
 				{
 					"question": "Εάν το όχημά σας έχει σταθμεύσει κατ' αυτόν τον τρόπο, τα φώτα θέσεως πρέπει να είναι αναμμένα:",
@@ -4302,7 +4302,7 @@
 						"Συνιστώνται.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h16.jpg",
-					"img_path": "data\\imgs\\h16.jpg"
+					"img_path": "data\\imgs\\quiz\\h16.jpg"
 				},
 				{
 					"question": "Σε ποιο σημείο του οδοστρώματος επιτρέπεται η στάθμευση:",
@@ -4311,7 +4311,7 @@
 						"Εκτός του μήκους που ορίζουν οι πινακίδες.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h18.jpg",
-					"img_path": "data\\imgs\\h18.jpg"
+					"img_path": "data\\imgs\\quiz\\h18.jpg"
 				},
 				{
 					"question": "Καμμία πινακίδα δεν σας απαγορεύει να σταθμεύσετε. Μπορείτε να σταθμεύσετε έτσι:",
@@ -4320,7 +4320,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h19.jpg",
-					"img_path": "data\\imgs\\h19.jpg"
+					"img_path": "data\\imgs\\quiz\\h19.jpg"
 				},
 				{
 					"question": "Καμμιά κίτρινη γραμμή δεν υπάρχει στο πεζοδρόμιο. Το επιβατηγό αυτοκίνητο είναι σταθμευμένο καλά:",
@@ -4329,7 +4329,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h20.jpg",
-					"img_path": "data\\imgs\\h20.jpg"
+					"img_path": "data\\imgs\\quiz\\h20.jpg"
 				},
 				{
 					"question": "Το αυτοκίνητο είναι σταθμευμένο καλά:",
@@ -4338,7 +4338,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h21.jpg",
-					"img_path": "data\\imgs\\h21.jpg"
+					"img_path": "data\\imgs\\quiz\\h21.jpg"
 				},
 				{
 					"question": "Σκοπεύετε να σταθμεύσετε στην οδό της φωτογραφίας κάποια μέρα του Φεβρουαρίου. Ποια πλευρά του οδοστρώματος θα επιλέξετε:",
@@ -4347,7 +4347,7 @@
 						"Τη δεξιά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h22.jpg",
-					"img_path": "data\\imgs\\h22.jpg"
+					"img_path": "data\\imgs\\quiz\\h22.jpg"
 				},
 				{
 					"question": "Σε ποιο σημείο μπορείτε να σταθμεύσετε:",
@@ -4357,7 +4357,7 @@
 						"Σε οποιαδήποτε θέση εκτός μπροστά από το στέγαστρο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h23.jpg",
-					"img_path": "data\\imgs\\h23.jpg"
+					"img_path": "data\\imgs\\quiz\\h23.jpg"
 				},
 				{
 					"question": "Η απόσταση του επιβατηγού αυτοκινήτου από το σηματοδότη της φωτογραφίας είναι 15 m. Επιτρέπεται η στάθμευσή του στο σημείο στο οποίο βρίσκεται:",
@@ -4366,7 +4366,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h24.jpg",
-					"img_path": "data\\imgs\\h24.jpg"
+					"img_path": "data\\imgs\\quiz\\h24.jpg"
 				},
 				{
 					"question": "Σκοπεύετε να σταθμεύσετε στην οδό της φωτογραφίας κάποια ημέρα του Ιουλίου. Ποια πλευρά του οδοστρώματος θα επιλέξετε:",
@@ -4375,7 +4375,7 @@
 						"Τη δεξιά.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h25.jpg",
-					"img_path": "data\\imgs\\h25.jpg"
+					"img_path": "data\\imgs\\quiz\\h25.jpg"
 				},
 				{
 					"question": "Γιατί δεν μπορείτε να σταματήσετε στο δεξιό άκρο του οδοστρώματος:",
@@ -4384,7 +4384,7 @@
 						"Γιατί υπάρχει πινακίδα που απαγορεύει τη στάση και τη στάθμευση καθώς και συνεχής κίτρινη γραμμή στο άκρο του οδοστρώματος.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/h26.jpg",
-					"img_path": "data\\imgs\\h26.jpg"
+					"img_path": "data\\imgs\\quiz\\h26.jpg"
 				},
 				{
 					"question": "Σε μονόδρομο, εάν το πλάτος της οδού επαρκεί, μπορείτε να σταθμεύσετε και στα αριστερά:",
@@ -4611,7 +4611,7 @@
 						"Πρέπει να περιμένετε για να προσπεράσετε μετά την στροφή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th02.jpg",
-					"img_path": "data\\imgs\\th02.jpg"
+					"img_path": "data\\imgs\\quiz\\th02.jpg"
 				},
 				{
 					"question": "Σε αυτήν την κατάσταση, εάν η οπισθοδρόμηση είναι απαραίτητη:",
@@ -4620,7 +4620,7 @@
 						"Το βαρύ όχημα υποχωρεί.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th03.jpg",
-					"img_path": "data\\imgs\\th03.jpg"
+					"img_path": "data\\imgs\\quiz\\th03.jpg"
 				},
 				{
 					"question": "Σε αυτήν την κατάσταση, εάν η οπισθοδρόμηση είναι απαραίτητη:",
@@ -4629,7 +4629,7 @@
 						"Το αυτοκίνητο που ρυμουλκεί το τροχόσπιτο υποχωρεί.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th05.jpg",
-					"img_path": "data\\imgs\\th05.jpg"
+					"img_path": "data\\imgs\\quiz\\th05.jpg"
 				},
 				{
 					"question": "To λεωφορείο είναι ακινητοποιημένο στη στάση. Εσείς, επειδή η αριστερή λωρίδα κυκλοφορίας είναι ελεύθερη, αποφασίζετε να το προσπεράσετε. Τι πρέπει να προσέξετε κατά τη διάρκεια του προσπεράσματος:",
@@ -4639,7 +4639,7 @@
 						"Μήπως το λεωφορείο ξεκινήσει ή μήπως πεζοί διασχίζουν απρόσεχτα το οδόστρωμα μπροστά από το λεωφορείο.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th07.jpg",
-					"img_path": "data\\imgs\\th07.jpg"
+					"img_path": "data\\imgs\\quiz\\th07.jpg"
 				},
 				{
 					"question": "Το αυτοκίνητό σας έχει καλή επιτάχυνση αλλά σε λίγα μέτρα διακρίνετε συνεχή γραμμή μεταξύ των ρευμάτων κυκλοφορίας:",
@@ -4648,7 +4648,7 @@
 						"Δεν πρέπει να προσπεράσετε.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th08.jpg",
-					"img_path": "data\\imgs\\th08.jpg"
+					"img_path": "data\\imgs\\quiz\\th08.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση θα έπρεπε να παραχωρήσετε την προτεραιότητα σε ένα όχημα που έρχεται απέναντί σας:",
@@ -4657,7 +4657,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th09.jpg",
-					"img_path": "data\\imgs\\th09.jpg"
+					"img_path": "data\\imgs\\quiz\\th09.jpg"
 				},
 				{
 					"question": "Ένα όχημα φθάνει από απέναντι. Πρέπει να επιβραδύνει για να σας αφήσει να προσπεράσετε:",
@@ -4666,7 +4666,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th10.jpg",
-					"img_path": "data\\imgs\\th10.jpg"
+					"img_path": "data\\imgs\\quiz\\th10.jpg"
 				},
 				{
 					"question": "Τελειώνετε το προσπέρασμά σας. Για να επανέλθετε στη δεξιά λωρίδα:",
@@ -4675,7 +4675,7 @@
 						"Περιμένετε να δείτε το όχημα που προσπεράσατε στον καθρέπτη.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th11.jpg",
-					"img_path": "data\\imgs\\th11.jpg"
+					"img_path": "data\\imgs\\quiz\\th11.jpg"
 				},
 				{
 					"question": "Το όχημα 1 έχει ανάψει αριστερό φλας για να στρίψει. Το όχημα 2 μόλις προσπέρασε από τα δεξιά:",
@@ -4684,7 +4684,7 @@
 						"Διέπραξε αδίκημα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th12.jpg",
-					"img_path": "data\\imgs\\th12.jpg"
+					"img_path": "data\\imgs\\quiz\\th12.jpg"
 				},
 				{
 					"question": "Η ορατότητα είναι άριστη:",
@@ -4693,7 +4693,7 @@
 						"Δεν πρέπει να ακολουθήσετε το όχημα που προσπερνά.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th13.jpg",
-					"img_path": "data\\imgs\\th13.jpg"
+					"img_path": "data\\imgs\\quiz\\th13.jpg"
 				},
 				{
 					"question": "Αυτό το αυτοκίνητο τελειώνει το προσπέρασμα του οχήματός σας:",
@@ -4702,7 +4702,7 @@
 						"Επιβραδύνετε ελαφρώς για να αποφύγετε να τον κάνετε να διατρέξει κίνδυνο.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th14.jpg",
-					"img_path": "data\\imgs\\th14.jpg"
+					"img_path": "data\\imgs\\quiz\\th14.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση, εάν μια οπισθοδρόμηση είναι απαραίτητη:",
@@ -4711,7 +4711,7 @@
 						"Το φορτηγό υποχωρεί.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th15.jpg",
-					"img_path": "data\\imgs\\th15.jpg"
+					"img_path": "data\\imgs\\quiz\\th15.jpg"
 				},
 				{
 					"question": "Σε αυτόν το δρόμο:",
@@ -4720,7 +4720,7 @@
 						"Περιμένετε να ολοκληρώσει το λεωφορείο το προσπερασμά του για να προσπεράσετε.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th16.jpg",
-					"img_path": "data\\imgs\\th16.jpg"
+					"img_path": "data\\imgs\\quiz\\th16.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση μπορείτε να προσπεράσετε:",
@@ -4729,7 +4729,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th17.jpg",
-					"img_path": "data\\imgs\\th17.jpg"
+					"img_path": "data\\imgs\\quiz\\th17.jpg"
 				},
 				{
 					"question": "Το κόκκινο αυτοκίνητο προσπερνά:",
@@ -4738,7 +4738,7 @@
 						"Ο οδηγός του σωστά άναψε τα φώτα πορείας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th19.jpg",
-					"img_path": "data\\imgs\\th19.jpg"
+					"img_path": "data\\imgs\\quiz\\th19.jpg"
 				},
 				{
 					"question": "Σε αυτήν την περίπτωση:",
@@ -4748,7 +4748,7 @@
 						"Δεν πρέπει να προσπεράσετε.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th20.jpg",
-					"img_path": "data\\imgs\\th20.jpg"
+					"img_path": "data\\imgs\\quiz\\th20.jpg"
 				},
 				{
 					"question": "Εάν είναι απαραίτητο, το ανερχόμενο αυτοκίνητο πρέπει να σταματήσει και να υποχωρήσει ώστε να παραχωρήσει την προτεραιότητα στο κατερχόμενο αυτοκίνητο:",
@@ -4757,7 +4757,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/th21.jpg",
-					"img_path": "data\\imgs\\th21.jpg"
+					"img_path": "data\\imgs\\quiz\\th21.jpg"
 				},
 				{
 					"question": "Για να περάσετε δίπλα από έναν πεζό, οφείλετε να αφήσετε ένα πλευρικό διάστημα το λιγότερο:",
@@ -4970,7 +4970,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/i01.jpg",
-					"img_path": "data\\imgs\\i01.jpg"
+					"img_path": "data\\imgs\\quiz\\i01.jpg"
 				},
 				{
 					"question": "Αυτή η πινακίδα τονίζει αλλεπάλληλες στροφές για απόσταση 200 m:",
@@ -4979,7 +4979,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/i02.jpg",
-					"img_path": "data\\imgs\\i02.jpg"
+					"img_path": "data\\imgs\\quiz\\i02.jpg"
 				},
 				{
 					"question": "Πώς πρέπει να ενεργήσετε βλέποντας τις πινακίδες της φωτογραφίας και γιατί:",
@@ -4988,7 +4988,7 @@
 						"Πρέπει να εντείνετε την προσοχή σας ανακόπτοντας την ταχύτητα του οχήματός σας αν είναι ανάγκη, επειδή οι πινακίδες προειδοποιούν για επικίνδυνη καμπύλη προς τα αριστερά.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/i03.jpg",
-					"img_path": "data\\imgs\\i03.jpg"
+					"img_path": "data\\imgs\\quiz\\i03.jpg"
 				},
 				{
 					"question": "Γιατί εδώ πρέπει να οδηγείτε με ιδιαίτερη προσοχή:",
@@ -4997,7 +4997,7 @@
 						"Γιατί μετά τη δεξιά στροφή μπορεί να υπάρχει επικίνδυνη αριστερή στροφή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/i04.jpg",
-					"img_path": "data\\imgs\\i04.jpg"
+					"img_path": "data\\imgs\\quiz\\i04.jpg"
 				},
 				{
 					"question": "Ποια είναι η προειδοποίηση των πινακίδων της φωτογραφίας:",
@@ -5006,7 +5006,7 @@
 						"Επειδή θα συναντήσετε διακλάδωση με λοξή οδό αριστερά, πρέπει η ταχύτητά σας να περιορισθεί σε 40 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/i05.jpg",
-					"img_path": "data\\imgs\\i05.jpg"
+					"img_path": "data\\imgs\\quiz\\i05.jpg"
 				},
 				{
 					"question": "Η φυγόκεντρη δύναμη:",
@@ -5112,7 +5112,7 @@
 						"Και τα δυο οχήματα.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia03.jpg",
-					"img_path": "data\\imgs\\ia03.jpg"
+					"img_path": "data\\imgs\\quiz\\ia03.jpg"
 				},
 				{
 					"question": "Μπορείτε να πάρετε την απόφαση να προσπεράσετε αυτό το φορτηγό από τα δεξιά:",
@@ -5121,7 +5121,7 @@
 						"Όχι, γιατί έβγαλε το δεξί του φλας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia06.jpg",
-					"img_path": "data\\imgs\\ia06.jpg"
+					"img_path": "data\\imgs\\quiz\\ia06.jpg"
 				},
 				{
 					"question": "Καθώς το φορτηγό εισέρχεται στο κύριο ρεύμα κυκλοφορίας από λωρίδα επιταχύνσεως, τι μπορεί να κάνει ο οδηγός ενός επιβατηγού αυτοκινήτου που κινείται στη δεξιά λωρίδα, για να συμβάλει στην ασφάλεια της κυκλοφορίας:",
@@ -5130,7 +5130,7 @@
 						"Να κινείται με την ίδια ταχύτητα παράλληλα και κοντά στο φορτηγό.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia07.jpg",
-					"img_path": "data\\imgs\\ia07.jpg"
+					"img_path": "data\\imgs\\quiz\\ia07.jpg"
 				},
 				{
 					"question": "Μπορείτε να πραγματοποιήσετε προσπέρασμα κοντά σε μια διάβαση πεζών:",
@@ -5139,7 +5139,7 @@
 						"Μόνο εάν πρόκειται να προσπεράσετε ένα δίκυκλο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia08.jpg",
-					"img_path": "data\\imgs\\ia08.jpg"
+					"img_path": "data\\imgs\\quiz\\ia08.jpg"
 				},
 				{
 					"question": "Είστε σταματημένος σε κάποιο κόκκινο φανάρι, μπροστά από διάβαση πεζών. Το πράσινο φανάρι της διαβάσεως πεζών γίνεται κόκκινο. Τι κάνετε:",
@@ -5148,7 +5148,7 @@
 						"Ξεκινάτε αμέσως μόλις ανάψει το πράσινο φανάρι για εσάς.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia11.jpg",
-					"img_path": "data\\imgs\\ia11.jpg"
+					"img_path": "data\\imgs\\quiz\\ia11.jpg"
 				},
 				{
 					"question": "Αφήνετε να διασχίσουν οι πεζοί το δρόμο:",
@@ -5157,7 +5157,7 @@
 						"Όχι, γιατί μπορείτε να ελιχθείτε γύρω τους.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia12.jpg",
-					"img_path": "data\\imgs\\ia12.jpg"
+					"img_path": "data\\imgs\\quiz\\ia12.jpg"
 				},
 				{
 					"question": "Τι πρέπει να κάνετε σε αυτήν την περίπτωση:",
@@ -5166,7 +5166,7 @@
 						"Να σταματήσετε πριν τη διάβαση πεζών για να περάσει ο πεζός.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia14.jpg",
-					"img_path": "data\\imgs\\ia14.jpg"
+					"img_path": "data\\imgs\\quiz\\ia14.jpg"
 				},
 				{
 					"question": "Στο σηματοδότη της φωτογραφίας, έχει ανάψει πράσινο σταθερό φως και κίτρινα φώτα με μορφή βέλους που αναβοσβήνουν. Εσείς σκοπεύετε να προχωρήσετε ευθεία. Πώς θα συνεχίσετε την πορεία σας:",
@@ -5175,7 +5175,7 @@
 						"Θα σταματήσετε στη διασταύρωση επειδή υπάρχει η πινακίδα STOP.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia15.jpg",
-					"img_path": "data\\imgs\\ia15.jpg"
+					"img_path": "data\\imgs\\quiz\\ia15.jpg"
 				},
 				{
 					"question": "Τι πρέπει να προσέξετε εδώ:",
@@ -5184,7 +5184,7 @@
 						"Ότι υπάρχει κίνδυνος λόγω διαβάσεως πεζών.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia16.jpg",
-					"img_path": "data\\imgs\\ia16.jpg"
+					"img_path": "data\\imgs\\quiz\\ia16.jpg"
 				},
 				{
 					"question": "Κινείσθε στη μεσαία λωρίδα κυκλοφορίας της οδού. Τι πρέπει να προσέξετε ιδιαίτερα και πώς πρέπει να ενεργήσετε στην περίπτωση αυτή:",
@@ -5193,7 +5193,7 @@
 						"Πρέπει να προσέξετε το επιβατηγό αυτοκίνητο που μετακινείται από την αριστερή προς τη μεσαία λωρίδα κυκλοφορίας και εάν χρειασθεί να ανακόψετε την ταχύτητά σας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia17.jpg",
-					"img_path": "data\\imgs\\ia17.jpg"
+					"img_path": "data\\imgs\\quiz\\ia17.jpg"
 				},
 				{
 					"question": "Στο δρόμο που κινείσθε βλέπετε τον εθελοντή σχολικό τροχονόμο να είναι σε αυτήν τη θέση. Τι θα κάνετε:",
@@ -5202,7 +5202,7 @@
 						"Θα σταματήσετε πριν τις γραμμές της διαβάσεως πεζών και θα περιμένετε μέχρι να περάσουν οι μαθητές και ο σχολικός τροχονόμος να δώσει σήμα να περάσετε.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia18.jpg",
-					"img_path": "data\\imgs\\ia18.jpg"
+					"img_path": "data\\imgs\\quiz\\ia18.jpg"
 				},
 				{
 					"question": "Ποια οχήματα πρέπει να σταματήσουν για να περάσουν με ασφάλεια οι πεζοί:",
@@ -5212,7 +5212,7 @@
 						"Τα οχήματα 1, 2 και 3.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ia19.jpg",
-					"img_path": "data\\imgs\\ia19.jpg"
+					"img_path": "data\\imgs\\quiz\\ia19.jpg"
 				},
 				{
 					"question": "Καθώς ετοιμάζεστε να προσπεράσετε διακρίνετε από τον εξωτερικό σας καθρέπτη το φως ενός μοτοποδηλάτου:",
@@ -5512,7 +5512,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib01.jpg",
-					"img_path": "data\\imgs\\ib01.jpg"
+					"img_path": "data\\imgs\\quiz\\ib01.jpg"
 				},
 				{
 					"question": "Είναι σωστή η συμβουλή να κάνετε στάσεις:",
@@ -5521,7 +5521,7 @@
 						"Ανά δύο ώρες.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib03.jpg",
-					"img_path": "data\\imgs\\ib03.jpg"
+					"img_path": "data\\imgs\\quiz\\ib03.jpg"
 				},
 				{
 					"question": "Η πινακίδα E-92 σε πράσινο φόντο σημαίνει:",
@@ -5531,7 +5531,7 @@
 						"Εθνική οδός 92.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib04.jpg",
-					"img_path": "data\\imgs\\ib04.jpg"
+					"img_path": "data\\imgs\\quiz\\ib04.jpg"
 				},
 				{
 					"question": "Προτίθεσθε να κινηθείτε ευθεία, αλλά το λευκό αυτοκίνητο έχει σταματήσει σε κακή θέση περιμένοντας να διασχίσει το οδόστρωμα και έχει κλείσει ένα μέρος της λωρίδας κυκλοφορίας σας. Πώς θα ενεργήσετε:",
@@ -5540,7 +5540,7 @@
 						"Θα επιταχύνετε και θα περάσετε ανάμεσα στο λευκό αυτοκίνητο και το πεζοδρόμιο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib06.jpg",
-					"img_path": "data\\imgs\\ib06.jpg"
+					"img_path": "data\\imgs\\quiz\\ib06.jpg"
 				},
 				{
 					"question": "Ο οδηγός του κόκκινου επιβατηγού αυτοκινήτου έχει ανάψει το αριστερό φλας επειδή σκοπεύει να μετακινηθεί στην αριστερή λωρίδα κυκλοφορίας, στην οποία προηγείται άλλο αυτοκίνητο. Πώς πρέπει να κινηθεί:",
@@ -5549,7 +5549,7 @@
 						"Να επιβραδύνει, να ελέγξει πίσω του αν η αριστερή λωρίδα κυκλοφορίας είναι ελεύθερη και να εισέλθει σε αυτήν ακολουθώντας το προπορευόμενο αυτοκίνητο.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib07.jpg",
-					"img_path": "data\\imgs\\ib07.jpg"
+					"img_path": "data\\imgs\\quiz\\ib07.jpg"
 				},
 				{
 					"question": "Κινείσθε στη μεσαία λωρίδα κυκλοφορίας στο δρόμο της φωτογραφίας και σκοπεύετε να στρίψετε αριστερά στην επόμενη διασταύρωση. Ποιες ενέργειες πρέπει να κάνετε:",
@@ -5558,7 +5558,7 @@
 						"Θα προειδοποιήσετε τους οδηγούς που ακολουθούν για την πρόθεσή σας, θα ελέγξετε την κίνηση στην αριστερή λωρίδα κυκλοφορίας και θα μετακινηθείτε προοδευτικά σε αυτήν πίσω από το κόκκινο αυτοκίνητο.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib08.jpg",
-					"img_path": "data\\imgs\\ib08.jpg"
+					"img_path": "data\\imgs\\quiz\\ib08.jpg"
 				},
 				{
 					"question": "Πώς θα ενεργήσετε στην περίπτωση αυτή:",
@@ -5567,7 +5567,7 @@
 						"Θα προχωρήσετε μέχρι το ύψος της πινακίδας STOP, θα σταματήσετε εκεί και θα παραχωρήσετε προτεραιότητα στα οχήματα που βλέπετε ότι κινούνται σε κάθετη με σας πορεία. Όταν δεν βλέπετε να έρχονται άλλα οχήματα, θα διασχίσετε τη διασταύρωση.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib09.jpg",
-					"img_path": "data\\imgs\\ib09.jpg"
+					"img_path": "data\\imgs\\quiz\\ib09.jpg"
 				},
 				{
 					"question": "Ποιος είναι ο σκοπός του κατόπτρου της φωτογραφίας:",
@@ -5576,7 +5576,7 @@
 						"Η επισήμανση διασταυρώσεως όπου ισχύει η από δεξιά προτεραιότητα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib12.jpg",
-					"img_path": "data\\imgs\\ib12.jpg"
+					"img_path": "data\\imgs\\quiz\\ib12.jpg"
 				},
 				{
 					"question": "Πώς θα κινηθείτε στην περίπτωση αυτή:",
@@ -5585,7 +5585,7 @@
 						"Με προσοχή λόγω του κινδύνου από την συχνή κίνηση παιδιών και με ταχύτητα όχι μεγαλύτερη από 30 km/h.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ib14.jpg",
-					"img_path": "data\\imgs\\ib14.jpg"
+					"img_path": "data\\imgs\\quiz\\ib14.jpg"
 				},
 				{
 					"question": "Για μεγάλες διαδρομές, ακολουθείτε κυρίως τις πινακίδες κατευθύνσεως με χρώμα υποβάθρου (φόντου):",
@@ -5937,7 +5937,7 @@
 						"0,8 γραμμάρια ανά λίτρο αίματος και 0,5 γραμμάρια ανά λίτρο αίματος για νέους οδηγούς.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ic06.jpg",
-					"img_path": "data\\imgs\\ic06.jpg"
+					"img_path": "data\\imgs\\quiz\\ic06.jpg"
 				}
 			]
 		},
@@ -5950,7 +5950,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/id01.jpg",
-					"img_path": "data\\imgs\\id01.jpg"
+					"img_path": "data\\imgs\\quiz\\id01.jpg"
 				},
 				{
 					"question": "Για να εισέλθετε σε μια κανονική λωρίδα κυκλοφορίας του αυτοκινητόδρομου:",
@@ -5960,7 +5960,7 @@
 						"Επιταχύνετε, εισέρχεσθε προοδευτικά, αλλάζετε λωρίδα.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/id02.jpg",
-					"img_path": "data\\imgs\\id02.jpg"
+					"img_path": "data\\imgs\\quiz\\id02.jpg"
 				},
 				{
 					"question": "Αναγνωρίζετε μία λωρίδα επιβραδύνσεως χάρη:",
@@ -5969,7 +5969,7 @@
 						"Στην πινακίδα παραχωρήσεως προτεραιότητας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/id03.jpg",
-					"img_path": "data\\imgs\\id03.jpg"
+					"img_path": "data\\imgs\\quiz\\id03.jpg"
 				},
 				{
 					"question": "Μια λωρίδα επιταχύνσεως είναι:",
@@ -6019,7 +6019,7 @@
 						"ΟΧΙ": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie05.jpg",
-					"img_path": "data\\imgs\\ie05.jpg"
+					"img_path": "data\\imgs\\quiz\\ie05.jpg"
 				},
 				{
 					"question": "Όταν στον αυτοκινητόδρομο η κυκλοφορία είναι πυκνή και γίνεται σε στοίχους:",
@@ -6028,7 +6028,7 @@
 						"Μπορείτε να προσπεράσετε αλλάζοντας σειρά.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie10.jpg",
-					"img_path": "data\\imgs\\ie10.jpg"
+					"img_path": "data\\imgs\\quiz\\ie10.jpg"
 				},
 				{
 					"question": "Σε κανονικές συνθήκες κυκλοφορίας, για να χρησιμοποιήσετε την αριστερή λωρίδα στον αυτοκινητόδρομο, πρέπει:",
@@ -6037,7 +6037,7 @@
 						"Να κινείσθε με ταχύτητα 80 km/h τουλάχιστον.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie11.jpg",
-					"img_path": "data\\imgs\\ie11.jpg"
+					"img_path": "data\\imgs\\quiz\\ie11.jpg"
 				},
 				{
 					"question": "Σε κάθε ταξίδι ο οδηγός πρέπει να κάνει στάση για ανάπαυση σε χώρο επιτρεπόμενης σταθμεύσεως κάθε:",
@@ -6047,7 +6047,7 @@
 						"Δύο ώρες.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie12.jpg",
-					"img_path": "data\\imgs\\ie12.jpg"
+					"img_path": "data\\imgs\\quiz\\ie12.jpg"
 				},
 				{
 					"question": "Ο άνεμος είναι:",
@@ -6057,7 +6057,7 @@
 						"Αδύναμος.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie15.jpg",
-					"img_path": "data\\imgs\\ie15.jpg"
+					"img_path": "data\\imgs\\quiz\\ie15.jpg"
 				},
 				{
 					"question": "Στον αυτοκινητόδρομο, μπορείτε να σταθμεύσετε:",
@@ -6067,7 +6067,7 @@
 						"Στις πλευρές (στα ερείσματα).": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie20.jpg",
-					"img_path": "data\\imgs\\ie20.jpg"
+					"img_path": "data\\imgs\\quiz\\ie20.jpg"
 				},
 				{
 					"question": "Στον αυτοκινητόδρομο, κατά τη διάρκεια ενός προσπεράσματος:",
@@ -6077,7 +6077,7 @@
 						"Δεν ασχολείσθε με το τι συμβαίνει πίσω από το όχημά σας εάν οδηγείτε με 130 km/h.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie21.jpg",
-					"img_path": "data\\imgs\\ie21.jpg"
+					"img_path": "data\\imgs\\quiz\\ie21.jpg"
 				},
 				{
 					"question": "Για να ακολουθήσετε την έξοδο, έχετε επιλέξει την κατάλληλη λωρίδα:",
@@ -6086,7 +6086,7 @@
 						"ΟΧΙ": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie23.jpg",
-					"img_path": "data\\imgs\\ie23.jpg"
+					"img_path": "data\\imgs\\quiz\\ie23.jpg"
 				},
 				{
 					"question": "Η στάση ανάγκης, είναι μια στάση του οχήματος επειδή:",
@@ -6254,7 +6254,7 @@
 						"110 km/h με ραγδαία βροχή.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ie16.jpg",
-					"img_path": "data\\imgs\\ie16.jpg"
+					"img_path": "data\\imgs\\quiz\\ie16.jpg"
 				},
 				{
 					"question": "Η αριστερή λωρίδα ενός αυτοκινητόδρομου τριών λωρίδων κυκλοφορίας, επιτρέπεται να χρησιμοποιείται από έναν οδηγό:",
@@ -6278,7 +6278,7 @@
 						"Θέσεως μόνο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ist01.jpg",
-					"img_path": "data\\imgs\\ist01.jpg"
+					"img_path": "data\\imgs\\quiz\\ist01.jpg"
 				},
 				{
 					"question": "Πρέπει να αλλάξετε τα φώτα πορείας με τα φώτα διασταυρώσεως:",
@@ -6288,7 +6288,7 @@
 						"Στην κορυφή πλαγιάς.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ist02.jpg",
-					"img_path": "data\\imgs\\ist02.jpg"
+					"img_path": "data\\imgs\\quiz\\ist02.jpg"
 				},
 				{
 					"question": "Εκτός κατοικημένης περιοχής κατά τη νύκτα:",
@@ -6297,7 +6297,7 @@
 						"Χρησιμοποιείτε τα φώτα πορείας.": true
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ist03.jpg",
-					"img_path": "data\\imgs\\ist03.jpg"
+					"img_path": "data\\imgs\\quiz\\ist03.jpg"
 				},
 				{
 					"question": "Σε περίπτωση ομίχλης:",
@@ -6306,7 +6306,7 @@
 						"Ανάβετε τα φώτα θέσεως μόνο.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ist04.jpg",
-					"img_path": "data\\imgs\\ist04.jpg"
+					"img_path": "data\\imgs\\quiz\\ist04.jpg"
 				},
 				{
 					"question": "Για να βελτιώσετε την ορατότητα σε περίπτωση ομίχλης, μπορείτε:",
@@ -6315,7 +6315,7 @@
 						"Να διακόψετε τον εξαερισμό.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ist06.jpg",
-					"img_path": "data\\imgs\\ist06.jpg"
+					"img_path": "data\\imgs\\quiz\\ist06.jpg"
 				},
 				{
 					"question": "Σε περίπτωση δυνατής βροχής, ανάβετε:",
@@ -6472,7 +6472,7 @@
 						"Οδηγείτε με υψηλή σχέση ταχυτήτων.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/iz03.jpg",
-					"img_path": "data\\imgs\\iz03.jpg"
+					"img_path": "data\\imgs\\quiz\\iz03.jpg"
 				},
 				{
 					"question": "Ο πάγος:",
@@ -6482,7 +6482,7 @@
 						"Σχηματίζεται κυρίως τις ημέρες που έχει ομίχλη.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/iz04.jpg",
-					"img_path": "data\\imgs\\iz04.jpg"
+					"img_path": "data\\imgs\\quiz\\iz04.jpg"
 				},
 				{
 					"question": "Η πρόσφυση σε ένα βρεγμένο οδόστρωμα μειώνεται σε σχέση με το στεγνό, κατά:",
@@ -6594,7 +6594,7 @@
 						"Φρενάρετε συνεχώς.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/in04.jpg",
-					"img_path": "data\\imgs\\in04.jpg"
+					"img_path": "data\\imgs\\quiz\\in04.jpg"
 				},
 				{
 					"question": "Ο σωστός τρόπος για να σταθμεύσετε το όχημα σε πλαγιά είναι:",
@@ -6654,7 +6654,7 @@
 						"Δεν σταματάτε αν πλησιάζετε στο προορισμό σας.": false
 					},
 					"img_url": "https://app.testdriveme.gr/img/photos/ith02.jpg",
-					"img_path": "data\\imgs\\ith02.jpg"
+					"img_path": "data\\imgs\\quiz\\ith02.jpg"
 				},
 				{
 					"question": "Πώς συμπεριφέρεσθε όταν ενώ οδηγείτε νύκτα σε ελεύθερο δρόμο, αισθανθείτε συμπτώματα κοπώσεως (νύστα, ρίγος, ξάφνιασμα κλπ.):",

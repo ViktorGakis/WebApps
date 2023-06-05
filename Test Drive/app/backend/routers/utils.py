@@ -111,20 +111,26 @@ async def check_localhost(request: Request):
         )
 
 
-def load_data(path=config.DATA_PATH):
-    with path.open("r", encoding="utf-8") as f:
-        return json.load(f)
+def load_data(choice):
+    if choice=='quiz':
+        path = config.DATA_QUIZ_PATH   
+    elif choice=='roadsigns':
+        path = config.DATA_ROADSIGNS_PATH
+    
+    if path.exists():
+        with path.open("r", encoding="utf-8") as f:
+            return json.load(f)
 
 
-def get_chapters():
-    chapters = [list(k.keys())[0] for k in load_data()[0]]
+def get_chapters(choice) -> str:
+    chapters = [list(k.keys())[0] for k in load_data(choice)[0]]
     return json.dumps(chapters)
 
 
-def get_chapter_questions(chapter: str):
-    data = load_data()[0]  # Assuming the data is a list of dictionaries
-    questions = [chaptr[chapter] for chaptr in data if chaptr.get(chapter) is not None]
-    return questions
+def get_chapter_items(chapter: str, choice):
+    data = load_data(choice)[0]  # Assuming the data is a list of dictionaries
+    items = [chaptr[chapter] for chaptr in data if chaptr.get(chapter) is not None]
+    return items
 
 
 def save_content_to_notes(content, question):

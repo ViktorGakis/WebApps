@@ -73,9 +73,9 @@ class AppFactory(FastAPI):
 
     def startup(self) -> None:
         self.__register_routers()
-        self.__add_static()
-        self.__add_react_app()
-        self._add_imgs_folder()
+        self.__mount_react_app()
+        self.__mount_static()
+        self.__mount_data()
         self.__add_templates()
         self.__add_jinja_global_vars()
         self.__add_jinja_filters()
@@ -120,17 +120,17 @@ class AppFactory(FastAPI):
         for router in self.unregistered_routers:
             self.include_router(router)
 
-    def __add_static(self) -> None:
+    def __mount_static(self) -> None:
         """
         ---------STATIC CONFIGURATION-----------
-        add static file(css,js,media) folder to the app
+        mount static file(css,js,media) folder to the app
         """
         if str(self.config.STATIC_PATH):
             self.mount(
                 "/static", StaticFiles(directory=self.config.STATIC_PATH), name="static"
             )
 
-    def __add_react_app(self) -> None:
+    def __mount_react_app(self) -> None:
         if str(self.config.REACT_PATH):
             self.mount(
                 "/frontend",
@@ -138,10 +138,12 @@ class AppFactory(FastAPI):
                 name="frontend",
             )
 
-    def _add_imgs_folder(self) -> None:
-        if self.config.IMGS_PATH.exists() and str(self.config.IMGS_PATH):
+    def __mount_data(self) -> None:
+        if str(self.config.DATA_PATH):
             self.mount(
-                "/imgs", StaticFiles(directory=self.config.IMGS_PATH), name="imgs"
+                "/data",
+                StaticFiles(directory=self.config.DATA_PATH),
+                name="data",
             )
 
     def __add_templates(self) -> None:

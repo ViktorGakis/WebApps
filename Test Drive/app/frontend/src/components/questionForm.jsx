@@ -23,7 +23,7 @@ function QuestionForm() {
 	const [formKey, setFormKey] = useState(0); // Add formKey state
 
 	useEffect(() => {
-		fetchChapterData(setChapters);
+		fetchChapterData(setChapters, "quiz");
 	}, []);
 
 	const handleSubmit = function (e, selectedOption) {

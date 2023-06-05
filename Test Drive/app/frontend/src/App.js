@@ -4,6 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 // import ApiTester from "./components/apitester.jsx";
 import { QuestionForm } from "./components/questionForm";
+import { RoadSignsForm } from "./components/roadsignsform"
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 				<div className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
 					<QuestionForm />
+					<RoadSignsForm />
 				</div>
 			</div>
 		</div>

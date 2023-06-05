@@ -121,8 +121,8 @@
 	justify-content: center;
 }
 
-
-.img, .title {
+.img,
+.title {
 	padding-top: 2%;
 }
 .choices ol {
@@ -130,14 +130,28 @@
 }
 
 .choices ol li:not(:first-child) {
-    padding-top: 1%;
+	padding-top: 1%;
 }
 
 .choices ol li {
+}
+
+#roadsigns {
+	padding-left: 5%;
+	padding-right: 5%;
 
 }
 
+/* #roadsigns div div div {
+	border: 2px solid cyan;
+	width: 200px;
+	height: 200px;
+}
 
+#roadsigns div div div img {
+	width: 100px;
+	height: 100px;
+} */
 
 /* form .button-container {
 	display: flex;
