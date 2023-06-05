@@ -3,15 +3,15 @@ import { fetchAPI } from "../js/utils";
 
 export { NotesComponent };
 
-async function handleSave(content) {
-	await fetchAPI("api/save/note", undefined, { data: content }, "POST");
+async function handleSave(content, question) {
+	await fetchAPI("api/save/note", undefined, { content: content, question: question }, "POST");
 }
 
-function NotesComponent() {
+function NotesComponent(question) {
 	const [content, setContent] = useState("");
 
 	const save = async () => {
-		await handleSave(content);
+		await handleSave(content, question.question.question);
 	};
 
 	const handleChange = (e) => {
@@ -24,7 +24,7 @@ function NotesComponent() {
 				value={content}
 				onChange={handleChange}
 				className="stretch"
-				contentEditable={true}
+				// contentEditable={true}
 			/>
 			<button onClick={save} className="btn btn-primary">Save</button>
 		</div>

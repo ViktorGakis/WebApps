@@ -57,23 +57,23 @@ async def exec_block(func, /, *args, **kwargs) -> Any:
         return await loop.run_in_executor(pool, func_call)
 
 
-async def parse_body(request: Request) -> dict[str, list[str]]:
+async def parse_body(request: Request):
     data = {}
     body: bytes = await request.body()
-    print(f"{body=}")
+    # print(f"{body=}")
     if isinstance(body, bytes):
         # decode the bytes to a string
         body_str: str = body.decode("utf-8")
-        print(f"{body_str=}")
+        # print(f"{body_str=}")
     if "&" in body_str:
         # parse the string as a dictionary using parse_qs
-        data: dict[str, list[str]] = parse_qs(body_str)
+        data = parse_qs(body_str)
     else:
         try:
             data = json.loads(body_str)
         except json.JSONDecodeError:
             print("data is not json object")
-    print(f"{data=}")
+    # print(f"{data=}")
     return data
 
 
@@ -118,9 +118,43 @@ def load_data(path=config.DATA_PATH):
 
 def get_chapters():
     chapters = [list(k.keys())[0] for k in load_data()[0]]
-    return json.dumps(chapters)   
+    return json.dumps(chapters)
+
 
 def get_chapter_questions(chapter: str):
     data = load_data()[0]  # Assuming the data is a list of dictionaries
     questions = [chaptr[chapter] for chaptr in data if chaptr.get(chapter) is not None]
     return questions
+
+
+def save_content_to_notes(content, question):
+    try:
+        with open("data/notes.json", "r", encoding="utf-8") as file:
+            notes = json.load(file)
+    except FileNotFoundError:
+        notes = {}
+
+    if question not in notes:
+        notes[question] = []
+
+    notes[question].append(content)
+
+    with open("data/notes.json", "w", encoding="utf-8") as file:
+        json.dump(notes, file)
+
+    print("Content saved successfully.")
+
+
+def load_notes(question=None):
+    try:
+        with open("data/notes.json", "r", encoding="utf-8") as file:
+            notes = json.load(file)
+    except FileNotFoundError:
+        notes = {}
+
+    if question is None:
+        return notes
+    elif question in notes:
+        return notes[question]
+    else:
+        return None

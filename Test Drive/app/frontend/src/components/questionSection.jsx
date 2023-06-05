@@ -71,7 +71,7 @@ function QuestionSection({
 				</span>
 				/<span>{countTrueValues(answeredQuestions)}</span>
 			</div>
-			<NotesComponent />
+			<NotesComponent question={question}/>
 		</div>
 	);
 }
