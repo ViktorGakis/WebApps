@@ -70,3 +70,4 @@ async def api_load_note(request: Request) -> JSONResponse:
     note = await exec_block(load_notes, question)
     return jsonResp({"note": note})
 
+

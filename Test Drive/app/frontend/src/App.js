@@ -13,6 +13,7 @@ function App() {
 				<div className="App-header">
 					<img src={logo} className="App-logo" alt="logo" />
 					<QuestionForm />
+					<hr></hr>
 					<RoadSignsForm />
 				</div>
 			</div>
