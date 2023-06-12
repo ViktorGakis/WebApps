@@ -11,19 +11,19 @@ export {
 
 async function fetchChapters(chapter_type) {
 	if (chapter_type === "quiz") {
-		return await fetchAPI("api/chapters/quiz");
+		return await fetchAPI("/api/chapters/quiz");
 	} else if (chapter_type === "roadsigns") {
-		return await fetchAPI("api/chapters/roadsigns");
+		return await fetchAPI("/api/chapters/roadsigns");
 	}
 }
 
 async function fetchChapterItems(chapter, chapter_type) {
 	if (chapter_type === "quiz") {
-		return await fetchAPI("api/chapters/quiz/questions", {
+		return await fetchAPI("/api/chapters/quiz/questions", {
 			chapter: chapter,
 		});
 	} else if (chapter_type === "roadsigns") {
-		return await fetchAPI("api/chapters/roadsigns/signs", {
+		return await fetchAPI("/api/chapters/roadsigns/signs", {
 			chapter: chapter,
 		});
 	}

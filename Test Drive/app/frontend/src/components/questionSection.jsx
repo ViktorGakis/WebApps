@@ -1,7 +1,7 @@
 import React from "react";
 import { QuestionComponent } from "./questionComponent";
-import { NotesComponent } from "./notes"
-import { Clock } from "./clock"
+import { NotesComponent } from "./notes";
+import { Clock } from "./clock";
 
 function countTrueValues(array) {
 	return array.filter(Boolean).length;
@@ -16,7 +16,7 @@ function QuestionSection({
 	setAnsweredQuestions,
 	correctAnswers,
 	setCorrectAnswers,
-	formKey
+	formKey,
 }) {
 	const handleNextQuestion = () => {
 		if (currentQuestionIndex < loadedQuestions) {
@@ -55,11 +55,11 @@ function QuestionSection({
 				</span>
 				/<span>{countTrueValues(answeredQuestions)}</span>
 			</div>
-			<Clock key={formKey}/>
+			<Clock key={formKey} />
 			<QuestionComponent question={question} onAnswer={handleAnswer} />
 			<span>
 				{currentQuestionIndex}/{loadedQuestions}
-			</span>			
+			</span>
 			<div className="button-container">
 				<button
 					className="btn btn-primary stretch-button"
@@ -75,8 +75,7 @@ function QuestionSection({
 				</button>
 			</div>
 
-
-			<NotesComponent question={question}/>
+			<NotesComponent question={question} />
 		</div>
 	);
 }

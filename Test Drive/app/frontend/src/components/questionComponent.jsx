@@ -5,7 +5,13 @@ import { transformImagePath } from "../js/app_specifics";
 export { QuestionComponent };
 
 function QuestionComponent({ question, onAnswer }) {
-	const { question: questionText, choices, img_url, img_path } = question;
+	const {
+		question: questionText,
+		choices,
+		img_url,
+		img_path,
+		chapter,
+	} = question;
 	const [selectedOption, setSelectedOption] = useState(null);
 
 	const handleOptionClick = (option, isCorrect) => {
@@ -14,11 +20,16 @@ function QuestionComponent({ question, onAnswer }) {
 		// The onAnswer function is called here every time a choice is clicked.
 		// This allows the QuestionForm component to update answeredQuestions
 		// and correctAnswers based on the user's selections.
-		onAnswer(isCorrect);
+		onAnswer(isCorrect);		
 	};
 
 	return (
 		<div className="question">
+			{chapter && (
+				<div className="chapter">
+					<h4>Chapter: {chapter}</h4>
+				</div>
+			)}
 			<div className="title">
 				<h3>{questionText}</h3>
 			</div>

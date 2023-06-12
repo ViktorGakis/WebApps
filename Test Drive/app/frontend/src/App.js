@@ -4,7 +4,10 @@ import logo from "./logo.svg";
 import "./App.css";
 // import ApiTester from "./components/apitester.jsx";
 import { QuestionForm } from "./components/questionForm";
-import { RoadSignsForm } from "./components/roadsignsform"
+import { RoadSignsForm } from "./components/roadsignsform";
+import { QuestionsFromNotes } from "./components/filterQuestionsByNotes";
+
+const FilterQuestionsEndpoint = "/api/retrieve/questions";
 
 function App() {
 	return (
@@ -15,6 +18,10 @@ function App() {
 					<QuestionForm />
 					<hr></hr>
 					<RoadSignsForm />
+					<hr></hr>
+					<QuestionsFromNotes
+						endpoint={FilterQuestionsEndpoint.toString()}
+					/>
 				</div>
 			</div>
 		</div>

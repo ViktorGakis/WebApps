@@ -33,7 +33,8 @@ async function fetchData(url, params = {}, payload = {}, method = "GET") {
 }
 
 async function fetchAPI(endpoint, params = {}, payload = {}, method = "GET") {
-	const apiUrl = `http://localhost:8000/${endpoint}`;
+	const apiUrl = `http://localhost:8000${endpoint}`;
+	console.log('apiUrl: ', apiUrl)
 	const response = await fetchData(apiUrl, params, payload, method);
 	return response;
 }

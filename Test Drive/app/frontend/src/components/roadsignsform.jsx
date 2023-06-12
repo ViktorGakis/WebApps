@@ -38,7 +38,7 @@ function RoadSignsForm() {
 				<div id="form-container">
 					<FormSelect
 						data={chapters}
-						url="api/chapters/roadsigns"
+						url="/api/chapters/roadsigns"
 						method="GET"
 						handleSubmit={handleFormSubmit} // Modified to use handleFormSubmit
 						id={'roadsignForm'}

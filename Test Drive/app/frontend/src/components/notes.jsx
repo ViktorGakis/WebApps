@@ -14,7 +14,7 @@ async function handleSave(content, question) {
 
 async function handleLoad(question) {
 	const note = await fetchAPI(
-		"api/load/note",
+		"/api/load/note",
 		{ question: question },
 		undefined,
 		"GET"

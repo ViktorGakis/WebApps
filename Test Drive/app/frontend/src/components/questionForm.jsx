@@ -49,7 +49,7 @@ function QuestionForm() {
 				<div id="form-container">
 					<FormSelect
 						data={chapters}
-						url="api/chapter/questions"
+						url="/api/chapter/questions"
 						method="GET"
 						handleSubmit={handleFormSubmit} // Modified to use handleFormSubmit
 						id={'questionForm'}
