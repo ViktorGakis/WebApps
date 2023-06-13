@@ -44,7 +44,7 @@ async function handleChapterRoadSignsFetch(selectedOption, setQuestions) {
 	try {
 		let rsp = await fetchChapterItems(selectedOption, "roadsigns");
 		let response = rsp.data[0];
-		console.log("handleChapterRoadSignsFetch response:", response);
+		// console.log("handleChapterRoadSignsFetch response:", response);
 		setQuestions(response);
 	} catch (error) {
 		console.log("Error:", error.message);
@@ -60,7 +60,7 @@ async function handleChapterQuestionFetch(
 	try {
 		let rsp = await fetchChapterItems(selectedOption, "quiz");
 		let response = rsp.data[0];
-		console.log("handleChapterQuestionFetch response:", response);
+		// console.log("handleChapterQuestionFetch response:", response);
 		setQuestions(response);
 		setCurrentQuestionIndex(1);
 	} catch (error) {

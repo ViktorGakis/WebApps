@@ -1,4 +1,5 @@
 from logging import Logger
+from pathlib import Path
 
 from fastapi import Request
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -21,7 +22,7 @@ config: APISettings = get_api_settings()
 
 @router.get("/")
 def main_index() -> HTMLResponse:
-    index_path = config.REACT_PATH / "index.html"
+    index_path: Path = config.REACT_PATH / "index.html"
     with index_path.open("r") as file:
         html_content: str = file.read()
     return HTMLResponse(content=html_content, status_code=200)

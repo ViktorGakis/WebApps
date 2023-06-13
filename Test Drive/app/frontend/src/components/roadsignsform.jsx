@@ -32,7 +32,7 @@ function RoadSignsForm() {
 	};
 
 	return (
-		<div id="main">
+		<div>
 			<h1>Choose Roadsign Category</h1>
 			{chapters.length > 0 ? (
 				<div id="form-container">

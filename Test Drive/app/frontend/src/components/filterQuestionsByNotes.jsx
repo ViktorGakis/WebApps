@@ -20,7 +20,6 @@ export function QuestionsFromNotes({ endpoint }) {
 	const [inputValue, setInputValue] = useState("");
 	const [loading, setLoading] = useState(false);
 
-
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setLoading(true);
@@ -37,7 +36,7 @@ export function QuestionsFromNotes({ endpoint }) {
 	};
 
 	useEffect(() => {
-		console.log("questions (inside useEffect): ", questions);
+		// console.log("questions (inside useEffect): ", questions);
 	}, [questions]); // Watch for changes in the questions state
 
 	const handleFormSubmit = function (e) {
@@ -50,14 +49,19 @@ export function QuestionsFromNotes({ endpoint }) {
 
 	return (
 		<div>
-			<form onSubmit={handleFormSubmit}>
+			<h1>Retrieve questions from notes</h1>
+			<div id="form-container">
+			<form className="form button-container" onSubmit={handleFormSubmit}>
 				<input
 					type="text"
 					value={inputValue}
 					onChange={(e) => setInputValue(e.target.value)}
 				/>
-				<button type="submit">Submit</button>
+				<button className="btn btn-primary" type="submit">
+					Submit
+				</button>
 			</form>
+			</div>
 			{loading ? (
 				<div>Loading...</div>
 			) : questions ? (
