@@ -22,11 +22,11 @@ def valid_model_attributes(
         return False
 
     if invalid_attributes := [
-        attribute
-        for attribute in attribute_dict
-        if not hasattr(model, attribute)
+        k for k, _ in attribute_dict.items() if not hasattr(model, k)
     ]:
-        log.error(f"The following attributes do not exist in the model: {', '.join(invalid_attributes)}")
+        log.error(
+            f"The following attributes do not exist in the model: {', '.join(invalid_attributes)}"
+        )
         return False
 
     return True
@@ -98,7 +98,6 @@ async def update_objs(
     model: DeclarativeMeta,
     column_value_dicts: list[Dict[str, Any]],
 ) -> Coroutine[Any, Any, None]:
-    
     for column_value_dict in column_value_dicts:
         if not valid_model_attributes(model, column_value_dict):
             return

@@ -1,8 +1,7 @@
-import datetime
 from datetime import datetime, timedelta
 from pprint import pprint
 from typing import Any, Dict, Optional
-from urllib.parse import quote, quote_plus, urlencode
+from urllib.parse import quote
 
 BASE_API_JOBS_URL: str = "https://www.jobs.ch/api/v1/public/search?"
 
@@ -129,10 +128,10 @@ class QueryBuilder:
     def add_languages(self) -> None:
         if self.languages:
             self.param_handle_dict(LANGUAGE_TYPES_DICT, self.languages)
-            if 'not indicated' in self.languages:
-                for i, tuple in enumerate(self.params['api']):
-                    if tuple == ('language-skills%5B%5D', 'missing'):
-                        self.params['api'][i] = ('language-skills%5B%5D', '')
+            if "not indicated" in self.languages:
+                for i, tuple in enumerate(self.params["api"]):
+                    if tuple == ("language-skills%5B%5D", "missing"):
+                        self.params["api"][i] = ("language-skills%5B%5D", "")
 
     def add_employment_type(self) -> None:
         if self.employment_types:
@@ -156,7 +155,6 @@ class QueryBuilder:
             self.param_handle(info_dict["domain_field"], v, ["domain"])
 
     def build_urls(self) -> None:
-        pprint(self.params)
         api_params: str = self.custom_urlencode(self.params["api"])
         domain_params: str = self.custom_urlencode(self.params["domain"])
 
@@ -196,31 +194,31 @@ class QueryBuilder:
         }
 
 
-# Ex# ample304: Provide all the optional arguments
-query_builder = QueryBuilder(
-    query="Software Engineer",
-    location="Switzerland",
-    days=1,
-    work_load=[0, 100],
-    position_types=["employee", "specialist"],
-    languages=["english", "french", "italian", "german", "not indicated"],
-    employment_types=[
-        "apprenticeship",
-        "freelance",
-        "internship",
-        "supplementary income",
-        "temporary",
-        "unlimited employment",
-    ],
-    company_types=["small and medium", "large", "consultants"],
-)
+if __name__ == "__main__":
+    # Ex# ample304: Provide all the optional arguments
+    query_builder = QueryBuilder(
+        query="Software Engineer",
+        location="Switzerland",
+        days=1,
+        work_load=[0, 100],
+        position_types=["employee", "specialist"],
+        languages=["english", "french", "italian", "german", "not indicated"],
+        employment_types=[
+            "apprenticeship",
+            "freelance",
+            "internship",
+            "supplementary income",
+            "temporary",
+            "unlimited employment",
+        ],
+        company_types=["small and medium", "large", "consultants"],
+    )
 
-
-print("----------------------------------------------------------------")
-pprint(query_builder.params["api"])
-print("----------------------------------------------------------------")
-print(query_builder.url_api)
-print("----------------------------------------------------------------")
-pprint(query_builder.params["domain"])
-print("----------------------------------------------------------------")
-print(query_builder.url_domain)
+    print("----------------------------------------------------------------")
+    pprint(query_builder.params["api"])
+    print("----------------------------------------------------------------")
+    print(query_builder.url_api)
+    print("----------------------------------------------------------------")
+    pprint(query_builder.params["domain"])
+    print("----------------------------------------------------------------")
+    print(query_builder.url_domain)

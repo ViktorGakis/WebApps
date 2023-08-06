@@ -22,7 +22,17 @@ class Query(Base):
         "dateLog", DateTime(timezone=True), default=func.now(), onupdate=func.now()
     )
 
-    def __init__(self, clientClassification=None, pageTitle=None, pageDescription=None, pageList=None, numPages=None, totalHits=None, searchQuery=None, url=None):
+    def __init__(
+        self,
+        clientClassification=None,
+        pageTitle=None,
+        pageDescription=None,
+        pageList=None,
+        numPages=None,
+        totalHits=None,
+        searchQuery=None,
+        url=None,
+    ):
         self.clientClassification = clientClassification
         self.pageTitle = pageTitle
         self.pageDescription = pageDescription
@@ -31,7 +41,6 @@ class Query(Base):
         self.totalHits = totalHits
         self.searchQuery = searchQuery
         self.url = url
-
 
     def serialize(self) -> dict:
         return OrderedDict(
