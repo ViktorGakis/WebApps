@@ -33,8 +33,8 @@ class Job_Api(Base):
 
     query_id = Column("query_id", Integer, default=None)
     subquery_id = Column("subquery_id", Integer, default=None)
-    dateLog = Column(
-        "dateLog", DateTime(timezone=True), default=func.now(), onupdate=func.now()
+    date_log = Column(
+        "date_log", DateTime(timezone=True), default=func.now(), onupdate=func.now()
     )
 
     def __init__(
@@ -110,7 +110,7 @@ class Job_Api(Base):
             "job_url_fr": self.job_url_fr,
             "query_id": self.query_id,
             "subquery_id": self.subquery_id,
-            "dateLog": self.dateLog,
+            "date_log": self.date_log,
         }
 
     def __repr__(self) -> str:

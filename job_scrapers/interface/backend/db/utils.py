@@ -1,7 +1,7 @@
 import logging
 from typing import Any, Coroutine, Dict, Optional, Union
 
-from sqlalchemy import inspect
+from sqlalchemy import Table, inspect, select, text, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm.decl_api import DeclarativeMeta
 
@@ -114,3 +114,37 @@ async def update_objs(
             await session.commit()
     else:
         log.debug("Object not found.")
+
+
+async def obj_retriever(model, column, identifiers):
+    async with async_session() as session:
+        query = await session.execute(
+            select(model).where(getattr(model, column).in_(identifiers))
+        )
+        return query.scalars().all()
+
+
+async def update_record(
+    model: Union[Table, DeclarativeMeta],
+    identifiers: list,
+    identifier_field: str,
+    field: str,
+    value: Any,
+    increment: bool = False,
+):
+    async with async_session() as session:
+        if increment:
+            # Increment current value
+            await session.execute(
+                update(model)
+                .where(getattr(model, identifier_field).in_(identifiers))
+                .values({field: text(f"{field} + {value}")})
+            )
+        else:
+            # Set new value
+            await session.execute(
+                update(model)
+                .where(getattr(model, identifier_field).in_(identifiers))
+                .values({field: value})
+            )
+        await session.commit()
