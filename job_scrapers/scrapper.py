@@ -2,29 +2,17 @@ from IPython.core.interactiveshell import InteractiveShell
 
 InteractiveShell.ast_node_interactivity = "all"
 import asyncio
-import importlib
-import pprint
+import json
 from pathlib import Path
-from typing import Any, Callable, Coroutine, Optional, Union
+from typing import Any, Optional, Union
 
 import aiohttp
-import pandas as pd
-from aiohttp import ClientError, ClientTimeout
 from bs4 import BeautifulSoup, NavigableString, ResultSet, Tag
-from chompjs import parse_js_object, parse_js_objects
-from pandas import DataFrame
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
-from sqlalchemy import inspect
-import json
-from pathlib import Path
-from typing import Union
-import json
-from pathlib import Path
-from bs4 import BeautifulSoup
-from scrapers.jobsdotch import QueryBuilder
 
 from interface.backend import db
+from scrapers.jobsdotch import QueryBuilder
 
 
 def read_from_file(filepath: Path, parser: str) -> BeautifulSoup:
@@ -167,10 +155,12 @@ async def handle_request(items, filepath):
 
 
 async def create_query(query, location, days, url, model):
-    return (await db.create_objs(
-        model,
-        [dict(query=query, location=location, days=days, url=url)],
-    ))[0][0]
+    return (
+        await db.create_objs(
+            model,
+            [dict(query=query, location=location, days=days, url=url)],
+        )
+    )[0][0]
 
 
 def generate_subqueries_urls(base_url, numPages) -> list[str]:
@@ -244,68 +234,75 @@ async def mainEn(
     days="",
     headers: Optional[dict] = None,
     cookies: Optional[dict] = None,
-) -> Coroutine[Any, Any, None]:
-    await db.init()
-
+):
     if headers is None:
         headers = {}
     if cookies is None:
         cookies = {}
 
-    # add full parameters
-    query_url: str = QueryBuilder(query=query, location=location, days=days).url_api
+    await db.init()
 
-    query_pk = (
-        await create_query(query, location, days, query_url, db.models.Query_Api)
-    )
-
-    items: list[dict[str, Any]] = [
-        {
-            "url": query_url,
-            "name": "",
-            "headers": headers,
-            "cookies": cookies,
-        },
-        # Add more dictionaries for more URLs
-    ]
-
-    data_json = await handle_request(items, f"data/json/jobsch/queries/{query_pk}.json")
-
-    if data_json.get("data", {}):
-        query_info = await extract_query_info(data_json)
-
-        await db.update_objs([query_pk], db.models.Query_Api, [query_info])
-
-        subqueries_pkeys = await generate_subqueries(
-            query_info["num_pages"],
-            query_pk,
-            query,
-            location,
-            days,
-            db.models.Query_Api,
-            db.models.SubQuery_Api,
+    async with db.async_session.begin() as ses:
+        req = db.models.Request(
+            url=QueryBuilder(query=query, location=location, days=days).url_api
         )
-        print(f"{subqueries_pkeys=}")
+        ses.add_all([req])
+        await ses.commit()
 
-        for spkey in subqueries_pkeys:
-            sub_data_json = await handle_request(
-                items, f"data/json/sub_queries/{query_pk}/{spkey}.json"
-            )
-            sub_query_info = await extract_query_info(sub_data_json)
-            await db.update_objs([spkey], db.models.SubQuery_Api, [sub_query_info])
+    if req_data_json := await handle_request(
+        [
+            {
+                "url": req.url,
+                "name": "",
+                "headers": headers,
+                "cookies": cookies,
+            },
+            # Add more dictionaries for more URLs
+        ],
+        f"data/json/jobsch/requests/{req.id}.json",
+    ):
+        if req_data_json.get("data", {}):
+            # sub_reqs = []
+            query_info = await extract_query_info(req_data_json)
 
-            for job in sub_data_json.get("data", {}).get("documents", {}):
-                job_info = await extract_job_info(job)
-                job_info["query_id"] = query_pk
-                job_info["subquery_id"] = spkey
-                if dupl_flag := await db.obj_retriever(
-                    db.models.Job_Api, "job_id", [job_info.get("job_id", "")]
-                ):
-                    await db.update_record(
-                        db.models.SubQuery_Api, [spkey], "id", "duplicates", 1, True
-                    )
-                    continue
-                await db.create_objs(db.models.Job_Api, [job_info])
+            for k, v in query_info.items():
+                setattr(req, k, v)
+
+            async with db.async_session.begin() as ses:
+                ses.add_all([req])
+                await ses.commit()
+
+            if req.num_pages > 1:
+                if sub_reqs := [
+                    db.models.SubRequest(url=url)
+                    for url in generate_subqueries_urls(req.url, req.num_pages)
+                ]:
+                    async with db.async_session.begin() as ses:
+                        ses.add_all([req, *sub_reqs])
+                        await ses.commit()
+
+            if sub_reqs:
+                for sub_req in sub_reqs:
+                    if sub_req_data_json := await handle_request(
+                        [
+                            {
+                                "url": sub_req.url,
+                                "name": "",
+                                "headers": headers,
+                                "cookies": cookies,
+                            },
+                            # Add more dictionaries for more URLs
+                        ],
+                        f"data/json/jobsch/sub_requests/{req.id}/{sub_req.id}.json",
+                    ):
+                        sub_req_info = await extract_query_info(sub_req_data_json)
+
+                        for k, v in sub_req_info.items():
+                            setattr(sub_req, k, v)
+
+                        async with db.async_session.begin() as ses:
+                            ses.add_all(sub_reqs)
+
 
 
 if __name__ == "__main__":

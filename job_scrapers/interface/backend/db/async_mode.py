@@ -1,6 +1,11 @@
 from typing import AsyncGenerator, Generator
 
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, create_async_engine
+from sqlalchemy.ext.asyncio import AsyncAttrs
+from sqlalchemy.ext.asyncio import async_sessionmaker
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.ext.asyncio import create_async_engine
+
 from sqlalchemy.orm import Session, sessionmaker
 
 from ..config import APISettings, get_api_settings
@@ -19,13 +24,15 @@ engine: AsyncEngine = create_async_engine(
     echo=False,
 )
 
-async_session: sessionmaker = sessionmaker(
-    autocommit=False,
-    autoflush=False,
-    bind=engine,
-    expire_on_commit=False,
-    class_=AsyncSession,
-)
+# async_session: sessionmaker = sessionmaker(
+#     autocommit=False,
+#     autoflush=False,
+#     bind=engine,
+#     expire_on_commit=False,
+#     class_=AsyncSession,
+# )
+
+async_session = async_sessionmaker(engine, expire_on_commit=False)
 
 # Dependency
 async def get_ses() -> AsyncGenerator[Session, None]:

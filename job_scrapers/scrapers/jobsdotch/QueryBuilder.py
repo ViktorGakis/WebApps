@@ -158,7 +158,7 @@ class QueryBuilder:
         api_params: str = self.custom_urlencode(self.params["api"])
         domain_params: str = self.custom_urlencode(self.params["domain"])
 
-        self.url_api: str = f"{BASE_API_JOBS_URL}{api_params}"
+        self.url_api: str = f"{BASE_API_JOBS_URL}{api_params}&rows=20"
         self.url_domain: str = f"{BASE_URL_JOBS}{domain_params}"
 
     @staticmethod
@@ -176,17 +176,17 @@ class QueryBuilder:
     @staticmethod
     def generate_dates(days: int) -> Dict[str, Any]:
         # Get the current datetime
-        now = datetime.now()
+        now: datetime = datetime.now()
 
         # Subtract the number of days to get the "from" date, and set the time to 00:00:00
-        from_date = (now - timedelta(days=days)).replace(hour=0, minute=0, second=0)
+        from_date: datetime = (now - timedelta(days=days)).replace(hour=0, minute=0, second=0)
 
         # Set the "to" datetime to the current day's end, i.e., 23:59:59
-        to_date = now.replace(hour=23, minute=59, second=59)
+        to_date: datetime = now.replace(hour=23, minute=59, second=59)
 
         # Format the dates into strings
-        from_str = quote(from_date.strftime("%Y-%m-%d %H:%M:%S"))
-        to_str = quote(to_date.strftime("%Y-%m-%d %H:%M:%S"))
+        from_str: str = quote(from_date.strftime("%Y-%m-%d %H:%M:%S"))
+        to_str: str = quote(to_date.strftime("%Y-%m-%d %H:%M:%S"))
 
         return {
             "publication-date-from": from_str,
