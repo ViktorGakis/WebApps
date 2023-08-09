@@ -1,19 +1,23 @@
-from IPython.core.interactiveshell import InteractiveShell
-
-InteractiveShell.ast_node_interactivity = "all"
 import asyncio
 import json
+from logging import Logger
 from pathlib import Path
 from typing import Any, Optional, Union
 
 import aiohttp
 from bs4 import BeautifulSoup, NavigableString, ResultSet, Tag
+from IPython.core.interactiveshell import InteractiveShell
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
 
 from interface.backend import db
 from scrapers.jobsdotch import QueryBuilder
 
+from interface.backend.logger import logdef
+
+InteractiveShell.ast_node_interactivity = "all"
+
+log: Logger = logdef(__name__)
 
 def read_from_file(filepath: Path, parser: str) -> BeautifulSoup:
     with filepath.open(mode="r", encoding="utf-8") as file:
@@ -47,9 +51,9 @@ def write_to_file(filepath: Path, data: Union[str, dict], data_format: str = "te
         else:
             raise ValueError("Invalid data format. Use 'text' or 'json'.")
 
-        print(f"Successfully wrote the data to '{filepath}' in {data_format} format.")
+        log.info(f"Successfully wrote the data to '{filepath}' in {data_format} format.")
     except Exception as e:
-        print(f"An error occurred: {e}")
+        log.error(f"An error occurred: {e}")
 
 
 def soup(
@@ -95,7 +99,7 @@ async def _make_request(
     async with session.get(url, headers=headers, cookies=cookies) as response:
         if response.status == 200:
             # Check the content type of the response
-            content_type = response.headers.get("Content-Type", "")
+            content_type: str = response.headers.get("Content-Type", "")
             # print(f"{content_type=}")
             if "application/json" in content_type:
                 # If it's JSON, use .json() method
@@ -103,7 +107,7 @@ async def _make_request(
             else:
                 # Otherwise, return as text
                 return dict(data=await response.text(), status=response.status)
-        print(f"Failed to fetch {url}. Status: {response.status}")
+        log.error(f"Failed to fetch {url}. Status: {response.status}")
         return None
 
 
@@ -123,7 +127,7 @@ async def fetch(
             )
         except (aiohttp.ClientError, asyncio.TimeoutError) as e:
             if i == retries - 1:  # This was the last attempt
-                print(f"Failed to fetch {url} after {retries} attempts. Error: {e}")
+                log.error(f"Failed to fetch {url} after {retries} attempts. Error: {e}")
                 return None
 
 
@@ -148,48 +152,14 @@ async def fetch_all(items, retries=3, timeout_for_session=5) -> list:
 
 
 async def handle_request(items, filepath):
-    data_json_list = await fetch_all(items)
+    data_json_list: list[Any] = await fetch_all(items)
     if data_json := data_json_list[0]:
         write_to_file(filepath, data_json.get("data", {}), "json")
         return data_json
 
 
-async def create_query(query, location, days, url, model):
-    return (
-        await db.create_objs(
-            model,
-            [dict(query=query, location=location, days=days, url=url)],
-        )
-    )[0][0]
-
-
 def generate_subqueries_urls(base_url, numPages) -> list[str]:
     return [f"{base_url}&page={x}" for x in range(1, numPages + 1)]
-
-
-async def generate_subqueries(
-    num_pages, queryPrimaryKey, query, location, days, model_retrieve, model_create
-):
-    base_url = (await db.retrieve_objs([queryPrimaryKey], model_retrieve))[0].url
-    if num_pages > 1:
-        urls: list[str] = generate_subqueries_urls(base_url, num_pages)
-        spkeys: list[Any] = await db.create_objs(
-            model_create,
-            [
-                dict(
-                    url=url,
-                    qpkey=queryPrimaryKey,
-                    query=query,
-                    location=location,
-                    days=days,
-                    page=page,
-                )
-                for page, url in enumerate(urls, start=1)
-            ],
-        )
-        return [x[0] if isinstance(x, tuple) else x for x in spkeys]
-    else:
-        return [x[0] if isinstance(x, tuple) else x for x in [queryPrimaryKey]]
 
 
 async def extract_query_info(rsp: dict):
@@ -198,7 +168,8 @@ async def extract_query_info(rsp: dict):
         current_page=rsp.get("data", {}).get("current_page", ""),
         total_hits=rsp.get("data", {}).get("total_hits", ""),
         actual_hits=len(rsp.get("data", {}).get("documents", [])),
-        status=rsp.get("status", None),
+        norn_search_query= rsp.get('data', {}).get('normalized_search_query',""),
+        status=rsp.get("status"),
     )
 
 
@@ -235,16 +206,21 @@ async def mainEn(
     headers: Optional[dict] = None,
     cookies: Optional[dict] = None,
 ):
+
+    await db.init()
+
     if headers is None:
         headers = {}
     if cookies is None:
         cookies = {}
 
-    await db.init()
 
     async with db.async_session.begin() as ses:
         req = db.models.Request(
-            url=QueryBuilder(query=query, location=location, days=days).url_api
+            query=query,
+            location=location,
+            days=days,
+            url=QueryBuilder(query=query, location=location, days=days).url_api,
         )
         ses.add_all([req])
         await ses.commit()
@@ -262,7 +238,7 @@ async def mainEn(
         f"data/json/jobsch/requests/{req.id}.json",
     ):
         if req_data_json.get("data", {}):
-            # sub_reqs = []
+            sub_reqs = []
             query_info = await extract_query_info(req_data_json)
 
             for k, v in query_info.items():
@@ -274,7 +250,13 @@ async def mainEn(
 
             if req.num_pages > 1:
                 if sub_reqs := [
-                    db.models.SubRequest(url=url)
+                    db.models.Sub_Request(
+                        url=url,
+                        query=req.query,
+                        location=req.location,
+                        days=req.days,
+                        request_id=req.id,
+                    )
                     for url in generate_subqueries_urls(req.url, req.num_pages)
                 ]:
                     async with db.async_session.begin() as ses:
@@ -282,27 +264,44 @@ async def mainEn(
                         await ses.commit()
 
             if sub_reqs:
-                for sub_req in sub_reqs:
+                for sub_request in sub_reqs:
                     if sub_req_data_json := await handle_request(
                         [
                             {
-                                "url": sub_req.url,
+                                "url": sub_request.url,
                                 "name": "",
                                 "headers": headers,
                                 "cookies": cookies,
                             },
                             # Add more dictionaries for more URLs
                         ],
-                        f"data/json/jobsch/sub_requests/{req.id}/{sub_req.id}.json",
+                        f"data/json/jobsch/sub_requests/{req.id}/{sub_request.id}.json",
                     ):
                         sub_req_info = await extract_query_info(sub_req_data_json)
 
                         for k, v in sub_req_info.items():
-                            setattr(sub_req, k, v)
+                            setattr(sub_request, k, v)
 
                         async with db.async_session.begin() as ses:
-                            ses.add_all(sub_reqs)
+                            ses.add_all([sub_request])
+                            await ses.commit()
 
+                        # print(f'{sub_req_data_json=}')
+
+                        jobs: list[db.models.Job] = [
+                            db.models.Job(
+                                **(await extract_job_info(job_dict)),
+                                request_id=req.id,
+                                sub_request_id=sub_request.id,
+                            )
+                            for job_dict in sub_req_data_json.get("data", {}).get(
+                                "documents", []
+                            )
+                        ]
+
+                        async with db.async_session.begin() as ses:
+                            ses.add_all(jobs)
+                            await ses.commit()
 
 
 if __name__ == "__main__":

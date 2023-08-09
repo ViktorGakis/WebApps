@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional
 
 from sqlalchemy import DateTime, ForeignKey
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy.sql import func
 
 from ..base import Base
@@ -25,26 +25,31 @@ class Request(Base):
     date_log: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=func.now(), onupdate=func.now()
     )
+    sub_requests = relationship("Sub_Request", back_populates="request")
+    jobs = relationship("Job", back_populates="request")
 
 
-class SubRequest(Base):
-    __tablename__: str = "subrequests"
-    # __table_args__: tuple[dict[str, bool]] = {"extend_existing": True}
+class Sub_Request(Base):
+    __tablename__: str = "sub_requests"
+    # ... other code ...ting": True}
     id: Mapped[int] = mapped_column(primary_key=True)
     status: Mapped[Optional[int]]
-    query: Mapped[Optional[str]] = mapped_column(ForeignKey("requests.query"))
-    location: Mapped[Optional[str]] = mapped_column(ForeignKey("requests.location"))
-    days: Mapped[Optional[int]] = mapped_column(ForeignKey("requests.days"))
+    query: Mapped[Optional[str]]  # Not a foreign key"requests.query"))
+    location: Mapped[Optional[str]]  # Not a foreign keyey("requests.location"))
+    days: Mapped[Optional[int]]  # Not a foreign keyrequests.days"))
     num_pages: Mapped[Optional[int]]
     total_hits: Mapped[Optional[int]]
     actual_hits: Mapped[Optional[int]]
     duplicates: Mapped[Optional[int]]
     current_page: Mapped[Optional[int]]
     url: Mapped[Optional[str]]
-    query_id: Mapped[Optional[int]] = mapped_column(ForeignKey("requests.id"))
+    request_id: Mapped[int] = mapped_column(ForeignKey("requests.id"))
+
     date_log: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=func.now(), onupdate=func.now()
     )
+    request = relationship("Request", back_populates="sub_requests")
+    jobs = relationship("Job", back_populates="sub_request")
 
 
 class Job(Base):
@@ -70,8 +75,11 @@ class Job(Base):
     job_url_en: Mapped[Optional[str]]
     job_url_de: Mapped[Optional[str]]
     job_url_fr: Mapped[Optional[str]]
-    query_id: Mapped[Optional[int]] = mapped_column(ForeignKey("requests.id"))
-    subquery_id: Mapped[Optional[int]] = mapped_column(ForeignKey("subrequests.id"))
+    request_id: Mapped[int] = mapped_column(ForeignKey("requests.id"))
+    sub_request_id: Mapped[int] = mapped_column(ForeignKey("sub_requests.id"))
+
     date_log: Mapped[Optional[datetime]] = mapped_column(
         DateTime(timezone=True), default=func.now(), onupdate=func.now()
     )
+    sub_request = relationship("Sub_Request", back_populates="jobs")
+    request = relationship("Request", back_populates="jobs")

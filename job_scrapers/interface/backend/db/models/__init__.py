@@ -1,1 +1,1 @@
-from .models import Request, SubRequest, Job
+from .models import Request, Sub_Request, Job
