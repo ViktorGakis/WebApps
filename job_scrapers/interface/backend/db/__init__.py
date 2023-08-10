@@ -29,4 +29,3 @@ async def init() -> None:
 async def disc() -> None:
     await engine.dispose()
     log.info("Db closed.")
-    log.info("Db closed.")

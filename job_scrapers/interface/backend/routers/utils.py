@@ -1,3 +1,4 @@
+import asyncio
 import json
 import operator as op
 import re
@@ -9,7 +10,7 @@ from functools import partial
 from inspect import currentframe
 from logging import FileHandler, Logger
 from pathlib import Path
-from typing import Any, Literal, Optional
+from typing import Any, Callable, Literal, Optional
 
 import plotly.graph_objects as go
 from bs4 import BeautifulSoup, NavigableString, Tag
@@ -21,20 +22,15 @@ from sqlalchemy import Column
 from sqlalchemy.sql.elements import BinaryExpression
 from sqlalchemy.sql.expression import ColumnOperators
 from starlette.templating import _TemplateResponse
-from OpenAI import CVletter
 
-from job_seeker import get_country_str, get_jobs_from_country
-from job_seeker.utils.rqsts.utils import soup
-
+# from job_seeker import get_country_str, get_jobs_from_country
 from .. import db
 from ..config import APISettings, get_api_settings
-from ..db.models import Collector, Company, Job
 from ..logger import logdef
 
 config: APISettings = get_api_settings()
 
 log: Logger = logdef(__name__)
-
 
 
 def jsonify_plotly(fig: go.Figure) -> str:
@@ -290,44 +286,38 @@ async def exec_processpool(func, /, *args, **kwargs) -> Any:
         return await loop.run_in_executor(pool, func_call)
 
 
-def job_descr_process(jobs: dict[str, Any], table) -> None:
-    for job in jobs["items"]:
-        if (path := Path(f"data/jobs_descr/{job.job_id}.html")).exists():
-            process_job(job, path)
-        else:
-            log.error("File for job_id: %s does not exist", job.job_id)
+def run_async_in_thread(
+    loop: asyncio.AbstractEventLoop, coro: Callable[..., Any]
+) -> Any:
+    """
+    This runs the given coroutine in the provided event loop and returns the result.
+    """
+    return loop.run_until_complete(coro)
 
 
-def process_job(job: Collector | Job, path: Path) -> None:
-    with path.open(mode="r", encoding="utf-8") as file:
-        html: str = file.read()
-        soup: BeautifulSoup = BeautifulSoup(html, "html.parser")
-        btn1: Tag | NavigableString | None = soup.find(
-            lambda tag: tag.name == "button"
-            and "show more" in tag.attrs.get("aria-label").lower().strip()
+async def exec_async_block(func: Callable[..., Any], /, *args, **kwargs) -> Any:
+    """
+    This runs the given async function in a separate thread and waits for the result.
+    """
+    loop: AbstractEventLoop = asyncio.get_running_loop()
+
+    with ThreadPoolExecutor() as pool:
+        # Create a new event loop for the new thread
+        new_loop: AbstractEventLoop = asyncio.new_event_loop()
+
+        # Prepare the partial function with the new event loop and the given async function
+        ctx: Context = copy_context()
+        func_call = partial(
+            ctx.run, run_async_in_thread, new_loop, func(*args, **kwargs)
         )
-        btn1.decompose()
-        btn2: Tag | NavigableString | None = soup.find(
-            lambda tag: tag.name == "button"
-            and "show less" in tag.attrs.get("aria-label").lower().strip()
-        )
-        btn2.decompose()
-        job.job_descr = f"{soup}"
 
+        # Run the function in the thread pool and await its result
+        result = await loop.run_in_executor(pool, func_call)
 
-async def retrieve_companies(jobs, table, ses) -> None:
-    if isinstance(jobs, dict):
-        for job in jobs["items"]:
-            await retrieve_company(job, ses)
-    else:
-        log.error("NEED TO IMPLEMENT JOBS OF TYPE: %s", type(jobs))
+        # Close the new event loop
+        new_loop.close()
 
-
-async def retrieve_company(job: Collector, ses: db.AsyncSession) -> None:
-    company_id: Column = job.company_id
-    sql = db.select(Company).filter(Company.company_id == company_id)
-    company = (await ses.execute(sql)).scalar()
-    job.company_obj = company
+        return result
 
 
 async def btn_update(
@@ -350,49 +340,3 @@ async def btn_update(
         await ses.commit()
         # log.debug('val_new: %s', val_new)
         return val_new
-
-
-async def country_filter(rq_args):
-    if country:=rq_args.get("country"):
-        jobs_country = get_jobs_from_country(country)
-        if jobs_country.shape[0]:
-            job_ids = jobs_country.job_id.values.tolist()
-            return Job.job_id.in_(job_ids)
-    return True
-
-async def retrieve_countries(jobs):
-    for job in jobs:
-        job.country = get_country_str(job.job_location)
-        
-
-async def package_application(rq_args, jobs, ses) -> int:
-    job_id: str = rq_args["job_id"]
-    if applied_status := await btn_update(Job, rq_args, "applied", ses):
-        for job in jobs["items"]:
-            if job.job_id == job_id:
-                country: str | None = get_country_str(job.job_location)
-                company_name = job.company_name
-                job_title = job.job_title
-                if not (
-                    path := Path(
-                        f"data/applied/{country}/{company_name}/{job_id}_{job_title}/"
-                    )
-                ).exists():
-                    path.mkdir(parents=True, exist_ok=True)
-                # with (path/"descr.txt").open("w+", encoding="utf-8") as f:
-                #     text = soup(job.job_descr, filepath=None).get_text().strip()
-                #     f.write(text)
-                with (path/"letter.txt").open("w+", encoding="utf-8") as f:
-                    f.write(rq_args["mot_letter"])
-                with (path/"prompt.txt").open("w+", encoding="utf-8") as f:
-                    job_descr = soup(job.job_descr, filepath=None).get_text().strip()
-                    letgen = CVletter()
-                    letgen.create(
-                        job_title=job.job_title,
-                        company=job.company_name,
-                        job_descr=job_descr,
-                        send=False
-                    )
-                    f.write(letgen.prompt)                
-                break
-    return applied_status
