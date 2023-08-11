@@ -2,7 +2,9 @@ from logging import Logger
 from typing import Any
 
 from interface.backend import db
+from interface.backend.db.utils import check_attribute_exists
 from interface.backend.logger import logdef
+
 from .requests import fetch_all
 from .utils import write_to_file
 
@@ -74,7 +76,7 @@ class Scraper:
 
     @classmethod
     async def handle_sub_requests(
-        cls, headers, cookies, request_obj, sub_requests, request_dir, job_model
+        cls, headers, cookies, request_obj, sub_requests, request_dir, job_model, job_id
     ):
         for sub_request in sub_requests:
             if sub_request_data := await cls.handle_request(
@@ -94,19 +96,44 @@ class Scraper:
                 await cls.update_request_info(sub_request, sub_request_info)
 
                 await cls.handle_jobs(
-                    request_obj, sub_request, sub_request_data, job_model
+                    request_obj, sub_request, sub_request_data, job_model, job_id
                 )
 
     @classmethod
-    async def handle_jobs(cls, request_obj, sub_request, sub_request_data, job_model):
+    async def handle_jobs(
+        cls, request_obj, sub_request_obj, sub_request_data, job_model, job_id: str
+    ):
         jobs: list[job_model] = [
             job_model(
                 **(await cls.extract_job_info(job_dict)),
                 request_id=request_obj.id,
-                sub_request_id=sub_request.id,
+                sub_request_id=sub_request_obj.id,
             )
             for job_dict in sub_request_data.get("data", {}).get("documents", [])
         ]
 
+        await cls.handle_duplicate_jobs(
+            request_obj, sub_request_obj, job_model, job_id, jobs
+        )
+
+    @classmethod
+    async def handle_duplicate_jobs(
+        cls, request_obj, sub_request_obj, job_model, job_id, jobs
+    ):
+        jobs_unique: list[job_model] = []
+        jobs_dupl: list[job_model] = []
+        for job in jobs:
+            if await check_attribute_exists(
+                job_model, job_id, value=getattr(job, job_id)
+            ):
+                jobs_dupl.append(job)
+            else:
+                jobs_unique.append(job)
+
         async with db.async_session.begin() as ses:
-            ses.add_all(jobs)
+            ses.add_all(jobs_unique + [sub_request_obj, request_obj])
+
+            if sub_request_obj.duplicates is None and len(jobs_dupl):
+                sub_request_obj.duplicates = 0 + len(jobs_dupl)
+            if request_obj.duplicates is None and len(jobs_dupl):
+                request_obj.duplicates = 0 + len(jobs_dupl)

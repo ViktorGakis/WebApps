@@ -8,12 +8,14 @@ import sqlalchemy.orm
 import sqlalchemy.pool
 from sqlalchemy import and_, func, or_, select, update, cast, DateTime, type_coerce
 
+from .models import base
+
 from ..logger import logdef
-from . import base, models
+from . import models
 from .async_mode import Session, async_session, engine, get_ses
 from .paginator import Pagination, paginate
 from .sync import engineSync, SessionLocalSync
-from .utils import get_primary_key, create_objs, retrieve_objs, update_objs, obj_retriever, update_record
+from .utils import get_primary_key, update_record
 
 log: Logger = logdef(__name__)
 

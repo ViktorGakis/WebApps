@@ -6,7 +6,6 @@ import aiohttp
 
 from interface.backend.logger import logdef
 
-from .utils import write_to_file
 
 log: Logger = logdef(__name__)
 
