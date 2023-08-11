@@ -45,19 +45,33 @@ class Scraper:
 
     @classmethod
     async def extract_request_info(cls, *args, **kwds):
-        pass
+        raise NotImplementedError(
+            "extract_request_info needs to be defined in a subclass"
+        )
 
     @classmethod
     async def extract_job_info(cls, *args, **kwds):
-        pass
+        raise NotImplementedError(
+            "extract_job_info_info needs to be defined in a subclass"
+        )
+
+    @classmethod
+    async def extract_job_info_full(cls, *args, **kwds):
+        raise NotImplementedError(
+            "extract_job_info_full needs to be defined in a subclass"
+        )
 
     @classmethod
     def generate_sub_request_urls(cls, *args, **kwds):
-        pass
+        raise NotImplementedError(
+            "generate_sub_request_urls needs to be defined in a subclass"
+        )
 
     @classmethod
     async def generate_sub_requests(
-        cls, request_obj, sub_request_model, generate_sub_request_urls
+        cls,
+        request_obj,
+        sub_request_model,
     ):
         sub_requests = [
             sub_request_model(
@@ -67,7 +81,7 @@ class Scraper:
                 days=request_obj.days,
                 request_id=request_obj.id,
             )
-            for url in generate_sub_request_urls(request_obj)
+            for url in cls.generate_sub_request_urls(request_obj)
         ]
         async with db.async_session.begin() as ses:
             ses.add_all(sub_requests)
@@ -95,7 +109,9 @@ class Scraper:
 
                 await cls.update_request_info(sub_request, sub_request_info)
 
-                await cls.handle_jobs(
+                log.info("%s", f"{sub_request}")
+
+                return await cls.handle_jobs(
                     request_obj, sub_request, sub_request_data, job_model, job_id
                 )
 
@@ -115,6 +131,8 @@ class Scraper:
         await cls.handle_duplicate_jobs(
             request_obj, sub_request_obj, job_model, job_id, jobs
         )
+
+        return jobs
 
     @classmethod
     async def handle_duplicate_jobs(

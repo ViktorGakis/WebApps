@@ -6,6 +6,10 @@ from ..base import Scraper as BaseScraper
 
 log: Logger = logdef(__name__)
 
+BASE_API_JOB_URL: str = "https://www.jobs.ch/api/v1/public/search/job/"
+
+BASE_API_JOB_URL_VAR: str = BASE_API_JOB_URL+'{job_id}'
+
 
 class Scraper(BaseScraper):
     @classmethod
@@ -45,11 +49,13 @@ class Scraper(BaseScraper):
             "is_paid": job.get("is_paid", ""),
             "work_experience": str(job.get("work_experience", [])),
             "language_skills": str(job.get("language_skills", [])),
-            "job_url_en": job.get("_links").get("detail_de").get("href", ""),
-            "job_url_de": job.get("_links").get("detail_fr").get("href", ""),
-            "job_url_fr": job.get("_links").get("detail_en").get("href", "")
+            "url_en": job.get("_links").get("detail_de").get("href", ""),
+            "url_de": job.get("_links").get("detail_fr").get("href", ""),
+            "url_fr": job.get("_links").get("detail_en").get("href", ""),
+            "url_api": BASE_API_JOB_URL_VAR.format(job_id=job.get("job_id", ""))
             # "links":job.get('_links', []),
         }
 
-
-
+    @classmethod
+    async def extract_job_info_full(cls, *args, **kwds):
+        pass   

@@ -5,6 +5,8 @@ from urllib.parse import quote
 
 BASE_API_JOBS_URL: str = "https://www.jobs.ch/api/v1/public/search?"
 
+
+
 BASE_URL: str = "https://www.jobs.ch/en/"
 BASE_URL_JOBS: str = "https://www.jobs.ch/en/vacancies/?"
 

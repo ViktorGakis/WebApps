@@ -72,9 +72,10 @@ class Job(Base):
     is_paid: Mapped[Optional[bool]]
     work_experience: Mapped[Optional[str]]
     language_skills: Mapped[Optional[str]]
-    job_url_en: Mapped[Optional[str]]
-    job_url_de: Mapped[Optional[str]]
-    job_url_fr: Mapped[Optional[str]]
+    url_en: Mapped[Optional[str]]
+    url_de: Mapped[Optional[str]]
+    url_fr: Mapped[Optional[str]]
+    url_api: Mapped[Optional[str]]
     request_id: Mapped[int] = mapped_column(ForeignKey("jobsch_requests.id"))
     sub_request_id: Mapped[int] = mapped_column(ForeignKey("jobsch_sub_requests.id"))
 

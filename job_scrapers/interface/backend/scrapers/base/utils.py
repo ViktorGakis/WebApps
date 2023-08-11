@@ -42,11 +42,11 @@ def write_to_file(filepath: Path, data: Union[str, dict], data_format: str = "te
             with path.open(mode="w", encoding="utf-8") as file:
                 file.write(data)
         else:
-            raise ValueError("Invalid data format. Use 'text' or 'json'.")
+            log.error("Invalid data format. Use 'text' or 'json'.")
 
-        log.info(f"Successfully wrote the data to '{filepath}' in {data_format} format.")
+        # log.info(f"Successfully wrote the data to '{filepath}' in {data_format} format.")
     except Exception as e:
-        log.error(f"An error occurred: {e}")
+        log.error("An error occurred: %s", e)
 
 
 def soup(
