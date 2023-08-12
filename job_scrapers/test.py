@@ -33,7 +33,7 @@ async def mainEn(
 
     request_url: str = querybuilder(query=query, location=location, days=days).url_api
 
-    request_obj = await scraper.setup_request(
+    request_obj: request_model = await scraper.setup_request(
         request_model,
         query=query,
         location=location,
@@ -55,8 +55,8 @@ async def mainEn(
     )
 
     await scraper.handle_request_data(request_data, request_obj)
-
-    log.info("%s", f"{request_obj}")
+    
+    request_obj.logger(log, 'info')
 
     if request_obj.num_pages > 0:
         sub_requests: list[sub_request_model] = await scraper.generate_sub_requests(
@@ -85,8 +85,10 @@ async def mainEn(
                     f"data/scraped/{request_dir}/jobs/{job.id}.json",
                 )
                 # develop single mode job_extractor and update Job db model
-
-                log.info("%s", f"{job}")
+                # async with db.async_session.begin() as ses:
+                #     ses.add(job)
+                #     await ses.commit()
+                #     log.info("%s", f"{job}")
 
     else:
         log.info("No data found for url: %s", request_obj.url)

@@ -17,6 +17,7 @@ def lit_eval(x: str):
 class APISettings(BaseSettings):
     BASE_DIR: Path = basedir
     SQLALCHEMY_DATABASE_URI: str = f"sqlite:///{db_path}"
+    print(f'{SQLALCHEMY_DATABASE_URI=}')
     SQLALCHEMY_TRACK_MODIFICATIONS: bool = False
     SQLALCHEMY_DATABASE_CONNECT_DICT: dict = {
         "check_same_thread": False

@@ -1,11 +1,31 @@
+from collections import OrderedDict
 import json
 from datetime import datetime
 from pprint import pformat
 
-from sqlalchemy import DateTime, Integer, func
+from sqlalchemy import DateTime, Integer, event, func
 from sqlalchemy.ext.declarative import DeclarativeMeta, declarative_base, declared_attr
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy.sql import func
+
+
+class PrettyOrderedDict(OrderedDict):
+    def formatted_repr(self, indent_level=0) -> str:
+        indent: str = "\t" * indent_level
+        items: list[str] = [
+            f"\n{indent}\t{repr(k)}: {self.formatted_value_repr(v, indent_level + 1)}"
+            for k, v in self.items()
+        ]
+        return f"{indent}{{" + ",".join(items) + f"\n{indent}}}"
+
+    def formatted_value_repr(self, value, indent_level):
+        if isinstance(value, PrettyOrderedDict):
+            return value.formatted_repr(indent_level + 1)
+        else:
+            return repr(value)
+
+    def __repr__(self) -> str:
+        return self.formatted_repr(1)
 
 
 class NamingDeclarativeMeta(DeclarativeMeta):
@@ -30,11 +50,13 @@ class TableNameMixin:
         return cls.__name__.lower()
 
 
-# 3. Base Model with Mixins included
-class BaseModel(ToJsonMixin, TableNameMixin):
-    __abstract__ = True  # Ensure that BaseModel is not treated as a model for a table
-
+# ID Mixin
+class IdMixin:
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
+
+
+# Timestamps Mixin
+class TimestampMixin:
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), default=func.now()
     )
@@ -42,11 +64,33 @@ class BaseModel(ToJsonMixin, TableNameMixin):
         DateTime(timezone=True), default=func.now(), onupdate=func.now()
     )
 
+
+# Base Model with only ToJsonMixin and TableNameMixin
+class IntermediateBase(ToJsonMixin, TableNameMixin):
+    __abstract__ = True
+
     def _dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__name__}: {pformat(self._dict())}"
+        attributes = {
+            c.name: getattr(self, c.name) if hasattr(self, c.name) else "Not Loaded"
+            for c in self.__table__.columns
+        }
+        return f"{self.__class__.__name__}: {attributes}"
+
+
+class BaseModel(IntermediateBase, IdMixin, TimestampMixin):
+    def logger(self, logger, log_type, attr_list):
+        dic = PrettyOrderedDict(
+            [
+                (attr, getattr(self, attr))
+                for attr in attr_list
+            ]
+        )
+        # dic = {: dic}
+        log = getattr(logger, log_type)
+        log(f"\n{self.__class__.__name__}:\n{dic}")
 
 
 Base = declarative_base(cls=BaseModel, metaclass=NamingDeclarativeMeta)

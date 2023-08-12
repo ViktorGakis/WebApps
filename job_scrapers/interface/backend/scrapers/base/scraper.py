@@ -42,6 +42,8 @@ class Scraper:
             request_info = await cls.extract_request_info(request_data)
 
             await cls.update_request_info(request_obj, request_info)
+            
+            
 
     @classmethod
     async def extract_request_info(cls, *args, **kwds):
@@ -108,8 +110,11 @@ class Scraper:
                 sub_request_info = await cls.extract_request_info(sub_request_data)
 
                 await cls.update_request_info(sub_request, sub_request_info)
-
-                log.info("%s", f"{sub_request}")
+                
+                # async with db.async_session.begin() as ses:
+                #     ses.add(sub_request)
+                #     await ses.commit()
+                #     log.info("%s", f"{sub_request}")
 
                 return await cls.handle_jobs(
                     request_obj, sub_request, sub_request_data, job_model, job_id
