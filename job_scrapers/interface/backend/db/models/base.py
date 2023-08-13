@@ -13,14 +13,14 @@ class PrettyOrderedDict(OrderedDict):
     def formatted_repr(self, indent_level=0) -> str:
         indent: str = "\t" * indent_level
         items: list[str] = [
-            f"\n{indent}\t{repr(k)}: {self.formatted_value_repr(v, indent_level + 1)}"
+            f"\n{indent}\t{repr(k)}: {self.formatted_value_repr(v, indent_level)}"
             for k, v in self.items()
         ]
         return f"{indent}{{" + ",".join(items) + f"\n{indent}}}"
 
     def formatted_value_repr(self, value, indent_level):
         if isinstance(value, PrettyOrderedDict):
-            return value.formatted_repr(indent_level + 1)
+            return value.formatted_repr(indent_level)
         else:
             return repr(value)
 
@@ -35,14 +35,14 @@ class NamingDeclarativeMeta(DeclarativeMeta):
         super().__init__(classname, bases, dict_)
 
 
-# 1. To-JSON Mixin
+# To-JSON Mixin
 class ToJsonMixin:
     def to_json(self):
         data_dict = {c.name: getattr(self, c.name) for c in self.__table__.columns}
         return json.dumps(data_dict)
 
 
-# 2. Table Name Generation Mixin
+# Table Name Generation Mixin
 class TableNameMixin:
     @declared_attr
     def __tablename__(cls):
@@ -81,7 +81,7 @@ class IntermediateBase(ToJsonMixin, TableNameMixin):
 
 
 class BaseModel(IntermediateBase, IdMixin, TimestampMixin):
-    def logger(self, logger, log_type, attr_list):
+    def logger(self, logger, log_type, text, attr_list):
         dic = PrettyOrderedDict(
             [
                 (attr, getattr(self, attr))
@@ -90,7 +90,9 @@ class BaseModel(IntermediateBase, IdMixin, TimestampMixin):
         )
         # dic = {: dic}
         log = getattr(logger, log_type)
-        log(f"\n{self.__class__.__name__}:\n{dic}")
+        string: str = f"\n{self.__class__.__name__}{text}:\n{dic}"
+        log(string)
 
 
 Base = declarative_base(cls=BaseModel, metaclass=NamingDeclarativeMeta)
+

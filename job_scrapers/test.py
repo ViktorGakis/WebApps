@@ -31,64 +31,57 @@ async def mainEn(
     if cookies is None:
         cookies = {}
 
-    request_url: str = querybuilder(query=query, location=location, days=days).url_api
-
-    request_obj: request_model = await scraper.setup_request(
+    request_obj: request_model = await db.create_record(
         request_model,
         query=query,
         location=location,
         days=days,
-        url=request_url,
+        url=querybuilder(query=query, location=location, days=days).url_api,
     )
 
-    request_data = await scraper.handle_request(
-        [
-            {
-                "url": request_url,
-                "headers": headers,
-                "cookies": cookies,
-            },
-            # Add more dictionaries for more URLs
-        ],
-        # may need to generalize for .html
-        f"data/scraped/{request_dir}/requests/{request_obj.id}.json",
-    )
-
-    await scraper.handle_request_data(request_data, request_obj)
-    
-    request_obj.logger(log, 'info')
-
-    if request_obj.num_pages > 0:
-        sub_requests: list[sub_request_model] = await scraper.generate_sub_requests(
+    if request_data := await scraper.handle_Request(
+        request_obj, headers, cookies
+    ):
+        if sub_requests := await scraper.generate_sub_requests(
             request_obj, sub_request_model
-        )
+        ):
+            for sub_request in sub_requests:
+                if sub_request_data_json := await scraper.handle_sub_Request(
+                    sub_request,
+                    headers,
+                    cookies
+                ):
+                    if sub_request_info:=scraper.extract:
+                    pass
+                
+        else:
+            log.info('No sub_request were generated for %s', request_obj.url)
+    # await scraper.handle_request_data(request_data, request_obj)
 
-        if sub_requests:
-            jobs = await scraper.handle_sub_requests(
-                headers,
-                cookies,
-                request_obj,
-                sub_requests,
-                request_dir,
-                job_model,
-                job_id,
-            )
-            for job in jobs:
-                job_data = await scraper.handle_request(
-                    [
-                        {
-                            "url": job.url_api,
-                            "headers": headers,
-                            "cookies": cookies,
-                        },
-                    ],
-                    f"data/scraped/{request_dir}/jobs/{job.id}.json",
-                )
-                # develop single mode job_extractor and update Job db model
-                # async with db.async_session.begin() as ses:
-                #     ses.add(job)
-                #     await ses.commit()
-                #     log.info("%s", f"{job}")
+    # if request_obj.num_pages > 0:
+    #     sub_requests: list[sub_request_model] = await scraper.generate_sub_requests(
+    #         request_obj, sub_request_model
+    #     )
+
+    #     if sub_requests:
+    #         jobs = await scraper.handle_sub_requests(
+    #             headers,
+    #             cookies,
+    #             request_obj,
+    #             sub_requests,
+    #             request_dir,
+    #             job_model,
+    #             job_id,
+    #         )
+
+    #         # print(f'{len(jobs[0])=}')
+
+    #         await scraper.handle_jobs_full_info(
+    #             jobs[0],
+    #             request_dir,
+    #             headers,
+    #             cookies
+    #         )
 
     else:
         log.info("No data found for url: %s", request_obj.url)

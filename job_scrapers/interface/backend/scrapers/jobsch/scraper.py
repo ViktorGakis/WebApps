@@ -8,7 +8,7 @@ log: Logger = logdef(__name__)
 
 BASE_API_JOB_URL: str = "https://www.jobs.ch/api/v1/public/search/job/"
 
-BASE_API_JOB_URL_VAR: str = BASE_API_JOB_URL+'{job_id}'
+BASE_API_JOB_URL_VAR: str = BASE_API_JOB_URL + "{job_id}"
 
 
 class Scraper(BaseScraper):
@@ -36,7 +36,7 @@ class Scraper(BaseScraper):
             "publication_date": job.get("publication_date", ""),
             "company_name": job.get("company_name", ""),
             "place": job.get("place", ""),
-            "is_active": job.get("is_active", ""),
+            "is_active": job.get("is_active", False),
             "preview": job.get("preview", ""),
             "company_logo_file": job.get("company_logo_file", ""),
             "job_id": job.get("job_id", ""),
@@ -46,7 +46,7 @@ class Scraper(BaseScraper):
             "company_segmentation": job.get("company_segmentation", ""),
             "employment_position_ids": str(job.get("employment_position_ids", [])),
             "employment_grades": str(job.get("employment_grades", [])),
-            "is_paid": job.get("is_paid", ""),
+            "is_paid": job.get("is_paid", False),
             "work_experience": str(job.get("work_experience", [])),
             "language_skills": str(job.get("language_skills", [])),
             "url_en": job.get("_links").get("detail_de").get("href", ""),
@@ -57,5 +57,57 @@ class Scraper(BaseScraper):
         }
 
     @classmethod
-    async def extract_job_info_full(cls, *args, **kwds):
-        pass   
+    async def extract_job_full_info(cls, job: dict):
+        return {
+            "application_url": job.get("application_url", ""),
+            "external_url": job.get("external_url", ""),
+            "template": job.get("template", ""),
+            "template_profession": job.get("template_profession", ""),
+            "template_text": job.get("template_text", ""),
+            "template_lead_text": job.get("template_lead_text", ""),
+            "is_active": job.get("is_active", False),
+            "is_paid": job.get("is_paid", False),
+            "headhunter_application_allowed": job.get(
+                "headhunter_application_allowed", False
+            ),
+            "publication_end_date": job.get("publication_end_date", ""),
+            "contact_person": job.get("contact_person", ""),
+            "status": job.get("status"),
+        }
+
+    @classmethod
+    async def handle_Request(
+        cls,
+        request_obj,
+        headers,
+        cookies,
+        request_dir="requests",
+        site_name="jobsch",
+    ):
+        return await super().handle_request(
+            request_obj,
+            site_name,
+            request_dir,
+            cls.extract_request_info,
+            headers,
+            cookies,
+        )
+
+    @classmethod
+    async def handle_sub_Request(
+        cls,
+        request_obj,
+        headers,
+        cookies,
+    ):
+        return await super().handle_sub_request(
+            request_obj,
+            "jobsch",
+            cls.extract_request_info,
+            headers,
+            cookies,
+        )
+
+    @classmethod
+    async def handle_Job(cls):
+        pass

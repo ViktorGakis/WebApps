@@ -20,20 +20,11 @@ def read_from_file(filepath: Path, parser: str) -> BeautifulSoup:
 def write_to_file(filepath: Path, data: Union[str, dict], data_format: str = "text"):
     try:
         # Create a Path object from the provided file path
-        path = Path(filepath)
-
+        path = Path(filepath) if isinstance(filepath, str) else filepath
         # Create parent directories if they don't exist
         path.parent.mkdir(parents=True, exist_ok=True)
 
-        if data_format == "text":
-            # If data is BeautifulSoup, convert it to a prettified string
-            if isinstance(data, BeautifulSoup):
-                data = str(data.prettify())
-
-            # Write the content to the file as text
-            with path.open(mode="w", encoding="utf-8") as file:
-                file.write(data)
-        elif data_format == "json":
+        if data_format == "json":
             # If data is a dictionary, convert it to a JSON-formatted string
             if isinstance(data, dict):
                 data = json.dumps(data, indent=4)
@@ -41,10 +32,18 @@ def write_to_file(filepath: Path, data: Union[str, dict], data_format: str = "te
             # Write the JSON content to the file
             with path.open(mode="w", encoding="utf-8") as file:
                 file.write(data)
+        elif data_format == "text":
+            # If data is BeautifulSoup, convert it to a prettified string
+            if isinstance(data, BeautifulSoup):
+                data = str(data.prettify())
+
+            # Write the content to the file as text
+            with path.open(mode="w", encoding="utf-8") as file:
+                file.write(data)
         else:
             log.error("Invalid data format. Use 'text' or 'json'.")
 
-        # log.info(f"Successfully wrote the data to '{filepath}' in {data_format} format.")
+            # log.info(f"Successfully wrote the data to '{filepath}' in {data_format} format.")
     except Exception as e:
         log.error("An error occurred: %s", e)
 

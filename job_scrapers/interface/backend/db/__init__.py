@@ -15,7 +15,7 @@ from . import models
 from .async_mode import Session, async_session, engine, get_ses
 from .paginator import Pagination, paginate
 from .sync import engineSync, SessionLocalSync
-from .utils import get_primary_key, update_record
+from .utils import get_primary_key, update_record, save_records, update_record_from_dict, create_record
 
 log: Logger = logdef(__name__)
 
