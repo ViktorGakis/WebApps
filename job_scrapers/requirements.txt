@@ -1,0 +1,17 @@
+ipykernel
+pandas
+jupyter
+sqlalchemy>=2.0.4
+statsmodels
+scikit-learn
+seaborn
+scipy
+requests
+fastapi
+uvicorn[standard]
+beautifulsoup4
+pydantic
+pydantic-settings
+aiosqlite
+aiohttp
+selenium

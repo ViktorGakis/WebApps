@@ -15,7 +15,7 @@ class Scraper(BaseScraper):
     @classmethod
     def generate_sub_request_urls(cls, request_obj) -> list[str]:
         return [
-            f"{request_obj.url}&page={x}" for x in range(1, request_obj.num_pages + 1)
+            f"{request_obj.url_api}&page={x}" for x in range(1, request_obj.num_pages + 1)
         ]
 
     @classmethod

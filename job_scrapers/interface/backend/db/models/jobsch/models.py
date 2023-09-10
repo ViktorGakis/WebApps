@@ -39,7 +39,7 @@ class Request(Base):
                 "current_page",
                 "num_pages",
                 "total_hits",
-                "url",
+                "url_api",
             ],
         )
 
@@ -76,7 +76,7 @@ class Sub_Request(Base):
                 "current_page",
                 "num_pages",
                 "total_hits",
-                "url",
+                "url_api",
             ],
         )
 

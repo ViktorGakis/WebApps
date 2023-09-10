@@ -2,7 +2,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Callable
 from ast import literal_eval
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 basedir: Path = Path(__file__).parent
 workspaceDir: Path = Path.cwd()

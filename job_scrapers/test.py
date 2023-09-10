@@ -6,7 +6,6 @@ from interface.backend import db
 from interface.backend import scrapers as scrp
 from interface.backend.logger import logdef
 
-
 log: Logger = logdef(__name__)
 
 
@@ -36,26 +35,23 @@ async def mainEn(
         query=query,
         location=location,
         days=days,
-        url=querybuilder(query=query, location=location, days=days).url_api,
+        url_api=querybuilder(query=query, location=location, days=days).url_api,
     )
 
-    if request_data := await scraper.handle_Request(
-        request_obj, headers, cookies
-    ):
+    if request_data := await scraper.handle_Request(request_obj, headers, cookies):
         if sub_requests := await scraper.generate_sub_requests(
             request_obj, sub_request_model
         ):
             for sub_request in sub_requests:
                 if sub_request_data_json := await scraper.handle_sub_Request(
-                    sub_request,
-                    headers,
-                    cookies
+                    sub_request, headers, cookies
                 ):
-                    if sub_request_info:=scraper.extract:
                     pass
-                
+                    # if sub_request_info:=scraper.extract:
+                    #     pass
+
         else:
-            log.info('No sub_request were generated for %s', request_obj.url)
+            log.info("No sub_request were generated for %s", request_obj.url)
     # await scraper.handle_request_data(request_data, request_obj)
 
     # if request_obj.num_pages > 0:
