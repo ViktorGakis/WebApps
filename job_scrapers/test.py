@@ -5,6 +5,7 @@ from typing import Optional
 from interface.backend import db
 from interface.backend import scrapers as scrp
 from interface.backend.logger import logdef
+from interface.backend.scrapers.base.scraper import BaseScraper
 
 log: Logger = logdef(__name__)
 
@@ -19,7 +20,6 @@ async def mainEn(
     sub_request_model,
     job_model,
     job_id,
-    request_dir: str,
     headers: Optional[dict] = None,
     cookies: Optional[dict] = None,
 ):
@@ -38,47 +38,21 @@ async def mainEn(
         url_api=querybuilder(query=query, location=location, days=days).url_api,
     )
 
-    if request_data := await scraper.handle_Request(request_obj, headers, cookies):
-        if sub_requests := await scraper.generate_sub_requests(
+    scpr = scraper(headers=headers, cookies=cookies)
+
+    if request_data := await scpr.handle_request(request_obj):
+        if sub_requests := await scpr.generate_sub_requests(
             request_obj, sub_request_model
         ):
-            for sub_request in sub_requests:
-                if sub_request_data_json := await scraper.handle_sub_Request(
-                    sub_request, headers, cookies
-                ):
-                    pass
-                    # if sub_request_info:=scraper.extract:
-                    #     pass
-
+            jobs = await scpr.handle_sub_requests(
+                request_obj,
+                sub_requests,
+                job_model,
+                job_id,
+            )
+            return jobs
         else:
             log.info("No sub_request were generated for %s", request_obj.url)
-    # await scraper.handle_request_data(request_data, request_obj)
-
-    # if request_obj.num_pages > 0:
-    #     sub_requests: list[sub_request_model] = await scraper.generate_sub_requests(
-    #         request_obj, sub_request_model
-    #     )
-
-    #     if sub_requests:
-    #         jobs = await scraper.handle_sub_requests(
-    #             headers,
-    #             cookies,
-    #             request_obj,
-    #             sub_requests,
-    #             request_dir,
-    #             job_model,
-    #             job_id,
-    #         )
-
-    #         # print(f'{len(jobs[0])=}')
-
-    #         await scraper.handle_jobs_full_info(
-    #             jobs[0],
-    #             request_dir,
-    #             headers,
-    #             cookies
-    #         )
-
     else:
         log.info("No data found for url: %s", request_obj.url)
 

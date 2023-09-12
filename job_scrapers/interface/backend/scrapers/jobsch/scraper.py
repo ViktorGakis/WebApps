@@ -1,8 +1,9 @@
 from logging import Logger
+from typing import Dict
 
 from interface.backend.logger import logdef
 
-from ..base import Scraper as BaseScraper
+from ..base import BaseScraper
 
 log: Logger = logdef(__name__)
 
@@ -12,14 +13,12 @@ BASE_API_JOB_URL_VAR: str = BASE_API_JOB_URL + "{job_id}"
 
 
 class Scraper(BaseScraper):
-    @classmethod
-    def generate_sub_request_urls(cls, request_obj) -> list[str]:
-        return [
-            f"{request_obj.url_api}&page={x}" for x in range(1, request_obj.num_pages + 1)
-        ]
+    def __init__(
+        self, headers: Dict[str, str], cookies: Dict[str, str], site_name="jobsch"
+    ) -> None:
+        super().__init__(site_name, headers, cookies)
 
-    @classmethod
-    async def extract_request_info(cls, rsp: dict):
+    def extract_request_info(self, rsp: dict):
         return dict(
             num_pages=rsp.get("data", {}).get("num_pages", ""),
             current_page=rsp.get("data", {}).get("current_page", ""),
@@ -29,8 +28,16 @@ class Scraper(BaseScraper):
             status=rsp.get("status"),
         )
 
-    @classmethod
-    async def extract_job_info(cls, job: dict):
+    def generate_sub_request_urls(self, request_obj) -> list[str]:
+        return [
+            f"{request_obj.url_api}&page={x}"
+            for x in range(1, request_obj.num_pages + 1)
+        ]
+
+    def extract_sub_request_info(self, rsp):
+        return self.extract_request_info(rsp)
+
+    def extract_job_info(self, job: dict):
         return {
             "title": job.get("title", ""),
             "publication_date": job.get("publication_date", ""),
@@ -56,8 +63,7 @@ class Scraper(BaseScraper):
             # "links":job.get('_links', []),
         }
 
-    @classmethod
-    async def extract_job_full_info(cls, job: dict):
+    def extract_job_request_info(self, job: dict):
         return {
             "application_url": job.get("application_url", ""),
             "external_url": job.get("external_url", ""),
@@ -75,39 +81,5 @@ class Scraper(BaseScraper):
             "status": job.get("status"),
         }
 
-    @classmethod
-    async def handle_Request(
-        cls,
-        request_obj,
-        headers,
-        cookies,
-        request_dir="requests",
-        site_name="jobsch",
-    ):
-        return await super().handle_request(
-            request_obj,
-            site_name,
-            request_dir,
-            cls.extract_request_info,
-            headers,
-            cookies,
-        )
-
-    @classmethod
-    async def handle_sub_Request(
-        cls,
-        request_obj,
-        headers,
-        cookies,
-    ):
-        return await super().handle_sub_request(
-            request_obj,
-            "jobsch",
-            cls.extract_request_info,
-            headers,
-            cookies,
-        )
-
-    @classmethod
-    async def handle_Job(cls):
-        pass
+    def extract_job_dict_from_sub_request(self, sub_request_data):
+        return sub_request_data.get("data", {}).get("documents", [])
