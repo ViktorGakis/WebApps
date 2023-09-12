@@ -1,9 +1,13 @@
 from logging import Logger
 from typing import Dict
 
-from interface.backend.logger import logdef
+from ... import db
+from ...logger import logdef
 
+# from interface.backend import db
+# from interface.backend.logger import logdef
 from ..base import BaseScraper
+from . import QueryBuilder
 
 log: Logger = logdef(__name__)
 
@@ -64,29 +68,37 @@ class Scraper(BaseScraper):
         }
 
     def extract_job_request_info(self, job: dict):
+        job_extr = job.get("data", {})
         return {
-            "application_url": job.get("application_url", ""),
-            "external_url": job.get("external_url", ""),
-            "template": job.get("template", ""),
-            "template_profession": job.get("template_profession", ""),
-            "template_text": job.get("template_text", ""),
-            "template_lead_text": job.get("template_lead_text", ""),
-            "is_active": job.get("is_active", False),
-            "is_paid": job.get("is_paid", False),
-            "headhunter_application_allowed": job.get(
+            "application_url": job_extr.get("application_url", ""),
+            "external_url": job_extr.get("external_url", ""),
+            "template": job_extr.get("template", ""),
+            "template_profession": job_extr.get("template_profession", ""),
+            "template_text": job_extr.get("template_text", ""),
+            "template_lead_text": job_extr.get("template_lead_text", ""),
+            "is_active": job_extr.get("is_active", False),
+            "is_paid": job_extr.get("is_paid", False),
+            "headhunter_application_allowed": job_extr.get(
                 "headhunter_application_allowed", False
             ),
-            "publication_end_date": job.get("publication_end_date", ""),
-            "contact_person": job.get("contact_person", ""),
+            "publication_end_date": job_extr.get("publication_end_date", ""),
+            "contact_person": str(job_extr.get("contact_person", "")),
             "status": job.get("status"),
         }
 
     def extract_job_dict_from_sub_request(self, sub_request_data):
         return sub_request_data.get("data", {}).get("documents", [])
 
-    async def get_uncompleted_jobs():
-        conditions = [
-            ("status", "is", None),
-            ("url_en", "not_is", None)
-        ]
-        return await get_records(db.models.jobsch.Job, conditions, 'and')
+    async def get_uncompleted_jobs(self):
+        conditions = [("status", "is", None), ("url_en", "not_is", None)]
+        return await db.get_records(db.models.jobsch.Job, conditions, "and")
+
+    async def main(self, query_list):
+        return await super().main(
+            query_list,
+            querybuilder=QueryBuilder,
+            request_model=db.models.jobsch.Request,
+            sub_request_model=db.models.jobsch.Sub_Request,
+            job_model=db.models.jobsch.Job,
+            job_id="job_id",
+        )

@@ -1,8 +1,8 @@
+import random
 import time
 from logging import Logger
-from math import e
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from interface.backend import db
 from interface.backend.db.utils import check_attribute_exists
@@ -28,6 +28,8 @@ class BaseScraper:
         self.JOB_DIR: Path = self.BASE_PATH / Path("Jobs")
         self.HEADERS: Dict[str, str] = {} or headers
         self.COOKIES: Dict[str, str] = {} or cookies
+        self.timeout_success: float = random.uniform(1, 1.5)
+        self.timeout_failure: float = random.uniform(3, 4.5)
 
     async def handle_request_data(
         self, data_json, request_obj, request_dir, extract_request_info
@@ -35,11 +37,24 @@ class BaseScraper:
         filepath: Path = request_dir / Path(f"{request_obj.id}.json")
         write_to_file(filepath, data_json.get("data", {}), "json")
 
+        # log.info("data_json: \n%s", data_json)
+
         request_info: Dict[str, Any] = extract_request_info(data_json)
+
+        # log.info("\request_obj: \n%s", request_obj)
+        # log.info("\nrequest_info: \n%s", request_info)
 
         await db.update_record_from_dict([request_obj], [request_info])
 
-        request_obj.logger(log, "info", "")
+        if request_info.get("status") == 200:
+            time.sleep(self.timeout_success)
+            # request_obj.logger(log, "info", " ")
+            # request_obj.logger(log, "info", f" ({idx}/{len(jobs)})")
+        elif request_info.get("status") != 404:
+            time.sleep(self.timeout_failure)
+            # request_obj.logger(log, "error", " ")
+            # request_obj.logger(log, "error", f" ({idx}/{len(jobs)})")
+        # request_obj.logger(log, "info", "")
 
     async def handle_abstr_request(
         self, url, request_obj, request_dir, extract_request_info
@@ -78,11 +93,11 @@ class BaseScraper:
             self.extract_sub_request_info,
         )
 
-    async def handle_job_request(self, job_obj):
+    async def handle_job_request(self, job):
         return await self.handle_abstr_request(
-            job_obj.url_api,
-            job_obj,
-            self.JOB_DIR / Path(f"{job_obj.id}"),
+            job.url_api,
+            job,
+            self.JOB_DIR / Path(f"{job.request_id}") / Path(f"{job.sub_request_id}"),
             self.extract_job_request_info,
         )
 
@@ -105,6 +120,9 @@ class BaseScraper:
         raise NotImplementedError(self.NOT_IMPLEMENTED_MSG)
 
     async def get_uncompleted_jobs(self, *args, **kwds):
+        raise NotImplementedError(self.NOT_IMPLEMENTED_MSG)
+
+    def extract_job_dict_from_job_request(self):
         raise NotImplementedError(self.NOT_IMPLEMENTED_MSG)
 
     async def generate_sub_requests(
@@ -175,32 +193,79 @@ class BaseScraper:
         job_id,
     ):
         jobs = []
-        for idx, sub_request in enumerate(sub_requests, start=0):
+        for idx, sub_request in enumerate(sub_requests, start=1):
             if sub_request_data := await self.handle_sub_request(
                 request_obj,
                 sub_request,
             ):
-                # f"data/scraped/{request_dir}/sub_requests/{request_obj.id}/{sub_request.id}.json"
                 sub_request_info = self.extract_sub_request_info(sub_request_data)
 
                 await db.update_record_from_dict([sub_request], [sub_request_info])
 
-            sub_request.logger(log, "info", f" ({idx}/{len(sub_requests)})")
-
-            jobs.append(
-                await self.handle_jobs(
-                    request_obj, sub_request, sub_request_data, job_model, job_id
+                jobs.append(
+                    await self.handle_jobs(
+                        request_obj, sub_request, sub_request_data, job_model, job_id
+                    )
                 )
-            )
+
+                if sub_request_info.get("status") == 200:
+                    time.sleep(self.timeout_success)
+                    sub_request.logger(log, "info", f" ({idx}/{len(sub_requests)})")
+                elif sub_request_info.get("status") != 404:
+                    time.sleep(self.timeout_failure)
+                    sub_request.logger(log, "error", f" ({idx}/{len(sub_requests)})")
+
         return jobs
 
-    async def handle_job_requests(
-        self, timeout_success: float = 1, timeout_failure: float = 4
-    ):
+    async def handle_job_requests(self):
         jobs = await self.get_uncompleted_jobs()
-        for job in jobs:
+        for idx, job in enumerate(jobs, start=1):
             await self.handle_job_request(job)
-            if job.status == 200:
-                time.sleep(timeout_success)
-            elif job.status != 404:
-                time.sleep(timeout_failure)
+            job.logger(log, "info", " ")
+            
+
+    async def main(
+        self,
+        query_list,
+        querybuilder,
+        request_model,
+        sub_request_model,
+        job_model,
+        job_id,
+    ):
+        await db.init()
+
+        for idx, query_dict in enumerate(query_list, start=1):
+            query = query_dict["query"]
+            location = query_dict["location"]
+            days = query_dict["days"]
+
+            request_obj: request_model = await db.create_record(
+                request_model,
+                query=query,
+                location=location,
+                days=days,
+                url_api=querybuilder(query=query, location=location, days=days).url_api,
+            )
+
+            if request_data := await self.handle_request(request_obj):
+                request_obj.logger(log, 'info', f' ({idx}/{len(query_list)})')
+                if sub_requests := await self.generate_sub_requests(
+                    request_obj, sub_request_model
+                ):
+                    jobs = await self.handle_sub_requests(
+                        request_obj,
+                        sub_requests,
+                        job_model,
+                        job_id,
+                    )
+                    await self.handle_job_requests()
+                else:
+                    log.info("No sub_request were generated for %s", request_obj.url)
+                    if request_obj.status == 200:
+                        time.sleep(1)
+                    else:
+                        time.sleep(3)
+            else:
+                log.info("No data found for url: %s", request_obj.url)
+            
