@@ -56,9 +56,9 @@ class Scraper(BaseScraper):
             "is_paid": job.get("is_paid", False),
             "work_experience": str(job.get("work_experience", [])),
             "language_skills": str(job.get("language_skills", [])),
-            "url_en": job.get("_links").get("detail_de").get("href", ""),
-            "url_de": job.get("_links").get("detail_fr").get("href", ""),
-            "url_fr": job.get("_links").get("detail_en").get("href", ""),
+            "url_en": job.get("_links").get("detail_en").get("href", ""),
+            "url_de": job.get("_links").get("detail_de").get("href", ""),
+            "url_fr": job.get("_links").get("detail_fr").get("href", ""),
             "url_api": BASE_API_JOB_URL_VAR.format(job_id=job.get("job_id", ""))
             # "links":job.get('_links', []),
         }
@@ -83,3 +83,10 @@ class Scraper(BaseScraper):
 
     def extract_job_dict_from_sub_request(self, sub_request_data):
         return sub_request_data.get("data", {}).get("documents", [])
+
+    async def get_uncompleted_jobs():
+        conditions = [
+            ("status", "is", None),
+            ("url_en", "not_is", None)
+        ]
+        return await get_records(db.models.jobsch.Job, conditions, 'and')

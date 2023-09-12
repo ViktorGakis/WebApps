@@ -1,11 +1,29 @@
-from typing import Any, Coroutine, Dict, List, Optional, Union
+from typing import Any, Coroutine, Dict, List, Optional, Tuple, Union
 
-from sqlalchemy import Table, inspect, select, text, update
+from sqlalchemy import Table, and_, inspect, not_, or_, select, text, update
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.future import select
 from sqlalchemy.orm.decl_api import DeclarativeMeta
 
 from .async_mode import async_session
+
+OPERATORS_MAP = {
+    "==": lambda attr, value: attr == value,
+    "!=": lambda attr, value: attr != value,
+    ">": lambda attr, value: attr > value,
+    "<": lambda attr, value: attr < value,
+    ">=": lambda attr, value: attr >= value,
+    "<=": lambda attr, value: attr <= value,
+    "in": lambda attr, value: attr.in_(value)
+    if isinstance(value, list)
+    else attr.in_([value]),
+    "not_in": lambda attr, value: ~attr.in_(value)
+    if isinstance(value, list)
+    else ~attr.in_([value]),
+    "like": lambda attr, value: attr.like(value),
+    "ilike": lambda attr, value: attr.ilike(value),
+    "is": lambda attr, value: attr.is_(value),
+    "not_is": lambda attr, value: ~attr.is_(value),
+}
 
 
 def get_primary_key(query_ob):
@@ -70,3 +88,31 @@ async def create_record(record_model, *args, **kwds):
     record = record_model(*args, **kwds)
     await save_records([record])
     return record
+
+
+async def get_records(
+    model,
+    conditions: List[Tuple[str, str, Union[Any, List[Any]]]],
+    logical_operator: str = "AND",
+):
+    async with async_session.begin() as session:
+        query = select(model)
+        filters = []
+
+        for attrib, op, value in conditions:
+            if op not in OPERATORS_MAP:
+                raise ValueError(f"Unsupported operator: {op}")
+            filter_condition = OPERATORS_MAP[op](getattr(model, attrib), value)
+            filters.append(filter_condition)
+
+        if logical_operator.upper() == "AND":
+            query = query.where(and_(*filters))
+        elif logical_operator.upper() == "OR":
+            query = query.where(or_(*filters))
+        elif logical_operator.upper() == "NOT":
+            query = query.where(not_(*filters))
+        else:
+            raise ValueError("Logical operator must be 'AND', 'OR', or 'NOT'")
+
+        result = await session.execute(query)
+        return list(result.scalars())
