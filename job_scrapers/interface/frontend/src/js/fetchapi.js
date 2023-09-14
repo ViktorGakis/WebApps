@@ -36,6 +36,5 @@ export default async function fetchAPI(
 	payload = {},
 	method = "GET"
 ) {
-	const apiUrl = `http://localhost:8000${endpoint}`;
-	return await fetchData(apiUrl, params, payload, method);
+	return await fetchData(endpoint, params, payload, method);
 }

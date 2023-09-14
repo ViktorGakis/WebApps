@@ -1,8 +1,8 @@
-import { TfiSave, TfiClose } from "react-icons/tfi";
+import { TfiSave } from "react-icons/tfi";
 import { AiFillLike, AiFillDislike, AiOutlineCheck } from "react-icons/ai";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import fetchAPI from "../js/fetchapi";
-import React from "react";
+import React, { useState, useEffect } from "react";
 export {
 	SaveButton,
 	ApplyButton,
@@ -13,20 +13,50 @@ export {
 };
 
 function SaveButton({ job, endpoint }) {
-	// Check if the job is saved and set the appropriate button class
-	const isSaved = job.saved;
-	const buttonClass = `btn save_btn ${
-		isSaved ? "btn-outline-info" : "btn-outline-secondary"
-	} btn-block`;
+	const buildClass = (jobData) => {
+		return `btn ${jobData.saved ? "success" : "neutral"}`;
+	};
+
+	const buildEndpoint = (jobData) => {
+		return `${endpoint}?job_id=${jobData.job_id}&saved=${Number(
+			jobData.saved
+		)}`;
+	};
+
+	const [currentJob, setCurrentJob] = useState(job);
+	const [currentEndpoint, setCurrentEndpoint] = useState(buildEndpoint(job));
+	const [currentClass, setCurrentClass] = useState(buildClass(job));
+	const [isLoading, setIsLoading] = useState(false);
+
+	useEffect(() => {
+		setCurrentClass(buildClass(currentJob));
+		setCurrentEndpoint(buildEndpoint(currentJob));
+	}, [currentJob]);
+
+	const toggleSaved = async () => {
+		setIsLoading(true);
+		try {
+			const response = await fetchAPI(endpoint);
+			const updatedJob = { ...currentJob, saved: response.saved };
+			setCurrentJob(updatedJob);
+		} catch (error) {
+			console.error("Error toggling saved state:", error);
+		} finally {
+			setIsLoading(false);
+		}
+	};
 
 	return (
-		<a
-			type="submit"
-			name={job.job_id}
-			href={endpoint}
-			className={buttonClass}>
-			<TfiSave />
-		</a>
+		<div>
+			<a
+				type="submit"
+				name={currentJob.job_id}
+				href={currentEndpoint}
+				className={currentClass}
+				onClick={toggleSaved}>
+				{isLoading ? <span>Loading...</span> : <TfiSave />}
+			</a>
+		</div>
 	);
 }
 

@@ -1,30 +1,30 @@
 .card {
-    background: var(--color-dark);
-    padding: 1.5rem;
-    border: 2px solid transparent;
-    border-radius: var(--border-radius-1);
-    transition: var(--transition);
+	background: var(--color-black);
+	padding: 1.5rem;
+	border: 2px solid transparent;
+	border-radius: var(--border-radius-1);
+	transition: var(--transition);
+	border-color: var(--color-dark);
 }
 
 .card:hover {
-    background: transparent;
-    border-color: var(--color-white);
-    /* transform: translateY(-0.5rem); */
+	background: transparent;
+	/* transform: translateY(-0.5rem); */
 }
 
 .card.light {
-    background: var(--color-light);
+	background: var(--color-light);
 }
 
 .card.light:hover {
-    background: transparent;
-    border-color: var(--color-light );
+	background: transparent;
+	border-color: var(--color-light);
 }
 
 /* PHONES */
 @media screen AND (max-width: 600px) {
-    .card {
-        padding: 1.2rem;
-        width: fit-content;
-    }
+	.card {
+		padding: 1.2rem;
+		width: fit-content;
+	}
 }

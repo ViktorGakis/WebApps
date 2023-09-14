@@ -28,6 +28,8 @@
 	--color-light: hsl(var(--primary-hue), 5%, var(--light-lightness));
 	--color-black: hsl(var(--primary-hue), 5%, var(--black-lightness));
 	--color-dark: hsl(var(--primary-hue), 5%, var(--dark-lightness));
+	--color-success: green;
+	--color-failure: red;
 
 	/* General container variables */
 	--container-width-lg: 76%;
@@ -184,8 +186,8 @@ img {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	background: var(--color-light);
-	color: var(--color-black);
+	background: transparent;
+	color: var(--color-light);
 	padding: 0.6rem 2.5rem;
 	border: 2px solid transparent;
 	border-radius: var(--border-radius-2);
@@ -205,6 +207,18 @@ img {
 .btn.white:hover {
 	background: transparent;
 	border-color: var(--color-white);
+}
+
+.btn.success {
+	background: transparent;
+	color: var(--color-success);
+	/* text color always is always white */
+}
+
+.btn.success:hover {
+	background: var(--color-success);
+	color: aliceblue;
+	/* text color always is always white */
 }
 
 .btn.disabled {
@@ -279,7 +293,3 @@ img {
 		width: var(--container-width-md);
 	}
 }
-
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */

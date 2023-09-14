@@ -1,11 +1,22 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import JobCard from "./components/JobCard";
+import DBForm from "./components/DBform";
+import React from "react";
 
-const App = () => {
-	function HomePage() {
-		return <JobCard />;
-	}
+function HomePage() {
+	return (
+		<>
+			<JobCard />
+			<DBForm
+				table="yourTableName"
+				cols={["col1", "col2"]}
+				col_opers={["oper1", "oper2"]}
+			/>
+		</>
+	);
+}
 
+function App() {
 	return (
 		<Router>
 			<Routes>
@@ -13,6 +24,6 @@ const App = () => {
 			</Routes>
 		</Router>
 	);
-};
+}
 
 export default App;

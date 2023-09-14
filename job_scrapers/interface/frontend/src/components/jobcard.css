@@ -20,8 +20,6 @@
 }
 
 .btns_group > * {
-	background: transparent;
-	color: var(--color-light);
 	font-size: small;
 }
 

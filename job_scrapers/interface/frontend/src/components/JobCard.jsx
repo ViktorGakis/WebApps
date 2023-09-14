@@ -19,7 +19,7 @@ import { MdLocationOn, MdDescription } from "react-icons/md";
 import { IoMdBusiness } from "react-icons/io";
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-const saveEndpoint = "/api/item/save";
+const saveEndpoint = "/jobs/api/item/save";
 const likeEndpoint = "/api/item/like";
 const applyEndpoint = "/api/item/like";
 const expiredEndpoint = "/api/item/like";
@@ -62,7 +62,7 @@ const job = {
 	template_lead_text: "",
 	headhunter_application_allowed: true,
 	applied: null,
-	saved: null,
+	saved: 1,
 	liked: null,
 	expired: null,
 	request_id: 2,

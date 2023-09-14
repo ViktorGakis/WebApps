@@ -1,7 +1,7 @@
 from logging import Logger
 from pprint import pformat
 
-from fastapi import Depends, Request
+from fastapi import Depends, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from starlette.templating import _TemplateResponse
 
@@ -105,10 +105,28 @@ async def jobs_api_items_form(
 @router.get("/api/item/save", response_class=HTMLResponse)
 async def jobs_api_save(
     request: Request,
+    job_id: str = Query(..., description="The job ID"),
     ses=Depends(db.get_ses),
 ) -> JSONResponse:
-    rq_args: dict[str, str] = dict(request.query_params)
-    return jsonResp({"saved_status": await btn_update(db.models.jobsch.Job, rq_args, "saved", ses)})
+    btn_type = "saved"
+    table = db.models.jobsch.Job
+    job = (await ses.execute(db.select(table).filter(table.job_id == job_id))).scalar()
+    val_old = getattr(job, btn_type)
+    # log.debug('val_old: %s', val_old)
+    setattr(job, f"{btn_type}", 0 if val_old else 1)
+    val_new = getattr(job, btn_type)
+    await ses.commit()
+    # log.debug('val_new: %s', val_new)
+    return jsonResp({"job_id": job_id, "saved": val_new})
+
+
+# @router.get("/api/item/save", response_class=HTMLResponse)
+# async def jobs_api_save(
+#     request: Request,
+#     ses=Depends(db.get_ses),
+# ) -> JSONResponse:
+#     rq_args: dict[str, str] = dict(request.query_params)
+#     return jsonResp({"saved_status": await btn_update(db.models.jobsch.Job, rq_args, "saved", ses)})
 
 
 @router.get("/api/item/like", response_class=HTMLResponse)
@@ -117,7 +135,9 @@ async def jobs_api_dis(
     ses=Depends(db.get_ses),
 ) -> JSONResponse:
     rq_args: dict[str, str] = dict(request.query_params)
-    return jsonResp({"like_status": await btn_update(db.models.jobsch.Job, rq_args, "liked", ses)})
+    return jsonResp(
+        {"like_status": await btn_update(db.models.jobsch.Job, rq_args, "liked", ses)}
+    )
 
 
 @router.get("/api/item/apply", response_class=HTMLResponse)
