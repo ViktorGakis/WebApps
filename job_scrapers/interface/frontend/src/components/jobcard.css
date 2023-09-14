@@ -1,0 +1,30 @@
+.job_card .dates {
+	/* background: red;
+	color: aqua; */
+	display: flex;
+	justify-content: space-between;
+}
+
+.job_card .job_id,
+.dates {
+	font-size: small;
+}
+
+.job_header {
+	display: flex;
+}
+
+.btns_group {
+	display: flex;
+	justify-content: space-between;
+}
+
+.btns_group > * {
+	background: transparent;
+	color: var(--color-light);
+	font-size: small;
+}
+
+.btns_group .btn_close {
+	color: red;
+}

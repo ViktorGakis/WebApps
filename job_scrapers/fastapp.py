@@ -6,4 +6,4 @@ from interface.backend import AppFactory
 app: FastAPI = AppFactory()
 
 if __name__ == "__main__":
-    run("interface:app", reload=True, port=8000)
+    run("fastapp:app", reload=True, port=8000)

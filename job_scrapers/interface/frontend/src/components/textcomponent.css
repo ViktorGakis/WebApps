@@ -1,0 +1,14 @@
+.container__text {
+	max-height: 200px; /* Set a maximum height for the container */
+	overflow: hidden; /* Hide any overflowing content */
+	text-overflow: ellipsis; /* Display an ellipsis (...) for truncated text */
+}
+
+.expand-button-text {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	cursor: pointer;
+	color: blue;
+	/* Add any additional styling as desired */
+}

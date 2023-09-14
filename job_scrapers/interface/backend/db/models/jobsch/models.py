@@ -1,6 +1,7 @@
+from collections import OrderedDict
 from pprint import pformat
 from typing import Optional
-from collections import OrderedDict
+
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -114,6 +115,10 @@ class Job(Base):
     template_text: Mapped[Optional[str]]
     template_lead_text: Mapped[Optional[str]]
     headhunter_application_allowed: Mapped[Optional[bool]]
+    applied: Mapped[Optional[int]]
+    saved: Mapped[Optional[int]]
+    liked: Mapped[Optional[int]]
+    expired: Mapped[Optional[int]]
 
     request_id: Mapped[int] = mapped_column(ForeignKey("jobsch_requests.id"))
     sub_request_id: Mapped[int] = mapped_column(ForeignKey("jobsch_sub_requests.id"))

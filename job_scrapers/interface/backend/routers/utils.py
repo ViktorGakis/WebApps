@@ -325,17 +325,14 @@ async def btn_update(
     rq_args: dict[str, Any],
     btn_type: str,
     ses: db.AsyncSession,
-    date_change: bool = True,
-) -> Literal[0, 1] | None:
+) -> Literal[-1, 0, 1] | None:
     if job_id := rq_args.get("job_id"):
-        job: Job = (
+        job = (
             await ses.execute(db.select(table).filter(table.job_id == job_id))
         ).scalar()
         val_old = getattr(job, btn_type)
         # log.debug('val_old: %s', val_old)
         setattr(job, f"{btn_type}", 0 if val_old else 1)
-        if date_change:
-            setattr(job, f"{btn_type}_date", datetime.now(timezone.utc))
         val_new = getattr(job, btn_type)
         await ses.commit()
         # log.debug('val_new: %s', val_new)

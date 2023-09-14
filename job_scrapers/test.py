@@ -1,12 +1,8 @@
 import asyncio
-import time
 from logging import Logger
-from typing import Optional
 
-from interface.backend import db
 from interface.backend import scrapers as scrp
 from interface.backend.logger import logdef
-from interface.backend.scrapers.base.scraper import BaseScraper
 
 log: Logger = logdef(__name__)
 
@@ -14,14 +10,16 @@ log: Logger = logdef(__name__)
 if __name__ == "__main__":
     query_list = [
         {"query": "Python", "location": "Switzerland", "days": None},
-        {"query": "Software Engineering", "location": "Switzerland", "days": None},
-        # "Software Developer",
-        # "Data Science",
-        # "Data Analysis",
-        # "Data Analytics",
-        # "Machine Learning",
-        # "Web Development",
-        # "Full Stack"
+        # {"query": "Software Engineering", "location": "Switzerland", "days": None},
+        # {"query": "Software Developer", "location": "Switzerland", "days": None},
+        # {"query": "Data Science", "location": "Switzerland", "days": None},
+        # {"query": "Data Analysis", "location": "Switzerland", "days": None},
+        # {"query": "Data Analytics", "location": "Switzerland", "days": None},
+        {"query": "Machine Learning", "location": "Switzerland", "days": None},
+        # {"query": "Web Development", "location": "Switzerland", "days": None},
+        # {"query": "Full Stack", "location": "Switzerland", "days": None},
+        # {"query": "Devops", "location": "Switzerland", "days": None},
+        # {"query": "Programmer", "location": "Switzerland", "days": None},
     ]
     SCRPR = scrp.jobsch.Scraper({}, {})
 

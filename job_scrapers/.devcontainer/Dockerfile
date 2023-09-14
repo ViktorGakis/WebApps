@@ -1,4 +1,5 @@
-FROM debian:bullseye-slim
+# FROM debian:bullseye-slim
+FROM ubuntu:latest
 
 LABEL maintainer="Anaconda, Inc"
 
@@ -20,10 +21,15 @@ RUN apt-get update && apt-get -y upgrade && \
     subversion \
     wget \
     git \
-    wget \
     g++ \
+    nodejs \
+    npm \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g n
+RUN n stable
+RUN npm -g install create-react-app
 
 # Set environment variables
 ENV MINICONDA_VERSION=latest

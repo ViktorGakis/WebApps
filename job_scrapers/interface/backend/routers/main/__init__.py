@@ -4,4 +4,4 @@ router: APIRouter = APIRouter(
     prefix="",
 )
 
-from . import routes, sockets
+from . import routes

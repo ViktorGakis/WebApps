@@ -3,9 +3,6 @@ from typing import Dict
 
 from ... import db
 from ...logger import logdef
-
-# from interface.backend import db
-# from interface.backend.logger import logdef
 from ..base import BaseScraper
 from . import QueryBuilder
 
@@ -68,21 +65,21 @@ class Scraper(BaseScraper):
         }
 
     def extract_job_request_info(self, job: dict):
-        job_extr = job.get("data", {})
+        job_data = job.get("data", {})
         return {
-            "application_url": job_extr.get("application_url", ""),
-            "external_url": job_extr.get("external_url", ""),
-            "template": job_extr.get("template", ""),
-            "template_profession": job_extr.get("template_profession", ""),
-            "template_text": job_extr.get("template_text", ""),
-            "template_lead_text": job_extr.get("template_lead_text", ""),
-            "is_active": job_extr.get("is_active", False),
-            "is_paid": job_extr.get("is_paid", False),
-            "headhunter_application_allowed": job_extr.get(
+            "application_url": job_data.get("application_url", ""),
+            "external_url": job_data.get("external_url", ""),
+            "template": job_data.get("template", ""),
+            "template_profession": job_data.get("template_profession", ""),
+            "template_text": job_data.get("template_text", ""),
+            "template_lead_text": job_data.get("template_lead_text", ""),
+            "is_active": job_data.get("is_active", False),
+            "is_paid": job_data.get("is_paid", False),
+            "headhunter_application_allowed": job_data.get(
                 "headhunter_application_allowed", False
             ),
-            "publication_end_date": job_extr.get("publication_end_date", ""),
-            "contact_person": str(job_extr.get("contact_person", "")),
+            "publication_end_date": job_data.get("publication_end_date", ""),
+            "contact_person": str(job_data.get("contact_person", "")),
             "status": job.get("status"),
         }
 
