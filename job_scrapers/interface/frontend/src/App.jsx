@@ -3,6 +3,9 @@ import JobCard from "./components/JobCard";
 import DBForm from "./components/DBform";
 import React from "react";
 
+const api_cols = "/api/items/cols";
+const api_oper = "/api/items/opers"
+
 function HomePage() {
 	return (
 		<>

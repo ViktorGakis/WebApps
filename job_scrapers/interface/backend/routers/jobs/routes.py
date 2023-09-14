@@ -23,17 +23,17 @@ sql = None
 jobs = {}
 
 
-@router.get("/", response_class=HTMLResponse)
-async def jobs_index(
-    request: Request,
-) -> _TemplateResponse:
-    return render_html(
-        "index.html",
-        {
-            "cols": get_cols(db.models.jobsch.Job),
-            "col_opers": column_operators(),
-        },
-    )
+# @router.get("/", response_class=HTMLResponse)
+# async def jobs_index(
+#     request: Request,
+# ) -> _TemplateResponse:
+#     return render_html(
+#         "index.html",
+#         {
+#             "cols": get_cols(db.models.jobsch.Job),
+#             "col_opers": column_operators(),
+#         },
+#     )
 
 
 @router.get("/api/retrieve", response_class=HTMLResponse)
@@ -83,22 +83,25 @@ async def jobs_api_items(
     return jsonResp({"data": jobs})
 
 
-@router.get("/api/items/form", response_class=HTMLResponse)
-async def jobs_api_items_form(
+@router.get("/api/items/cols", response_class=HTMLResponse)
+async def jobs_api_items_cols(
+    request: Request,
+    tablename: str = Query("db.models.jobsch.Job", description="The name of table"),
+) -> JSONResponse:
+    table = eval(tablename)
+    form_dict: dict[str, str] = {
+        "cols": str(get_cols(table)),
+    }
+    return jsonResp(form_dict)
+
+
+@router.get("/api/items/opers", response_class=HTMLResponse)
+async def jobs_api_items_opers(
     request: Request,
 ) -> JSONResponse:
-    # rq_args: dict[str, str] = dict(request.query_params)
-    # log.debug("\n rq_args \n %s", pformat(rq_args))
-    table = db.models.jobsch.Job
-    cols: list[str] = [col.name for col in table.__table__.c]
-    # per_page: int = int(rq_args.get("per_page") or 5)
-    form_dict = {
-        "table": table.__tablename__,
-        "cols": cols,
-        # "per_page": str(per_page),
+    form_dict: dict[str, str] = {
+        "opers": str(column_operators()),
     }
-    print(form_dict)
-    # jobs = [job._dict() for job in jobs]
     return jsonResp(form_dict)
 
 
