@@ -1,13 +1,13 @@
 from logging import Logger
+from pprint import pformat
 from typing import Callable, List
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.routing import APIRoute, APIRouter
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from pprint import pformat
+
 from .config import APISettings
 from .logger import logdef
 
@@ -62,9 +62,9 @@ class AppFactory(FastAPI):
         self.__add_templates()
         self.__add_jinja_global_vars()
         self.__add_jinja_filters()
-        log.info('UnRegistered Routers: \n%s' % pformat(self.unregistered_routers))
-        log.info('Registered Routers: \n%s' % pformat(self.registered_routers))
-        self.__add_cors()        
+        log.info("UnRegistered Routers: \n%s" % pformat(self.unregistered_routers))
+        log.info("Registered Routers: \n%s" % pformat(self.registered_routers))
+        self.__add_cors()
 
     @property
     def unregistered_routers(self) -> List[APIRouter]:
@@ -136,9 +136,14 @@ class AppFactory(FastAPI):
         # Add middleware for CORS
         self.add_middleware(
             CORSMiddleware,
-            allow_origins=["http://localhost", "https://localhost"],
+            allow_origins=[
+                "http://localhost",
+                "https://localhost",
+                "http://localhost:3000",
+                "https://localhost:3000",
+            ],
             allow_credentials=True,
             allow_methods=["*"],
             allow_headers=["*"],
         )
-        log.info('Added CORS')
+        log.info("Added CORS")

@@ -8,6 +8,7 @@ async function fetchData(url, params = {}, payload = {}, method = "GET") {
 		const requestOptions = {
 			method,
 			headers: {
+				Accept: "application/json",
 				"Content-Type": "application/json",
 			},
 		};

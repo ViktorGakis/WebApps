@@ -1,7 +1,25 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
-function DBField({ field, table = null }) {
-	const formAction = table ? `${table}_api_distinct_values` : undefined;
+import fetchAPI from "../js/fetchapi";
+
+async function get_distinct_v(table, field, distinctv_endpoint) {
+	const rsp = await fetchAPI(
+		`${distinctv_endpoint}?table=${table}&field=${field}`
+	);
+    console.log('rspv')
+    console.log(rsp.data)
+	return rsp.data;
+}
+
+function DBField({ field, table = null, distinctv_endpoint }) {
+	const [htmlText, setHtmlText] = useState(field);
+	const fetchData = async () => {
+		// Fetch cols
+		const htmlText = await get_distinct_v(table, field, distinctv_endpoint);
+		console.log("htmlText");
+		console.log(htmlText);
+		setHtmlText(htmlText);
+	};
 
 	return (
 		<>
@@ -12,10 +30,13 @@ function DBField({ field, table = null }) {
 				aria-label={field}
 				list={`${field}_list`}
 				className="form-control btn btn-outline-primary field"
-				formAction={formAction}
+				formAction={distinctv_endpoint}
 				autoComplete="off"
+				onClick={fetchData}
 			/>
-			<datalist id={`${field}_list`}></datalist>
+			<datalist
+				id={`${field}_list`}
+				dangerouslySetInnerHTML={{ __html: htmlText }}></datalist>
 		</>
 	);
 }
@@ -88,6 +109,11 @@ function DBFieldOrderMode() {
 }
 
 function ClearForm({ formRef }) {
+	// need to define
+	// const formRef = useRef(null);
+	// in the component that contains the form
+	// and also add as an attr in the form
+	// ref={formRef}
 	const handleClear = () => {
 		if (formRef.current) {
 			formRef.current.reset();
@@ -101,16 +127,53 @@ function ClearForm({ formRef }) {
 	);
 }
 
-export default function DBForm({ table, cols = [], col_opers = [] }) {
-	const actionUrl = `${table}_api_items`;
+async function get_cols(table, endpoint) {
+	const rsp = await fetchAPI(endpoint + `?table=${table}`);
+	return rsp.cols;
+}
+
+async function get_col_opers(endpoint) {
+	const rsp = await fetchAPI(endpoint);
+	return rsp.col_opers;
+}
+
+export default function DBForm({
+	table,
+	form_endpoint,
+	cols_endpoint,
+	opers_endpoint,
+	distinctv_endpoint,
+	// cols = [],
+	// col_opers = [],
+}) {
 	const formRef = useRef(null);
+	// Initialize state variables for cols and col_opers
+	const [cols, setCols] = useState([]);
+	const [col_opers, setColOpers] = useState([]);
+
+	// Use the useEffect hook to run asynchronous operations
+	useEffect(() => {
+		const fetchData = async () => {
+			// Fetch cols
+			const colsData = await get_cols(table, cols_endpoint);
+			setCols(colsData);
+
+			// Fetch col_opers
+			const colOpersData = await get_col_opers(opers_endpoint);
+
+			setColOpers(colOpersData);
+		};
+
+		fetchData();
+	}, [table, cols_endpoint, opers_endpoint]); // dependencies ensure the effect runs when these props change
+
 	return (
 		<div id="form_db">
 			<div className="table-responsive">
 				<form
 					ref={formRef}
 					method="GET"
-					action={actionUrl}
+					action={form_endpoint}
 					id="db_query"
 					name="db_query">
 					<table className="table table-hover table-bordered border-5 table-dark caption-top">
@@ -143,7 +206,13 @@ export default function DBForm({ table, cols = [], col_opers = [] }) {
 										/>
 									</td>
 									<td>
-										<DBField field={field} table={table} />
+										<DBField
+											field={field}
+											table={table}
+											distinctv_endpoint={
+												distinctv_endpoint
+											}
+										/>
 									</td>
 								</tr>
 							))}
@@ -173,13 +242,6 @@ export default function DBForm({ table, cols = [], col_opers = [] }) {
 								<td>
 									<div className="d-grid">
 										<ClearForm formRef={formRef} />
-										{/* <button
-											type="btn-primary btn-block"
-											id="clear_job_filters"
-											form="db_query"
-											className="btn btn-primary clear_form">
-											Clear
-										</button> */}
 									</div>
 								</td>
 							</tr>

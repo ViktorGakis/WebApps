@@ -10,6 +10,7 @@ from ...logger import logdef
 from ..utils import (
     btn_update,
     column_operators,
+    distinct_v_html,
     get_cols,
     jsonResp,
     order_filter,
@@ -34,6 +35,45 @@ jobs = {}
 #             "col_opers": column_operators(),
 #         },
 #     )
+
+
+# @router.options("/api/items/cols", response_class=HTMLResponse)
+@router.get("/api/items/cols", response_class=HTMLResponse)
+async def jobs_api_items_cols(
+    request: Request,
+    table: str = Query("db.models.jobsch.Job", description="The name of table"),
+) -> JSONResponse:
+    table_name = eval(table)
+    form_dict: dict[str, list] = {
+        "cols": get_cols(table_name),
+    }
+    print(f"{form_dict=}")
+    return jsonResp(form_dict)
+
+
+# @router.options("/api/items/opers", response_class=HTMLResponse)
+@router.get("/api/items/opers", response_class=HTMLResponse)
+async def jobs_api_items_opers(
+    request: Request,
+) -> JSONResponse:
+    form_dict: dict[str, list] = {
+        "col_opers": column_operators(),
+    }
+    print(f"{form_dict=}")
+    return jsonResp(form_dict)
+
+
+@router.get("/api/distinct_values")
+@router.post("/api/distinct_values")
+async def jobs_api_distinct_values(
+    request: Request,
+    ses=Depends(db.get_ses),
+    table: str = Query("db.models.jobsch.Job", description="The name of table"),
+    field: str = Query(..., description="Column name"),
+) -> JSONResponse:
+    table_name = eval(table)
+    html: str = await distinct_v_html(field.strip(), table_name, ses)
+    return jsonResp({"data": html})
 
 
 @router.get("/api/retrieve", response_class=HTMLResponse)
@@ -62,7 +102,6 @@ async def jobs_api_items(
     log.debug("\n rq_args \n %s", pformat(rq_args))
     table = db.models.jobsch.Job
 
-    cols: list[str] = [col.name for col in table.__table__.c]
     filter_args: list = []
     per_page: int = int(rq_args.get("per_page") or 5)
     filter_args = await setup_filters(rq_args, table)
@@ -81,28 +120,6 @@ async def jobs_api_items(
     )
     # jobs = [job._dict() for job in jobs]
     return jsonResp({"data": jobs})
-
-
-@router.get("/api/items/cols", response_class=HTMLResponse)
-async def jobs_api_items_cols(
-    request: Request,
-    tablename: str = Query("db.models.jobsch.Job", description="The name of table"),
-) -> JSONResponse:
-    table = eval(tablename)
-    form_dict: dict[str, str] = {
-        "cols": str(get_cols(table)),
-    }
-    return jsonResp(form_dict)
-
-
-@router.get("/api/items/opers", response_class=HTMLResponse)
-async def jobs_api_items_opers(
-    request: Request,
-) -> JSONResponse:
-    form_dict: dict[str, str] = {
-        "opers": str(column_operators()),
-    }
-    return jsonResp(form_dict)
 
 
 @router.get("/api/item/save", response_class=HTMLResponse)
