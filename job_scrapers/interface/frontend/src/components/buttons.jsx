@@ -78,37 +78,49 @@ function ApplyButton({ job, endpoint }) {
 	);
 }
 
-function CloseButton({ addAttr }) {
-	// Check if additional attributes are provided
-	const additionalAttributes = addAttr || {};
-	const handleClick = (event) => {
-		let currentElement = event.target;
+// function CloseButton({ addAttr }) {
+// 	// Check if additional attributes are provided
+// 	const additionalAttributes = addAttr || {};
+// 	const handleClick = (event) => {
+// 		let currentElement = event.target;
 
-		while (currentElement) {
-			if (
-				currentElement.classList.contains("card") &&
-				currentElement.classList.contains("job_card") &&
-				currentElement.tagName.toLowerCase() === "article"
-			) {
-				currentElement.remove();
-				return; // Stop searching once the article is found and removed
-			}
-			currentElement = currentElement.parentElement;
+// 		while (currentElement) {
+// 			if (
+// 				currentElement.classList.contains("card") &&
+// 				currentElement.classList.contains("job_card") &&
+// 				currentElement.tagName.toLowerCase() === "article"
+// 			) {
+// 				currentElement.remove();
+// 				return; // Stop searching once the article is found and removed
+// 			}
+// 			currentElement = currentElement.parentElement;
+// 		}
+// 	};
+// 	return (
+// 		<button
+// 			type="button"
+// 			className="btn btn_close"
+// 			onClick={handleClick}
+// 			{...additionalAttributes}>
+// 			<AiOutlineCloseCircle />
+// 		</button>
+// 	);
+// }
+
+function CloseButton({ jobId, onRemove }) {
+	const handleClick = () => {
+		if (onRemove) {
+			onRemove(jobId);
 		}
 	};
 	return (
-		<button
-			type="button"
-			className="btn btn_close"
-			onClick={handleClick}
-			{...additionalAttributes}>
+		<button type="button" className="btn btn_close" onClick={handleClick}>
 			<AiOutlineCloseCircle />
 		</button>
 	);
 }
 
 function LikeButton({ job, endpoint }) {
-	// Check if the job is in the 'fav' state and set the appropriate class
 	const isFav = job.liked;
 	const buttonClass = `btn like_btn btn-outline-secondary ${
 		isFav ? "dis_state" : ""
@@ -126,7 +138,6 @@ function LikeButton({ job, endpoint }) {
 }
 
 function DisLikeButton({ job, endpoint }) {
-	// Check if the job is in the 'fav' state and set the appropriate class
 	const isFav = job.liked;
 	const buttonClass = `btn like_btn btn-outline-secondary ${
 		isFav ? "dis_state" : ""
@@ -144,7 +155,6 @@ function DisLikeButton({ job, endpoint }) {
 }
 
 function ExpiredButton({ job, endpoint }) {
-	// Check if the job is in the 'expired' state and set the appropriate class
 	const isExpired = job.expired;
 	const buttonClass = `btn expire_btn btn-outline-secondary ${
 		isExpired ? "expired_state" : ""

@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import fetchAPI from "../js/fetchapi";
 import ExpContent from "./ExpContent";
 import Card from "./Card";
+import JobCard from "./JobCard";
 
 async function get_distinct_v(table, field, distinctv_endpoint) {
 	const rsp = await fetchAPI(
@@ -123,7 +124,13 @@ function ClearForm({ formRef }) {
 	};
 
 	return (
-		<button type="button" className="btn" onClick={handleClear}>
+		<button
+			type="button"
+			className="btn"
+			onClick={handleClear}
+			style={{
+				flex: "1",
+			}}>
 			Clear
 		</button>
 	);
@@ -224,12 +231,20 @@ function DBUtilsRow(formRef) {
 			</tr>
 			<tr scope="row">
 				<th colSpan="3">
-					<div className="d-grid" style={{ display: "flex" }}>
+					<div
+						className="d-grid"
+						style={{
+							display: "flex",
+							"justify-content": "space-between",
+						}}>
 						<button
 							type="btn-primary"
 							id="get_jobs"
 							form="db_query"
-							className="btn btn-primary btn-block">
+							className="btn btn-primary btn-block"
+							style={{
+								flex: "1",
+							}}>
 							GET JOBS
 						</button>
 						<ClearForm formRef={formRef} />
@@ -267,6 +282,7 @@ export default function DBForm({
 	const [col_opers, setColOpers] = useState([]);
 	const [visibleColumns, setVisibleColumns] = useState(cols);
 	const [usePredefinedCols, setUsePredefinedCols] = useState(false);
+	const [jobs, setJobs] = useState([]);
 
 	// Handler for when a column is toggled in the ColumnSelector
 	const handleColumnToggle = (col) => {
@@ -302,6 +318,24 @@ export default function DBForm({
 			setVisibleColumns(initialVisibleColumns);
 		}
 		setUsePredefinedCols((prev) => !prev);
+	};
+
+	const handleFormSubmit = async (e) => {
+		e.preventDefault();
+		// Make a request to get jobs based on the form data
+		// For simplicity, assume the form sends a GET request with query parameters
+		const formData = new FormData(formRef.current);
+		const queryParameters = new URLSearchParams(formData).toString();
+		const rsp = await fetchAPI(`${form_endpoint}?${queryParameters}`);
+		console.log("rsp: ");
+		console.log(rsp);
+		// Set this data to a state to render job cards
+		setJobs(rsp.data.items);
+	};
+
+	const handleRemoveJob = (jobId) => {
+		console.log("Trying to remove job with ID:", jobId);
+		setJobs((prevJobs) => prevJobs.filter((job) => job.id !== jobId));
 	};
 
 	// Use the useEffect hook to run asynchronous operations
@@ -347,18 +381,19 @@ export default function DBForm({
 			</Card>
 			<Card>
 				<ExpContent
-					summary={"Table"}
+					summary={"DB FORM"}
 					content={
 						<div className="table-responsive">
 							<form
 								ref={formRef}
+								onSubmit={handleFormSubmit}
 								method="GET"
 								action={form_endpoint}
 								id="db_query"
 								name="db_query">
 								<table className="table table-hover table-bordered border-5 table-dark caption-top">
 									<caption>
-										<h1>{`table: ${
+										<h1>{`Table: ${
 											table.charAt(0).toUpperCase() +
 											table.slice(1)
 										}`}</h1>
@@ -396,6 +431,19 @@ export default function DBForm({
 					}
 				/>
 			</Card>
+			<div className="jobs-container">
+				{jobs.length > 0 ? (
+					jobs.map((job) => (
+						<JobCard
+							key={job.id}
+							job={job}
+							onRemove={handleRemoveJob}
+						/>
+					))
+				) : (
+					<p>No jobs available.</p>
+				)}
+			</div>
 		</div>
 	);
 }
