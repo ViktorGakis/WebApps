@@ -1,14 +1,45 @@
 import React, { useState } from "react";
-import fetchAPI from "../js/fetchapi";
 
-const Paginator = ({ data, endpoint }) => {
+function Paginator({ data, onPageChange }) {
+	return (
+		<div className="paginator">
+			{/* Previous Button */}
+			<button
+				onClick={() => onPageChange(data.prev_num)}
+				disabled={!data.has_prev}>
+				Prev
+			</button>
+
+			{/* Page Numbers */}
+			{Array.isArray(data.iter_pages) &&
+				data.iter_pages.map((num) => (
+					<button
+						key={num}
+						onClick={() => onPageChange(num)}
+						className={num === data.page ? "active" : ""}>
+						{num}
+					</button>
+				))}
+
+			{/* Next Button */}
+			<button
+				onClick={() => onPageChange(data.next_num)}
+				disabled={!data.has_next}>
+				Next
+			</button>
+		</div>
+	);
+}
+
+const Paginator = ({ data, endpoint, onPageChange }) => {
 	const [page, setPage] = useState(data.page);
 	const [hasPrev, setHasPrev] = useState(data.has_prev);
 	const [prevNum, setPrevNum] = useState(data.prev_num);
 	const [hasNext, setHasNext] = useState(data.has_next);
 	const [nextNum, setNextNum] = useState(data.next_num);
 	const [iterPages, setIterPages] = useState(data.iter_pages);
-	const [paginationData, setPaginationData] = useState(data);
+	const [perPage, setPerPage] = useState(data.per_page);
+	const [total, setTotal] = useState(data.total);
 
 	const handlePageChange = async (pageNum) => {
 		try {
@@ -19,9 +50,17 @@ const Paginator = ({ data, endpoint }) => {
 			setHasNext(newData.data.has_next);
 			setNextNum(newData.data.next_num);
 			setIterPages(newData.data.iter_pages);
-			setPaginationData(newData.data);
+			setPerPage(newData.data.per_page);
+			setTotal(newData.data.total);
 		} catch (error) {
 			console.error("Error fetching new page data:", error);
+		}
+	};
+
+	const handlePageClick = (page) => {
+		setPage(page);
+		if (onPageChange) {
+			onPageChange(page);
 		}
 	};
 
@@ -29,8 +68,7 @@ const Paginator = ({ data, endpoint }) => {
 		<div id="pagination">
 			<nav>
 				<h4>
-					Per_page: {paginationData.per_page}, Results:{" "}
-					{paginationData.total}
+					Per_page: {perPage}, Results: {total}
 				</h4>
 				<ul className="pagination justify-content-center">
 					<li className="page-item">

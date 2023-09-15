@@ -4,6 +4,7 @@ import fetchAPI from "../js/fetchapi";
 import ExpContent from "./ExpContent";
 import Card from "./Card";
 import JobCard from "./JobCard";
+// import Paginator from "./Paginator";
 
 async function get_distinct_v(table, field, distinctv_endpoint) {
 	const rsp = await fetchAPI(
@@ -255,12 +256,87 @@ function DBUtilsRow(formRef) {
 	);
 }
 
-export default function DBForm({
+function DBFormTable({
+	table,
+	visibleColumns,
+	col_opers,
+	distinctv_endpoint,
+	formRef,
+}) {
+	return (
+		<table className="table table-hover table-bordered border-5 table-dark caption-top">
+			<caption>
+				<h1>{`Table: ${
+					table.charAt(0).toUpperCase() + table.slice(1)
+				}`}</h1>
+			</caption>
+			<thead>
+				<tr scope="row">
+					<th scope="col">
+						<h3>Field</h3>
+					</th>
+					<th scope="col">
+						<h3>Operator</h3>
+					</th>
+					<th scope="col">
+						<h3>Value</h3>
+					</th>
+				</tr>
+			</thead>
+			<tbody className="table-group-divider table-dark">
+				{visibleColumns.map((field) => (
+					<DBFieldRow
+						key={field}
+						field={field}
+						col_opers={col_opers}
+						table={table}
+						distinctv_endpoint={distinctv_endpoint}
+					/>
+				))}
+				<DBUtilsRow formRef={formRef} />
+			</tbody>
+		</table>
+	);
+}
+
+function Paginator({ data, onPageChange }) {
+	return (
+		<div className="paginator">
+			{/* Previous Button */}
+			<button
+				onClick={() => onPageChange(data.prev_num)}
+				disabled={!data.has_prev}>
+				Prev
+			</button>
+
+			{/* Page Numbers */}
+			{Array.isArray(data.iter_pages) &&
+				data.iter_pages.map((num) => (
+					<button
+						key={num}
+						onClick={() => onPageChange(num)}
+						className={num === data.page ? "active" : ""}>
+						{num}
+					</button>
+				))}
+
+			{/* Next Button */}
+			<button
+				onClick={() => onPageChange(data.next_num)}
+				disabled={!data.has_next}>
+				Next
+			</button>
+		</div>
+	);
+}
+
+function DBForm({
 	table,
 	form_endpoint,
 	cols_endpoint,
 	opers_endpoint,
 	distinctv_endpoint,
+	onUpdateData,
 	predefinedCols = {
 		title: true,
 		company_name: true,
@@ -273,8 +349,6 @@ export default function DBForm({
 		liked: true,
 		expired: true,
 	},
-	// cols = [],
-	// col_opers = [],
 }) {
 	const formRef = useRef(null);
 	// Initialize state variables for cols and col_opers
@@ -282,7 +356,6 @@ export default function DBForm({
 	const [col_opers, setColOpers] = useState([]);
 	const [visibleColumns, setVisibleColumns] = useState(cols);
 	const [usePredefinedCols, setUsePredefinedCols] = useState(false);
-	const [jobs, setJobs] = useState([]);
 
 	// Handler for when a column is toggled in the ColumnSelector
 	const handleColumnToggle = (col) => {
@@ -320,22 +393,17 @@ export default function DBForm({
 		setUsePredefinedCols((prev) => !prev);
 	};
 
-	const handleFormSubmit = async (e) => {
+	const handleFormSubmit = async (e, page = 1) => {
 		e.preventDefault();
-		// Make a request to get jobs based on the form data
-		// For simplicity, assume the form sends a GET request with query parameters
 		const formData = new FormData(formRef.current);
 		const queryParameters = new URLSearchParams(formData).toString();
-		const rsp = await fetchAPI(`${form_endpoint}?${queryParameters}`);
-		console.log("rsp: ");
-		console.log(rsp);
-		// Set this data to a state to render job cards
-		setJobs(rsp.data.items);
-	};
+		console.log("qParams: ");
+		console.log(queryParameters);
+		const rsp = await fetchAPI(
+			`${form_endpoint}?${queryParameters}&page=${page}`
+		);
 
-	const handleRemoveJob = (jobId) => {
-		console.log("Trying to remove job with ID:", jobId);
-		setJobs((prevJobs) => prevJobs.filter((job) => job.id !== jobId));
+		onUpdateData(rsp.data);
 	};
 
 	// Use the useEffect hook to run asynchronous operations
@@ -391,59 +459,78 @@ export default function DBForm({
 								action={form_endpoint}
 								id="db_query"
 								name="db_query">
-								<table className="table table-hover table-bordered border-5 table-dark caption-top">
-									<caption>
-										<h1>{`Table: ${
-											table.charAt(0).toUpperCase() +
-											table.slice(1)
-										}`}</h1>
-									</caption>
-									<thead>
-										<tr scope="row">
-											<th scope="col">
-												<h3>Field</h3>
-											</th>
-											<th scope="col">
-												<h3>Operator</h3>
-											</th>
-											<th scope="col">
-												<h3>Value</h3>
-											</th>
-										</tr>
-									</thead>
-									<tbody className="table-group-divider table-dark">
-										{visibleColumns.map((field) => (
-											<DBFieldRow
-												key={field}
-												field={field}
-												col_opers={col_opers}
-												table={table}
-												distinctv_endpoint={
-													distinctv_endpoint
-												}
-											/>
-										))}
-										<DBUtilsRow formRef={formRef} />
-									</tbody>
-								</table>
+								<DBFormTable
+									table={table}
+									visibleColumns={visibleColumns}
+									col_opers={col_opers}
+									distinctv_endpoint={distinctv_endpoint}
+									formRef={formRef}
+								/>
 							</form>
 						</div>
 					}
 				/>
 			</Card>
-			<div className="jobs-container">
-				{jobs.length > 0 ? (
-					jobs.map((job) => (
-						<JobCard
-							key={job.id}
-							job={job}
-							onRemove={handleRemoveJob}
-						/>
-					))
-				) : (
-					<p>No jobs available.</p>
-				)}
-			</div>
+		</div>
+	);
+}
+
+function JobsContainer({ data }) {
+	const [jobs, setJobs] = useState(data.items);
+
+	useEffect(() => {
+		setJobs(data.items);
+	}, [data]);
+
+	const handleRemoveJob = (jobId) => {
+		setJobs((prevJobs) => prevJobs.filter((job) => job.id !== jobId));
+	};
+
+	return (
+		<div className="jobs-container">
+			<h1>Jobs Found:</h1>
+			{jobs && jobs.length > 0 ? (
+				jobs.map((job) => (
+					<JobCard
+						key={job.id}
+						job={job}
+						onRemove={handleRemoveJob}
+					/>
+				))
+			) : (
+				<p>No jobs available.</p>
+			)}
+		</div>
+	);
+}
+
+export default function DataBaseContainer({
+	table,
+	form_endpoint,
+	cols_endpoint,
+	opers_endpoint,
+	distinctv_endpoint,
+}) {
+	const [data, setData] = useState([]);
+
+	const updateData = (newData) => {
+		setData(newData);
+	};
+
+	return (
+		<div>
+			<DBForm
+				table={table}
+				form_endpoint={form_endpoint}
+				cols_endpoint={cols_endpoint}
+				opers_endpoint={opers_endpoint}
+				distinctv_endpoint={distinctv_endpoint}
+				onUpdateData={updateData}
+			/>
+			{/* <Paginator data={data} onUpdateData={updateData} /> */}
+			{Array.isArray(data.items) && data.items.length > 0 && (
+				<JobsContainer data={data} />
+			)}
 		</div>
 	);
 }

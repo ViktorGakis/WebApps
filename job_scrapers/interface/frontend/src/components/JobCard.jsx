@@ -219,7 +219,7 @@ function TitleHeader({ job }) {
 			<ExpContent
 				summary={
 					<div>
-						<Title job={undefined} />
+						<Title job={job} />
 						<h5>
 							<MdLocationOn /> {job.place}
 						</h5>

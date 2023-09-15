@@ -118,7 +118,6 @@ async def jobs_api_items(
         session=ses,
         select=sql,
     )
-    # jobs = [job._dict() for job in jobs]
     return jsonResp({"data": jobs})
 
 
