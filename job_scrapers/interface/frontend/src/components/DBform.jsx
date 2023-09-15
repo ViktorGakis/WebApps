@@ -185,6 +185,24 @@ function ColumnSelector({
 	);
 }
 
+function DBFieldRow({ field, col_opers, table, distinctv_endpoint }) {
+	return (
+		<tr scope="row">
+			<th scope="row">{field}</th>
+			<td>
+				<DBFieldOper field={field} col_opers={col_opers} />
+			</td>
+			<td>
+				<DBField
+					field={field}
+					table={table}
+					distinctv_endpoint={distinctv_endpoint}
+				/>
+			</td>
+		</tr>
+	);
+}
+
 export default function DBForm({
 	table,
 	form_endpoint,
@@ -323,69 +341,16 @@ export default function DBForm({
 									</thead>
 									<tbody className="table-group-divider table-dark">
 										{visibleColumns.map((field) => (
-											<tr scope="row" key={field}>
-												<th scope="row">{field}</th>
-												<td>
-													<DBFieldOper
-														field={field}
-														col_opers={col_opers}
-													/>
-												</td>
-												<td>
-													<DBField
-														field={field}
-														table={table}
-														distinctv_endpoint={
-															distinctv_endpoint
-														}
-													/>
-												</td>
-											</tr>
+											<DBFieldRow
+												field={field}
+												col_opers={col_opers}
+												table={table}
+												distinctv_endpoint={
+													distinctv_endpoint
+												}
+											/>
 										))}
-										<tr scope="row">
-											<th scope="row">Order</th>
-											<td>
-												<DBFieldOrderCol />
-											</td>
-											<td>
-												<DBFieldOrderMode />
-											</td>
-										</tr>
-										<tr scope="row">
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr scope="row">
-											<th colSpan="2">
-												<input
-													type="number"
-													name="per_page"
-													placeholder="results_per_page"
-													className="form-control btn btn-outline-primary field_oper"
-												/>
-											</th>
-											<td>
-												<div className="d-grid">
-													<ClearForm
-														formRef={formRef}
-													/>
-												</div>
-											</td>
-										</tr>
-										<tr scope="row">
-											<th colSpan="3">
-												<div className="d-grid">
-													<button
-														type="btn-primary"
-														id="get_jobs"
-														form="db_query"
-														className="btn btn-primary btn-block">
-														GET JOBS
-													</button>
-												</div>
-											</th>
-										</tr>
+										;
 									</tbody>
 								</table>
 							</form>
