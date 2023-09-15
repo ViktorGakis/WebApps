@@ -299,43 +299,118 @@ function DBFormTable({
 	);
 }
 
-function Paginator({ data, onPageChange }) {
+function Paginator({ data, formEndpoint, formRef, onUpdateData }) {
+	const createPageLink = (page) => {
+		return `${formEndpoint}?page=${page}`;
+	};
+
+	const handlePageClick = async (e) => {
+		const options = {
+			url: e.target.href,
+		};
+		console.log(`url: ${options.url}`);
+		const rsp = await handleFormRequest(e, formRef, options);
+		onUpdateData(rsp.data);
+	};
+
 	return (
-		<div className="paginator">
-			{/* Previous Button */}
-			<button
-				onClick={() => onPageChange(data.prev_num)}
-				disabled={!data.has_prev}>
-				Prev
-			</button>
+		<div id="pagination">
+			<nav>
+				<h4>
+					Per_page: {data.per_page}, Results: {data.total}
+				</h4>
+				<ul className="pagination justify-content-center">
+					<li className="page-item">
+						{data.has_prev ? (
+							<a
+								className="page-link"
+								href={createPageLink(data.prev_num)}
+								aria-label="Previous"
+								onClick={handlePageClick}>
+								&laquo;
+							</a>
+						) : (
+							<span aria-hidden="true">&laquo;</span>
+						)}
+					</li>
 
-			{/* Page Numbers */}
-			{Array.isArray(data.iter_pages) &&
-				data.iter_pages.map((num) => (
-					<button
-						key={num}
-						onClick={() => onPageChange(num)}
-						className={num === data.page ? "active" : ""}>
-						{num}
-					</button>
-				))}
+					{data.iter_pages.map((pageNum) => (
+						<li
+							className="page-item"
+							aria-current="page"
+							key={pageNum}>
+							{pageNum ? (
+								data.page === pageNum ? (
+									<a
+										className="page-link"
+										href={createPageLink(pageNum)}
+										onClick={handlePageClick}>
+										{pageNum}
+									</a>
+								) : (
+									<a
+										className="page-link"
+										href={createPageLink(pageNum)}
+										onClick={handlePageClick}>
+										{pageNum}
+									</a>
+								)
+							) : (
+								"..."
+							)}
+						</li>
+					))}
 
-			{/* Next Button */}
-			<button
-				onClick={() => onPageChange(data.next_num)}
-				disabled={!data.has_next}>
-				Next
-			</button>
+					<li className="page-item">
+						{data.has_next ? (
+							<a
+								className="page-link"
+								href={createPageLink(data.next_num)}
+								aria-label="Next"
+								onClick={handlePageClick}>
+								&raquo;
+							</a>
+						) : (
+							<span aria-hidden="true">&raquo;</span>
+						)}
+					</li>
+				</ul>
+			</nav>
 		</div>
 	);
 }
 
+async function handleFormRequest(e, formRef, options = {}) {
+	e.preventDefault();
+
+	const formData = new FormData(formRef.current);
+	const queryParameters = new URLSearchParams(formData).toString();
+
+	const { url = null, formEndpoint = null, page = null } = options;
+
+	if (url) {
+		return await fetchAPI(url);
+	}
+	let apiUrl = formEndpoint;
+
+	if (queryParameters) {
+		apiUrl += `?${queryParameters}`;
+	}
+
+	if (page !== null) {
+		apiUrl += `&page=${page}`;
+	}
+
+	return await fetchAPI(apiUrl);
+}
+
 function DBForm({
 	table,
-	form_endpoint,
+	formEndpoint,
 	cols_endpoint,
 	opers_endpoint,
 	distinctv_endpoint,
+	formRef,
 	onUpdateData,
 	predefinedCols = {
 		title: true,
@@ -350,7 +425,6 @@ function DBForm({
 		expired: true,
 	},
 }) {
-	const formRef = useRef(null);
 	// Initialize state variables for cols and col_opers
 	const [cols, setCols] = useState([]);
 	const [col_opers, setColOpers] = useState([]);
@@ -394,15 +468,11 @@ function DBForm({
 	};
 
 	const handleFormSubmit = async (e, page = 1) => {
-		e.preventDefault();
-		const formData = new FormData(formRef.current);
-		const queryParameters = new URLSearchParams(formData).toString();
-		console.log("qParams: ");
-		console.log(queryParameters);
-		const rsp = await fetchAPI(
-			`${form_endpoint}?${queryParameters}&page=${page}`
-		);
-
+		const options = {
+			formEndpoint: formEndpoint,
+			page: page,
+		};
+		const rsp = await handleFormRequest(e, formRef, options);
 		onUpdateData(rsp.data);
 	};
 
@@ -456,7 +526,7 @@ function DBForm({
 								ref={formRef}
 								onSubmit={handleFormSubmit}
 								method="GET"
-								action={form_endpoint}
+								action={formEndpoint}
 								id="db_query"
 								name="db_query">
 								<DBFormTable
@@ -506,12 +576,13 @@ function JobsContainer({ data }) {
 
 export default function DataBaseContainer({
 	table,
-	form_endpoint,
+	formEndpoint,
 	cols_endpoint,
 	opers_endpoint,
 	distinctv_endpoint,
 }) {
 	const [data, setData] = useState([]);
+	const formRef = useRef(null);
 
 	const updateData = (newData) => {
 		setData(newData);
@@ -521,13 +592,21 @@ export default function DataBaseContainer({
 		<div>
 			<DBForm
 				table={table}
-				form_endpoint={form_endpoint}
+				formEndpoint={formEndpoint}
 				cols_endpoint={cols_endpoint}
 				opers_endpoint={opers_endpoint}
 				distinctv_endpoint={distinctv_endpoint}
+				formRef={formRef}
 				onUpdateData={updateData}
 			/>
-			{/* <Paginator data={data} onUpdateData={updateData} /> */}
+			{Array.isArray(data.items) && data.items.length > 0 && (
+				<Paginator
+					data={data}
+					formEndpoint={formEndpoint}
+					formRef={formRef}
+					onUpdateData={updateData}
+				/>
+			)}
 			{Array.isArray(data.items) && data.items.length > 0 && (
 				<JobsContainer data={data} />
 			)}
