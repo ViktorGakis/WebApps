@@ -1,10 +1,8 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import fetchAPI from "../js/fetchapi";
+import fetchAPI, { handleFormRequest } from "../js/fetchapi";
 import ExpContent from "./ExpContent";
 import Card from "./Card";
-import JobCard from "./JobCard";
-// import Paginator from "./Paginator";
 
 async function get_distinct_v(table, field, distinctv_endpoint) {
 	const rsp = await fetchAPI(
@@ -116,7 +114,7 @@ function ClearForm({ formRef }) {
 	// need to define
 	// const formRef = useRef(null);
 	// in the component that contains the form
-	// and also add as an attr in the form
+	// and also add as an attr in the actual form
 	// ref={formRef}
 	const handleClear = () => {
 		if (formRef.current) {
@@ -299,112 +297,7 @@ function DBFormTable({
 	);
 }
 
-function Paginator({ data, formEndpoint, formRef, onUpdateData }) {
-	const createPageLink = (page) => {
-		return `${formEndpoint}?page=${page}`;
-	};
-
-	const handlePageClick = async (e) => {
-		const options = {
-			url: e.target.href,
-		};
-		console.log(`url: ${options.url}`);
-		const rsp = await handleFormRequest(e, formRef, options);
-		onUpdateData(rsp.data);
-	};
-
-	return (
-		<div id="pagination">
-			<nav>
-				<h4>
-					Per_page: {data.per_page}, Results: {data.total}
-				</h4>
-				<ul className="pagination justify-content-center">
-					<li className="page-item">
-						{data.has_prev ? (
-							<a
-								className="page-link"
-								href={createPageLink(data.prev_num)}
-								aria-label="Previous"
-								onClick={handlePageClick}>
-								&laquo;
-							</a>
-						) : (
-							<span aria-hidden="true">&laquo;</span>
-						)}
-					</li>
-
-					{data.iter_pages.map((pageNum) => (
-						<li
-							className="page-item"
-							aria-current="page"
-							key={pageNum}>
-							{pageNum ? (
-								data.page === pageNum ? (
-									<a
-										className="page-link"
-										href={createPageLink(pageNum)}
-										onClick={handlePageClick}>
-										{pageNum}
-									</a>
-								) : (
-									<a
-										className="page-link"
-										href={createPageLink(pageNum)}
-										onClick={handlePageClick}>
-										{pageNum}
-									</a>
-								)
-							) : (
-								"..."
-							)}
-						</li>
-					))}
-
-					<li className="page-item">
-						{data.has_next ? (
-							<a
-								className="page-link"
-								href={createPageLink(data.next_num)}
-								aria-label="Next"
-								onClick={handlePageClick}>
-								&raquo;
-							</a>
-						) : (
-							<span aria-hidden="true">&raquo;</span>
-						)}
-					</li>
-				</ul>
-			</nav>
-		</div>
-	);
-}
-
-async function handleFormRequest(e, formRef, options = {}) {
-	e.preventDefault();
-
-	const formData = new FormData(formRef.current);
-	const queryParameters = new URLSearchParams(formData).toString();
-
-	const { url = null, formEndpoint = null, page = null } = options;
-
-	if (url) {
-		return await fetchAPI(url);
-	}
-	let apiUrl = formEndpoint;
-
-	if (queryParameters) {
-		apiUrl += `?${queryParameters}`;
-	}
-
-	if (page !== null) {
-		apiUrl += `&page=${page}`;
-	}
-
-	return await fetchAPI(apiUrl);
-}
-
-function DBForm({
+export default function DBForm({
 	table,
 	formEndpoint,
 	cols_endpoint,
@@ -541,75 +434,6 @@ function DBForm({
 					}
 				/>
 			</Card>
-		</div>
-	);
-}
-
-function JobsContainer({ data }) {
-	const [jobs, setJobs] = useState(data.items);
-
-	useEffect(() => {
-		setJobs(data.items);
-	}, [data]);
-
-	const handleRemoveJob = (jobId) => {
-		setJobs((prevJobs) => prevJobs.filter((job) => job.id !== jobId));
-	};
-
-	return (
-		<div className="jobs-container">
-			<h1>Jobs Found:</h1>
-			{jobs && jobs.length > 0 ? (
-				jobs.map((job) => (
-					<JobCard
-						key={job.id}
-						job={job}
-						onRemove={handleRemoveJob}
-					/>
-				))
-			) : (
-				<p>No jobs available.</p>
-			)}
-		</div>
-	);
-}
-
-export default function DataBaseContainer({
-	table,
-	formEndpoint,
-	cols_endpoint,
-	opers_endpoint,
-	distinctv_endpoint,
-}) {
-	const [data, setData] = useState([]);
-	const formRef = useRef(null);
-
-	const updateData = (newData) => {
-		setData(newData);
-	};
-
-	return (
-		<div>
-			<DBForm
-				table={table}
-				formEndpoint={formEndpoint}
-				cols_endpoint={cols_endpoint}
-				opers_endpoint={opers_endpoint}
-				distinctv_endpoint={distinctv_endpoint}
-				formRef={formRef}
-				onUpdateData={updateData}
-			/>
-			{Array.isArray(data.items) && data.items.length > 0 && (
-				<Paginator
-					data={data}
-					formEndpoint={formEndpoint}
-					formRef={formRef}
-					onUpdateData={updateData}
-				/>
-			)}
-			{Array.isArray(data.items) && data.items.length > 0 && (
-				<JobsContainer data={data} />
-			)}
 		</div>
 	);
 }

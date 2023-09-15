@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import DataBaseContainer from "./components/DBform";
 import React from "react";
+import DataBaseContainer from "./sections/DatabaseContainer";
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 const saveEndpoint = "/jobs/api/item/save";

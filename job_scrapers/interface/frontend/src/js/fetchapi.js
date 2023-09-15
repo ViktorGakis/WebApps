@@ -39,3 +39,27 @@ export default async function fetchAPI(
 ) {
 	return await fetchData(endpoint, params, payload, method);
 }
+
+export async function handleFormRequest(e, formRef, options = {}) {
+	e.preventDefault();
+
+	const formData = new FormData(formRef.current);
+	const queryParameters = new URLSearchParams(formData).toString();
+
+	const { url = null, formEndpoint = null, page = null } = options;
+
+	if (url) {
+		return await fetchAPI(url);
+	}
+	let apiUrl = formEndpoint;
+
+	if (queryParameters) {
+		apiUrl += `?${queryParameters}`;
+	}
+
+	if (page !== null) {
+		apiUrl += `&page=${page}`;
+	}
+
+	return await fetchAPI(apiUrl);
+}
