@@ -203,6 +203,43 @@ function DBFieldRow({ field, col_opers, table, distinctv_endpoint }) {
 	);
 }
 
+function DBUtilsRow(formRef) {
+	return (
+		<>
+			<tr scope="row">
+				<th colSpan="1">
+					<input
+						type="number"
+						name="per_page"
+						placeholder="results_per_page"
+						className="form-control btn btn-outline-primary field_oper"
+					/>
+				</th>
+				<th>
+					<DBFieldOrderCol />
+				</th>
+				<th>
+					<DBFieldOrderMode />
+				</th>
+			</tr>
+			<tr scope="row">
+				<th colSpan="3">
+					<div className="d-grid" style={{ display: "flex" }}>
+						<button
+							type="btn-primary"
+							id="get_jobs"
+							form="db_query"
+							className="btn btn-primary btn-block">
+							GET JOBS
+						</button>
+						<ClearForm formRef={formRef} />
+					</div>
+				</th>
+			</tr>
+		</>
+	);
+}
+
 export default function DBForm({
 	table,
 	form_endpoint,
@@ -321,10 +358,10 @@ export default function DBForm({
 								name="db_query">
 								<table className="table table-hover table-bordered border-5 table-dark caption-top">
 									<caption>
-										<h1>{`${
+										<h1>{`table: ${
 											table.charAt(0).toUpperCase() +
 											table.slice(1)
-										} db query form`}</h1>
+										}`}</h1>
 									</caption>
 									<thead>
 										<tr scope="row">
@@ -351,7 +388,7 @@ export default function DBForm({
 												}
 											/>
 										))}
-										;
+										<DBUtilsRow formRef={formRef} />
 									</tbody>
 								</table>
 							</form>
