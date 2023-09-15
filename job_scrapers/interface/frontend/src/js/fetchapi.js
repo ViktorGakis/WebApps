@@ -1,5 +1,6 @@
 async function fetchData(url, params = {}, payload = {}, method = "GET") {
 	try {
+		console.log(`url: ${url}`);
 		const urlWithParams = new URL(url);
 		Object.keys(params).forEach((key) =>
 			urlWithParams.searchParams.append(key, params[key])
