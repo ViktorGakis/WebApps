@@ -342,6 +342,7 @@ export default function DBForm({
 									<tbody className="table-group-divider table-dark">
 										{visibleColumns.map((field) => (
 											<DBFieldRow
+												key={field}
 												field={field}
 												col_opers={col_opers}
 												table={table}
