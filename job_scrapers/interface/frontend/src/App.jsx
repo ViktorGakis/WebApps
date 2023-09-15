@@ -16,7 +16,6 @@ const distinctv_endpoint = "/jobs/api/distinct_values";
 function HomePage() {
 	return (
 		<>
-			<JobCard />
 			<DBForm
 				table="db.models.jobsch.Job"
 				form_endpoint={apiBaseUrl + api_items}
@@ -26,6 +25,7 @@ function HomePage() {
 				// cols={["col1", "col2"]}
 				// col_opers={["oper1", "oper2"]}
 			/>
+			<JobCard />
 		</>
 	);
 }
