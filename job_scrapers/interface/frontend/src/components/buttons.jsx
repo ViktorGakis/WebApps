@@ -78,34 +78,6 @@ function ApplyButton({ job, endpoint }) {
 	);
 }
 
-// function CloseButton({ addAttr }) {
-// 	// Check if additional attributes are provided
-// 	const additionalAttributes = addAttr || {};
-// 	const handleClick = (event) => {
-// 		let currentElement = event.target;
-
-// 		while (currentElement) {
-// 			if (
-// 				currentElement.classList.contains("card") &&
-// 				currentElement.classList.contains("job_card") &&
-// 				currentElement.tagName.toLowerCase() === "article"
-// 			) {
-// 				currentElement.remove();
-// 				return; // Stop searching once the article is found and removed
-// 			}
-// 			currentElement = currentElement.parentElement;
-// 		}
-// 	};
-// 	return (
-// 		<button
-// 			type="button"
-// 			className="btn btn_close"
-// 			onClick={handleClick}
-// 			{...additionalAttributes}>
-// 			<AiOutlineCloseCircle />
-// 		</button>
-// 	);
-// }
 
 function CloseButton({ jobId, onRemove }) {
 	const handleClick = () => {
