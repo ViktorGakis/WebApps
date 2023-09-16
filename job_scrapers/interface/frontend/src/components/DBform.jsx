@@ -136,7 +136,7 @@ function ClearForm({ formRef }) {
 }
 
 async function get_cols(table, endpoint) {
-	const rsp = await fetchAPI(endpoint + `?table=${table}`);
+	const rsp = await fetchAPI(endpoint);
 	return rsp.cols;
 }
 

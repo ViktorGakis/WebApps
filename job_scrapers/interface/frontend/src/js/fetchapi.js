@@ -22,12 +22,13 @@ async function fetchData(url, params = {}, payload = {}, method = "GET") {
 		const data = await response.json();
 
 		if (!response.ok) {
+			console.error(`url: ${url}. \nError fetching data`);
 			throw new Error(data.message || "Error fetching data");
 		}
 
 		return data;
 	} catch (error) {
-		console.error("Error fetching data:", error);
+		console.error(`url: ${url}. \nError fetching data:`, error);
 		throw error;
 	}
 }

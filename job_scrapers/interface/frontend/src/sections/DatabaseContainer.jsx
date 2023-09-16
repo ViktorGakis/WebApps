@@ -3,7 +3,13 @@ import Paginator from "../components/Paginator";
 import JobCard from "../components/JobCard";
 import DBForm from "../components/DBform";
 
-function JobsContainer({ data }) {
+function JobsContainer({
+	data,
+	saveEndpoint,
+	likeEndpoint,
+	applyEndpoint,
+	expiredEndpoint,
+}) {
 	const [jobs, setJobs] = useState(data.items);
 
 	useEffect(() => {
@@ -23,6 +29,10 @@ function JobsContainer({ data }) {
 						key={job.id}
 						job={job}
 						onRemove={handleRemoveJob}
+						saveEndpoint={saveEndpoint}
+						likeEndpoint={likeEndpoint}
+						applyEndpoint={applyEndpoint}
+						expiredEndpoint={expiredEndpoint}
 					/>
 				))
 			) : (
@@ -35,12 +45,49 @@ function JobsContainer({ data }) {
 export default function DataBaseContainer({
 	table,
 	formEndpoint,
-	cols_endpoint,
-	opers_endpoint,
-	distinctv_endpoint,
+	colsEndpoint,
+	opersEndpoint,
+	distinctvEndpoint,
+	saveEndpoint,
+	likeEndpoint,
+	applyEndpoint,
+	expiredEndpoint,
 }) {
 	const [data, setData] = useState([]);
 	const formRef = useRef(null);
+	const [formEndpointUpd, setformEndpointUpd] = useState(
+		formEndpoint + "?table=" + table
+	);
+	const [colsEndpointUpd, setcolsEndpointUpd] = useState(
+		colsEndpoint + "?table=" + table
+	);
+	const [opersEndpointUpd, setopersEndpointUpd] = useState(opersEndpoint);
+	const [distinctvEndpointUpd, setdistinctvEndpointUpd] = useState(
+		distinctvEndpoint + "?table=" + table
+	);
+	const [saveEndpointUpd, setsaveEndpointUpd] = useState(
+		saveEndpoint + "?table=" + table
+	);
+	const [LikeEndpointUpd, setLikeEndpointUpd] = useState(
+		likeEndpoint + "?table=" + table
+	);
+	const [ApplyApiEndpointUpd, setApplyApiEndpointUpd] = useState(
+		applyEndpoint + "?table=" + table
+	);
+	const [ExpiredApiEndpointUpd, setExpiredApiEndpointUpd] = useState(
+		expiredEndpoint + "?table=" + table
+	);
+
+	useEffect(() => {
+		setformEndpointUpd(formEndpoint + "?table=" + table);
+		setcolsEndpointUpd(colsEndpoint + "?table=" + table);
+		// setopersEndpointUpd(opersEndpointUpd + "?table=" + table);
+		setdistinctvEndpointUpd(distinctvEndpoint + "?table=" + table);
+		setsaveEndpointUpd(saveEndpoint + "?table=" + table);
+		setLikeEndpointUpd(likeEndpoint + "?table=" + table);
+		setApplyApiEndpointUpd(applyEndpoint + "?table=" + table);
+		setExpiredApiEndpointUpd(expiredEndpoint + "?table=" + table);
+	}, [table]);
 
 	const updateData = (newData) => {
 		setData(newData);
@@ -50,23 +97,29 @@ export default function DataBaseContainer({
 		<div>
 			<DBForm
 				table={table}
-				formEndpoint={formEndpoint}
-				cols_endpoint={cols_endpoint}
-				opers_endpoint={opers_endpoint}
-				distinctv_endpoint={distinctv_endpoint}
+				formEndpoint={formEndpointUpd}
+				cols_endpoint={colsEndpointUpd}
+				opers_endpoint={opersEndpointUpd}
+				distinctv_endpoint={distinctvEndpointUpd}
 				formRef={formRef}
 				onUpdateData={updateData}
 			/>
 			{Array.isArray(data.items) && data.items.length > 0 && (
 				<Paginator
 					data={data}
-					formEndpoint={formEndpoint}
+					formEndpoint={formEndpointUpd}
 					formRef={formRef}
 					onUpdateData={updateData}
 				/>
 			)}
 			{Array.isArray(data.items) && data.items.length > 0 && (
-				<JobsContainer data={data} />
+				<JobsContainer
+					data={data}
+					saveEndpoint={saveEndpointUpd}
+					LikeEndpoint={LikeEndpointUpd}
+					ApplyApiEndpoint={ApplyApiEndpointUpd}
+					ExpiredApiEndpoint={ExpiredApiEndpointUpd}
+				/>
 			)}
 		</div>
 	);

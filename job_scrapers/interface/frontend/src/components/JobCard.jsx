@@ -107,10 +107,6 @@ function CompanyInfo({ job }) {
 	);
 }
 
-function JobHeader() {
-	return <div className="job_header">{/* <PrimaryInfo /> */}</div>;
-}
-
 function Description({ job }) {
 	return (
 		<ExpandableContent
@@ -238,19 +234,33 @@ function TitleHeader({ job }) {
 	);
 }
 
-function BtnsGroup({ job, onRemove }) {
+function BtnsGroup({
+	job,
+	onRemove,
+	saveEndpoint,
+	likeEndpoint,
+	applyEndpoint,
+	expiredEndpoint,
+}) {
 	return (
 		<div className="btns_group">
-			<LikeButton job={job} endpoint={apiBaseUrl + likeEndpoint} />
-			<DisLikeButton job={job} endpoint={apiBaseUrl + likeEndpoint} />
-			<SaveButton job={job} endpoint={apiBaseUrl + saveEndpoint} />
-			<ApplyButton job={job} endpoint={apiBaseUrl + applyEndpoint} />
+			<LikeButton job={job} endpoint={likeEndpoint} />
+			<DisLikeButton job={job} endpoint={likeEndpoint} />
+			<SaveButton job={job} endpoint={saveEndpoint} />
+			<ApplyButton job={job} endpoint={applyEndpoint} />
 			<CloseButton jobId={job.id} onRemove={onRemove} />
 		</div>
 	);
 }
 
-export default function JobCard({ job, onRemove }) {
+export default function JobCard({
+	job,
+	onRemove,
+	saveEndpoint,
+	likeEndpoint,
+	applyEndpoint,
+	expiredEndpoint,
+}) {
 	if (!job || typeof job.id === "undefined") {
 		return <div>Error: Invalid job data {job}</div>;
 	}
@@ -263,7 +273,14 @@ export default function JobCard({ job, onRemove }) {
 				<TitleHeader job={job} />
 			</div>
 			<PseudoFooter job={job} />
-			<BtnsGroup job={job} onRemove={onRemove} />
+			<BtnsGroup
+				job={job}
+				onRemove={onRemove}
+				saveEndpoint={saveEndpoint}
+				likeEndpoint={likeEndpoint}
+				applyEndpoint={applyEndpoint}
+				expiredEndpoint={expiredEndpoint}
+			/>
 		</Card>
 	);
 }

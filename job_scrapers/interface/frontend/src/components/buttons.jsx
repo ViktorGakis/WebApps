@@ -18,7 +18,7 @@ function SaveButton({ job, endpoint }) {
 	};
 
 	const buildEndpoint = (jobData) => {
-		return `${endpoint}?job_id=${jobData.job_id}&saved=${Number(
+		return `${endpoint}&job_id=${jobData.job_id}&saved=${Number(
 			jobData.saved
 		)}`;
 	};
@@ -33,10 +33,11 @@ function SaveButton({ job, endpoint }) {
 		setCurrentEndpoint(buildEndpoint(currentJob));
 	}, [currentJob]);
 
-	const toggleSaved = async () => {
+	const toggleSaved = async (e) => {
+		e.preventDefault();
 		setIsLoading(true);
 		try {
-			const response = await fetchAPI(endpoint);
+			const response = await fetchAPI(currentEndpoint);
 			const updatedJob = { ...currentJob, saved: response.saved };
 			setCurrentJob(updatedJob);
 		} catch (error) {
@@ -77,7 +78,6 @@ function ApplyButton({ job, endpoint }) {
 		</a>
 	);
 }
-
 
 function CloseButton({ jobId, onRemove }) {
 	const handleClick = () => {

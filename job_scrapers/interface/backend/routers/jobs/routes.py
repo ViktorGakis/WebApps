@@ -1,5 +1,6 @@
 from logging import Logger
 from pprint import pformat
+from typing import Any
 
 from fastapi import Depends, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -41,7 +42,7 @@ jobs = {}
 @router.get("/api/items/cols", response_class=HTMLResponse)
 async def jobs_api_items_cols(
     request: Request,
-    table: str = Query("db.models.jobsch.Job", description="The name of table"),
+    table: str = Query(..., description="The name of the table"),
 ) -> JSONResponse:
     table_name = eval(table)
     form_dict: dict[str, list] = {
@@ -121,31 +122,27 @@ async def jobs_api_items(
     return jsonResp({"data": jobs})
 
 
+async def btn_upd(table, target, target_val, identifier, identifier_value):
+    val_new = 0 if target_val else 1
+    await db.update_record(eval(table), [identifier_value], identifier, target, val_new)
+    return val_new
+
+
 @router.get("/api/item/save", response_class=HTMLResponse)
 async def jobs_api_save(
     request: Request,
-    job_id: str = Query(..., description="The job ID"),
     ses=Depends(db.get_ses),
+    table: str = Query(..., description="The sqlalchemy table class"),
+    job_id: str = Query(..., description="The job ID"),
+    saved: int = Query(..., description="The saved value"),
 ) -> JSONResponse:
-    btn_type = "saved"
-    table = db.models.jobsch.Job
-    job = (await ses.execute(db.select(table).filter(table.job_id == job_id))).scalar()
-    val_old = getattr(job, btn_type)
-    # log.debug('val_old: %s', val_old)
-    setattr(job, f"{btn_type}", 0 if val_old else 1)
-    val_new = getattr(job, btn_type)
-    await ses.commit()
-    # log.debug('val_new: %s', val_new)
-    return jsonResp({"job_id": job_id, "saved": val_new})
+    identifier = "job_id"
+    identifier_value: str = job_id
+    target = "saved"
+    target_val: Any = saved
 
-
-# @router.get("/api/item/save", response_class=HTMLResponse)
-# async def jobs_api_save(
-#     request: Request,
-#     ses=Depends(db.get_ses),
-# ) -> JSONResponse:
-#     rq_args: dict[str, str] = dict(request.query_params)
-#     return jsonResp({"saved_status": await btn_update(db.models.jobsch.Job, rq_args, "saved", ses)})
+    val_new = await btn_upd(table, target, target_val, identifier, identifier_value)
+    return jsonResp({"job_id": identifier_value, "saved": val_new})
 
 
 @router.get("/api/item/like", response_class=HTMLResponse)
