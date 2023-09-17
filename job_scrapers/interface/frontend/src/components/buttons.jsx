@@ -1,6 +1,7 @@
 import { TfiSave } from "react-icons/tfi";
 import { AiFillLike, AiFillDislike, AiOutlineCheck } from "react-icons/ai";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { BsExclamationTriangle } from "react-icons/bs";
 import fetchAPI from "../js/fetchapi";
 import React, { useState, useEffect } from "react";
 export {
@@ -22,25 +23,6 @@ function CloseButton({ jobId, onRemove }) {
 		<button type="button" className="btn btn_close" onClick={handleClick}>
 			<AiOutlineCloseCircle />
 		</button>
-	);
-}
-
-function ExpiredButton({ job, endpoint }) {
-	const isExpired = job.expired;
-	const buttonClass = `btn expire_btn btn-outline-secondary ${
-		isExpired ? "expired_state" : ""
-	} btn-block`;
-
-	return (
-		<a
-			type="submit"
-			name={job.job_id}
-			href={endpoint}
-			className={buttonClass}>
-			<span>
-				<i className="fa-solid fa-triangle-exclamation fa-2x"></i>
-			</span>
-		</a>
 	);
 }
 
@@ -157,6 +139,21 @@ function ApplyButton({ job, endpoint, setState }) {
 			col_name={"applied"}
 			class_value={"success"}
 			icon={<AiOutlineCheck />}
+			class_trigger_value={1}
+		/>
+	);
+}
+
+function ExpiredButton({ job, endpoint, setState }) {
+	return (
+		<ToggleBtn
+			job={job}
+			endpoint={endpoint}
+			setState={setState}
+			job_id={"job_id"}
+			col_name={"expired"}
+			class_value={"failure"}
+			icon={<BsExclamationTriangle />}
 			class_trigger_value={1}
 		/>
 	);

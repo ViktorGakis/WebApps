@@ -4,15 +4,10 @@ import {
 	DisLikeButton,
 	ExpiredButton,
 	LikeButton,
-	LikeButtonsGroup,
 	SaveButton,
 } from "./buttons";
-import { TfiSave } from "react-icons/tfi";
-import { AiFillLike, AiFillDislike, AiOutlineCheck } from "react-icons/ai";
-import { AiOutlineCloseCircle } from "react-icons/ai";
-import fetchAPI from "../js/fetchapi";
-import React, { useState, useEffect, useCallback } from "react";
-import { ImSpinner9 } from "react-icons/im";
+
+import React, { useEffect, useState } from "react";
 import "./jobcard.css";
 import Card from "./Card";
 import ExpandableContent from "./ExpContent";
@@ -282,6 +277,12 @@ export default function JobCard({
 				<ApplyButton
 					job={jobData}
 					endpoint={applyEndpoint}
+					setState={setJobData}
+				/>
+
+				<ExpiredButton
+					job={jobData}
+					endpoint={expiredEndpoint}
 					setState={setJobData}
 				/>
 				<CloseButton jobId={job.id} onRemove={onRemove} />

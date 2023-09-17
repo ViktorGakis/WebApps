@@ -242,16 +242,26 @@ async def jobs_api_apply(
     return jsonResp(job)
 
 
-@router.get("/api/item/expired", response_class=HTMLResponse)
-async def jobs_api_expired(
+@router.get("/api/item/expire", response_class=HTMLResponse)
+async def jobs_api_apply(
     request: Request,
     ses=Depends(db.get_ses),
+    table: str = Query(..., description="The sqlalchemy table class"),
+    job_id: str = Query(..., description="The job ID"),
+    # liked: int = Query(..., description="The liked value"),
 ) -> JSONResponse:
-    rq_args: dict[str, str] = dict(request.query_params)
-    return jsonResp(
-        {
-            "expired_status": await btn_update(
-                db.models.jobsch.Job, rq_args, "expired", ses=ses
-            )
-        }
+    identifier = "job_id"
+    identifier_value: str = job_id
+    target_col = "expired"
+    # target_val: Any = liked
+    print(f"{identifier_value=}")
+    job = await btn_upd(
+        table,
+        identifier,
+        identifier_value,
+        target_col,
+        {0: 1, None: 1, 1: 0},
+        ses,
     )
+    print(f"{job['expired']=}")
+    return jsonResp(job)
