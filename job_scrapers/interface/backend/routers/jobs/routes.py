@@ -39,6 +39,27 @@ jobs = {}
 #     )
 
 
+async def btn_upd(
+    table,
+    identifier,
+    identifier_value,
+    target_col,
+    target_val,
+    ses,
+):
+    db_model = eval(table)
+    stmt = db.select(db_model).filter(getattr(db_model, identifier) == identifier_value)
+    result = await ses.execute(stmt)
+    instance = result.scalars().first()
+
+    val_old = getattr(instance, target_col)
+    val_new = target_val[val_old]
+    setattr(instance, target_col, val_new)
+    instance_dict = instance._dict()
+    await ses.commit()
+    return instance_dict
+
+
 @router.get("/api/items/cols", response_class=HTMLResponse)
 async def jobs_api_items_cols(
     request: Request,
@@ -68,11 +89,18 @@ async def jobs_api_items_opers(
 async def jobs_api_distinct_values(
     request: Request,
     ses=Depends(db.get_ses),
-    table: str = Query("db.models.jobsch.Job", description="The name of table"),
+    table: str = Query(..., description="The name of table"),
     field: str = Query(..., description="Column name"),
 ) -> JSONResponse:
+    print(
+        f"""
+        {table=}
+        {field=}
+        """
+    )
     table_name = eval(table)
     html: str = await distinct_v_html(field.strip(), table_name, ses)
+    print(f"{html}=")
     return jsonResp({"data": html})
 
 
@@ -119,27 +147,6 @@ async def jobs_api_items(
         select=sql,
     )
     return jsonResp({"data": jobs})
-
-
-async def btn_upd(
-    table,
-    identifier,
-    identifier_value,
-    target_col,
-    target_val,
-    ses,
-):
-    db_model = eval(table)
-    stmt = db.select(db_model).filter(getattr(db_model, identifier) == identifier_value)
-    result = await ses.execute(stmt)
-    instance = result.scalars().first()
-
-    val_old = getattr(instance, target_col)
-    val_new = target_val[val_old]
-    setattr(instance, target_col, val_new)
-    instance_dict = instance._dict()
-    await ses.commit()
-    return instance_dict
 
 
 @router.get("/api/item/save", response_class=HTMLResponse)
@@ -243,7 +250,7 @@ async def jobs_api_apply(
 
 
 @router.get("/api/item/expire", response_class=HTMLResponse)
-async def jobs_api_apply(
+async def jobs_api_expire(
     request: Request,
     ses=Depends(db.get_ses),
     table: str = Query(..., description="The sqlalchemy table class"),

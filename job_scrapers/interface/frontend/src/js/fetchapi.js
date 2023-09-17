@@ -1,6 +1,6 @@
 async function fetchData(url, params = {}, payload = {}, method = "GET") {
 	try {
-		console.log(`url: ${url}`);
+		// console.log(`fetchData: url: ${url}`);
 		const urlWithParams = new URL(url);
 		Object.keys(params).forEach((key) =>
 			urlWithParams.searchParams.append(key, params[key])
@@ -22,13 +22,13 @@ async function fetchData(url, params = {}, payload = {}, method = "GET") {
 		const data = await response.json();
 
 		if (!response.ok) {
-			console.error(`url: ${url}. \nError fetching data`);
+			console.error(`fetchData: url: ${url}. \nError fetching data`);
 			throw new Error(data.message || "Error fetching data");
 		}
 
 		return data;
 	} catch (error) {
-		console.error(`url: ${url}. \nError fetching data:`, error);
+		console.error(`fetchData: url: ${url}. \nError fetching data:`, error);
 		throw error;
 	}
 }
@@ -39,6 +39,7 @@ export default async function fetchAPI(
 	payload = {},
 	method = "GET"
 ) {
+	// console.log(`fetchAPI: url: ${endpoint}`);
 	return await fetchData(endpoint, params, payload, method);
 }
 
@@ -51,6 +52,7 @@ export async function handleFormRequest(e, formRef, options = {}) {
 	const { url = null, formEndpoint = null, page = null } = options;
 
 	if (url) {
+		console.log(`handleFormRequest: url: ${url}`);
 		return await fetchAPI(url);
 	}
 	let apiUrl = formEndpoint;
@@ -62,6 +64,6 @@ export async function handleFormRequest(e, formRef, options = {}) {
 	if (page !== null) {
 		apiUrl += `&page=${page}`;
 	}
-
+	console.log(`handleFormRequest: apiUrl: ${apiUrl}`);
 	return await fetchAPI(apiUrl);
 }

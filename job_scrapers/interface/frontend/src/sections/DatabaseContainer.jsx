@@ -114,7 +114,7 @@ export default function DataBaseContainer({
 			{Array.isArray(data.items) && data.items.length > 0 && (
 				<Paginator
 					data={data}
-					formEndpoint={formEndpointUpd}
+					formEndpoint={formEndpoint}
 					formRef={formRef}
 					onUpdateData={updateData}
 				/>

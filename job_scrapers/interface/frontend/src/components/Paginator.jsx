@@ -9,14 +9,16 @@ export default function Paginator({
 	onUpdateData,
 }) {
 	const createPageLink = (page) => {
-		return `${formEndpoint}?page=${page}`;
+		const url = `${formEndpoint}&page=${page}`;
+		console.log(`Paginator: url ${formEndpoint}`);
+		return url;
 	};
 
 	const handlePageClick = async (e) => {
 		const options = {
 			url: e.target.href,
 		};
-		console.log(`url: ${options.url}`);
+		console.log(`handlePageClick: url: ${options.url}`);
 		const rsp = await handleFormRequest(e, formRef, options);
 		onUpdateData(rsp.data);
 	};
@@ -27,7 +29,7 @@ export default function Paginator({
 				<h4>
 					Per_page: {data.per_page}, Results: {data.total}
 				</h4>
-				<ul className="pagination justify-content-center">
+				<ul className="pagination">
 					<li className="page-item">
 						{data.has_prev ? (
 							<a

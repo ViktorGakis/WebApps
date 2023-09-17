@@ -5,11 +5,9 @@ import ExpContent from "./ExpContent";
 import Card from "./Card";
 
 async function get_distinct_v(table, field, distinctv_endpoint) {
-	const rsp = await fetchAPI(
-		`${distinctv_endpoint}?table=${table}&field=${field}`
-	);
-	console.log("rspv");
-	console.log(rsp.data);
+	const rsp = await fetchAPI(`${distinctv_endpoint}&field=${field}`);
+	// console.log("rspv");
+	// console.log(rsp.data);
 	return rsp.data;
 }
 
@@ -18,8 +16,8 @@ function DBField({ field, table = null, distinctv_endpoint }) {
 	const fetchData = async () => {
 		// Fetch cols
 		const htmlText = await get_distinct_v(table, field, distinctv_endpoint);
-		console.log("htmlText");
-		console.log(htmlText);
+		// console.log("htmlText");
+		// console.log(htmlText);
 		setHtmlText(htmlText);
 	};
 
@@ -234,7 +232,7 @@ function DBUtilsRow(formRef) {
 						className="d-grid"
 						style={{
 							display: "flex",
-							"justify-content": "space-between",
+							justifyContent: "space-between",
 						}}>
 						<button
 							type="btn-primary"
