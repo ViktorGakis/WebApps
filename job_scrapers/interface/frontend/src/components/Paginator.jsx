@@ -1,5 +1,6 @@
 import React from "react";
 import { handleFormRequest } from "../js/fetchapi";
+import "./paginator.css";
 
 export default function Paginator({
 	data,

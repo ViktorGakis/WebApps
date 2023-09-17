@@ -3,28 +3,30 @@ import React from "react";
 import DataBaseContainer from "./sections/DatabaseContainer";
 
 const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-const SaveApiEndpoint = "/jobs/api/item/save";
-const LikeApiEndpoint = "/jobs/api/item/like";
-const ApplyApiEndpoint = "/jobs/api/item/like";
-const ExpiredApiEndpoint = "/jobs/api/item/like";
-const ColsApiEndpoint = "/jobs/api/items/cols";
-const OperApiEndpoint = "/jobs/api/items/opers";
-const ItemsApiEndpoint = "/jobs/api/items";
-const DistinctvApiEndpoint = "/jobs/api/distinct_values";
+const saveEndpoint = "/jobs/api/item/save";
+const likeEndpoint = "/jobs/api/item/like";
+const dislikeEndpoint = "/jobs/api/item/dislike";
+const applyEndpoint = "/jobs/api/item/apply";
+const expiredEndpoint = "/jobs/api/item/expire";
+const colsEndpoint = "/jobs/api/items/cols";
+const operEndpoint = "/jobs/api/items/opers";
+const itemsEndpoint = "/jobs/api/items";
+const distinctvEndpoint = "/jobs/api/distinct_values";
 const table = "db.models.jobsch.Job";
 
 function HomePage() {
 	return (
 		<DataBaseContainer
 			table={table}
-			formEndpoint={apiBaseUrl + ItemsApiEndpoint}
-			colsEndpoint={apiBaseUrl + ColsApiEndpoint}
-			opersEndpoint={apiBaseUrl + OperApiEndpoint}
-			distinctvEndpoint={apiBaseUrl + DistinctvApiEndpoint}
-			saveEndpoint={apiBaseUrl + SaveApiEndpoint}
-			likeEndpoint={apiBaseUrl + LikeApiEndpoint}
-			applyEndpoint={apiBaseUrl + ApplyApiEndpoint}
-			expiredEndpoint={apiBaseUrl + ExpiredApiEndpoint}
+			formEndpoint={apiBaseUrl + itemsEndpoint}
+			colsEndpoint={apiBaseUrl + colsEndpoint}
+			opersEndpoint={apiBaseUrl + operEndpoint}
+			distinctvEndpoint={apiBaseUrl + distinctvEndpoint}
+			saveEndpoint={apiBaseUrl + saveEndpoint}
+			likeEndpoint={apiBaseUrl + likeEndpoint}
+			disLikeEndpoint={apiBaseUrl + dislikeEndpoint}
+			applyEndpoint={apiBaseUrl + applyEndpoint}
+			expiredEndpoint={apiBaseUrl + expiredEndpoint}
 		/>
 	);
 }

@@ -1,6 +1,7 @@
 from logging import Logger
 from pprint import pformat
-from typing import Any
+from re import A
+from typing import Any, Optional
 
 from fastapi import Depends, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -38,7 +39,6 @@ jobs = {}
 #     )
 
 
-# @router.options("/api/items/cols", response_class=HTMLResponse)
 @router.get("/api/items/cols", response_class=HTMLResponse)
 async def jobs_api_items_cols(
     request: Request,
@@ -52,7 +52,6 @@ async def jobs_api_items_cols(
     return jsonResp(form_dict)
 
 
-# @router.options("/api/items/opers", response_class=HTMLResponse)
 @router.get("/api/items/opers", response_class=HTMLResponse)
 async def jobs_api_items_opers(
     request: Request,
@@ -122,10 +121,25 @@ async def jobs_api_items(
     return jsonResp({"data": jobs})
 
 
-async def btn_upd(table, target, target_val, identifier, identifier_value):
-    val_new = 0 if target_val else 1
-    await db.update_record(eval(table), [identifier_value], identifier, target, val_new)
-    return val_new
+async def btn_upd(
+    table,
+    identifier,
+    identifier_value,
+    target_col,
+    target_val,
+    ses,
+):
+    db_model = eval(table)
+    stmt = db.select(db_model).filter(getattr(db_model, identifier) == identifier_value)
+    result = await ses.execute(stmt)
+    instance = result.scalars().first()
+
+    val_old = getattr(instance, target_col)
+    val_new = target_val[val_old]
+    setattr(instance, target_col, val_new)
+    instance_dict = instance._dict()
+    await ses.commit()
+    return instance_dict
 
 
 @router.get("/api/item/save", response_class=HTMLResponse)
@@ -134,37 +148,98 @@ async def jobs_api_save(
     ses=Depends(db.get_ses),
     table: str = Query(..., description="The sqlalchemy table class"),
     job_id: str = Query(..., description="The job ID"),
-    saved: int = Query(..., description="The saved value"),
+    # liked: int = Query(..., description="The liked value"),
 ) -> JSONResponse:
     identifier = "job_id"
     identifier_value: str = job_id
-    target = "saved"
-    target_val: Any = saved
-
-    val_new = await btn_upd(table, target, target_val, identifier, identifier_value)
-    return jsonResp({"job_id": identifier_value, "saved": val_new})
+    target_col = "saved"
+    # target_val: Any = liked
+    print(f"{identifier_value=}")
+    job = await btn_upd(
+        table,
+        identifier,
+        identifier_value,
+        target_col,
+        {0: 1, None: 1, 1: 0},
+        ses,
+    )
+    print(f'{job["saved"]=}')
+    return jsonResp(job)
 
 
 @router.get("/api/item/like", response_class=HTMLResponse)
-async def jobs_api_dis(
+async def jobs_api_like(
     request: Request,
     ses=Depends(db.get_ses),
+    table: str = Query(..., description="The sqlalchemy table class"),
+    job_id: str = Query(..., description="The job ID"),
+    # liked: int = Query(..., description="The liked value"),
 ) -> JSONResponse:
-    rq_args: dict[str, str] = dict(request.query_params)
-    return jsonResp(
-        {"like_status": await btn_update(db.models.jobsch.Job, rq_args, "liked", ses)}
+    identifier = "job_id"
+    identifier_value: str = job_id
+    target_col = "liked"
+    # target_val: Any = liked
+    print(f"{identifier_value=}")
+    job = await btn_upd(
+        table,
+        identifier,
+        identifier_value,
+        target_col,
+        {0: 1, None: 1, -1: 1, 1: 0},
+        ses,
     )
+    print(f"{job['liked']=}")
+    return jsonResp(job)
+
+
+@router.get("/api/item/dislike", response_class=HTMLResponse)
+async def jobs_api_dislike(
+    request: Request,
+    ses=Depends(db.get_ses),
+    table: str = Query(..., description="The sqlalchemy table class"),
+    job_id: str = Query(..., description="The job ID"),
+    # liked: int = Query(..., description="The liked value"),
+) -> JSONResponse:
+    identifier = "job_id"
+    identifier_value: str = job_id
+    target_col = "liked"
+    # target_val: Any = liked
+    print(f"{identifier_value=}")
+    job = await btn_upd(
+        table,
+        identifier,
+        identifier_value,
+        target_col,
+        {0: -1, None: -1, 1: -1, -1: 0},
+        ses,
+    )
+    print(f"{job['liked']=}")
+    return jsonResp(job)
 
 
 @router.get("/api/item/apply", response_class=HTMLResponse)
 async def jobs_api_apply(
     request: Request,
     ses=Depends(db.get_ses),
+    table: str = Query(..., description="The sqlalchemy table class"),
+    job_id: str = Query(..., description="The job ID"),
+    # liked: int = Query(..., description="The liked value"),
 ) -> JSONResponse:
-    rq_args: dict[str, str] = dict(request.query_params)
-    applied_status: int = await package_application(rq_args, jobs, ses)
-    # applied_status = 0
-    return jsonResp({"applied_status": applied_status})
+    identifier = "job_id"
+    identifier_value: str = job_id
+    target_col = "applied"
+    # target_val: Any = liked
+    print(f"{identifier_value=}")
+    job = await btn_upd(
+        table,
+        identifier,
+        identifier_value,
+        target_col,
+        {0: 1, None: 1, 1: 0},
+        ses,
+    )
+    print(f"{job['applied']=}")
+    return jsonResp(job)
 
 
 @router.get("/api/item/expired", response_class=HTMLResponse)

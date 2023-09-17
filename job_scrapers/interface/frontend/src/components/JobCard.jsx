@@ -4,25 +4,22 @@ import {
 	DisLikeButton,
 	ExpiredButton,
 	LikeButton,
+	LikeButtonsGroup,
 	SaveButton,
 } from "./buttons";
-
+import { TfiSave } from "react-icons/tfi";
+import { AiFillLike, AiFillDislike, AiOutlineCheck } from "react-icons/ai";
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import fetchAPI from "../js/fetchapi";
+import React, { useState, useEffect, useCallback } from "react";
+import { ImSpinner9 } from "react-icons/im";
 import "./jobcard.css";
-
 import Card from "./Card";
-
-import React from "react";
 import ExpandableContent from "./ExpContent";
 import CondElem from "./CondElem";
 import ExpContent from "./ExpContent";
 import { MdLocationOn, MdDescription } from "react-icons/md";
 import { IoMdBusiness } from "react-icons/io";
-
-const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-const saveEndpoint = "/jobs/api/item/save";
-const likeEndpoint = "/api/item/like";
-const applyEndpoint = "/api/item/like";
-const expiredEndpoint = "/api/item/like";
 
 // const job = {
 // 	title: "Internships Global Specialized Solutions department (m/f/d)",
@@ -234,36 +231,29 @@ function TitleHeader({ job }) {
 	);
 }
 
-function BtnsGroup({
-	job,
-	onRemove,
-	saveEndpoint,
-	likeEndpoint,
-	applyEndpoint,
-	expiredEndpoint,
-}) {
-	return (
-		<div className="btns_group">
-			<LikeButton job={job} endpoint={likeEndpoint} />
-			<DisLikeButton job={job} endpoint={likeEndpoint} />
-			<SaveButton job={job} endpoint={saveEndpoint} />
-			<ApplyButton job={job} endpoint={applyEndpoint} />
-			<CloseButton jobId={job.id} onRemove={onRemove} />
-		</div>
-	);
-}
-
 export default function JobCard({
 	job,
 	onRemove,
 	saveEndpoint,
 	likeEndpoint,
+	disLikeEndpoint,
 	applyEndpoint,
 	expiredEndpoint,
 }) {
+	const [jobData, setJobData] = useState(job);
+
+	useEffect(() => {
+		// 3. Re-run whenever jobData changes.
+		// This is just an illustration. Currently, this useEffect doesn't
+		// do much since setting state already causes a re-render.
+		// But you can put logic here if you want to perform side-effects
+		// whenever jobData changes.
+	}, [jobData]);
+
 	if (!job || typeof job.id === "undefined") {
 		return <div>Error: Invalid job data {job}</div>;
 	}
+
 	return (
 		<Card className="job_card">
 			<div className="job_header">
@@ -273,14 +263,29 @@ export default function JobCard({
 				<TitleHeader job={job} />
 			</div>
 			<PseudoFooter job={job} />
-			<BtnsGroup
-				job={job}
-				onRemove={onRemove}
-				saveEndpoint={saveEndpoint}
-				likeEndpoint={likeEndpoint}
-				applyEndpoint={applyEndpoint}
-				expiredEndpoint={expiredEndpoint}
-			/>
+			<div className="btns_group">
+				<LikeButton
+					job={jobData}
+					endpoint={likeEndpoint}
+					setState={setJobData}
+				/>
+				<DisLikeButton
+					job={jobData}
+					endpoint={disLikeEndpoint}
+					setState={setJobData}
+				/>
+				<SaveButton
+					job={jobData}
+					endpoint={saveEndpoint}
+					setState={setJobData}
+				/>
+				<ApplyButton
+					job={jobData}
+					endpoint={applyEndpoint}
+					setState={setJobData}
+				/>
+				<CloseButton jobId={job.id} onRemove={onRemove} />
+			</div>
 		</Card>
 	);
 }

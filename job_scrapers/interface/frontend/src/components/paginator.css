@@ -1,0 +1,32 @@
+div[id="pagination"] {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
+li[class="page-item"] a {
+	background-color: #00000000;
+	text-decoration: none;
+	transition: background-color 0.3s;
+}
+
+li[class="page-item"] a:hover {
+	background-color: #4caf50;
+	color: var(--white);
+}
+
+li[class="page-item"] a:focus {
+	color: red;
+}
+
+li[class="page-item"] a.active {
+	background-color: #1f35ff;
+	color: var(--white);
+	/* border: 1px solid #4caf50; */
+}
+
+li[class="page-item"] a:hover:not(.active) {
+	background-color: #e106f9;
+	color: var(--white);
+}

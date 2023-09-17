@@ -221,6 +221,18 @@ img {
 	/* text color always is always white */
 }
 
+.btn.failure {
+	background: transparent;
+	color: var(--color-failure);
+	/* text color always is always white */
+}
+
+.btn.failure:hover {
+	background: var(--color-failure);
+	color: aliceblue;
+	/* text color always is always white */
+}
+
 .btn.disabled {
 	opacity: 0.6; /* Reduce opacity to indicate disabled state */
 	cursor: not-allowed; /* Show not-allowed cursor when hovering */

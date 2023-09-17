@@ -7,6 +7,7 @@ function JobsContainer({
 	data,
 	saveEndpoint,
 	likeEndpoint,
+	disLikeEndpoint,
 	applyEndpoint,
 	expiredEndpoint,
 }) {
@@ -31,6 +32,7 @@ function JobsContainer({
 						onRemove={handleRemoveJob}
 						saveEndpoint={saveEndpoint}
 						likeEndpoint={likeEndpoint}
+						disLikeEndpoint={disLikeEndpoint}
 						applyEndpoint={applyEndpoint}
 						expiredEndpoint={expiredEndpoint}
 					/>
@@ -50,6 +52,7 @@ export default function DataBaseContainer({
 	distinctvEndpoint,
 	saveEndpoint,
 	likeEndpoint,
+	disLikeEndpoint,
 	applyEndpoint,
 	expiredEndpoint,
 }) {
@@ -71,6 +74,9 @@ export default function DataBaseContainer({
 	const [LikeEndpointUpd, setLikeEndpointUpd] = useState(
 		likeEndpoint + "?table=" + table
 	);
+	const [disLikeEndpointUpd, setdisLikeEndpointUpd] = useState(
+		disLikeEndpoint + "?table=" + table
+	);
 	const [ApplyApiEndpointUpd, setApplyApiEndpointUpd] = useState(
 		applyEndpoint + "?table=" + table
 	);
@@ -85,6 +91,7 @@ export default function DataBaseContainer({
 		setdistinctvEndpointUpd(distinctvEndpoint + "?table=" + table);
 		setsaveEndpointUpd(saveEndpoint + "?table=" + table);
 		setLikeEndpointUpd(likeEndpoint + "?table=" + table);
+		setdisLikeEndpointUpd(disLikeEndpoint + "?table=" + table);
 		setApplyApiEndpointUpd(applyEndpoint + "?table=" + table);
 		setExpiredApiEndpointUpd(expiredEndpoint + "?table=" + table);
 	}, [table]);
@@ -116,9 +123,10 @@ export default function DataBaseContainer({
 				<JobsContainer
 					data={data}
 					saveEndpoint={saveEndpointUpd}
-					LikeEndpoint={LikeEndpointUpd}
-					ApplyApiEndpoint={ApplyApiEndpointUpd}
-					ExpiredApiEndpoint={ExpiredApiEndpointUpd}
+					likeEndpoint={LikeEndpointUpd}
+					disLikeEndpoint={disLikeEndpointUpd}
+					applyEndpoint={ApplyApiEndpointUpd}
+					expiredEndpoint={ExpiredApiEndpointUpd}
 				/>
 			)}
 		</div>

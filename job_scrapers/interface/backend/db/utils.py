@@ -111,6 +111,8 @@ async def get_records(
             query = query.where(or_(*filters))
         elif logical_operator.upper() == "NOT":
             query = query.where(not_(*filters))
+        elif logical_operator is None:
+            query = query.where(*filters)
         else:
             raise ValueError("Logical operator must be 'AND', 'OR', or 'NOT'")
 

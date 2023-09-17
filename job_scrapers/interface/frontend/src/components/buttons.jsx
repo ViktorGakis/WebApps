@@ -12,73 +12,6 @@ export {
 	ExpiredButton,
 };
 
-function SaveButton({ job, endpoint }) {
-	const buildClass = (jobData) => {
-		return `btn ${jobData.saved ? "success" : "neutral"}`;
-	};
-
-	const buildEndpoint = (jobData) => {
-		return `${endpoint}&job_id=${jobData.job_id}&saved=${Number(
-			jobData.saved
-		)}`;
-	};
-
-	const [currentJob, setCurrentJob] = useState(job);
-	const [currentEndpoint, setCurrentEndpoint] = useState(buildEndpoint(job));
-	const [currentClass, setCurrentClass] = useState(buildClass(job));
-	const [isLoading, setIsLoading] = useState(false);
-
-	useEffect(() => {
-		setCurrentClass(buildClass(currentJob));
-		setCurrentEndpoint(buildEndpoint(currentJob));
-	}, [currentJob]);
-
-	const toggleSaved = async (e) => {
-		e.preventDefault();
-		setIsLoading(true);
-		try {
-			const response = await fetchAPI(currentEndpoint);
-			const updatedJob = { ...currentJob, saved: response.saved };
-			setCurrentJob(updatedJob);
-		} catch (error) {
-			console.error("Error toggling saved state:", error);
-		} finally {
-			setIsLoading(false);
-		}
-	};
-
-	return (
-		<div>
-			<a
-				type="submit"
-				name={currentJob.job_id}
-				href={currentEndpoint}
-				className={currentClass}
-				onClick={toggleSaved}>
-				{isLoading ? <span>Loading...</span> : <TfiSave />}
-			</a>
-		</div>
-	);
-}
-
-function ApplyButton({ job, endpoint }) {
-	// Check if the job is applied and set the appropriate button class
-	const isApplied = job.applied;
-	const buttonClass = `btn apply_btn ${
-		isApplied ? "btn-outline-success" : "btn-outline-secondary"
-	} btn-block`;
-
-	return (
-		<a
-			type="button"
-			name={job.job_id}
-			href={endpoint}
-			className={buttonClass}>
-			<AiOutlineCheck />
-		</a>
-	);
-}
-
 function CloseButton({ jobId, onRemove }) {
 	const handleClick = () => {
 		if (onRemove) {
@@ -89,40 +22,6 @@ function CloseButton({ jobId, onRemove }) {
 		<button type="button" className="btn btn_close" onClick={handleClick}>
 			<AiOutlineCloseCircle />
 		</button>
-	);
-}
-
-function LikeButton({ job, endpoint }) {
-	const isFav = job.liked;
-	const buttonClass = `btn like_btn btn-outline-secondary ${
-		isFav ? "dis_state" : ""
-	} btn-block`;
-
-	return (
-		<a
-			type="button"
-			name={job.job_id}
-			href={endpoint}
-			className={buttonClass}>
-			<AiFillLike />
-		</a>
-	);
-}
-
-function DisLikeButton({ job, endpoint }) {
-	const isFav = job.liked;
-	const buttonClass = `btn like_btn btn-outline-secondary ${
-		isFav ? "dis_state" : ""
-	} btn-block`;
-
-	return (
-		<a
-			type="button"
-			name={job.job_id}
-			href={endpoint}
-			className={buttonClass}>
-			<AiFillDislike />
-		</a>
 	);
 }
 
@@ -142,5 +41,123 @@ function ExpiredButton({ job, endpoint }) {
 				<i className="fa-solid fa-triangle-exclamation fa-2x"></i>
 			</span>
 		</a>
+	);
+}
+
+function ToggleBtn({
+	job,
+	endpoint,
+	setState,
+	job_id,
+	col_name,
+	class_value,
+	class_trigger_value,
+	icon,
+}) {
+	const buildClass = (jobData) => {
+		const baseClass = "btn";
+		if (jobData[col_name] == class_trigger_value) {
+			return baseClass + " " + class_value;
+		}
+		return baseClass;
+	};
+
+	const buildEndpoint = (jobData) => {
+		return `${endpoint}&${job_id}=${jobData[job_id]}`;
+	};
+
+	const [currentEndpoint, setCurrentEndpoint] = useState(buildEndpoint(job));
+	const [currentClass, setCurrentClass] = useState(buildClass(job));
+	const [isLoading, setIsLoading] = useState(false);
+
+	useEffect(() => {
+		setCurrentClass(buildClass(job));
+		setCurrentEndpoint(buildEndpoint(job));
+	}, [job]);
+
+	const toggleButton = async (e) => {
+		e.preventDefault();
+		setIsLoading(true);
+		try {
+			const updatedJob = await fetchAPI(currentEndpoint);
+			setState(updatedJob);
+		} catch (error) {
+			console.error(`Error toggling ${col_name} state:`, error);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
+	return (
+		<div>
+			<a
+				type="submit"
+				name={job.job_id}
+				href={currentEndpoint}
+				className={currentClass}
+				onClick={toggleButton}>
+				{isLoading ? <span>Loading...</span> : icon}
+			</a>
+		</div>
+	);
+}
+
+function LikeButton({ job, endpoint, setState }) {
+	return (
+		<ToggleBtn
+			job={job}
+			endpoint={endpoint}
+			setState={setState}
+			job_id={"job_id"}
+			col_name={"liked"}
+			class_value={"success"}
+			icon={<AiFillLike />}
+			class_trigger_value={1}
+		/>
+	);
+}
+
+function DisLikeButton({ job, endpoint, setState }) {
+	return (
+		<ToggleBtn
+			job={job}
+			endpoint={endpoint}
+			setState={setState}
+			job_id={"job_id"}
+			col_name={"liked"}
+			class_value={"failure"}
+			icon={<AiFillDislike />}
+			class_trigger_value={-1}
+		/>
+	);
+}
+
+function SaveButton({ job, endpoint, setState }) {
+	return (
+		<ToggleBtn
+			job={job}
+			endpoint={endpoint}
+			setState={setState}
+			job_id={"job_id"}
+			col_name={"saved"}
+			class_value={"success"}
+			icon={<TfiSave />}
+			class_trigger_value={1}
+		/>
+	);
+}
+
+function ApplyButton({ job, endpoint, setState }) {
+	return (
+		<ToggleBtn
+			job={job}
+			endpoint={endpoint}
+			setState={setState}
+			job_id={"job_id"}
+			col_name={"applied"}
+			class_value={"success"}
+			icon={<AiOutlineCheck />}
+			class_trigger_value={1}
+		/>
 	);
 }
