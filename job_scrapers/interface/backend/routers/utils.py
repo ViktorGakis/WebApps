@@ -320,20 +320,22 @@ async def exec_async_block(func: Callable[..., Any], /, *args, **kwargs) -> Any:
         return result
 
 
-async def btn_update(
+async def btn_upd(
     table,
-    rq_args: dict[str, Any],
-    btn_type: str,
-    ses: db.AsyncSession,
-) -> Literal[-1, 0, 1] | None:
-    if job_id := rq_args.get("job_id"):
-        job = (
-            await ses.execute(db.select(table).filter(table.job_id == job_id))
-        ).scalar()
-        val_old = getattr(job, btn_type)
-        # log.debug('val_old: %s', val_old)
-        setattr(job, f"{btn_type}", 0 if val_old else 1)
-        val_new = getattr(job, btn_type)
-        await ses.commit()
-        # log.debug('val_new: %s', val_new)
-        return val_new
+    identifier,
+    identifier_value,
+    target_col,
+    target_val,
+    ses,
+):
+    db_model = eval(table)
+    stmt = db.select(db_model).filter(getattr(db_model, identifier) == identifier_value)
+    result = await ses.execute(stmt)
+    instance = result.scalars().first()
+
+    val_old = getattr(instance, target_col)
+    val_new = target_val[val_old]
+    setattr(instance, target_col, val_new)
+    instance_dict = instance._dict()
+    await ses.commit()
+    return instance_dict

@@ -56,13 +56,16 @@ export async function handleFormRequest(e, formRef, options = {}) {
 		return await fetchAPI(url);
 	}
 	let apiUrl = formEndpoint;
+	console.log(`handleFormRequest: ${apiUrl}`);
 
 	if (queryParameters) {
-		apiUrl += `?${queryParameters}`;
+		apiUrl += `&${queryParameters}`;
+		console.log(`handleFormRequest: ${apiUrl}`);
 	}
 
 	if (page !== null) {
 		apiUrl += `&page=${page}`;
+		console.log(`handleFormRequest: ${apiUrl}`);
 	}
 	console.log(`handleFormRequest: apiUrl: ${apiUrl}`);
 	return await fetchAPI(apiUrl);

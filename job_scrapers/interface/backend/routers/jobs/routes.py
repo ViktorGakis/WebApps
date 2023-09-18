@@ -1,6 +1,5 @@
 from logging import Logger
 from pprint import pformat
-from re import A
 from typing import Any, Optional
 
 from fastapi import Depends, Query, Request
@@ -10,7 +9,7 @@ from starlette.templating import _TemplateResponse
 from ... import db
 from ...logger import logdef
 from ..utils import (
-    btn_update,
+    btn_upd,
     column_operators,
     distinct_v_html,
     get_cols,
@@ -22,8 +21,6 @@ from ..utils import (
 from . import router
 
 log: Logger = logdef(__name__)
-sql = None
-jobs = {}
 
 
 # @router.get("/", response_class=HTMLResponse)
@@ -37,27 +34,6 @@ jobs = {}
 #             "col_opers": column_operators(),
 #         },
 #     )
-
-
-async def btn_upd(
-    table,
-    identifier,
-    identifier_value,
-    target_col,
-    target_val,
-    ses,
-):
-    db_model = eval(table)
-    stmt = db.select(db_model).filter(getattr(db_model, identifier) == identifier_value)
-    result = await ses.execute(stmt)
-    instance = result.scalars().first()
-
-    val_old = getattr(instance, target_col)
-    val_new = target_val[val_old]
-    setattr(instance, target_col, val_new)
-    instance_dict = instance._dict()
-    await ses.commit()
-    return instance_dict
 
 
 @router.get("/api/items/cols", response_class=HTMLResponse)
@@ -89,8 +65,8 @@ async def jobs_api_items_opers(
 async def jobs_api_distinct_values(
     request: Request,
     ses=Depends(db.get_ses),
-    table: str = Query(..., description="The name of table"),
-    field: str = Query(..., description="Column name"),
+    table: str = Query(...),
+    field: str = Query(...),
 ) -> JSONResponse:
     print(
         f"""
@@ -119,17 +95,13 @@ async def jobs_api(
 
 
 @router.get("/api/items", response_class=HTMLResponse)
-@router.get("/api/items/{page}", response_class=HTMLResponse)
+# @router.get("/api/items/{page}", response_class=HTMLResponse)
 async def jobs_api_items(
-    request: Request,
-    ses=Depends(db.get_ses),
-    page: int = 1,
+    request: Request, ses=Depends(db.get_ses), page: int = 1, table: str = Query(...)
 ) -> JSONResponse:
-    global jobs, sql
     rq_args: dict[str, str] = dict(request.query_params)
     log.debug("\n rq_args \n %s", pformat(rq_args))
-    table = db.models.jobsch.Job
-
+    table = eval(table)
     filter_args: list = []
     per_page: int = int(rq_args.get("per_page") or 5)
     filter_args = await setup_filters(rq_args, table)

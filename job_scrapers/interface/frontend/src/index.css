@@ -305,3 +305,7 @@ img {
 		width: var(--container-width-md);
 	}
 }
+
+.jobs .container .job {
+	padding-top: 1rem;
+}

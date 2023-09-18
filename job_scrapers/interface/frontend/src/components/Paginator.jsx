@@ -9,16 +9,20 @@ export default function Paginator({
 	onUpdateData,
 }) {
 	const createPageLink = (page) => {
-		const url = `${formEndpoint}&page=${page}`;
-		console.log(`Paginator: url ${formEndpoint}`);
+		// const url = `${formEndpoint}&page=${page}`;
+		const url = `${page}`;
+		// console.log(`Paginator: url ${formEndpoint}`);
 		return url;
 	};
 
 	const handlePageClick = async (e) => {
+		e.preventDefault();
 		const options = {
-			url: e.target.href,
+			page: e.target.getAttribute("data-page"),
+			formEndpoint: formEndpoint,
 		};
-		console.log(`handlePageClick: url: ${options.url}`);
+		console.log(`handlePageClick: page: ${options.page}`);
+		console.log(`handlePageClick: formEndpoint: ${options.formEndpoint}`);
 		const rsp = await handleFormRequest(e, formRef, options);
 		onUpdateData(rsp.data);
 	};
@@ -29,11 +33,12 @@ export default function Paginator({
 				<h4>
 					Per_page: {data.per_page}, Results: {data.total}
 				</h4>
-				<ul className="pagination">
-					<li className="page-item">
+				<div className="pagination">
+					<div className="page-item">
 						{data.has_prev ? (
 							<a
 								className="page-link"
+								data-page={data.prev_num}
 								href={createPageLink(data.prev_num)}
 								aria-label="Previous"
 								onClick={handlePageClick}>
@@ -42,16 +47,17 @@ export default function Paginator({
 						) : (
 							<span aria-hidden="true">&laquo;</span>
 						)}
-					</li>
+					</div>
 
 					{data.iter_pages.map((pageNum) => (
-						<li
+						<div
 							className="page-item"
 							aria-current="page"
 							key={pageNum}>
 							{pageNum ? (
 								<a
 									className="page-link"
+									data-page={pageNum}
 									href={createPageLink(pageNum)}
 									onClick={handlePageClick}>
 									{pageNum}
@@ -59,13 +65,14 @@ export default function Paginator({
 							) : (
 								"..."
 							)}
-						</li>
+						</div>
 					))}
 
-					<li className="page-item">
+					<div className="page-item">
 						{data.has_next ? (
 							<a
 								className="page-link"
+								data-page={data.next_num}
 								href={createPageLink(data.next_num)}
 								aria-label="Next"
 								onClick={handlePageClick}>
@@ -74,8 +81,8 @@ export default function Paginator({
 						) : (
 							<span aria-hidden="true">&raquo;</span>
 						)}
-					</li>
-				</ul>
+					</div>
+				</div>
 			</nav>
 		</div>
 	);
